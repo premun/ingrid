@@ -16,6 +16,7 @@
     <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="b500" ref="r:c3608ff3-23d3-4792-858b-da3c93005e4d(premun.mps.ingrid.plugin.import_process.import_process)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
@@ -66,6 +67,9 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
+        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
+      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -529,7 +533,37 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="4F6jbA$lB_1" role="3cqZAp" />
+        <node concept="3clFbH" id="4J1$HSvIE$a" role="3cqZAp" />
+        <node concept="3cpWs8" id="4J1$HSvIGw5" role="3cqZAp">
+          <node concept="3cpWsn" id="4J1$HSvIGw6" role="3cpWs9">
+            <property role="TrG5h" value="importer" />
+            <node concept="3uibUv" id="4J1$HSvIGw7" role="1tU5fm">
+              <ref role="3uigEE" to="b500:1OSx5D$GPOR" resolve="ImportProvider" />
+            </node>
+            <node concept="2ShNRf" id="4J1$HSvIGET" role="33vP2m">
+              <node concept="HV5vD" id="4J1$HSvINw5" role="2ShVmc">
+                <ref role="HV5vE" to="b500:1OSx5D$GPOR" resolve="ImportProvider" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4J1$HSvINHN" role="3cqZAp">
+          <node concept="2OqwBi" id="4J1$HSvINSI" role="3clFbG">
+            <node concept="37vLTw" id="4J1$HSvINHL" role="2Oq$k0">
+              <ref role="3cqZAo" node="4J1$HSvIGw6" resolve="importer" />
+            </node>
+            <node concept="liA8E" id="4J1$HSvINVg" role="2OqNvi">
+              <ref role="37wK5l" to="b500:4J1$HSvHxpa" resolve="importGrammar" />
+              <node concept="37vLTw" id="4J1$HSvINY2" role="37wK5m">
+                <ref role="3cqZAo" node="4F6jbA$lC9C" resolve="fileName" />
+              </node>
+              <node concept="37vLTw" id="4J1$HSvIOuj" role="37wK5m">
+                <ref role="3cqZAo" node="4F6jbA$lu1z" resolve="language" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4J1$HSvIFcD" role="3cqZAp" />
         <node concept="3clFbF" id="4F6jbA$lEGa" role="3cqZAp">
           <node concept="2OqwBi" id="4F6jbA$lESK" role="3clFbG">
             <node concept="2WthIp" id="4F6jbA$lEG8" role="2Oq$k0" />
