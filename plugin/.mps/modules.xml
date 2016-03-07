@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/imported.CSV/imported.CSV.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/imported.CSV/sandbox/imported.CSV.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/premun.mps.ingrid.plugin.importer/premun.mps.ingrid.plugin.importer.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/premun.mps.ingrid.plugin.importer/sandbox/premun.mps.ingrid.plugin.importer.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/premun.mps.ingrid.plugin.import/premun.mps.ingrid.plugin.importaction.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/premun.mps.ingrid.plugin.import_action/premun.mps.ingrid.plugin.import_action.msd" folder="" />
+    </projectModules>
+  </component>
+</project>
