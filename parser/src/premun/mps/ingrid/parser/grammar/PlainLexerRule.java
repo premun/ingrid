@@ -5,5 +5,6 @@ public class PlainLexerRule extends LexerRule {
 
     public PlainLexerRule(String name) {
         super(name);
+        this.value = name;
     }
 }

@@ -4,6 +4,7 @@ import premun.mps.ingrid.parser.antlr.ANTLRv4Parser.GrammarSpecContext;
 import premun.mps.ingrid.parser.antlr.ANTLRv4ParserBaseListener;
 import premun.mps.ingrid.parser.grammar.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -21,18 +22,20 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
     public void exitGrammarSpec(GrammarSpecContext ctx) {
         this.processGrammar();
 
-        this.grammar.debugPrint();
+        System.out.println(this.grammar.toString());
     }
 
     /**
-     * Resolves rules that weren't resolved during first parsing.
+     * Resolves rules that weren't resolved during first parsing. That means
+     * that everything that was discovered during first walk and is saved as
+     * a string name will be replaced by reference to the grammar.rules element.
      * Flattens lexer rules so that they become either strings or regexes.
      */
     private void processGrammar() {
         Map<String, Rule> rules = this.grammar.rules;
 
-        rules
-                .values()
+        // We need to copy the array because we are changing it inside
+        new ArrayList<>(rules.values())
                 .stream()
                 .filter(x -> x instanceof ParserRule)
                 .forEach(rule -> resolveParserRule((ParserRule) rule));
@@ -50,13 +53,27 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
         for (List<Rule> alternative : rule.alternatives) {
             // For each element on the line..
             for (int i = 0; i < alternative.size(); ++i) {
-                Rule r = alternative.get(i);
+                Rule element = alternative.get(i);
 
-                if (r instanceof UnresolvedRule) {
-                    if (rules.containsKey(r.name)) {
-                        alternative.set(i, rules.get(r.name));
+                if (element instanceof UnresolvedParserRule) {
+                    if (rules.containsKey(element.name)) {
+                        alternative.set(i, rules.get(element.name));
                     } else {
-                        System.err.println("Couldn't resolve rule '" + r.name + "'");
+                        throw new UnsupportedOperationException("Couldn't resolve rule '" + element.name + "'");
+                    }
+                } else if (element instanceof UnresolvedTerminalRule) {
+                    // String literal, e.g. '<' and '>' inside:
+                    // rule: '<' Name '>';
+                    if (element.name.startsWith("'")) {
+                        // Either link reference
+                        if (!rules.containsKey(element.name)) {
+                            // Or create new Rule item
+                            rules.put(element.name, new PlainLexerRule(element.name));
+                        }
+
+                        alternative.set(i, rules.get(element.name));
+                    } else {
+                        // TODO: Resolve lexer rules
                     }
                 }
             }
@@ -71,7 +88,7 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
                 TOKEN_REF COLON lexerRuleBlock SEMI
             ;
         */
-        LexerRule rule = new LexerRule(ctx.TOKEN_REF().getText());
+        LexerRule rule = LexerRule.ParseLexerRule(ctx);
         grammar.rules.put(rule.name, rule);
     }
 

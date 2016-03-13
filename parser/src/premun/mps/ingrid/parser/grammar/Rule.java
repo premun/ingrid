@@ -6,4 +6,9 @@ public abstract class Rule {
     public Rule(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }

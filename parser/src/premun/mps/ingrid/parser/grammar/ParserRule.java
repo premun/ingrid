@@ -52,7 +52,7 @@ public class ParserRule extends Rule {
     private void parseAlternative(ParseTree node, List<Rule> result) {
         // Either a token rule or 'string'
         if (node instanceof TerminalContext) {
-            Rule rule = new TerminalRule((TerminalContext) node);
+            Rule rule = new UnresolvedTerminalRule((TerminalContext) node);
             result.add(rule);
             return;
         }
@@ -66,7 +66,7 @@ public class ParserRule extends Rule {
 
         // Reference to another rule, we save it's name
         if (node instanceof RulerefContext) {
-            Rule rule = new UnresolvedRule(node.getChild(0).getText());
+            Rule rule = new UnresolvedParserRule(node.getChild(0).getText());
             result.add(rule);
             return;
         }
@@ -75,6 +75,30 @@ public class ParserRule extends Rule {
         for (int i = 0; i < node.getChildCount(); i++) {
             parseAlternative(node.getChild(i), result);
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb
+            .append(this.name)
+            .append("\t:")
+            .append(System.lineSeparator());
+
+        for (List<Rule> alternatives : this.alternatives) {
+            sb.append("\t\t|   ");
+
+            for (Rule rule : alternatives) {
+                sb
+                    .append(rule.name)
+                    .append(" ");
+            }
+
+            sb.append(System.lineSeparator());
+        }
+
+        return sb.toString();
     }
 
     /*

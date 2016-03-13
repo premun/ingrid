@@ -15,29 +15,23 @@ public class GrammarInfo {
         this.name = context.id().getText();
     }
 
-    public void debugPrint() {
-        System.out.println("grammar " + this.name + ";\n");
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
 
-        for (Map.Entry<String, Rule> entry : this.rules.entrySet()) {
-            System.out.println(entry.getKey());
+        sb
+            .append("grammar ")
+            .append(this.name)
+            .append(";")
+            .append(System.lineSeparator());
 
-            Rule value = entry.getValue();
-
-            if (value instanceof ParserRule) {
-                for (List<Rule> alternatives : ((ParserRule) value).alternatives) {
-                    System.out.print("\t\t|   ");
-
-                    for (Rule rule : alternatives) {
-                        System.out.print(rule.name + " ");
-                    }
-
-                    System.out.println();
-                }
-            } else if (value instanceof LexerRule) {
-                // System.out.println(((LexerRule) value).name);
-            }
-            
-            System.out.println("\t\t;\n");
+        for (Rule rule : this.rules.values()) {
+            sb
+                .append(rule.toString())
+                .append(System.lineSeparator())
+                .append(System.lineSeparator());
         }
+
+        return sb.toString();
     }
 }
