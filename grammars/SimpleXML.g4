@@ -3,10 +3,10 @@ grammar SimpleXML;
 document    :   comment? element
             ;
 
-comment     :   '/*' CONTENT '*/'
+comment     :   '/*' Content '*/'
             ;
 
-element     :   '<' Name '>' CONTENT '</' Name '>'
+element     :   LT Name '>' Content '</' Name '>'
             |   '<' Name ' />'
             ;
 
@@ -31,6 +31,9 @@ NameChar    :   NameStartChar
 fragment
 NameStartChar
             :   [:a-zA-Z]
+            ;
+
+LT          :   '<'
             ;
 
 /*document    :   prolog? element
