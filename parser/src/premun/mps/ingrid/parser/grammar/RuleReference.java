@@ -6,7 +6,7 @@ package premun.mps.ingrid.parser.grammar;
  */
 public class RuleReference {
     public Rule rule;
-    public Quantity quantity = Quantity.ONE;
+    public Quantity quantity = Quantity.EXACTLY_ONE;
 
     public RuleReference(Rule rule) {
         this.rule = rule;

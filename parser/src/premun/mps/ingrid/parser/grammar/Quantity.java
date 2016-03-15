@@ -1,7 +1,7 @@
 package premun.mps.ingrid.parser.grammar;
 
 public enum Quantity {
-    ONE,
+    EXACTLY_ONE,
     MAX_ONE,
     AT_LEAST_ONE,
     ANY;
@@ -22,7 +22,7 @@ public enum Quantity {
     @Override
     public String toString() {
         switch (this) {
-            case ONE:
+            case EXACTLY_ONE:
                 return "";
 
             case ANY:
