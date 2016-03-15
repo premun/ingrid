@@ -1,6 +1,6 @@
 package premun.mps.ingrid.parser.grammar;
 
-public class RegexRule extends Rule {
+public class RegexRule extends FlatLexerRule {
     public String regexp;
 
     public RegexRule(String name, String regexp) {
@@ -11,6 +11,11 @@ public class RegexRule extends Rule {
     public RegexRule(String regexp) {
         // TODO: naming service
         this(java.util.UUID.randomUUID().toString(), regexp);
+    }
+
+    @Override
+    public String getContent() {
+        return regexp;
     }
 
     @Override

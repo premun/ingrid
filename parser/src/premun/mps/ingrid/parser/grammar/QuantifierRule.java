@@ -2,10 +2,10 @@ package premun.mps.ingrid.parser.grammar;
 
 import premun.mps.ingrid.parser.antlr.ANTLRv4Parser.EbnfSuffixContext;
 
-public class RuleQuantifier extends Rule {
+public class QuantifierRule extends Rule {
     public Quantity quantity;
 
-    public RuleQuantifier(EbnfSuffixContext context) {
+    public QuantifierRule(EbnfSuffixContext context) {
         super(context.getText());
 
         switch (this.name) {

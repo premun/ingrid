@@ -15,7 +15,7 @@ import static premun.mps.ingrid.parser.antlr.ANTLRv4Parser.*;
  *
  * After the grammar is parsed:
  * 1) References inside parser rules are resolved.
- * 2) Lexer rules are flattened into a single regexp or a string literal.
+ * 2) Lexer rules are flattened into a single regex or a string literal.
  *
  * Parsed grammar representation is then available.
  */
@@ -28,7 +28,7 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
 
     @Override
     public void enterGrammarSpec(GrammarSpecContext context) {
-        this.grammar = new GrammarInfo(context);
+        this.grammar = new GrammarInfo(context.id().getText());
         this.rules = new HashMap<>();
     }
 
@@ -38,78 +38,142 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
      */
     @Override
     public void exitGrammarSpec(GrammarSpecContext context) {
-        this.processGrammar();
+        this.buildGrammar();
 
-        for (Rule r : this.rules.values()) {
-            System.out.println(r.toString());
-        }
+        System.out.println(this.grammar.toString());
     }
 
     /**
      * Resolves rules that weren't resolved during first parsing. That means
      * that everything that was discovered during first walk and is saved as
      * a string name will be replaced by reference to the this.rules element.
-     * Flattens lexer rules so that they become either strings or regexps.
+     * Flattens lexer rules so that they become either strings or regexs.
      */
-    private void processGrammar() {
+    private void buildGrammar() {
         // Lexer rules must be resolved first so that parser rules can reference them
         // Lexer rules do not contain references to parser rules
         // We need to copy the array because we are changing it inside forEach
         new ArrayList<>(this.rules.keySet())
             .stream()
-            .filter(key -> rules.get(key) instanceof LexerRule)
-            .forEach(key -> flattenLexerRule(rules.get(key)));
+            .filter(name -> this.rules.get(name) instanceof LexerRule)
+            .forEach(name -> {
+                // We always get updated Rule from rule set again, because we might have
+                // updated it
+                FlatLexerRule flatRule = flattenLexerRule(this.rules.get(name));
+                this.grammar.rules.put(name, flatRule);
+            });
 
         // We need to copy the array because we are changing it inside forEach
         new ArrayList<>(this.rules.values())
             .stream()
-            .filter(x -> x instanceof ParserRule)
-            .forEach(rule -> resolveParserRule((ParserRule) rule));
+            .filter(r -> r instanceof ParserRule)
+            .forEach(rule -> {
+                resolveParserRule((ParserRule) rule);
+                this.grammar.rules.put(rule.name, rule);
+            });
     }
 
     /**
-     * Flattens rule into a regexp or string literal.
+     * Flattens rule into a regex or string literal.
      * TODO: Cyclic (faulty) ANTLR definition will cause endless loop and stack overflow.
      * @param rule Rule to be resolved.
      */
-    private void flattenLexerRule(Rule rule) {
+    private FlatLexerRule flattenLexerRule(Rule rule) {
         // Because some rules were resolved as a dependency of another rule,
-        // it might happen that it
-        if (!(rule instanceof LexerRule)) return;
+        // it might happen that it is already flattened.
+        if (rule instanceof FlatLexerRule) {
+            return (FlatLexerRule) rule;
+        }
+
+        if (rule instanceof UnresolvedLexerRule) {
+            throw new UnsupportedOperationException(
+                "Rule '" + rule.name + "' must be resolved before flattening");
+        }
 
         LexerRule lexerRule = (LexerRule) rule;
-        StringBuilder expression = new StringBuilder();
 
         // If we have only one element, we might be looking at a literal rule..
         // We count all elements of all alternatives:
-        int totalElements = lexerRule
-            .alternatives
-            .stream()
-            .mapToInt(List::size)
-            .sum();
-
-        if (totalElements == 1) {
+        if (lexerRule.alternatives.size() == 1 && lexerRule.alternatives.get(0).size() == 1) {
             Rule only = lexerRule.alternatives.get(0).get(0);
             if (only instanceof LiteralRule) {
-                Rule newRule = new LiteralRule(rule.name, ((LiteralRule) only).value);
-                this.rules.put(rule.name, newRule);
-                return;
+                return new LiteralRule(rule.name, ((LiteralRule) only).value);
             }
         }
 
-        // Indicates whether a rule will be a plain rule or a regex rule
-        /*boolean isRegexp = lexerRule.alternatives.size() == 1;
+        // We can construct one big regex out of sub rules
+        List<List<String>> regexs = new ArrayList<>();
 
+        // Gather all sub rule contents (or resolve them, if wasn't resolved before)
         for (List<Rule> alternative : lexerRule.alternatives) {
+            List<String> subRegex = new ArrayList<>();
+
             for (Rule element : alternative) {
+                // Is each sub element already resolved?
+                if (!(element instanceof FlatLexerRule)) {
+                    if (element instanceof QuantifierRule) {
+                        int lastIndex = subRegex.size() - 1;
+
+                        if (lastIndex < 0) {
+                            throw new UnsupportedOperationException("Quantifier suffix found with no prefix regex");
+                        }
+
+                        // We append it to the previous rule
+                        char quantifier = ((QuantifierRule) element).quantity.getQuantifierChar();
+                        subRegex.set(lastIndex, subRegex.get(lastIndex) + quantifier);
+
+                    } else if (element instanceof UnresolvedLexerRule) {
+                        if (!this.rules.containsKey(element.name)) {
+                            throw new UnsupportedOperationException("Failed to resolve lexer rule '" + element.name + "'");
+                        }
+
+                        FlatLexerRule flatRule = flattenLexerRule(this.rules.get(element.name));
+                        this.rules.put(element.name, flatRule);
+                        subRegex.add(flatRule.getContent());
+                    } else {
+                        throw new UnsupportedOperationException(
+                            "Rule '" + element.name + "' (" + element.getClass().getSimpleName() + ") failed to be flattened");
+                    }
+                } else {
+                    subRegex.add(((FlatLexerRule) element).getContent());
+                }
             }
+
+            regexs.add(subRegex);
         }
 
-        LexerRule flatRule = isRegexp
-            ? new RegexRule(rule.name, expression.toString())
-            : new LiteralRule(rule.name, expression.toString());
+        // Build regex from gathered strings
+        return new RegexRule(rule.name, buildLexerRegex(regexs));
+    }
 
-        rules.put(rule.name, flatRule);*/
+    /**
+     * Helper method that turns {{a,b,c}, {d,e}} into ((a|b|c)|(d|e)).
+     * @param alternatives Array of arrays of strings.
+     * @return Flattened string ready for regex.
+     */
+    private String buildLexerRegex(List<List<String>> alternatives) {
+        StringBuilder expression = new StringBuilder();
+
+        if (alternatives.size() == 1) {
+            expression.append(String.join("", alternatives.get(0)));
+        } else {
+            for (List<String> alt : alternatives) {
+                if (expression.length() == 0) {
+                    expression.append('(');
+                } else {
+                    expression.append('|');
+                }
+
+                expression
+                    .append('(')
+                    .append(String.join("", alt))
+                    .append(')');
+            }
+
+            expression.append(')');
+        }
+
+        return expression.toString();
     }
 
     /**
@@ -180,6 +244,12 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
     public void enterAlternative(AlternativeContext context) {
         ArrayList<Rule> elements = new ArrayList<>();
 
+        // Rules that can dissolve into empty string
+        if (context.children == null) {
+            elements.add(new LiteralRule(""));
+            return;
+        }
+
         // Recursively recognize elements
         for (ParseTree element : context.children) {
             parseAlternativeElement(element, elements);
@@ -204,9 +274,19 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
         this.rules.put(currentLexerRule.name, currentLexerRule);
     }
 
+    /**
+     * Parses alternative branches of a lexer rule.
+     * @param context Parser context.
+     */
     @Override
     public void enterLexerAlt(LexerAltContext context) {
         ArrayList<Rule> elements = new ArrayList<>();
+
+        // Rules that can dissolve into empty string
+        if (context.children == null) {
+            elements.add(new LiteralRule(""));
+            return;
+        }
 
         // Recursively recognize elements
         for (ParseTree element : context.children) {
@@ -223,7 +303,7 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
      * @param elements Output parameter containing all found Rule objects
      */
     private void parseAlternativeElement(ParseTree node, List<Rule> elements) {
-        // Either a lexer rule name, regexp or 'string'
+        // Either a lexer rule name, regex or 'string'
         if (node instanceof LexerAtomContext || node instanceof TerminalContext) {
             String name = node.getText();
 
@@ -244,7 +324,7 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
 
         // ? * +
         if (node instanceof EbnfSuffixContext) {
-            Rule rule = new RuleQuantifier((EbnfSuffixContext) node);
+            Rule rule = new QuantifierRule((EbnfSuffixContext) node);
             elements.add(rule);
             return;
         }
@@ -266,9 +346,11 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
     private void printTree(String name, RuleContext context) {
         System.out.println("------------------------------");
         System.out.println("TREE " + name);
+
         for (int i = 0; i < context.getChildCount(); ++i) {
             printTree(context.getChild(i), 2);
         }
+
         System.out.println("------------------------------");
     }
 
@@ -276,11 +358,7 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
     private void printTree(ParseTree tree, int indent) {
         System.out.print(new String(new char[indent]).replace("\0", " "));
 
-        String classname = tree
-            .getClass()
-            .toString()
-            .replace("class premun.mps.ingrid.parser.antlr.ANTLRv4Parser$", "")
-            .replace("class org.antlr.v4.runtime.tree.", "");
+        String classname = tree.getClass().getSimpleName();
 
         if (classname.equals("TerminalNodeImpl")) {
             classname += " (" + tree.getText() + ")";
@@ -298,4 +376,3 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
         return grammar;
     }
 }
-

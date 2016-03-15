@@ -24,10 +24,8 @@ public class ParserRule extends Rule {
             sb.append("\t\t|   ");
 
             for (Rule rule : alternatives) {
-                if (rule instanceof LiteralRule) {
-                    sb.append("_" + ((LiteralRule) rule).value);
-                } if (rule instanceof RegexRule) {
-                    sb.append(((RegexRule) rule).regexp);
+                if (rule instanceof FlatLexerRule) {
+                    sb.append(((FlatLexerRule) rule).getContent());
                 } else {
                     sb.append(rule.name);
                 }

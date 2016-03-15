@@ -7,7 +7,7 @@ comment     :   '/*' Content '*/'
             ;
 
 element     :   LT Name '>' Content '</' Name '>'
-            |   '<' Name ' />'
+            |   '<' Name '/>'
             ;
 
 Content     :   [a-zA-Z0-9 ]*

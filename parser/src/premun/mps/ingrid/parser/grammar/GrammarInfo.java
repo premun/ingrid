@@ -1,9 +1,6 @@
 package premun.mps.ingrid.parser.grammar;
 
-import premun.mps.ingrid.parser.antlr.ANTLRv4Parser;
-
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class GrammarInfo {
@@ -11,8 +8,8 @@ public class GrammarInfo {
     public Map<String, Rule> rules = new HashMap<>();
     public Rule rootRule = null;
 
-    public GrammarInfo(ANTLRv4Parser.GrammarSpecContext context) {
-        this.name = context.id().getText();
+    public GrammarInfo(String name) {
+        this.name = name;
     }
 
     @Override
