@@ -29,7 +29,7 @@ public class LexerRule extends Rule {
             for (Rule rule : alternatives) {
                 if (rule instanceof LiteralRule) {
                     sb.append(((LiteralRule) rule).value);
-                } if (rule instanceof RegexRule) {
+                } else if (rule instanceof RegexRule) {
                     sb.append(((RegexRule) rule).regexp);
                 } else {
                     sb.append(rule.name);

@@ -11,7 +11,7 @@ public enum Quantity {
         switch (this) {
             case ONE:
                 return "";
-            
+
             case ANY:
                 return "*";
 

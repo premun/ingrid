@@ -1,22 +1,20 @@
 package premun.mps.ingrid.parser;
 
 import org.antlr.v4.runtime.tree.*;
+import premun.mps.ingrid.parser.antlr.ANTLRv4Parser.*;
 import premun.mps.ingrid.parser.antlr.*;
-import premun.mps.ingrid.parser.antlr.ANTLRv4Parser.GrammarSpecContext;
 import premun.mps.ingrid.parser.grammar.*;
 
 import java.util.*;
 import java.util.stream.*;
 
-import static premun.mps.ingrid.parser.antlr.ANTLRv4Parser.*;
-
 /**
  * Class that handles walking through imported grammar and constructs the tree.
- *
+ * <p>
  * After the grammar is parsed:
  * 1) References inside parser rules are resolved.
  * 2) Lexer rules are flattened into a single regex or a string literal.
- *
+ * <p>
  * Parsed grammar representation is then available.
  */
 public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
@@ -34,6 +32,7 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
 
     /**
      * Last action after grammar was walked through. Resolve + flatten rules.
+     *
      * @param context Parser context
      */
     @Override
@@ -76,6 +75,7 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
     /**
      * Flattens rule into a regex or string literal.
      * TODO: Cyclic (faulty) ANTLR definition will cause endless loop and stack overflow.
+     *
      * @param rule Rule to be resolved.
      */
     private FlatLexerRule flattenLexerRule(Rule rule) {
@@ -148,6 +148,7 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
 
     /**
      * Helper method that turns {{a,b,c}, {d,e}} into ((a|b|c)|(d|e)).
+     *
      * @param alternatives Array of arrays of strings.
      * @return Flattened string ready for regex.
      */
@@ -179,6 +180,7 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
     /**
      * Matches (string) references inside rule alternatives with actual
      * pointers to rule definitions.
+     *
      * @param rule Rule to be resolved
      */
     private void resolveParserRule(ParserRule rule) {
@@ -242,6 +244,7 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
 
     /**
      * Parses possible alternatives that the rule can split into.
+     *
      * @param context Parser context.
      */
     @Override
@@ -272,6 +275,7 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
 
     /**
      * Called when a new lexer rule is met.
+     *
      * @param context Parser context
      */
     @Override
@@ -288,6 +292,7 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
 
     /**
      * Parses alternative branches of a lexer rule.
+     *
      * @param context Parser context.
      */
     @Override
@@ -311,7 +316,8 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
     /**
      * Explores the full tree of a node, finds all token types
      * and transforms them into Rule objects.
-     * @param node Starting tree node
+     *
+     * @param node     Starting tree node
      * @param elements Output parameter containing all found Rule objects
      */
     private void parseAlternativeElement(ParseTree node, List<Rule> elements) {

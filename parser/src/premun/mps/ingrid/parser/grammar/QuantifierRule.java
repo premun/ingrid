@@ -1,6 +1,6 @@
 package premun.mps.ingrid.parser.grammar;
 
-import premun.mps.ingrid.parser.antlr.ANTLRv4Parser.EbnfSuffixContext;
+import premun.mps.ingrid.parser.antlr.ANTLRv4Parser.*;
 
 public class QuantifierRule extends Rule {
     public Quantity quantity;

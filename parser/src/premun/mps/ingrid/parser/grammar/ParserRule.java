@@ -2,8 +2,7 @@ package premun.mps.ingrid.parser.grammar;
 
 import premun.mps.ingrid.parser.antlr.ANTLRv4Parser.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ParserRule extends Rule {
     public List<List<RuleReference>> alternatives = new ArrayList<>();

@@ -1,7 +1,6 @@
 package premun.mps.ingrid.parser.grammar;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class GrammarInfo {
     public String name;
