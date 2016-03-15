@@ -9,8 +9,7 @@ public class Main {
             return;
         }
 
-        GrammarParser parser = new GrammarParser();
-        GrammarInfo grammar = parser.parseFile(args[0]);
-        System.out.println(grammar.toString());
+        GrammarInfo grammar = GrammarParser.parseFile(args[0]);
+        System.out.println(grammar != null ? grammar.toString() : null);
     }
 }

@@ -8,14 +8,14 @@ import premun.mps.ingrid.parser.grammar.*;
 import java.io.*;
 
 public class GrammarParser {
-    public GrammarInfo parseFile(String fileName) {
+    public static GrammarInfo parseFile(String fileName) {
         File file = new File(fileName);
 
         FileInputStream fis;
         try {
             fis = new FileInputStream(file);
         } catch (FileNotFoundException e) {
-            System.out.println("File not found");
+            System.out.println("File '" + fileName + "' not found");
             return null;
         }
 
@@ -29,7 +29,11 @@ public class GrammarParser {
             return null;
         }
 
-        ANTLRv4Lexer lexer = new ANTLRv4Lexer(new ANTLRInputStream(new String(data)));
+        return parseString(new String(data));
+    }
+
+    public static GrammarInfo parseString(String grammar) {
+        ANTLRv4Lexer lexer = new ANTLRv4Lexer(new ANTLRInputStream(grammar));
 
         // Get a list of matched tokens
         CommonTokenStream tokens = new CommonTokenStream(lexer);

@@ -1,4 +1,4 @@
-package premun.mps.ingrid.parser.grammar.test;
+package premun.mps.ingrid.parser.grammar;
 
 import org.junit.*;
 import premun.mps.ingrid.parser.grammar.*;

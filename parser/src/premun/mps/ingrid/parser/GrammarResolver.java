@@ -1,4 +1,7 @@
-package premun.mps.ingrid.parser.grammar;
+package premun.mps.ingrid.parser;
+
+import premun.mps.ingrid.parser.grammar.*;
+import premun.mps.ingrid.parser.grammar.exception.*;
 
 import java.util.*;
 
@@ -15,7 +18,7 @@ public class GrammarResolver {
      * @param parserResult Result of ANTLR parsing.
      * @return Resolved grammar ready to be imported to MPS.
      */
-    public static GrammarInfo generateGrammar(ParserResult parserResult) {
+    public static GrammarInfo generateGrammar(ParserResult parserResult) throws IngridParserException {
         GrammarInfo grammar = new GrammarInfo(parserResult.grammarName);
 
         Map<String, Rule> rules = parserResult.rules;
@@ -27,9 +30,9 @@ public class GrammarResolver {
             .stream()
             .filter(name -> rules.get(name) instanceof LexerRule)
             .forEach(name -> {
-                // We always get updated Rule from rule set again, because we might have
-                // updated it
-                FlatLexerRule flatRule = flattenLexerRule(rules.get(name), rules);
+                FlatLexerRule flatRule = null;
+                // We always get updated Rule from rule set again, because we might have updated it
+                flatRule = flattenLexerRule(rules.get(name), rules);
                 grammar.rules.put(name, flatRule);
             });
 
@@ -53,7 +56,7 @@ public class GrammarResolver {
      *
      * @param rule Rule to be resolved
      */
-    private static void resolveParserRule(ParserRule rule, Map<String, Rule> rules) {
+    private static void resolveParserRule(ParserRule rule, Map<String, Rule> rules) throws IngridParserException {
         // For each alternative line..
         for (List<RuleReference> alternative : rule.alternatives) {
             // For each element on the line..
@@ -69,12 +72,12 @@ public class GrammarResolver {
                         Rule lookedUpRule = rules.get(r.name);
                         alternative.set(i, new RuleReference(lookedUpRule, ref.quantity));
                     } else {
-                        throw new UnsupportedOperationException(
+                        throw new IngridParserException(
                             "Couldn't resolve rule '" + r.name + "' (inside " + rule.name + ")");
                     }
                 } else if (r instanceof QuantifierRule) {
                     if (i == 0) {
-                        throw new UnsupportedOperationException(
+                        throw new IngridParserException(
                             "Quantifier suffix found with no previous reference");
                     }
 
@@ -103,7 +106,7 @@ public class GrammarResolver {
         }
 
         if (rule instanceof UnresolvedLexerRule) {
-            throw new UnsupportedOperationException(
+            throw new IngridParserException(
                 "Rule '" + rule.name + "' must be resolved before flattening");
         }
 
@@ -132,23 +135,24 @@ public class GrammarResolver {
                         int lastIndex = subRegex.size() - 1;
 
                         if (lastIndex < 0) {
-                            throw new UnsupportedOperationException("Quantifier suffix found with no prefix regex");
+                            throw new IngridParserException("Quantifier suffix found with no prefix regex");
                         }
 
                         // We append it to the previous rule
                         String quantifier = ((QuantifierRule) element).quantity.toString();
-                        subRegex.set(lastIndex, subRegex.get(lastIndex) + quantifier);
+                        String quantifiedRegex = '(' + subRegex.get(lastIndex) + ')' + quantifier;
+                        subRegex.set(lastIndex, quantifiedRegex);
 
                     } else if (element instanceof UnresolvedLexerRule) {
                         if (!rules.containsKey(element.name)) {
-                            throw new UnsupportedOperationException("Failed to resolve lexer rule '" + element.name + "'");
+                            throw new UnresolvableRuleException("Failed to resolve lexer rule '" + element.name + "'");
                         }
 
                         FlatLexerRule flatRule = flattenLexerRule(rules.get(element.name), rules);
                         rules.put(element.name, flatRule);
                         subRegex.add(flatRule.getContent());
                     } else {
-                        throw new UnsupportedOperationException(
+                        throw new IngridParserException(
                             "Rule '" + element.name + "' (" + element.getClass().getSimpleName() + ") failed to be flattened");
                     }
                 } else {
