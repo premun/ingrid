@@ -1,6 +1,5 @@
 package premun.mps.ingrid.parser;
 
-import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import premun.mps.ingrid.parser.antlr.*;
 import premun.mps.ingrid.parser.antlr.ANTLRv4Parser.GrammarSpecContext;
@@ -352,36 +351,6 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
         // Recursively explore further
         for (int i = 0; i < node.getChildCount(); i++) {
             parseAlternativeElement(node.getChild(i), elements);
-        }
-    }
-
-    // TODO: delete this debug method
-    private void printTree(String name, RuleContext context) {
-        System.out.println("------------------------------");
-        System.out.println("TREE " + name);
-
-        for (int i = 0; i < context.getChildCount(); ++i) {
-            printTree(context.getChild(i), 2);
-        }
-
-        System.out.println("------------------------------");
-    }
-
-    // TODO: delete this debug method
-    private void printTree(ParseTree tree, int indent) {
-        System.out.print(new String(new char[indent]).replace("\0", " "));
-
-        String classname = tree.getClass().getSimpleName();
-
-        if (classname.equals("TerminalNodeImpl")) {
-            classname += " (" + tree.getText() + ")";
-        }
-
-        System.out.println(classname);
-
-        for (int i = 0; i < tree.getChildCount(); i++) {
-            ParseTree child = tree.getChild(i);
-            printTree(child, indent + 4);
         }
     }
 
