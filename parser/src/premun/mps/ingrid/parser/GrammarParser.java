@@ -42,6 +42,8 @@ public class GrammarParser {
         ANTLRv4Listener listener = new ANTLRv4Listener();
         walker.walk(listener, parser.grammarSpec());
 
-        return listener.getGrammar();
+        ParserResult parseResult = listener.getParseResult();
+
+        return GrammarResolver.generateGrammar(parseResult);
     }
 }
