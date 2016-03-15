@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParserRule extends Rule {
-    public List<List<Rule>> alternatives = new ArrayList<>();
+    public List<List<RuleReference>> alternatives = new ArrayList<>();
 
     public ParserRule(ParserRuleSpecContext ruleContext) {
         super(ruleContext.RULE_REF().getText());
@@ -20,14 +20,18 @@ public class ParserRule extends Rule {
             .append(this.name)
             .append(System.lineSeparator());
 
-        for (List<Rule> alternatives : this.alternatives) {
+        for (List<RuleReference> alternatives : this.alternatives) {
             sb.append("\t\t|   ");
 
-            for (Rule rule : alternatives) {
-                if (rule instanceof FlatLexerRule) {
-                    sb.append(((FlatLexerRule) rule).getContent());
+            for (RuleReference ref : alternatives) {
+                if (ref.rule instanceof FlatLexerRule) {
+                    sb
+                        .append(((FlatLexerRule) ref.rule).getContent())
+                        .append(ref.quantity.toString());
                 } else {
-                    sb.append(rule.name);
+                    sb
+                        .append(ref.rule.name)
+                        .append(ref.quantity.toString());
                 }
 
                 sb.append(" ");

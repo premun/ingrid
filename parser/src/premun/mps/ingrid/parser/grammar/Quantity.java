@@ -1,20 +1,25 @@
 package premun.mps.ingrid.parser.grammar;
 
 public enum Quantity {
+    ONE,
     MAX_ONE,
     AT_LEAST_ONE,
     ANY;
 
-    public char getQuantifierChar() {
+    @Override
+    public String toString() {
         switch (this) {
+            case ONE:
+                return "";
+            
             case ANY:
-                return '*';
+                return "*";
 
             case AT_LEAST_ONE:
-                return '+';
+                return "+";
 
             case MAX_ONE:
-                return '?';
+                return "?";
 
             default:
                 throw new IllegalArgumentException();

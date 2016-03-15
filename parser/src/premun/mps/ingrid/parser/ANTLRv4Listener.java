@@ -7,6 +7,7 @@ import premun.mps.ingrid.parser.antlr.ANTLRv4Parser.GrammarSpecContext;
 import premun.mps.ingrid.parser.grammar.*;
 
 import java.util.*;
+import java.util.stream.*;
 
 import static premun.mps.ingrid.parser.antlr.ANTLRv4Parser.*;
 
@@ -119,7 +120,7 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
                         }
 
                         // We append it to the previous rule
-                        char quantifier = ((QuantifierRule) element).quantity.getQuantifierChar();
+                        String quantifier = ((QuantifierRule) element).quantity.toString();
                         subRegex.set(lastIndex, subRegex.get(lastIndex) + quantifier);
 
                     } else if (element instanceof UnresolvedLexerRule) {
@@ -183,30 +184,34 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
      */
     private void resolveParserRule(ParserRule rule) {
         // For each alternative line..
-        for (List<Rule> alternative : rule.alternatives) {
+        for (List<RuleReference> alternative : rule.alternatives) {
             // For each element on the line..
             for (int i = 0; i < alternative.size(); ++i) {
-                Rule element = alternative.get(i);
+                RuleReference ref = alternative.get(i);
 
-                if (element instanceof UnresolvedParserRule) {
-                    if (this.rules.containsKey(element.name)) {
-                        alternative.set(i, this.rules.get(element.name));
-                    } else {
-                        throw new UnsupportedOperationException(
-                            "Couldn't resolve  Parser rule '" + element.name + "'");
-                    }
+                // Rule referenced in this alternative element
+                Rule r = ref.rule;
 
-                } else if (element instanceof UnresolvedLexerRule) {
-                    String lexerRule = element.name;
-
-                    // Name of a Lexer rule
+                if (r instanceof UnresolvedRule) {
                     // Lexer rules were resolved first, so they are ready to be referenced
-                    if (this.rules.containsKey(lexerRule)) {
-                        alternative.set(i, this.rules.get(lexerRule));
+                    if (this.rules.containsKey(r.name)) {
+                        Rule lookedUpRule = this.rules.get(r.name);
+                        alternative.set(i, new RuleReference(lookedUpRule, ref.quantity));
                     } else {
                         throw new UnsupportedOperationException(
-                            "Couldn't resolve Lexer rule '" + lexerRule + "' (inside " + rule.name + ")");
+                            "Couldn't resolve rule '" + r.name + "' (inside " + rule.name + ")");
                     }
+                } else if (r instanceof QuantifierRule) {
+                    if (i == 0) {
+                        throw new UnsupportedOperationException(
+                            "Quantifier suffix found with no previous reference");
+                    }
+
+                    // Apply quantifier to previous element of alternative
+                    alternative.get(i - 1).quantity = ((QuantifierRule) r).quantity;
+                    // Remove quantifier itself
+                    alternative.remove(i);
+                    i--;
                 }
             }
         }
@@ -254,8 +259,16 @@ public class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
         for (ParseTree element : context.children) {
             parseAlternativeElement(element, elements);
         }
-        
-        currentParserRule.alternatives.add(elements);
+
+        // Transform rules into references
+        List<RuleReference> references = elements
+            .stream()
+            .map(RuleReference::new)
+            .collect(Collectors.toList());
+
+        currentParserRule
+            .alternatives
+            .add(references);
     }
 
     /**
