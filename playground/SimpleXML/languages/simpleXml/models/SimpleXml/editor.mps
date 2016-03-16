@@ -251,25 +251,18 @@
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="39OqM6CzecJ">
-    <property role="3GE5qa" value="Rules" />
-    <ref role="1XX52x" to="2faz:39OqM6Czece" resolve="Content_1" />
-    <node concept="3F1sOY" id="1KUMcrYDKdH" role="2wV5jI">
-      <ref role="1NtTu8" to="2faz:39OqM6Czecf" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="39OqM6Czm7F">
-    <property role="3GE5qa" value="Rules" />
-    <ref role="1XX52x" to="2faz:39OqM6Czm7y" resolve="Content_2" />
-    <node concept="3F1sOY" id="1KUMcrYDGyx" role="2wV5jI">
-      <ref role="1NtTu8" to="2faz:39OqM6Czm7z" />
-    </node>
-  </node>
   <node concept="24kQdi" id="1KUMcrYDLOA">
     <property role="3GE5qa" value="Rules" />
     <ref role="1XX52x" to="2faz:39OqM6CyKkO" resolve="Chardata_TEXT" />
     <node concept="3F1sOY" id="1KUMcrYDLOC" role="2wV5jI">
       <ref role="1NtTu8" to="2faz:39OqM6CyKkT" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3R$SdNHlz6p">
+    <property role="3GE5qa" value="Rules" />
+    <ref role="1XX52x" to="2faz:39OqM6CyKkV" resolve="Chardata_WS" />
+    <node concept="3F1sOY" id="3R$SdNHlz6r" role="2wV5jI">
+      <ref role="1NtTu8" to="2faz:39OqM6CyKkW" />
     </node>
   </node>
 </model>
