@@ -20,9 +20,9 @@
     </language>
   </registry>
   <node concept="3XknaB" id="7u4wmVSP3nV">
-    <property role="TrG5h" value="CSV" />
-    <property role="3Xkna$" value="/home/premun/Diplomka/ingrid/grammars/CSV.g4" />
-    <property role="3Xknay" value="imported.CSV" />
+    <property role="TrG5h" value="SimpleXML" />
+    <property role="3Xkna$" value="/home/premun/Diplomka/ingrid/grammars/SimpleXML.g4" />
+    <property role="3Xknay" value="imported.SimpleXML" />
   </node>
 </model>
 

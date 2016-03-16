@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="imported.CSV" uuid="8b95808d-05d6-4ad4-8aa8-fe8c3285da6c" languageVersion="0" moduleVersion="0">
+<language namespace="imported.SimpleXML" uuid="c62865dd-0bc2-4d05-b2c8-1141078756f4" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="imported.CSV#8612150701060410272" uuid="05292936-cc2c-4001-be3a-f457d6efbe2f">
+    <generator generatorUID="imported.SimpleXML#4459936770483044202" uuid="07d3b696-fade-458d-8712-3aefdd229e3a">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
@@ -18,7 +18,7 @@
         <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
       </usedDevKits>
       <languageVersions>
-        <language id="8b95808d-05d6-4ad4-8aa8-fe8c3285da6c" fqName="imported.CSV" version="-1" />
+        <language id="c62865dd-0bc2-4d05-b2c8-1141078756f4" fqName="imported.SimpleXML" version="-1" />
         <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" fqName="jetbrains.mps.baseLanguage" version="4" />
         <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" fqName="jetbrains.mps.baseLanguage.blTypes" version="0" />
         <language id="fd392034-7849-419d-9071-12563d152375" fqName="jetbrains.mps.baseLanguage.closures" version="0" />
@@ -38,8 +38,8 @@
         <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
         <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
-        <module reference="8b95808d-05d6-4ad4-8aa8-fe8c3285da6c(imported.CSV)" version="0" />
-        <module reference="05292936-cc2c-4001-be3a-f457d6efbe2f(imported.CSV#8612150701060410272)" version="0" />
+        <module reference="c62865dd-0bc2-4d05-b2c8-1141078756f4(imported.SimpleXML)" version="0" />
+        <module reference="07d3b696-fade-458d-8712-3aefdd229e3a(imported.SimpleXML#4459936770483044202)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
         <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
         <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
@@ -77,7 +77,7 @@
     <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
     <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
-    <module reference="8b95808d-05d6-4ad4-8aa8-fe8c3285da6c(imported.CSV)" version="0" />
+    <module reference="c62865dd-0bc2-4d05-b2c8-1141078756f4(imported.SimpleXML)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
     <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />

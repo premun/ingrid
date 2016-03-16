@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:7c70e294-787c-4e52-92c4-deb395955290(imported.CSV.typesystem)">
+<model ref="r:78008fcb-2994-4768-a250-c4fea34fddd1(imported.SimpleXML.typesystem)">
   <persistence version="9" />
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:776348ff-c9e9-415f-a6a4-9d21e694ff43(imported.CSV.generator.template.main@generator)">
+<model ref="r:5951f1db-06b4-47de-9e55-2b3c240caea6(imported.SimpleXML.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="8b95808d-05d6-4ad4-8aa8-fe8c3285da6c" name="imported.CSV" version="-1" />
+    <use id="c62865dd-0bc2-4d05-b2c8-1141078756f4" name="imported.SimpleXML" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -19,7 +19,7 @@
       </concept>
     </language>
   </registry>
-  <node concept="bUwia" id="7u4wmVSP$Ix">
+  <node concept="bUwia" id="3R$SdNHm3XF">
     <property role="TrG5h" value="main" />
   </node>
 </model>
