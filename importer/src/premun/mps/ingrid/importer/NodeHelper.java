@@ -8,45 +8,57 @@ import org.jetbrains.mps.openapi.model.*;
 
 public class NodeHelper {
     public static SNode createNode(NodeType type, String name, String alias, String virtualPackage, SModel parentModel) {
-        SNode node = null;
+        SConcept concept;
 
         switch (type) {
             case Concept:
-                node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(
-                    MetaAdapterFactory.getConcept(
-                        0xc72da2b97cce4447L,
-                        0x8389f407dc1158b7L,
-                        0xf979ba0450L,
-                        "jetbrains.mps.lang.structure.structure.ConceptDeclaration")));
+                concept = MetaAdapterFactory.getConcept(
+                    0xc72da2b97cce4447L,
+                    0x8389f407dc1158b7L,
+                    0xf979ba0450L,
+                    "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
                 break;
 
             case Interface:
-                node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(
-                    MetaAdapterFactory.getConcept(
-                        0xc72da2b97cce4447L,
-                        0x8389f407dc1158b7L,
-                        0x1103556dcafL,
-                        "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")));
+                concept = MetaAdapterFactory.getConcept(
+                    0xc72da2b97cce4447L,
+                    0x8389f407dc1158b7L,
+                    0x1103556dcafL,
+                    "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
                 break;
 
             case ConstraintDataType:
-                node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(
-                    MetaAdapterFactory.getConcept(
-                        0xc72da2b97cce4447L,
-                        0x8389f407dc1158b7L,
-                        0xfc268c7a37L,
-                        "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration")));
+                concept = MetaAdapterFactory.getConcept(
+                    0xc72da2b97cce4447L,
+                    0x8389f407dc1158b7L,
+                    0xfc268c7a37L,
+                    "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration");
+                break;
+
+            case InterfaceReference:
+                concept = MetaAdapterFactory.getConcept(
+                    0xc72da2b97cce4447L,
+                    0x8389f407dc1158b7L,
+                    0x110356fc618L,
+                    "jetbrains.mps.lang.structure.structure.InterfaceConceptReference");
                 break;
 
             default:
                 throw new IllegalArgumentException("Unknown node type " + type.toString());
         }
 
-        setProperty(node, Properties.NAME, name);
-        setProperty(node, Properties.ALIAS, alias);
+        SNode node = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(concept));
 
-        if (type != NodeType.ConstraintDataType) {
-            setProperty(node, Properties.CONCEPT_ID, "" + (ConceptIdUtil.generate(node, parentModel)));
+        if (name != null) {
+            setProperty(node, Properties.NAME, name);
+        }
+
+        if (alias != null) {
+            setProperty(node, Properties.ALIAS, alias);
+        }
+
+        if (type == NodeType.Concept || type == NodeType.Interface) {
+            setProperty(node, Properties.CONCEPT_ID, "" + ConceptIdUtil.generate(node, parentModel));
         }
 
         if (virtualPackage != null) {

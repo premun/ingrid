@@ -15,8 +15,12 @@
         <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
       </concept>
       <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
+      <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
+        <reference id="1169127628841" name="intfc" index="PrY4T" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
+        <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -29,42 +33,60 @@
       </concept>
     </language>
   </registry>
-  <node concept="Az7Fb" id="mX_CB8GbY1">
+  <node concept="Az7Fb" id="1tL4s7G6u8f">
     <property role="TrG5h" value="Content" />
     <property role="OYydz" value="Content" />
     <property role="3GE5qa" value="Tokens" />
     <property role="FLfZY" value="([a-zA-Z0-9 ])*" />
   </node>
-  <node concept="Az7Fb" id="mX_CB8GbY2">
+  <node concept="Az7Fb" id="1tL4s7G6u8g">
     <property role="TrG5h" value="NameChar" />
     <property role="OYydz" value="NameChar" />
     <property role="3GE5qa" value="Tokens" />
     <property role="FLfZY" value="(([:a-zA-Z])|(-)|(_)|(.)|([0-9]))" />
   </node>
-  <node concept="Az7Fb" id="mX_CB8GbY3">
+  <node concept="Az7Fb" id="1tL4s7G6u8h">
     <property role="TrG5h" value="Name" />
     <property role="OYydz" value="Name" />
     <property role="3GE5qa" value="Tokens" />
     <property role="FLfZY" value="[:a-zA-Z]((([:a-zA-Z])|(-)|(_)|(.)|([0-9])))*" />
   </node>
-  <node concept="1TIwiD" id="mX_CB8GbY4">
+  <node concept="1TIwiD" id="1tL4s7G6u8i">
     <property role="TrG5h" value="document" />
     <property role="OYydz" value="document" />
-    <property role="1pbfSe" value="831629811" />
+    <property role="1pbfSe" value="59438035" />
     <property role="3GE5qa" value="Rules" />
     <property role="19KtqR" value="true" />
   </node>
-  <node concept="1TIwiD" id="mX_CB8GbY5">
+  <node concept="1TIwiD" id="1tL4s7G6u8j">
     <property role="TrG5h" value="comment" />
     <property role="OYydz" value="comment" />
-    <property role="1pbfSe" value="831629810" />
+    <property role="1pbfSe" value="59438036" />
     <property role="3GE5qa" value="Rules" />
   </node>
-  <node concept="PlHQZ" id="mX_CB8GbY6">
+  <node concept="PlHQZ" id="1tL4s7G6u8k">
     <property role="TrG5h" value="element" />
     <property role="OYydz" value="element" />
-    <property role="1pbfSe" value="831629809" />
+    <property role="1pbfSe" value="59438037" />
     <property role="3GE5qa" value="Interfaces" />
+  </node>
+  <node concept="1TIwiD" id="1tL4s7G6u8l">
+    <property role="TrG5h" value="element_1" />
+    <property role="OYydz" value="element_1" />
+    <property role="1pbfSe" value="59438038" />
+    <property role="3GE5qa" value="Rules" />
+    <node concept="PrWs8" id="1tL4s7G6u8m" role="PzmwI">
+      <ref role="PrY4T" node="1tL4s7G6u8k" resolve="element" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1tL4s7G6u8n">
+    <property role="TrG5h" value="element_2" />
+    <property role="OYydz" value="element_2" />
+    <property role="1pbfSe" value="59438040" />
+    <property role="3GE5qa" value="Rules" />
+    <node concept="PrWs8" id="1tL4s7G6u8o" role="PzmwI">
+      <ref role="PrY4T" node="1tL4s7G6u8k" resolve="element" />
+    </node>
   </node>
 </model>
 
