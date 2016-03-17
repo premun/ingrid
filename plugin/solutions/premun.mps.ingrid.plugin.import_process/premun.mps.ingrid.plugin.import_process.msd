@@ -7,11 +7,13 @@
     <modelRoot contentPath="/media/premun/Data/MFF/Diplomka/ingrid/lib" type="java_classes">
       <sourceRoot location="antlr-4.5.2-complete.jar" />
       <sourceRoot location="premun.mps.ingrid.parser.jar" />
+      <sourceRoot location="premun.mps.ingrid.importer.jar" />
     </modelRoot>
   </models>
   <stubModelEntries>
     <stubModelEntry path="/media/premun/Data/MFF/Diplomka/ingrid/lib/antlr-4.5.2-complete.jar" />
     <stubModelEntry path="/home/premun/Diplomka/ingrid/lib/premun.mps.ingrid.parser.jar" />
+    <stubModelEntry path="/home/premun/Diplomka/ingrid/lib/premun.mps.ingrid.importer.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
