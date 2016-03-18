@@ -8,8 +8,6 @@ import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.parser.*;
 import premun.mps.ingrid.parser.grammar.*;
 
-import java.util.*;
-
 public class GrammarImporter {
     private SModel structureModel;
     private GrammarInfo grammar;
@@ -42,6 +40,7 @@ public class GrammarImporter {
 
         this.importTokens();
         this.importRules();
+        this.importConceptContents();
 
         // Set root rule's concept as rootable
         SNode rootConcept = this.translateRuleToConcept(this.grammar.rootRule);
@@ -70,62 +69,78 @@ public class GrammarImporter {
             .forEach(r -> this.importRule((ParserRule) r));
     }
 
+    /**
+     * Imports parser rule children and references.
+     */
+    private void importConceptContents() {
+        this.grammar.rules
+            .values()
+            .stream()
+            .filter(r -> r instanceof ParserRule)
+            .forEach(r -> this.importConceptContent((ParserRule) r));
+    }
+
+    /**
+     * Imports parser rule as an interface or a concept (not their children or editors).
+     *
+     * For split rules, all alternatives are imported as empty concepts.
+     * Example:
+     * element:   '<' Name '>' Content '</' Name '>'
+     *        |   '<' Name '/>'
+     *        ;
+     *
+     * There will be created one interface and two concepts for this rule that will implements this concept.
+     * They will be named element (interface) and element_1 and element_2 (concepts).
+     * TODO: use naming service and check for duplicate names
+     *
+     * @param rule Rule to be imported.
+     */
     private void importRule(ParserRule rule) {
         if (rule.alternatives.size() > 1) {
             // Rule with more alternatives - we will create an interface
             // and a child for each alternative that will inherit this interface
-            SNode iface = NodeHelper.createNode(NodeType.Interface, rule.name, rule.name, "Interfaces", this.structureModel);
+            SNode iface = NodeHelper.createNode(NodeType.Interface, rule.name, rule.name, "Rules." + rule.name, this.structureModel);
             this.structureModel.addRootNode(iface);
 
             // For each alternative, there will be a concept
             for (int i = 0; i < rule.alternatives.size(); ++i) {
                 // TODO: if only one element is contained inside, we can flatten this rule and delete this intermediate step by advancing to the next step
                 String name = rule.name + "_" + (i + 1);
-                SNode alternativeNode = this.importAlternative(rule.alternatives.get(i), name);
-                this.linkInterfaceToConcept(iface, alternativeNode);
+
+                // Concrete element, we can create a concept
+                SNode node = NodeHelper.createNode(NodeType.Concept, name, name, "Rules." + rule.name, this.structureModel);
+
+                // Link the parent split rule interface to this rule
+                this.linkInterfaceToConcept(iface, node);
+                this.structureModel.addRootNode(node);
             }
         } else {
-            this.importAlternative(rule.alternatives.get(0), rule.name);
+            // Not a rule that splits into more rules - we create it directly
+            SNode node = NodeHelper.createNode(NodeType.Concept, rule.name, rule.name, "Rules", this.structureModel);
+            this.structureModel.addRootNode(node);
         }
     }
 
+    /**
+     * Imports a regex rule as a constraint data type element.
+     *
+     * @param rule Rule to be imported.
+     */
     private void importToken(RegexRule rule) {
         SNode node = NodeHelper.createNode(NodeType.ConstraintDataType, rule.name, rule.name, "Tokens", this.structureModel);
         NodeHelper.setProperty(node, Properties.CONSTRAINT, ((RegexRule) rule).regexp);
         this.structureModel.addRootNode(node);
     }
 
-    /**
-     * Imports an alternative, which is a real concept containing several rules.
-     *
-     * Alternative is imported together with editor, that contains literal rules.
-     * All children rules are set as children
-     * Example:
-     * element   :   '<' Name '>' Content '</' Name '>'
-                 |   '<' Name '/>'
-                 ;
-     *
-     * There will be created two concepts for this rule (two alternatives).
-     *
-     * @param alternative List of elements of given alternative.
-     * @param name Name of the concept.
-     * @return Created concept's node.
-     */
-    private SNode importAlternative(List<RuleReference> alternative, String name) {
-        // Concrete element, we can create a concept
-        SNode node = NodeHelper.createNode(NodeType.Concept, name, name, "Rules", this.structureModel);
-
+    private void importConceptContent(ParserRule rule) {
         // TODO: add children elements (ParserRule/RegexRule children)
         // TODO: create editor
         // TODO: add literal rules into editor aspect
-
-        this.structureModel.addRootNode(node);
-
-        return node;
     }
 
     /**
      * Links an interface node and a concept node together (adds the interface to "implements" field).
+     *
      * @param iface Interface to be added.
      * @param concept Target concept node.
      */
@@ -143,6 +158,7 @@ public class GrammarImporter {
 
     /**
      * Finds a concept that was created for given rule.
+     *
      * @param rule Rule to be matched.
      * @return Concept node belonging to given rule.
      */
