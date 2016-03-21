@@ -99,7 +99,7 @@ public class GrammarImporter {
         if (rule.alternatives.size() > 1) {
             // Rule with more alternatives - we will create an interface
             // and a child for each alternative that will inherit this interface
-            SNode iface = NodeHelper.createInterface(rule.name, "Rules." + rule.name, this.structureModel);
+            SNode iface = NodeFactory.createInterface(rule.name, "Rules." + rule.name, this.structureModel);
             this.structureModel.addRootNode(iface);
 
             // For each alternative, there will be a concept
@@ -108,7 +108,7 @@ public class GrammarImporter {
                 String name = this.namingService.generateName(rule.name + "_" + (i + 1));
 
                 // Concrete element, we can create a concept
-                SNode concept = NodeHelper.createConcept(name, name, "Rules." + rule.name, rule.equals(this.grammar.rootRule), this.structureModel);
+                SNode concept = NodeFactory.createConcept(name, name, "Rules." + rule.name, rule.equals(this.grammar.rootRule), this.structureModel);
 
                 // Link the parent split rule interface to this rule
                 NodeHelper.linkInterfaceToConcept(concept, iface);
@@ -116,7 +116,7 @@ public class GrammarImporter {
             }
         } else {
             // Not a rule that splits into more rules - we create it directly
-            SNode concept = NodeHelper.createConcept(rule.name, rule.name, "Rules." + rule.name, rule.equals(this.grammar.rootRule), this.structureModel);
+            SNode concept = NodeFactory.createConcept(rule.name, rule.name, "Rules." + rule.name, rule.equals(this.grammar.rootRule), this.structureModel);
             this.structureModel.addRootNode(concept);
         }
     }
@@ -128,7 +128,7 @@ public class GrammarImporter {
      */
     private void importToken(RegexRule rule) {
         rule.name = this.namingService.generateName(rule.name);
-        SNode node = NodeHelper.createConstraintDataType(rule.name, rule.regexp, "Tokens");
+        SNode node = NodeFactory.createConstraintDataType(rule.name, rule.regexp, "Tokens");
         this.structureModel.addRootNode(node);
     }
 
