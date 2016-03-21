@@ -6,6 +6,8 @@ import premun.mps.ingrid.parser.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.import_process.utility.*;
 
+import java.util.*;
+
 public class GrammarImporter {
     private SModel structureModel;
     private GrammarInfo grammar;
@@ -134,6 +136,65 @@ public class GrammarImporter {
         // TODO: add children elements (ParserRule/RegexRule children)
         // TODO: create editor
         // TODO: add literal rules into editor aspect
+        if (rule.alternatives.size() > 1) {
+            // Interface - we need to find implementors
+            for (int i = 0; i < rule.alternatives.size(); i++) {
+                String name = rule.name + "_" + (i + 1);
+                SNode concept = this.findConceptByName(name);
+
+                if (concept == null) {
+                    // TODO: Log error
+                    continue;
+                }
+
+                this.importConceptContent(concept, rule.alternatives.get(i));
+            }
+        } else {
+            SNode concept = this.findConceptByRule(rule);
+
+            if (concept == null) {
+                // TODO: Log error
+            } else {
+                this.importConceptContent(concept, rule.alternatives.get(0));
+            }
+        }
+    }
+
+    /**
+     * Parses alternative's structure and imports children of a single alternative.
+     * @param parent Parent rule, whose alternative we are parsing
+     * @param children Alternative's content
+     */
+    private void importConceptContent(SNode parent, List<RuleReference> children) {
+        for (int i = 0; i < children.size(); i++) {
+            RuleReference reference = children.get(i);
+            Rule childRule = reference.rule;
+            SNode child = this.findConceptByRule(childRule);
+
+            String name = childRule.name + "_" + (i + 1);
+
+            if (childRule instanceof ParserRule) {
+                NodeHelper.addChildToNode(parent, child, name, reference.quantity);
+            } else if (childRule instanceof RegexRule) {
+                NodeHelper.addPropertyToNode(parent, name, child);
+            }
+        }
+    }
+
+    /**
+     * Finds a concept by it's name.
+     *
+     * @param name Concept to be matched.
+     * @return Concept node belonging to given rule.
+     */
+    private SNode findConceptByName(String name) {
+        for (SNode node : this.structureModel.getRootNodes()) {
+            if (name.equals(node.getName())) {
+                return node;
+            }
+        }
+
+        return null;
     }
 
     /**
@@ -142,7 +203,7 @@ public class GrammarImporter {
      * @param rule Rule to be matched.
      * @return Concept node belonging to given rule.
      */
-    private SNode translateRuleToConcept(Rule rule) {
+    private SNode findConceptByRule(Rule rule) {
         for (SNode node : this.structureModel.getRootNodes()) {
             if (rule.name.equals(node.getName())) {
                 return node;

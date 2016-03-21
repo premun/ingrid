@@ -6,6 +6,25 @@ public enum Quantity {
     AT_LEAST_ONE,
     ANY;
 
+    public String getCardinality() {
+        switch (this) {
+            case EXACTLY_ONE:
+                return "1";
+
+            case ANY:
+                return "0..n";
+
+            case AT_LEAST_ONE:
+                return "1..n";
+
+            case MAX_ONE:
+                return "0..1";
+
+            default:
+                throw new IllegalArgumentException();
+        }
+    }
+
     public static Quantity FromString(String quantifier) {
         switch (quantifier) {
             case "?":

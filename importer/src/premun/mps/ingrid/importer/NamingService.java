@@ -23,6 +23,12 @@ public class NamingService {
             // TODO: add suffix
         }
 
+        suggested = capitalize(suggested);
+
         return suggested;
+    }
+
+    private String capitalize(String s) {
+        return Character.toUpperCase(s.charAt(0)) + s.substring(1);
     }
 }
