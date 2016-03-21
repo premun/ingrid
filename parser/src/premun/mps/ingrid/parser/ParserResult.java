@@ -1,8 +1,10 @@
-package premun.mps.ingrid.parser.grammar;
+package premun.mps.ingrid.parser;
+
+import premun.mps.ingrid.parser.grammar.*;
 
 import java.util.*;
 
-public class ParserResult {
+class ParserResult {
     public String grammarName;
     public Map<String, Rule> rules;
     public String rootRule;
