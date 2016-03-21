@@ -17,7 +17,7 @@ import java.util.stream.*;
  * <p>
  * Parsed grammar representation is then available.
  */
-class ANTLRv4Listener extends ANTLRv4ParserBaseListener {
+class GrammarWalker extends ANTLRv4ParserBaseListener {
     private ParserRule currentParserRule;
     private LexerRule currentLexerRule;
 

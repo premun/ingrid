@@ -43,7 +43,7 @@ public class GrammarParser {
 
         // Walk it and attach our listener
         ParseTreeWalker walker = new ParseTreeWalker();
-        ANTLRv4Listener listener = new ANTLRv4Listener();
+        GrammarWalker listener = new GrammarWalker();
         walker.walk(listener, parser.grammarSpec());
 
         ParserResult parseResult = listener.getParseResult();
