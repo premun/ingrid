@@ -16,8 +16,10 @@
     <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
-    <import index="b500" ref="r:c3608ff3-23d3-4792-858b-da3c93005e4d(premun.mps.ingrid.plugin.import_process.import_process)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="zkjw" ref="c844064f-26e3-4868-95b4-15456423be74/java:premun.mps.ingrid.importer(premun.mps.ingrid.plugin.import_process/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="b500" ref="r:c3608ff3-23d3-4792-858b-da3c93005e4d(premun.mps.ingrid.plugin.import_process.import_process)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -76,6 +78,10 @@
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
@@ -354,32 +360,65 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="mX_CB8FXNd" role="3cqZAp" />
-        <node concept="3cpWs8" id="mX_CB8FVfd" role="3cqZAp">
-          <node concept="3cpWsn" id="mX_CB8FVfe" role="3cpWs9">
-            <property role="TrG5h" value="importer" />
-            <node concept="3uibUv" id="mX_CB8FVff" role="1tU5fm">
-              <ref role="3uigEE" to="b500:1OSx5D$GPOR" resolve="ImportProvider" />
+        <node concept="3clFbH" id="5Jh2F9ezXzW" role="3cqZAp" />
+        <node concept="3cpWs8" id="5Jh2F9ezXWk" role="3cqZAp">
+          <node concept="3cpWsn" id="5Jh2F9ezXWl" role="3cpWs9">
+            <property role="TrG5h" value="structureModel" />
+            <node concept="3uibUv" id="5Jh2F9ezY_F" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
-            <node concept="2ShNRf" id="mX_CB8FVfg" role="33vP2m">
-              <node concept="HV5vD" id="mX_CB8FVfh" role="2ShVmc">
-                <ref role="HV5vE" to="b500:1OSx5D$GPOR" resolve="ImportProvider" />
+            <node concept="2OqwBi" id="5Jh2F9ezY88" role="33vP2m">
+              <node concept="Rm8GO" id="5Jh2F9ezY4B" role="2Oq$k0">
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.STRUCTURE" resolve="STRUCTURE" />
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+              </node>
+              <node concept="liA8E" id="5Jh2F9ezYib" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
+                <node concept="37vLTw" id="5Jh2F9ezYjz" role="37wK5m">
+                  <ref role="3cqZAo" node="mX_CB8FXZo" resolve="language" />
+                </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="mX_CB8FVfi" role="3cqZAp">
-          <node concept="2OqwBi" id="mX_CB8FVfj" role="3clFbG">
-            <node concept="37vLTw" id="mX_CB8FVfk" role="2Oq$k0">
-              <ref role="3cqZAo" node="mX_CB8FVfe" resolve="importer" />
+        <node concept="3clFbH" id="5Jh2F9ezZ4l" role="3cqZAp" />
+        <node concept="3cpWs8" id="2CENt80j8HM" role="3cqZAp">
+          <node concept="3cpWsn" id="2CENt80j8HN" role="3cpWs9">
+            <property role="TrG5h" value="grammarImporter" />
+            <node concept="3uibUv" id="2CENt80j8HO" role="1tU5fm">
+              <ref role="3uigEE" to="zkjw:~GrammarImporter" resolve="GrammarImporter" />
             </node>
-            <node concept="liA8E" id="mX_CB8FVfl" role="2OqNvi">
-              <ref role="37wK5l" to="b500:4J1$HSvHxpa" resolve="importGrammar" />
-              <node concept="Xl_RD" id="mX_CB8FVG1" role="37wK5m">
+            <node concept="2ShNRf" id="2CENt80j8Iu" role="33vP2m">
+              <node concept="1pGfFk" id="2CENt80jbpK" role="2ShVmc">
+                <ref role="37wK5l" to="zkjw:~GrammarImporter.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel)" resolve="GrammarImporter" />
+                <node concept="37vLTw" id="5Jh2F9ezZcP" role="37wK5m">
+                  <ref role="3cqZAo" node="5Jh2F9ezXWl" resolve="structureModel" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2CENt80jbvp" role="3cqZAp">
+          <node concept="2OqwBi" id="2CENt80jbwA" role="3clFbG">
+            <node concept="37vLTw" id="2CENt80jbvn" role="2Oq$k0">
+              <ref role="3cqZAo" node="2CENt80j8HN" resolve="grammarImporter" />
+            </node>
+            <node concept="liA8E" id="2CENt80jbxG" role="2OqNvi">
+              <ref role="37wK5l" to="zkjw:~GrammarImporter.importGrammar(java.lang.String):void" resolve="importGrammar" />
+              <node concept="Xl_RD" id="5Jh2F9ezZdF" role="37wK5m">
                 <property role="Xl_RC" value="/home/premun/Diplomka/ingrid/grammars/SimpleXML.g4" />
               </node>
-              <node concept="37vLTw" id="mX_CB8FZ2m" role="37wK5m">
-                <ref role="3cqZAo" node="mX_CB8FXZo" resolve="language" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="5Jh2F9ezYRq" role="3cqZAp" />
+        <node concept="3clFbF" id="5Jh2F9ezWJQ" role="3cqZAp">
+          <node concept="2OqwBi" id="5Jh2F9ezWJR" role="3clFbG">
+            <node concept="2WthIp" id="5Jh2F9ezWJS" role="2Oq$k0" />
+            <node concept="2XshWL" id="5Jh2F9ezWJT" role="2OqNvi">
+              <ref role="2WH_rO" node="4F6jbA$ln8h" resolve="showAlert" />
+              <node concept="Xl_RD" id="5Jh2F9ezWJU" role="2XxRq1">
+                <property role="Xl_RC" value="Language imported." />
               </node>
             </node>
           </node>
