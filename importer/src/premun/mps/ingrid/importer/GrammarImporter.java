@@ -11,9 +11,11 @@ import premun.mps.ingrid.parser.grammar.*;
 public class GrammarImporter {
     private SModel structureModel;
     private GrammarInfo grammar;
+    private NamingService namingService;
 
     public GrammarImporter(SModel structureModel) {
         this.structureModel = structureModel;
+        this.namingService = new NamingService(structureModel);
     }
 
     /**
@@ -96,16 +98,19 @@ public class GrammarImporter {
      * @param rule Rule to be imported.
      */
     private void importRule(ParserRule rule) {
+        // Generate unique name
+        rule.name = this.namingService.generateName(rule.name);
+
         if (rule.alternatives.size() > 1) {
             // Rule with more alternatives - we will create an interface
             // and a child for each alternative that will inherit this interface
-            SNode iface = NodeHelper.createNode(NodeType.Interface, rule.name, rule.name, "Rules." + rule.name, this.structureModel);
+            SNode iface = NodeHelper.createNode(NodeType.Interface, rule.name, null, "Rules." + rule.name, this.structureModel);
             this.structureModel.addRootNode(iface);
 
             // For each alternative, there will be a concept
             for (int i = 0; i < rule.alternatives.size(); ++i) {
                 // TODO: if only one element is contained inside, we can flatten this rule and delete this intermediate step by advancing to the next step
-                String name = rule.name + "_" + (i + 1);
+                String name = this.namingService.generateName(rule.name + "_" + (i + 1));
 
                 // Concrete element, we can create a concept
                 SNode node = NodeHelper.createNode(NodeType.Concept, name, name, "Rules." + rule.name, this.structureModel);
@@ -127,6 +132,9 @@ public class GrammarImporter {
      * @param rule Rule to be imported.
      */
     private void importToken(RegexRule rule) {
+        // Generate unique name
+        rule.name = this.namingService.generateName(rule.name);
+
         SNode node = NodeHelper.createNode(NodeType.ConstraintDataType, rule.name, rule.name, "Tokens", this.structureModel);
         NodeHelper.setProperty(node, Properties.CONSTRAINT, ((RegexRule) rule).regexp);
         this.structureModel.addRootNode(node);
