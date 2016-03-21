@@ -1,12 +1,10 @@
 package premun.mps.ingrid.importer;
 
-import jetbrains.mps.internal.collections.runtime.*;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.*;
-import jetbrains.mps.smodel.adapter.structure.*;
-import org.jetbrains.mps.openapi.language.*;
 import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.parser.*;
 import premun.mps.ingrid.parser.grammar.*;
+import premun.mps.ingrid.plugin.import_process.utility.*;
 
 public class GrammarImporter {
     private SModel structureModel;
@@ -43,10 +41,6 @@ public class GrammarImporter {
         this.importTokens();
         this.importRules();
         this.importConceptContents();
-
-        // Set root rule's concept as rootable
-        SNode rootConcept = this.translateRuleToConcept(this.grammar.rootRule);
-        NodeHelper.setProperty(rootConcept, Properties.ROOTABLE, "true");
     }
 
     /**
@@ -93,7 +87,6 @@ public class GrammarImporter {
      *
      * There will be created one interface and two concepts for this rule that will implements this concept.
      * They will be named element (interface) and element_1 and element_2 (concepts).
-     * TODO: use naming service and check for duplicate names
      *
      * @param rule Rule to be imported.
      */
@@ -104,7 +97,7 @@ public class GrammarImporter {
         if (rule.alternatives.size() > 1) {
             // Rule with more alternatives - we will create an interface
             // and a child for each alternative that will inherit this interface
-            SNode iface = NodeHelper.createNode(NodeType.Interface, rule.name, null, "Rules." + rule.name, this.structureModel);
+            SNode iface = NodeHelper.createInterface(rule.name, "Rules." + rule.name, this.structureModel);
             this.structureModel.addRootNode(iface);
 
             // For each alternative, there will be a concept
@@ -113,16 +106,16 @@ public class GrammarImporter {
                 String name = this.namingService.generateName(rule.name + "_" + (i + 1));
 
                 // Concrete element, we can create a concept
-                SNode node = NodeHelper.createNode(NodeType.Concept, name, name, "Rules." + rule.name, this.structureModel);
+                SNode concept = NodeHelper.createConcept(name, name, "Rules." + rule.name, rule.equals(this.grammar.rootRule), this.structureModel);
 
                 // Link the parent split rule interface to this rule
-                this.linkInterfaceToConcept(iface, node);
-                this.structureModel.addRootNode(node);
+                NodeHelper.linkInterfaceToConcept(concept, iface);
+                this.structureModel.addRootNode(concept);
             }
         } else {
             // Not a rule that splits into more rules - we create it directly
-            SNode node = NodeHelper.createNode(NodeType.Concept, rule.name, rule.name, "Rules", this.structureModel);
-            this.structureModel.addRootNode(node);
+            SNode concept = NodeHelper.createConcept(rule.name, rule.name, "Rules." + rule.name, rule.equals(this.grammar.rootRule), this.structureModel);
+            this.structureModel.addRootNode(concept);
         }
     }
 
@@ -132,11 +125,8 @@ public class GrammarImporter {
      * @param rule Rule to be imported.
      */
     private void importToken(RegexRule rule) {
-        // Generate unique name
         rule.name = this.namingService.generateName(rule.name);
-
-        SNode node = NodeHelper.createNode(NodeType.ConstraintDataType, rule.name, rule.name, "Tokens", this.structureModel);
-        NodeHelper.setProperty(node, Properties.CONSTRAINT, ((RegexRule) rule).regexp);
+        SNode node = NodeHelper.createConstraintDataType(rule.name, rule.regexp, "Tokens");
         this.structureModel.addRootNode(node);
     }
 
@@ -144,24 +134,6 @@ public class GrammarImporter {
         // TODO: add children elements (ParserRule/RegexRule children)
         // TODO: create editor
         // TODO: add literal rules into editor aspect
-    }
-
-    /**
-     * Links an interface node and a concept node together (adds the interface to "implements" field).
-     *
-     * @param iface Interface to be added.
-     * @param concept Target concept node.
-     */
-    private void linkInterfaceToConcept(SNode iface, SNode concept) {
-        // Create interface link
-        SNode interfaceReference = NodeHelper.createNode(NodeType.InterfaceReference, null, null, null, null);
-        SReferenceLink interfaceLink = MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc");
-        SLinkOperations.setTarget(interfaceReference, interfaceLink, iface);
-
-        // Implements field of the concept
-        SContainmentLink implementsLink = MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements");
-        // Add interface to implements field
-        ListSequence.fromList(SLinkOperations.getChildren(concept, implementsLink)).addElement(interfaceReference);
     }
 
     /**

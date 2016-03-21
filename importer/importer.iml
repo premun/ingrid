@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="mps" level="project" />
     <orderEntry type="library" name="premun.mps.ingrid.parser" level="project" />
+    <orderEntry type="module" module-name="source_gen" />
   </component>
 </module>
