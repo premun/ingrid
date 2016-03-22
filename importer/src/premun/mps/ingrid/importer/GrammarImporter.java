@@ -166,16 +166,17 @@ public class GrammarImporter {
      * @param children Alternative's content
      */
     private void importConceptContent(SNode parent, List<RuleReference> children) {
-        for (int i = 0; i < children.size(); i++) {
-            RuleReference reference = children.get(i);
+        int propertyIndex = 0;
+        int childIndex = 0;
+
+        for (RuleReference reference : children) {
             Rule childRule = reference.rule;
             SNode child = this.findConceptByRule(childRule);
-
-            String name = childRule.name + "_" + (i + 1);
-
             if (childRule instanceof ParserRule) {
+                String name = childRule.name + "_" + (++childIndex);
                 NodeHelper.addChildToNode(parent, child, name, reference.quantity);
             } else if (childRule instanceof RegexRule) {
+                String name = childRule.name + "_" + (++propertyIndex);
                 NodeHelper.addPropertyToNode(parent, name, child);
             }
         }
