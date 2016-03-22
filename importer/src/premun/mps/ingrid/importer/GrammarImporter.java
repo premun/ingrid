@@ -6,16 +6,22 @@ import premun.mps.ingrid.parser.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.import_process.utility.*;
 
+import javax.management.*;
 import java.util.*;
 
 public class GrammarImporter {
+    private SModel editorModel;
     private SModel structureModel;
+
     private GrammarInfo grammar;
     private NamingService namingService;
+    private NodeFactory nodeFactory;
 
-    public GrammarImporter(SModel structureModel) {
+    public GrammarImporter(SModel structureModel, SModel editorModel) {
+        this.editorModel = editorModel;
         this.structureModel = structureModel;
         this.namingService = new NamingService(structureModel);
+        this.nodeFactory = new NodeFactory(structureModel);
     }
 
     /**
@@ -26,6 +32,11 @@ public class GrammarImporter {
         // Delete all nodes
         SModelOperations
             .nodes(this.structureModel, null)
+            .stream()
+            .forEach(SNodeOperations::deleteNode);
+
+        SModelOperations
+            .nodes(this.editorModel, null)
             .stream()
             .forEach(SNodeOperations::deleteNode);
     }
@@ -43,6 +54,7 @@ public class GrammarImporter {
         this.importTokens();
         this.importRules();
         this.importConceptContents();
+        this.buildEditors();
     }
 
     /**
@@ -57,6 +69,17 @@ public class GrammarImporter {
     }
 
     /**
+     * Imports a regex rule as a constraint data type element.
+     *
+     * @param rule Rule to be imported.
+     */
+    private void importToken(RegexRule rule) {
+        rule.name = this.namingService.generateName(rule.name);
+        SNode node = this.nodeFactory.createConstraintDataType(rule.name, rule.regexp, "Tokens");
+        this.structureModel.addRootNode(node);
+    }
+
+    /**
      * Import all parser rules as either interfaces (split rules) or actual concepts.
      */
     private void importRules() {
@@ -65,17 +88,6 @@ public class GrammarImporter {
             .stream()
             .filter(r -> r instanceof ParserRule)
             .forEach(r -> this.importRule((ParserRule) r));
-    }
-
-    /**
-     * Imports parser rule children and references.
-     */
-    private void importConceptContents() {
-        this.grammar.rules
-            .values()
-            .stream()
-            .filter(r -> r instanceof ParserRule)
-            .forEach(r -> this.importConceptContent((ParserRule) r));
     }
 
     /**
@@ -99,7 +111,7 @@ public class GrammarImporter {
         if (rule.alternatives.size() > 1) {
             // Rule with more alternatives - we will create an interface
             // and a child for each alternative that will inherit this interface
-            SNode iface = NodeFactory.createInterface(rule.name, "Rules." + rule.name, this.structureModel);
+            SNode iface = this.nodeFactory.createInterface(rule.name, "Rules." + rule.name);
             this.structureModel.addRootNode(iface);
 
             // For each alternative, there will be a concept
@@ -108,7 +120,7 @@ public class GrammarImporter {
                 String name = this.namingService.generateName(rule.name + "_" + (i + 1));
 
                 // Concrete element, we can create a concept
-                SNode concept = NodeFactory.createConcept(name, name, "Rules." + rule.name, rule.equals(this.grammar.rootRule), this.structureModel);
+                SNode concept = this.nodeFactory.createConcept(name, name, "Rules." + rule.name, rule.equals(this.grammar.rootRule));
 
                 // Link the parent split rule interface to this rule
                 NodeHelper.linkInterfaceToConcept(concept, iface);
@@ -116,26 +128,27 @@ public class GrammarImporter {
             }
         } else {
             // Not a rule that splits into more rules - we create it directly
-            SNode concept = NodeFactory.createConcept(rule.name, rule.name, "Rules." + rule.name, rule.equals(this.grammar.rootRule), this.structureModel);
+            SNode concept = this.nodeFactory.createConcept(rule.name, rule.name, "Rules." + rule.name, rule.equals(this.grammar.rootRule));
             this.structureModel.addRootNode(concept);
         }
     }
 
     /**
-     * Imports a regex rule as a constraint data type element.
-     *
-     * @param rule Rule to be imported.
+     * Imports parser rule children and references.
      */
-    private void importToken(RegexRule rule) {
-        rule.name = this.namingService.generateName(rule.name);
-        SNode node = NodeFactory.createConstraintDataType(rule.name, rule.regexp, "Tokens");
-        this.structureModel.addRootNode(node);
+    private void importConceptContents() {
+        this.grammar.rules
+            .values()
+            .stream()
+            .filter(r -> r instanceof ParserRule)
+            .forEach(r -> this.importRuleContents((ParserRule) r));
     }
 
-    private void importConceptContent(ParserRule rule) {
-        // TODO: add children elements (ParserRule/RegexRule children)
-        // TODO: create editor
-        // TODO: add literal rules into editor aspect
+    /**
+     * Imports rule's alternatives (children and properties linking to different concepts).
+     * @param rule Rule to be imported.
+     */
+    private void importRuleContents(ParserRule rule) {
         if (rule.alternatives.size() > 1) {
             // Interface - we need to find implementors
             for (int i = 0; i < rule.alternatives.size(); i++) {
@@ -162,6 +175,7 @@ public class GrammarImporter {
 
     /**
      * Parses alternative's structure and imports children of a single alternative.
+     *
      * @param parent Parent rule, whose alternative we are parsing
      * @param children Alternative's content
      */
@@ -178,6 +192,40 @@ public class GrammarImporter {
             } else if (childRule instanceof RegexRule) {
                 String name = childRule.name + "_" + (++propertyIndex);
                 NodeHelper.addPropertyToNode(parent, name, child);
+            }
+        }
+    }
+
+    private void buildEditors() {
+        this.grammar.rules
+            .values()
+            .stream()
+            .filter(r -> r instanceof ParserRule)
+            .forEach(r -> this.buildEditor((ParserRule) r));
+    }
+
+    private void buildEditor(ParserRule rule) {
+        if (rule.alternatives.size() > 1) {
+            // Interface - we need to find implementors
+            for (int i = 0; i < rule.alternatives.size(); i++) {
+                String name = rule.name + "_" + (i + 1);
+                SNode concept = this.findConceptByName(name);
+
+                if (concept == null) {
+                    throw new RuntimeException("Concept " + name + " not found!");
+                }
+
+                SNode editor = EditorHelper.createEditor(concept, rule.alternatives.get(i));
+                this.editorModel.addRootNode(editor);
+            }
+        } else {
+            SNode concept = this.findConceptByRule(rule);
+
+            if (concept == null) {
+                throw new RuntimeException("Concept " + rule.name + " not found!");
+            } else {
+                SNode editor = EditorHelper.createEditor(concept, rule.alternatives.get(0));
+                this.editorModel.addRootNode(editor);
             }
         }
     }

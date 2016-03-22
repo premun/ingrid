@@ -361,15 +361,35 @@
           </node>
         </node>
         <node concept="3clFbH" id="5Jh2F9ezXzW" role="3cqZAp" />
+        <node concept="3cpWs8" id="4X6IwqdNpSM" role="3cqZAp">
+          <node concept="3cpWsn" id="4X6IwqdNpSN" role="3cpWs9">
+            <property role="TrG5h" value="structureModel" />
+            <node concept="3uibUv" id="4X6IwqdNpSO" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+            </node>
+            <node concept="2OqwBi" id="4X6IwqdNpSP" role="33vP2m">
+              <node concept="Rm8GO" id="4X6IwqdNpSQ" role="2Oq$k0">
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.STRUCTURE" resolve="STRUCTURE" />
+              </node>
+              <node concept="liA8E" id="4X6IwqdNpSR" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
+                <node concept="37vLTw" id="4X6IwqdNpSS" role="37wK5m">
+                  <ref role="3cqZAo" node="mX_CB8FXZo" resolve="language" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="5Jh2F9ezXWk" role="3cqZAp">
           <node concept="3cpWsn" id="5Jh2F9ezXWl" role="3cpWs9">
-            <property role="TrG5h" value="structureModel" />
+            <property role="TrG5h" value="editorModel" />
             <node concept="3uibUv" id="5Jh2F9ezY_F" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
             <node concept="2OqwBi" id="5Jh2F9ezY88" role="33vP2m">
-              <node concept="Rm8GO" id="5Jh2F9ezY4B" role="2Oq$k0">
-                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.STRUCTURE" resolve="STRUCTURE" />
+              <node concept="Rm8GO" id="4X6IwqdNqdR" role="2Oq$k0">
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.EDITOR" resolve="EDITOR" />
                 <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
               </node>
               <node concept="liA8E" id="5Jh2F9ezYib" role="2OqNvi">
@@ -390,9 +410,12 @@
             </node>
             <node concept="2ShNRf" id="2CENt80j8Iu" role="33vP2m">
               <node concept="1pGfFk" id="2CENt80jbpK" role="2ShVmc">
-                <ref role="37wK5l" to="zkjw:~GrammarImporter.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel)" resolve="GrammarImporter" />
-                <node concept="37vLTw" id="5Jh2F9ezZcP" role="37wK5m">
-                  <ref role="3cqZAo" node="5Jh2F9ezXWl" resolve="structureModel" />
+                <ref role="37wK5l" to="zkjw:~GrammarImporter.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SModel)" resolve="GrammarImporter" />
+                <node concept="37vLTw" id="4X6IwqdNqfV" role="37wK5m">
+                  <ref role="3cqZAo" node="4X6IwqdNpSN" resolve="structureModel" />
+                </node>
+                <node concept="37vLTw" id="4X6IwqdNsR6" role="37wK5m">
+                  <ref role="3cqZAo" node="5Jh2F9ezXWl" resolve="editorModel" />
                 </node>
               </node>
             </node>
