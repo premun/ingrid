@@ -2,8 +2,8 @@ package premun.mps.ingrid.parser;
 
 import org.junit.*;
 import premun.mps.ingrid.parser.grammar.*;
+import premun.mps.ingrid.parser.grammar.Rule;
 
-import java.net.*;
 import java.util.*;
 
 import static org.junit.Assert.*;
@@ -49,5 +49,10 @@ public class FullTest {
 
         assertTrue(grammar.rules.get("LT") instanceof LiteralRule);
         assertTrue(grammar.rules.get("Content") instanceof RegexRule);
+
+        // Get element, first alternative and Content rule
+        Rule contentRule = ((ParserRule) grammar.rules.get("element")).alternatives.get(0).get(3).rule;
+        assertEquals(grammar.rules.get("Content").getClass(), contentRule.getClass());
+        assertTrue(grammar.rules.get("Content") == contentRule);
     }
 }

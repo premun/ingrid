@@ -34,6 +34,9 @@ class GrammarResolver {
                 // We always get updated Rule from rule set again, because we might have updated it
                 flatRule = flattenLexerRule(rules.get(name), rules);
                 grammar.rules.put(name, flatRule);
+                // We need to put it to the old set too, so resolving in the second step works too,
+                // because we create new flatRule objects inside flattenLexerRule.
+                rules.put(name, flatRule);
             });
 
         // We need to copy the array because we are changing it inside forEach
@@ -42,6 +45,8 @@ class GrammarResolver {
             .filter(r -> r instanceof ParserRule)
             .forEach(rule -> {
                 resolveParserRule((ParserRule) rule, rules);
+                // We do not call "new Rule" inside here, so we don't need to update old rule set.
+                // Unlike in the first step, ParserRule objects stay the same, just their content is changed.
                 grammar.rules.put(rule.name, rule);
             });
 
@@ -51,10 +56,13 @@ class GrammarResolver {
     }
 
     /**
+     *
      * Matches (string) references inside rule alternatives with actual
      * pointers to rule definitions.
      *
      * @param rule Rule to be resolved
+     * @param rules Set of rules where we look up references.
+     * @throws IngridParserException
      */
     private static void resolveParserRule(ParserRule rule, Map<String, Rule> rules) throws IngridParserException {
         // For each alternative line..
@@ -85,7 +93,7 @@ class GrammarResolver {
                     alternative.get(i - 1).quantity = ((QuantifierRule) r).quantity;
                     // Remove quantifier itself
                     alternative.remove(i);
-                    i--;
+                    --i;
                 }
             }
         }
@@ -96,7 +104,7 @@ class GrammarResolver {
      * TODO: Cyclic (faulty) ANTLR definition will cause endless loop and stack overflow.
      *
      * @param rule Rule to be resolved.
-     * @param rules All rules that can be used for lookup.
+     * @param rules Set of rules where we look up references.
      */
     private static FlatLexerRule flattenLexerRule(Rule rule, Map<String, Rule> rules) {
         // Because some rules were resolved as a dependency of another rule,
