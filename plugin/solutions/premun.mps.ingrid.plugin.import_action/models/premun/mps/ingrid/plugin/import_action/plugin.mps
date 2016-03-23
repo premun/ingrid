@@ -429,7 +429,7 @@
             <node concept="liA8E" id="2CENt80jbxG" role="2OqNvi">
               <ref role="37wK5l" to="zkjw:~GrammarImporter.importGrammar(java.lang.String):void" resolve="importGrammar" />
               <node concept="Xl_RD" id="5Jh2F9ezZdF" role="37wK5m">
-                <property role="Xl_RC" value="/home/premun/Diplomka/ingrid/grammars/SimpleXML.g4" />
+                <property role="Xl_RC" value="/home/premun/Diplomka/ingrid/grammars/XML.g4" />
               </node>
             </node>
           </node>

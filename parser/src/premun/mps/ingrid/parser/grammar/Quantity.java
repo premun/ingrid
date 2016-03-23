@@ -30,6 +30,7 @@ public enum Quantity {
             case "?":
                 return MAX_ONE;
             case "*":
+            case "*?": // TODO: Has '*?' really this meaning?
                 return ANY;
             case "+":
                 return AT_LEAST_ONE;

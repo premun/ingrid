@@ -6,7 +6,6 @@ import premun.mps.ingrid.parser.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.import_process.utility.*;
 
-import javax.management.*;
 import java.util.*;
 
 public class GrammarImporter {
@@ -43,6 +42,7 @@ public class GrammarImporter {
 
     /**
      * Main method of the import process.
+     *
      * @param fileName Name of the ANTLR grammar file to be imported.
      */
     public void importGrammar(String fileName) {
@@ -146,6 +146,7 @@ public class GrammarImporter {
 
     /**
      * Imports rule's alternatives (children and properties linking to different concepts).
+     *
      * @param rule Rule to be imported.
      */
     private void importRuleContents(ParserRule rule) {

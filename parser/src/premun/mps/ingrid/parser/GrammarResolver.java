@@ -164,6 +164,25 @@ class GrammarResolver {
                             "Rule '" + element.name + "' (" + element.getClass().getSimpleName() + ") failed to be flattened");
                     }
                 } else {
+                    /*
+                        TODO:
+                        if (element instanceof LiteralRule) {
+                            escape regex special chars
+                        }
+
+                        [EXAMPLE]
+
+                        XMLDeclOpen :   '<?xml' S
+                                    ;
+                        S           :   [ \t\r\n]
+                                    ;
+
+                        will yield currently regex:
+                        <?xml[ \t\r\n]
+
+                        but should yield:
+                        <\?xml[ \t\r\n]
+                    */
                     subRegex.add(((FlatLexerRule) element).getContent());
                 }
             }
