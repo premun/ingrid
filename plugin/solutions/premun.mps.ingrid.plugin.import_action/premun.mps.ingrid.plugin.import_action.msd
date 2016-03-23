@@ -13,7 +13,6 @@
   </stubModelEntries>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">fe246be5-ce3c-4829-8cc0-4a7d01deb23f(premun.mps.ingrid.plugin.importer)</dependency>
     <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
     <dependency reexport="false">742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)</dependency>
     <dependency reexport="false">c844064f-26e3-4868-95b4-15456423be74(premun.mps.ingrid.plugin.import_process)</dependency>
@@ -42,13 +41,9 @@
     <module reference="498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)" version="0" />
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
-    <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)" version="0" />
-    <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
-    <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
     <module reference="8f833572-184a-4705-be72-ff2712986984(premun.mps.ingrid.plugin.import_action)" version="0" />
     <module reference="c844064f-26e3-4868-95b4-15456423be74(premun.mps.ingrid.plugin.import_process)" version="0" />
-    <module reference="fe246be5-ce3c-4829-8cc0-4a7d01deb23f(premun.mps.ingrid.plugin.importer)" version="0" />
   </dependencyVersions>
 </solution>
 

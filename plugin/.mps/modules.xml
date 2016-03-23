@@ -5,7 +5,6 @@
       <modulePath path="$PROJECT_DIR$/languages/imported.SimpleXML/imported.SimpleXML.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/imported.SimpleXML/sandbox/imported.SimpleXML.sandbox.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/premun.mps.ingrid.plugin.importer/premun.mps.ingrid.plugin.importer.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/premun.mps.ingrid.plugin.importer/sandbox/premun.mps.ingrid.plugin.importer.sandbox.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/premun.mps.ingrid.plugin.import_action/premun.mps.ingrid.plugin.import_action.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/premun.mps.ingrid.plugin.import_process/premun.mps.ingrid.plugin.import_process.msd" folder="" />
     </projectModules>
