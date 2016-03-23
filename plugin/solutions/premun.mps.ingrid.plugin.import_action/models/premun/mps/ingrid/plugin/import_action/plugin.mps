@@ -5,7 +5,6 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -17,7 +16,8 @@
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="zkjw" ref="c844064f-26e3-4868-95b4-15456423be74/java:premun.mps.ingrid.importer(premun.mps.ingrid.plugin.import_process/)" />
+    <import index="t5if" ref="642f71f8-327a-425b-84f9-44ad58786d27/f:project#fe246be5-ce3c-4829-8cc0-4a7d01deb23f(jetbrains.mps.lang.project.modules/module.premun.mps.ingrid.plugin.importer@project_stub)" />
+    <import index="zkjw" ref="8f833572-184a-4705-be72-ff2712986984/java:premun.mps.ingrid.importer(premun.mps.ingrid.plugin.import_action/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="b500" ref="r:c3608ff3-23d3-4792-858b-da3c93005e4d(premun.mps.ingrid.plugin.import_process.import_process)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />

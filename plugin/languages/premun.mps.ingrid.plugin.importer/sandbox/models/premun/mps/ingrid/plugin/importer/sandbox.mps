@@ -3,7 +3,6 @@
   <persistence version="9" />
   <languages>
     <use id="fe246be5-ce3c-4829-8cc0-4a7d01deb23f" name="premun.mps.ingrid.plugin.importer" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
   </languages>
   <imports />
   <registry>
