@@ -6,7 +6,6 @@ import premun.mps.ingrid.parser.antlr.*;
 import premun.mps.ingrid.parser.grammar.*;
 
 import java.util.*;
-import java.util.stream.*;
 
 /**
  * Class that handles walking through imported grammar and constructs the tree.
@@ -59,35 +58,157 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
         this.rules.put(currentParserRule.name, currentParserRule);
     }
 
-    /**
-     * Parses possible alternatives that the rule can split into.
-     *
-     * @param context Parser context.
-     */
     @Override
-    public void enterAlternative(AlternativeContext context) {
-        ArrayList<Rule> elements = new ArrayList<>();
+    public void enterLabeledAlt(LabeledAltContext context) {
+        List<RuleReference> elements = parseParserAlternative(context.alternative());
+        currentParserRule.alternatives.add(elements);
+    }
 
-        // Rules that can dissolve into empty string
-        if (context.children == null) {
-            elements.add(new LiteralRule(""));
-            return;
+    /**
+     * Parses an alternative of a parser rule (the whole rule line).
+     *
+     * @param alternative Rule alternative
+     * @return List of elements that make up the alternative
+     */
+    private List<RuleReference> parseParserAlternative(AlternativeContext alternative) {
+        ArrayList<RuleReference> elements = new ArrayList<>();
+
+        if (alternative == null || alternative.children == null) {
+            // TODO: warning?
+            return elements;
         }
 
-        // Recursively recognize elements
-        for (ParseTree element : context.children) {
-            parseAlternativeElement(element, elements);
-        }
-
-        // Transform rules into references
-        List<RuleReference> references = elements
+        // Parse every element into a RuleReference
+        alternative
+            .children
             .stream()
-            .map(RuleReference::new)
-            .collect(Collectors.toList());
+            .map(c -> parseParserAlternativeElement((ElementContext) c))
+            .forEach(elements::add);
 
-        currentParserRule
-            .alternatives
-            .add(references);
+        return elements;
+    }
+
+    /**
+     * Parses an element of an alternative into a RuleReference.
+     *
+     * Example:
+     *     rule : a (b | (c | d))* DIGIT?
+     *          ;
+     *
+     * Will be parsed into 3 references:
+     *   1) Reference to a parser rule 'a'
+     *   2) Reference to a newly created block rule for the middle part
+     *   3) Reference to a lexer rule 'DIGIT'
+     *
+     * There will be following quantities:
+     *   1) Exactly one
+     *   2) Any number
+     *   3) Max one
+     *
+     * @param element Element context
+     * @return A rule reference representing element
+     */
+    private RuleReference parseParserAlternativeElement(ElementContext element) {
+        Quantity quantity;
+
+        // Do we have a quantifier in the end?
+        if (element.ebnfSuffix() == null) {
+            quantity = Quantity.EXACTLY_ONE;
+        } else {
+            quantity = Quantity.FromString(element.ebnfSuffix().getText());
+        }
+
+        Rule rule = null;
+
+        for (ParseTree child : element.children) {
+            if (child instanceof AtomContext) {
+                ParseTree grandChild = child.getChild(0);
+                String name = grandChild.getText();
+
+                if (grandChild instanceof RulerefContext) {
+                    // Parser rule name
+                    rule = new UnresolvedParserRule(name);
+                } else if (grandChild instanceof LexerAtomContext || grandChild instanceof TerminalContext) {
+                    // A literal/regex/lexer rule name
+                    char first = name.charAt(0);
+
+                    if ('A' <= first && first <= 'Z') {
+                        rule = new UnresolvedLexerRule(name);
+                    } else if (first == '\'') {
+                        rule = new LiteralRule(name);
+                    } else {
+                        rule = new RegexRule(name);
+                    }
+                }
+            } else if (child instanceof EbnfContext) {
+                EbnfContext blockRule = (EbnfContext) child;
+
+                // We encountered a block rule inside alternative!
+                // We need to create a new rule that will represent this..
+                //
+                // Example:
+                //     rule : a (b | (c | d))* DIGIT?
+                //          ;
+                // Inside first alternative there is a block '(b | (c | d))*'
+                rule = createBlockRule(blockRule);
+
+                // For block rules, quantifier is bound to block suffix, not element ebnf suffix...
+                if (blockRule.blockSuffix() == null) {
+                    quantity = Quantity.EXACTLY_ONE;
+                } else {
+                    quantity = Quantity.FromString(blockRule.blockSuffix().getText());
+                }
+            }
+        }
+
+        if (rule == null) {
+            // TODO: log error!
+        }
+
+        return new RuleReference(rule, quantity);
+    }
+
+    /**
+     * When a rule contains a block inside its alternative, we need to create a special block rule.
+     *
+     * Example:
+     *     rule : a (b | (c | d))* DIGIT?
+     *          ;
+     * Inside first alternative there is a block '(b | (c | d))*'
+     *
+     * @param context Block context
+     * @return Newly created rule
+     */
+    private Rule createBlockRule(EbnfContext context) {
+        // Generate a new name in the form of [RULE]_block_[A]_[I], where:
+        //   RULE is name of the parent rule
+        //   A is index of alternative inside rule
+        //   I is index of block inside alternative
+        int a = currentParserRule.alternatives.size() + 1;
+        String name = currentParserRule.name + "_block_" + a + "_";
+        int i = 1;
+        while (this.rules.containsKey(name + i)) {
+            i++;
+        }
+        name += i;
+
+        // Create the rule itself
+        ParserRule rule = new ParserRule(name);
+        this.rules.put(name, rule);
+
+        // Parse every alternative of this block rule recursively
+        // The rule usually looks like (a | b | c)
+        // We want to skip terminals '(', '|', ')' so we filter
+        context
+            .block()
+            .altList()
+            .children
+            .stream()
+            .filter(n -> n instanceof AlternativeContext)
+            .map(n -> parseParserAlternative((AlternativeContext) n))
+            .forEach(alt -> rule.alternatives.add(alt));
+
+        return rule;
     }
 
     /**
@@ -119,12 +240,13 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
         // Rules that can dissolve into empty string
         if (context.children == null) {
             elements.add(new LiteralRule(""));
+            currentLexerRule.alternatives.add(elements);
             return;
         }
 
         // Recursively recognize elements
         for (ParseTree element : context.children) {
-            parseAlternativeElement(element, elements);
+            parseLexerAlternativeElement(element, elements);
         }
 
         currentLexerRule.alternatives.add(elements);
@@ -137,7 +259,7 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
      * @param node     Starting tree node
      * @param elements Output parameter containing all found Rule objects
      */
-    private void parseAlternativeElement(ParseTree node, List<Rule> elements) {
+    private void parseLexerAlternativeElement(ParseTree node, List<Rule> elements) {
         // Either a lexer rule name, regex or 'string'
         if (node instanceof LexerAtomContext || node instanceof TerminalContext) {
             String name = node.getText();
@@ -173,7 +295,28 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
 
         // Recursively explore further
         for (int i = 0; i < node.getChildCount(); i++) {
-            parseAlternativeElement(node.getChild(i), elements);
+            parseLexerAlternativeElement(node.getChild(i), elements);
+        }
+    }
+
+    private void debugPrintANTLRTree(ParseTree tree) {
+        debugPrintANTLRTree(tree, 0);
+    }
+
+    private void debugPrintANTLRTree(ParseTree tree, int indent) {
+        System.out.print(new String(new char[indent]).replace("\0", " "));
+
+        String classname = tree.getClass().getSimpleName();
+
+        if (classname.equals("TerminalNodeImpl")) {
+            classname += " (" + tree.getText() + ")";
+        }
+
+        System.out.println(classname);
+
+        for (int i = 0; i < tree.getChildCount(); i++) {
+            ParseTree child = tree.getChild(i);
+            debugPrintANTLRTree(child, indent + 4);
         }
     }
 }

@@ -7,6 +7,10 @@ import java.util.*;
 public class ParserRule extends Rule {
     public List<List<RuleReference>> alternatives = new ArrayList<>();
 
+    public ParserRule(String name) {
+        super(name);
+    }
+
     public ParserRule(ParserRuleSpecContext ruleContext) {
         super(ruleContext.RULE_REF().getText());
     }
