@@ -28,12 +28,17 @@ public enum Quantity {
     public static Quantity FromString(String quantifier) {
         switch (quantifier) {
             case "?":
+            case "??": // non-greedy (https://github.com/antlr/antlr4/blob/master/doc/wildcard.md)
                 return MAX_ONE;
+
             case "*":
-            case "*?": // TODO: Has '*?' really this meaning?
+            case "*?": // non-greedy (https://github.com/antlr/antlr4/blob/master/doc/wildcard.md)
                 return ANY;
+
             case "+":
+            case "+?": // non-greedy (https://github.com/antlr/antlr4/blob/master/doc/wildcard.md)
                 return AT_LEAST_ONE;
+
             default:
                 throw new IllegalArgumentException("Unknown quantification character '" + quantifier + "'");
         }
