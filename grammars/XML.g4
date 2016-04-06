@@ -1,5 +1,5 @@
 /** XML parser derived from ANTLR v4 ref guide book example */
-parser XMLParser;
+grammar XMLParser;
 
 // options { tokenVocab=XMLLexer; }
 
