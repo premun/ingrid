@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:3401a5bb-ce7d-4f65-abc8-5176e4117302(imported.SimpleXML.structure)">
+<model ref="r:d581198d-0920-4150-8375-93104759b264(imported.SimpleXML.structure)">
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />

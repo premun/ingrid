@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:39868d45-54aa-4806-8cbd-394b2949f5bb(imported.SimpleXML.editor)">
+<model ref="r:ffd1efff-b06f-40ff-bd1b-714193b18f43(imported.SimpleXML.editor)">
   <persistence version="9" />
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />

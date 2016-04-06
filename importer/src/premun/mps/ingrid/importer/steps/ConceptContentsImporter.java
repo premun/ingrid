@@ -23,16 +23,18 @@ public class ConceptContentsImporter extends ImportStep {
      * @param rule Rule to be imported.
      */
     private void importRuleContents(ParserRule rule) {
+        // Either we have an interface concept (more children), or directly concept
         if (rule.alternatives.size() > 1) {
             // Interface - we need to find implementors
             for (int i = 0; i < rule.alternatives.size(); i++) {
                 String name = rule.name + "_" + (i + 1);
-                // TODO: catch exception
+
+                // TODO: Exception handling
                 SNode concept = this.findConceptByName(name);
                 this.importConceptContent(concept, rule.alternatives.get(i));
             }
         } else {
-            // TODO: catch exception
+            // TODO: Exception handling
             SNode concept = this.findConceptByRule(rule);
             this.importConceptContent(concept, rule.alternatives.get(0));
         }
@@ -50,7 +52,16 @@ public class ConceptContentsImporter extends ImportStep {
 
         for (RuleReference reference : children) {
             Rule childRule = reference.rule;
+
+            if (childRule instanceof LiteralRule) {
+                // There are no concepts for literal rules,
+                // literals are baked directly into concept's editor.
+                continue;
+            }
+
+            // TODO: exception handling
             SNode child = this.findConceptByRule(childRule);
+
             if (childRule instanceof ParserRule) {
                 String name = childRule.name + "_" + (++childIndex);
                 NodeHelper.addChildToNode(parent, child, name, reference.quantity);
