@@ -6,7 +6,7 @@ document    :   comment? element
 comment     :   '/*' Content '*/'
             ;
 
-element     :   LT Name '>' Content '</' Name '>'
+element     :   LT Name '>' ( Content | element )* '</' Name '>'
             |   '<' Name '/>'
             ;
 

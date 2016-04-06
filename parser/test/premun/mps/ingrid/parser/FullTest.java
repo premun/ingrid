@@ -50,9 +50,18 @@ public class FullTest {
         assertTrue(grammar.rules.get("LT") instanceof LiteralRule);
         assertTrue(grammar.rules.get("Content") instanceof RegexRule);
 
-        // Get element, first alternative and Content rule
-        Rule contentRule = ((ParserRule) grammar.rules.get("element")).alternatives.get(0).get(3).rule;
-        assertEquals(grammar.rules.get("Content").getClass(), contentRule.getClass());
-        assertTrue(grammar.rules.get("Content") == contentRule);
+        // Test the rule block that was inside first alternative
+        RuleReference block = ((ParserRule) grammar.rules.get("element")).alternatives.get(0).get(3);
+        assertEquals(Quantity.ANY, block.quantity);
+
+        ParserRule blockRule = (ParserRule) block.rule;
+
+        Rule contentAlternative = blockRule.alternatives.get(0).get(0).rule;
+        assertEquals(grammar.rules.get("Content").getClass(), contentAlternative.getClass());
+        assertTrue(grammar.rules.get("Content") == contentAlternative);
+
+        Rule elementAlternative = blockRule.alternatives.get(1).get(0).rule;
+        assertEquals(grammar.rules.get("element").getClass(), elementAlternative.getClass());
+        assertTrue(grammar.rules.get("element") == elementAlternative);
     }
 }
