@@ -2,6 +2,7 @@ package premun.mps.ingrid.importer.steps;
 
 import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.importer.*;
+import premun.mps.ingrid.importer.exceptions.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.import_process.utility.*;
 
@@ -29,14 +30,14 @@ public abstract class ImportStep {
      * @param name Concept to be matched.
      * @return Concept node belonging to given rule.
      */
-    protected SNode findConceptByName(String name) {
+    protected SNode findConceptByName(String name) throws IngridException {
         for (SNode node : this.structureModel.getRootNodes()) {
             if (name.equals(node.getName())) {
                 return node;
             }
         }
 
-        throw new RuntimeException("Concept " + name + " not found!");
+        throw new IngridException("Concept " + name + " not found!");
     }
 
     /**
@@ -45,13 +46,13 @@ public abstract class ImportStep {
      * @param rule Rule to be matched.
      * @return Concept node belonging to given rule.
      */
-    protected SNode findConceptByRule(Rule rule) {
+    protected SNode findConceptByRule(Rule rule) throws IngridException {
         for (SNode node : this.structureModel.getRootNodes()) {
-            if (rule.name.equals(node.getName())) {
+            if (node.getName().equals(rule.name) || node.getName().equals(rule.name + "_1")) {
                 return node;
             }
         }
 
-        throw new RuntimeException("Concept for rule " + rule.name + " not found!");
+        throw new IngridException("Concept for rule " + rule.name + " not found!");
     }
 }

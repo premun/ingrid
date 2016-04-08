@@ -23,51 +23,50 @@ public class ConceptContentsImporter extends ImportStep {
      * @param rule Rule to be imported.
      */
     private void importRuleContents(ParserRule rule) {
-        // Either we have an interface concept (more children), or directly concept
-        if (rule.alternatives.size() > 1) {
-            // Interface - we need to find implementors
-            for (int i = 0; i < rule.alternatives.size(); i++) {
-                String name = rule.name + "_" + (i + 1);
+        // For each alternative..
+        for (int altIndex = 0; altIndex < rule.alternatives.size(); altIndex++) {
+            List<RuleReference> alternative = rule.alternatives.get(altIndex);
+            int childIndex = 0;
+            int propertyIndex = 0;
 
-                // TODO: Exception handling
-                SNode concept = this.findConceptByName(name);
-                this.importConceptContent(concept, rule.alternatives.get(i));
-            }
-        } else {
-            // TODO: Exception handling
-            SNode concept = this.findConceptByRule(rule);
-            this.importConceptContent(concept, rule.alternatives.get(0));
-        }
-    }
+            // Concept representing current alternative
+            SNode parent = this.findConceptByName(rule.name + "_" + (altIndex + 1));
 
-    /**
-     * Parses alternative's structure and imports children of a single alternative.
-     *
-     * @param parent Parent rule, whose alternative we are parsing
-     * @param children Alternative's content
-     */
-    private void importConceptContent(SNode parent, List<RuleReference> children) {
-        int propertyIndex = 0;
-        int childIndex = 0;
+            // For each element of that alternative..
+            for (int elemIndex = 0; elemIndex < alternative.size(); elemIndex++) {
+                RuleReference childRef = alternative.get(elemIndex);
 
-        for (RuleReference reference : children) {
-            Rule childRule = reference.rule;
+                if (childRef.rule instanceof LiteralRule) {
+                    // Literal rule will only appear in editor
 
-            if (childRule instanceof LiteralRule) {
-                // There are no concepts for literal rules,
-                // literals are baked directly into concept's editor.
-                continue;
-            }
+                } else if (childRef.rule instanceof RegexRule) {
+                    // Find regex type and create property for it
+                    String linkName = childRef.rule.name + "_" + (++propertyIndex);
+                    SNode tokenRule = this.findConceptByRule(childRef.rule);
+                    NodeHelper.addPropertyToNode(parent, linkName, tokenRule);
 
-            // TODO: exception handling
-            SNode child = this.findConceptByRule(childRule);
+                } else if (childRef.rule instanceof ParserRule) {
+                    // Either directly insert child if one, or create an interface if more concepts can be inserted
+                    ParserRule child = (ParserRule) childRef.rule;
 
-            if (childRule instanceof ParserRule) {
-                String name = childRule.name + "_" + (++childIndex);
-                NodeHelper.addChildToNode(parent, child, name, reference.quantity);
-            } else if (childRule instanceof RegexRule) {
-                String name = childRule.name + "_" + (++propertyIndex);
-                NodeHelper.addPropertyToNode(parent, name, child);
+                    if (child.alternatives.size() > 1) {
+                        // Split rule? More children?
+                        // We create an interface and find all children and assign it to them..
+                        String ifaceName = this.namingService.generateName("I" + rule.name + "_" + (altIndex + 1) + "_" + (elemIndex + 1));
+                        SNode iface = this.nodeFactory.createInterface(ifaceName, "Interfaces." + rule.name);
+                        this.structureModel.addRootNode(iface);
+
+                        // TODO: find all concepts that will implements this interface
+
+                        NodeHelper.addChildToNode(parent, iface, ifaceName + "_" + (++childIndex), childRef.quantity);
+                    } else {
+                        // TODO: find concept, that will be the child
+                        SNode childConcept = null;
+                        String linkName = child.name + "_" + (++childIndex);
+
+                        NodeHelper.addChildToNode(parent, childConcept, linkName, childRef.quantity);
+                    }
+                }
             }
         }
     }

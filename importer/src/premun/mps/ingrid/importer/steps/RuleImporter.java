@@ -33,28 +33,27 @@ public class RuleImporter extends ImportStep {
         // Generate unique name
         rule.name = this.namingService.generateName(rule.name);
 
-        if (rule.alternatives.size() > 1) {
+//        if (rule.alternatives.size() > 1) {
             // Rule with more alternatives - we will create an interface
             // and a child for each alternative that will inherit this interface
-            SNode iface = this.nodeFactory.createInterface(rule.name, "Rules." + rule.name);
-            this.structureModel.addRootNode(iface);
+//            SNode iface = this.nodeFactory.createInterface(rule.name, "Rules." + rule.name);
+//            this.structureModel.addRootNode(iface);
 
             // For each alternative, there will be a concept
             for (int i = 0; i < rule.alternatives.size(); ++i) {
-                // TODO: if only one element is contained inside, we can flatten this rule and delete this intermediate step by advancing to the next step
                 String name = this.namingService.generateName(rule.name + "_" + (i + 1));
 
                 // Concrete element, we can create a concept
                 SNode concept = this.nodeFactory.createConcept(name, name, "Rules." + rule.name, rule.equals(this.grammar.rootRule));
 
                 // Link the parent split rule interface to this rule
-                NodeHelper.linkInterfaceToConcept(concept, iface);
+//                NodeHelper.linkInterfaceToConcept(concept, iface);
                 this.structureModel.addRootNode(concept);
             }
-        } else {
+//        } else {
             // Not a rule that splits into more rules - we create it directly
-            SNode concept = this.nodeFactory.createConcept(rule.name, rule.name, "Rules." + rule.name, rule.equals(this.grammar.rootRule));
-            this.structureModel.addRootNode(concept);
-        }
+//            SNode concept = this.nodeFactory.createConcept(rule.name, rule.name, "Rules." + rule.name, rule.equals(this.grammar.rootRule));
+//            this.structureModel.addRootNode(concept);
+//        }
     }
 }
