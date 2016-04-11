@@ -3,14 +3,18 @@ grammar SimpleXML;
 document    :   comment? element
             ;
 
-comment     :   '/*' Content '*/'
+comment     :   '/*' TEXT '*/'
             ;
 
-element     :   LT Name '>' Content '</' Name '>'
-            |   '<' Name '/>'
+element     :   LT Name attribute* '>' content* '</' Name '>'
+            |   '<' Name attribute* '/>'
             ;
 
-Content     :   [a-zA-Z0-9 ]*
+attribute   :   Name '="' TEXT '"'
+            ;
+
+content     :   TEXT*
+            |   element*
             ;
             
 Name        :   NameStartChar NameChar* 
@@ -34,6 +38,9 @@ NameStartChar
             ;
 
 LT          :   '<'
+            ;
+
+TEXT        : [a-zA-Z0-9 ]*
             ;
 
 /*document    :   prolog? element

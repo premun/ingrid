@@ -9,11 +9,11 @@ public class EditorBuilder extends ImportStep {
 
     @Override
     public void Execute() {
-//        this.grammar.rules
-//            .values()
-//            .stream()
-//            .filter(r -> r instanceof ParserRule)
-//            .forEach(r -> this.buildEditor((ParserRule) r));
+        this.grammar.rules
+            .values()
+            .stream()
+            .filter(r -> r instanceof ParserRule)
+            .forEach(r -> this.buildEditor((ParserRule) r));
     }
 
     /**

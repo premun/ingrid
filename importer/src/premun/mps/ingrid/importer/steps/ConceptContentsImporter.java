@@ -38,7 +38,6 @@ public class ConceptContentsImporter extends ImportStep {
 
                 if (childRef.rule instanceof LiteralRule) {
                     // Literal rule will only appear in editor
-
                 } else if (childRef.rule instanceof RegexRule) {
                     // Find regex type and create property for it
                     String linkName = childRef.rule.name + "_" + (++propertyIndex);
@@ -46,28 +45,59 @@ public class ConceptContentsImporter extends ImportStep {
                     NodeHelper.addPropertyToNode(parent, linkName, tokenRule);
 
                 } else if (childRef.rule instanceof ParserRule) {
-                    // Either directly insert child if one, or create an interface if more concepts can be inserted
                     ParserRule child = (ParserRule) childRef.rule;
 
-                    if (child.alternatives.size() > 1) {
-                        // Split rule? More children?
-                        // We create an interface and find all children and assign it to them..
-                        String ifaceName = this.namingService.generateName("I" + rule.name + "_" + (altIndex + 1) + "_" + (elemIndex + 1));
+                    // List of rules that this child breaks into
+                    List<SNode> grandChildren = this.findChildConcepts(child);
+
+                    String childName = rule.name + "_" + (altIndex + 1) + "_" + (elemIndex + 1);
+
+                    // Either link child directly or create an interface if more concepts can be inserted
+                    if (grandChildren.size() == 1) {
+                        NodeHelper.addChildToNode(parent, grandChildren.get(0), childName, childRef.quantity);
+                    } else {
+                        String ifaceName = this.namingService.generateName("I" + childName);
                         SNode iface = this.nodeFactory.createInterface(ifaceName, "Interfaces." + rule.name);
                         this.structureModel.addRootNode(iface);
 
-                        // TODO: find all concepts that will implements this interface
+                        // Link interface to all possible children
+                        for (SNode grandChild : grandChildren) {
+                            NodeHelper.linkInterfaceToConcept(grandChild, iface);
+                        }
 
                         NodeHelper.addChildToNode(parent, iface, ifaceName + "_" + (++childIndex), childRef.quantity);
-                    } else {
-                        // TODO: find concept, that will be the child
-                        SNode childConcept = null;
-                        String linkName = child.name + "_" + (++childIndex);
-
-                        NodeHelper.addChildToNode(parent, childConcept, linkName, childRef.quantity);
                     }
                 }
             }
         }
+    }
+
+    /**
+     * Searches for all concepts that could inherit given interface.
+     * That means all that given rule breaks into, effectively skipping empty levels.
+     *
+     * @param rule Root rule where search starts.
+     */
+    private List<SNode> findChildConcepts(ParserRule rule) {
+        List<SNode> result = new ArrayList<>();
+
+        for (int i = 0; i < rule.alternatives.size(); i++) {
+            List<RuleReference> alternative = rule.alternatives.get(i);
+
+            // Try to skip levels that are not important
+            if (alternative.size() == 1) {
+                Rule r = alternative.get(0).rule;
+
+                if (r instanceof ParserRule) {
+                    result.addAll(findChildConcepts((ParserRule) r));
+                    continue;
+                }
+            }
+
+            SNode child = this.findConceptByName(rule.name + "_" + (i + 1));
+            result.add(child);
+        }
+
+        return result;
     }
 }

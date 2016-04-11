@@ -4,7 +4,7 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
-    <modelRoot contentPath="/media/premun/Data/MFF/Diplomka/ingrid/lib" type="java_classes">
+    <modelRoot contentPath="/home/premun/Diplomka/ingrid/lib" type="java_classes">
       <sourceRoot location="premun.mps.ingrid.importer.jar" />
     </modelRoot>
   </models>
