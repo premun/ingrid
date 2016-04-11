@@ -11,7 +11,8 @@ public class TokenImporter extends ImportStep {
             .values()
             .stream()
             .filter(r -> r instanceof RegexRule)
-            .forEach(r -> this.importToken((RegexRule) r));
+            .map(r -> (RegexRule) r)
+            .forEach(this::importToken);
     }
 
     /**

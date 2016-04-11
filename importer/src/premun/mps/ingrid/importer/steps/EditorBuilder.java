@@ -13,7 +13,8 @@ public class EditorBuilder extends ImportStep {
             .values()
             .stream()
             .filter(r -> r instanceof ParserRule)
-            .forEach(r -> this.buildEditor((ParserRule) r));
+            .map(r -> (ParserRule) r)
+            .forEach(this::buildEditor);
     }
 
     /**

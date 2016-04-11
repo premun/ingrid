@@ -14,7 +14,8 @@ public class ConceptContentsImporter extends ImportStep {
             .values()
             .stream()
             .filter(r -> r instanceof ParserRule)
-            .forEach(r -> this.importRuleContents((ParserRule) r));
+            .map(r -> (ParserRule) r)
+            .forEach(this::importRuleContents);
     }
 
     /**
@@ -25,12 +26,17 @@ public class ConceptContentsImporter extends ImportStep {
     private void importRuleContents(ParserRule rule) {
         // For each alternative..
         for (int altIndex = 0; altIndex < rule.alternatives.size(); altIndex++) {
+            // Concept representing current alternative
+            String conceptName = rule.name;
+            if (rule.alternatives.size() > 1) {
+                conceptName += "_" + (altIndex + 1);
+            }
+            
+            SNode parent = this.findConceptByName(conceptName);
+
             List<RuleReference> alternative = rule.alternatives.get(altIndex);
             int childIndex = 0;
             int propertyIndex = 0;
-
-            // Concept representing current alternative
-            SNode parent = this.findConceptByName(rule.name + "_" + (altIndex + 1));
 
             // For each element of that alternative..
             for (int elemIndex = 0; elemIndex < alternative.size(); elemIndex++) {
@@ -43,61 +49,13 @@ public class ConceptContentsImporter extends ImportStep {
                     String linkName = childRef.rule.name + "_" + (++propertyIndex);
                     SNode tokenRule = this.findConceptByRule(childRef.rule);
                     NodeHelper.addPropertyToNode(parent, linkName, tokenRule);
-
                 } else if (childRef.rule instanceof ParserRule) {
+                    // Find referenced interface / concept
                     ParserRule child = (ParserRule) childRef.rule;
-
-                    // List of rules that this child breaks into
-                    List<SNode> grandChildren = this.findChildConcepts(child);
-
-                    String childName = rule.name + "_" + (altIndex + 1) + "_" + (elemIndex + 1);
-
-                    // Either link child directly or create an interface if more concepts can be inserted
-                    if (grandChildren.size() == 1) {
-                        NodeHelper.addChildToNode(parent, grandChildren.get(0), child.name + "_" + (++childIndex), childRef.quantity);
-                    } else {
-                        String ifaceName = this.namingService.generateName("I" + childName);
-                        SNode iface = this.nodeFactory.createInterface(ifaceName, "Interfaces." + rule.name);
-                        this.structureModel.addRootNode(iface);
-
-                        // Link interface to all possible children
-                        for (SNode grandChild : grandChildren) {
-                            NodeHelper.linkInterfaceToConcept(grandChild, iface);
-                        }
-
-                        NodeHelper.addChildToNode(parent, iface, child.name + "_" + (++childIndex), childRef.quantity);
-                    }
+                    SNode childConcept = this.findConceptByRule(child);
+                    NodeHelper.addChildToNode(parent, childConcept, child.name + "_" + (++childIndex), childRef.quantity);
                 }
             }
         }
-    }
-
-    /**
-     * Searches for all concepts that could inherit given interface.
-     * That means all that given rule breaks into, effectively skipping empty levels.
-     *
-     * @param rule Root rule where search starts.
-     */
-    private List<SNode> findChildConcepts(ParserRule rule) {
-        List<SNode> result = new ArrayList<>();
-
-        for (int i = 0; i < rule.alternatives.size(); i++) {
-            List<RuleReference> alternative = rule.alternatives.get(i);
-
-            // Try to skip levels that are not important
-            if (alternative.size() == 1) {
-                Rule r = alternative.get(0).rule;
-
-                if (r instanceof ParserRule) {
-                    result.addAll(findChildConcepts((ParserRule) r));
-                    continue;
-                }
-            }
-
-            SNode child = this.findConceptByName(rule.name + "_" + (i + 1));
-            result.add(child);
-        }
-
-        return result;
     }
 }
