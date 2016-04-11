@@ -5,6 +5,9 @@ import premun.mps.ingrid.importer.exceptions.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.import_process.utility.*;
 
+/**
+ * Import step that creates projectional editors for all concepts.
+ */
 public class EditorBuilder extends ImportStep {
 
     @Override
@@ -26,10 +29,7 @@ public class EditorBuilder extends ImportStep {
         if (rule.alternatives.size() > 1) {
             // Interface - we need to find implementors
             for (int i = 0; i < rule.alternatives.size(); i++) {
-                String name = rule.name + "_" + (i + 1);
-
-                SNode concept = this.findConceptByName(name);
-
+                SNode concept = this.findAlternativeConcept(rule, i);
                 SNode editor = EditorHelper.createEditor(concept, rule.alternatives.get(i));
                 this.editorModel.addRootNode(editor);
             }

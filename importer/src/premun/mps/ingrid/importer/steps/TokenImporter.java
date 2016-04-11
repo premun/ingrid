@@ -3,6 +3,9 @@ package premun.mps.ingrid.importer.steps;
 import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.parser.grammar.*;
 
+/**
+ * Import step that creates constraint data concepts for lexer rules (regex rules).
+ */
 public class TokenImporter extends ImportStep {
 
     @Override

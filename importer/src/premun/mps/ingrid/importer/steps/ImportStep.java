@@ -6,6 +6,9 @@ import premun.mps.ingrid.importer.exceptions.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.import_process.utility.*;
 
+/**
+ * Abstract import step.
+ */
 public abstract class ImportStep {
     protected GrammarInfo grammar;
     protected SModel structureModel;
@@ -30,7 +33,7 @@ public abstract class ImportStep {
      * @param name Concept to be matched.
      * @return Concept node belonging to given rule.
      */
-    protected SNode findConceptByName(String name) throws IngridException {
+    protected final SNode findConceptByName(String name) throws IngridException {
         for (SNode node : this.structureModel.getRootNodes()) {
             if (name.equals(node.getName())) {
                 return node;
@@ -46,7 +49,7 @@ public abstract class ImportStep {
      * @param rule Rule to be matched.
      * @return Concept node belonging to given rule.
      */
-    protected SNode findConceptByRule(Rule rule) throws IngridException {
+    protected final SNode findConceptByRule(Rule rule) throws IngridException {
         for (SNode node : this.structureModel.getRootNodes()) {
             if (node.getName().equals(rule.name) || node.getName().equals(rule.name + "_1")) {
                 return node;
@@ -54,5 +57,21 @@ public abstract class ImportStep {
         }
 
         throw new IngridException("Concept for rule " + rule.name + " not found!");
+    }
+
+    /**
+     * Finds a concept representing given alternative.
+     *
+     * @param rule Rule whose alternative we are resolving.
+     * @param index Index of the alternative.
+     * @return Concept node belonging to given alternative.
+     * @throws IngridException
+     */
+    protected final SNode findAlternativeConcept(ParserRule rule, int index) throws IngridException {
+        if (rule.alternatives.size() == 1) {
+            return this.findConceptByRule(rule);
+        } else {
+            return this.findConceptByName(rule.name + "_" + (index + 1));
+        }
     }
 }

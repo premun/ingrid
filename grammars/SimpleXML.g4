@@ -3,7 +3,7 @@ grammar SimpleXML;
 document    :   comment? element
             ;
 
-comment     :   '/*' TEXT '*/'
+comment     :   '<!--' TEXT '-->'
             ;
 
 element     :   LT Name attribute* '>' content* '</' Name '>'

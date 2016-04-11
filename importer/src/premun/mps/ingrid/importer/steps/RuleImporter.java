@@ -4,6 +4,9 @@ import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.import_process.utility.*;
 
+/**
+ * Import step that creates concepts and interfaces for parser rules.
+ */
 public class RuleImporter extends ImportStep {
 
     @Override

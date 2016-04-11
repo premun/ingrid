@@ -6,6 +6,9 @@ import premun.mps.ingrid.plugin.import_process.utility.*;
 
 import java.util.*;
 
+/**
+ * Import step that links concepts together by creating properties and children.
+ */
 public class ConceptContentsImporter extends ImportStep {
 
     @Override
@@ -27,21 +30,14 @@ public class ConceptContentsImporter extends ImportStep {
         // For each alternative..
         for (int altIndex = 0; altIndex < rule.alternatives.size(); altIndex++) {
             // Concept representing current alternative
-            String conceptName = rule.name;
-            if (rule.alternatives.size() > 1) {
-                conceptName += "_" + (altIndex + 1);
-            }
-            
-            SNode parent = this.findConceptByName(conceptName);
+            SNode parent = this.findAlternativeConcept(rule, altIndex);
 
             List<RuleReference> alternative = rule.alternatives.get(altIndex);
             int childIndex = 0;
             int propertyIndex = 0;
 
             // For each element of that alternative..
-            for (int elemIndex = 0; elemIndex < alternative.size(); elemIndex++) {
-                RuleReference childRef = alternative.get(elemIndex);
-
+            for (RuleReference childRef : alternative) {
                 if (childRef.rule instanceof LiteralRule) {
                     // Literal rule will only appear in editor
                 } else if (childRef.rule instanceof RegexRule) {
