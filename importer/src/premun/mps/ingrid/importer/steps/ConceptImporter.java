@@ -5,12 +5,21 @@ import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.import_process.utility.*;
 
 /**
- * Import step that creates concepts and interfaces for parser rules.
+ * Import step that creates concepts, constraint data concepts and interface concepts for grammar rules.
  */
-public class RuleImporter extends ImportStep {
+public class ConceptImporter extends ImportStep {
 
     @Override
     public void Execute() {
+        // Creates constraint data concepts
+        this.grammar.rules
+            .values()
+            .stream()
+            .filter(r -> r instanceof RegexRule)
+            .map(r -> (RegexRule) r)
+            .forEach(this::importToken);
+
+        // Creates interfaces for parser rules and concepts for alternatives
         this.grammar.rules
             .values()
             .stream()
@@ -59,5 +68,16 @@ public class RuleImporter extends ImportStep {
             SNode concept = this.nodeFactory.createConcept(rule.name, rule.name, "Rules." + rule.name, rule.equals(this.grammar.rootRule));
             this.structureModel.addRootNode(concept);
         }
+    }
+
+    /**
+     * Imports a regex rule as a constraint data type element.
+     *
+     * @param rule Rule to be imported.
+     */
+    private void importToken(RegexRule rule) {
+        rule.name = this.namingService.generateName(rule.name);
+        SNode node = this.nodeFactory.createConstraintDataType(rule.name, rule.regexp, "Tokens");
+        this.structureModel.addRootNode(node);
     }
 }

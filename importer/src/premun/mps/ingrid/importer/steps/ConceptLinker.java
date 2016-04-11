@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * Import step that links concepts together by creating properties and children.
  */
-public class ConceptContentsImporter extends ImportStep {
+public class ConceptLinker extends ImportStep {
 
     @Override
     public void Execute() {
@@ -18,7 +18,7 @@ public class ConceptContentsImporter extends ImportStep {
             .stream()
             .filter(r -> r instanceof ParserRule)
             .map(r -> (ParserRule) r)
-            .forEach(this::importRuleContents);
+            .forEach(this::linkRuleChildren);
     }
 
     /**
@@ -26,7 +26,7 @@ public class ConceptContentsImporter extends ImportStep {
      *
      * @param rule Rule to be imported.
      */
-    private void importRuleContents(ParserRule rule) {
+    private void linkRuleChildren(ParserRule rule) {
         // For each alternative..
         for (int altIndex = 0; altIndex < rule.alternatives.size(); altIndex++) {
             // Concept representing current alternative

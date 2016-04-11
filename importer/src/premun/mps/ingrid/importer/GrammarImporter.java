@@ -46,9 +46,8 @@ public class GrammarImporter {
         this.grammar = GrammarParser.parseFile(fileName);
 
         ImportStep[] steps = new ImportStep[] {
-            new TokenImporter(),
-            new RuleImporter(),
-            new ConceptContentsImporter(),
+            new ConceptImporter(),
+            new ConceptLinker(),
             new EditorBuilder(),
             new AliasFinder()
         };
