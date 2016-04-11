@@ -54,7 +54,7 @@ public class ConceptContentsImporter extends ImportStep {
 
                     // Either link child directly or create an interface if more concepts can be inserted
                     if (grandChildren.size() == 1) {
-                        NodeHelper.addChildToNode(parent, grandChildren.get(0), childName, childRef.quantity);
+                        NodeHelper.addChildToNode(parent, grandChildren.get(0), child.name + "_" + (++childIndex), childRef.quantity);
                     } else {
                         String ifaceName = this.namingService.generateName("I" + childName);
                         SNode iface = this.nodeFactory.createInterface(ifaceName, "Interfaces." + rule.name);
@@ -65,7 +65,7 @@ public class ConceptContentsImporter extends ImportStep {
                             NodeHelper.linkInterfaceToConcept(grandChild, iface);
                         }
 
-                        NodeHelper.addChildToNode(parent, iface, ifaceName + "_" + (++childIndex), childRef.quantity);
+                        NodeHelper.addChildToNode(parent, iface, child.name + "_" + (++childIndex), childRef.quantity);
                     }
                 }
             }
