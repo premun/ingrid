@@ -444,6 +444,26 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="6B2Ha6FnxDT" role="3cqZAp">
+          <node concept="3cpWsn" id="6B2Ha6FnxDU" role="3cpWs9">
+            <property role="TrG5h" value="textGenModel" />
+            <node concept="3uibUv" id="6B2Ha6Fn$Nq" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+            </node>
+            <node concept="2OqwBi" id="6B2Ha6FnxQs" role="33vP2m">
+              <node concept="Rm8GO" id="6B2Ha6FnxMR" role="2Oq$k0">
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.TEXT_GEN" resolve="TEXT_GEN" />
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+              </node>
+              <node concept="liA8E" id="6B2Ha6Fny9d" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
+                <node concept="37vLTw" id="6B2Ha6Fnyak" role="37wK5m">
+                  <ref role="3cqZAo" node="mX_CB8FXZo" resolve="language" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbH" id="5Jh2F9ezZ4l" role="3cqZAp" />
         <node concept="3cpWs8" id="2CENt80j8HM" role="3cqZAp">
           <node concept="3cpWsn" id="2CENt80j8HN" role="3cpWs9">
@@ -453,12 +473,15 @@
             </node>
             <node concept="2ShNRf" id="2CENt80j8Iu" role="33vP2m">
               <node concept="1pGfFk" id="2CENt80jbpK" role="2ShVmc">
-                <ref role="37wK5l" to="zkjw:~GrammarImporter.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SModel)" resolve="GrammarImporter" />
+                <ref role="37wK5l" to="zkjw:~GrammarImporter.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SModel)" resolve="GrammarImporter" />
                 <node concept="37vLTw" id="4X6IwqdNqfV" role="37wK5m">
                   <ref role="3cqZAo" node="4X6IwqdNpSN" resolve="structureModel" />
                 </node>
                 <node concept="37vLTw" id="4X6IwqdNsR6" role="37wK5m">
                   <ref role="3cqZAo" node="5Jh2F9ezXWl" resolve="editorModel" />
+                </node>
+                <node concept="37vLTw" id="6B2Ha6FnBPu" role="37wK5m">
+                  <ref role="3cqZAo" node="6B2Ha6FnxDU" resolve="textGenModel" />
                 </node>
               </node>
             </node>

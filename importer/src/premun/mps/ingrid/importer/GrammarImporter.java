@@ -9,12 +9,14 @@ import premun.mps.ingrid.parser.grammar.*;
 public class GrammarImporter {
     private SModel editorModel;
     private SModel structureModel;
+    private SModel textGenModel;
 
     private GrammarInfo grammar;
 
-    public GrammarImporter(SModel structureModel, SModel editorModel) {
+    public GrammarImporter(SModel structureModel, SModel editorModel, SModel textGenModel) {
         this.editorModel = editorModel;
         this.structureModel = structureModel;
+        this.textGenModel = textGenModel;
     }
 
     /**
@@ -47,10 +49,11 @@ public class GrammarImporter {
 
         ImportStep[] steps = new ImportStep[] {
             new ConceptImporter(),
+            new RegexTransformer(),
             new ConceptLinker(),
-            new EditorBuilder(),
             new AliasFinder(),
-            new RegexTransformer()
+            new EditorBuilder(),
+            new TextGenBuilder()
         };
 
         this.executeSteps(steps);
@@ -59,7 +62,7 @@ public class GrammarImporter {
     private void executeSteps(ImportStep[] steps) {
         // Initialize steps with data
         for (ImportStep step : steps) {
-            step.Initialize(this.grammar, this.structureModel, this.editorModel);
+            step.Initialize(this.grammar, this.structureModel, this.editorModel, this.textGenModel);
         }
 
         // Execute steps

@@ -13,13 +13,15 @@ public abstract class ImportStep {
     protected GrammarInfo grammar;
     protected SModel structureModel;
     protected SModel editorModel;
+    protected SModel textGenModel;
     protected NodeFactory nodeFactory;
     protected NamingService namingService;
 
-    public void Initialize(GrammarInfo grammar, SModel structureModel, SModel editorModel) {
+    public void Initialize(GrammarInfo grammar, SModel structureModel, SModel editorModel, SModel textGenModel) {
         this.grammar = grammar;
         this.structureModel = structureModel;
         this.editorModel = editorModel;
+        this.textGenModel = textGenModel;
 
         this.namingService = new NamingService(structureModel);
         this.nodeFactory = new NodeFactory(structureModel);

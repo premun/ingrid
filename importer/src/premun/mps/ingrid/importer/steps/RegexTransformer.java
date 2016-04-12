@@ -35,7 +35,7 @@ public class RegexTransformer extends ImportStep {
         // All-except-from has different notation
         constraint = constraint.replaceAll("~\\[", "[^");
 
-        // TODO: more escape sequences (\uXXX) etc.
+        // TODO: more escape sequences (\\uXXX) etc.
 
         NodeHelper.setConstraint(concept, constraint);
     }
