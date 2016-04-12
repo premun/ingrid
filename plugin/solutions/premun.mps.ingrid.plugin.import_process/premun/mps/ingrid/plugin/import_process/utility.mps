@@ -224,6 +224,7 @@
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="1196350785110" name="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" flags="ng" index="2c44t0">
@@ -518,6 +519,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="1fTj9HrDHoi" role="3cqZAp" />
         <node concept="3SKdUt" id="5Jh2F9eAcrD" role="3cqZAp">
           <node concept="3SKdUq" id="5Jh2F9eAcrF" role="3SKWNk">
             <property role="3SKdUp" value="This line somehow makes the link add child, not reference" />
@@ -790,7 +792,7 @@
         <node concept="17QB3L" id="2Dfqp1I661N" role="1tU5fm" />
       </node>
     </node>
-    <node concept="2tJIrI" id="4X6IwqdOESW" role="jymVt" />
+    <node concept="2tJIrI" id="1fTj9HrD$98" role="jymVt" />
     <node concept="2YIFZL" id="4X6IwqdOESX" role="jymVt">
       <property role="TrG5h" value="setProperty" />
       <property role="od$2w" value="false" />
@@ -908,6 +910,56 @@
         <node concept="17QB3L" id="2Dfqp1I67BZ" role="1tU5fm" />
       </node>
       <node concept="3cqZAl" id="2Dfqp1I68fz" role="3clF45" />
+      <node concept="P$JXv" id="1fTj9HrD$ma" role="lGtFl">
+        <node concept="TZ5HA" id="1fTj9HrD$mb" role="TZ5H$">
+          <node concept="1dT_AC" id="1fTj9HrD$mc" role="1dT_Ay">
+            <property role="1dT_AB" value="Sets a given basic (alias, name...) property of a given node to a given value." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1fTj9HrDAiD" role="jymVt" />
+    <node concept="2YIFZL" id="1fTj9HrDAz_" role="jymVt">
+      <property role="TrG5h" value="setConstraint" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="1fTj9HrDAzC" role="3clF47">
+        <node concept="3clFbF" id="1fTj9HrDAEA" role="3cqZAp">
+          <node concept="37vLTI" id="1fTj9HrDAQq" role="3clFbG">
+            <node concept="37vLTw" id="1fTj9HrDASS" role="37vLTx">
+              <ref role="3cqZAo" node="1fTj9HrDADu" resolve="value" />
+            </node>
+            <node concept="2OqwBi" id="1fTj9HrDAG1" role="37vLTJ">
+              <node concept="37vLTw" id="1fTj9HrDAE_" role="2Oq$k0">
+                <ref role="3cqZAo" node="1fTj9HrDADk" resolve="node" />
+              </node>
+              <node concept="3TrcHB" id="1fTj9HrDAOR" role="2OqNvi">
+                <ref role="3TsBF5" to="tpce:fKFLfW2" resolve="constraint" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1fTj9HrDAtS" role="1B3o_S" />
+      <node concept="3cqZAl" id="1fTj9HrDAzz" role="3clF45" />
+      <node concept="37vLTG" id="1fTj9HrDADk" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="1fTj9HrDADj" role="1tU5fm">
+          <ref role="ehGHo" to="tpce:fKAz7CR" resolve="ConstrainedDataTypeDeclaration" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1fTj9HrDADu" role="3clF46">
+        <property role="TrG5h" value="value" />
+        <node concept="17QB3L" id="1fTj9HrDADA" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="1fTj9HrDAZs" role="lGtFl">
+        <node concept="TZ5HA" id="1fTj9HrDAZt" role="TZ5H$">
+          <node concept="1dT_AC" id="1fTj9HrDAZu" role="1dT_Ay">
+            <property role="1dT_AB" value="Sets the regex value of a given constrain data type node." />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="3pfFnS02Gtd" role="jymVt" />
     <node concept="2YIFZL" id="3pfFnS02Gte" role="jymVt">
@@ -947,6 +999,13 @@
       <node concept="37vLTG" id="3pfFnS02Gtr" role="3clF46">
         <property role="TrG5h" value="index" />
         <node concept="10Oyi0" id="3pfFnS02Gts" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="1fTj9HrD$x9" role="lGtFl">
+        <node concept="TZ5HA" id="1fTj9HrD$xa" role="TZ5H$">
+          <node concept="1dT_AC" id="1fTj9HrD$xb" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns a property node at specified index of given node." />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="3pfFnS02$hN" role="jymVt" />
@@ -1018,6 +1077,13 @@
         <property role="TrG5h" value="childName" />
         <node concept="17QB3L" id="3pfFnS02$if" role="1tU5fm" />
       </node>
+      <node concept="P$JXv" id="1fTj9HrD$It" role="lGtFl">
+        <node concept="TZ5HA" id="1fTj9HrD$Iu" role="TZ5H$">
+          <node concept="1dT_AC" id="1fTj9HrD$Iv" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns a child link of given node with given name." />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="4X6IwqdOrOy" role="jymVt" />
     <node concept="2YIFZL" id="4X6IwqdOs4G" role="jymVt">
@@ -1057,6 +1123,13 @@
       <node concept="37vLTG" id="4X6IwqdOsar" role="3clF46">
         <property role="TrG5h" value="index" />
         <node concept="10Oyi0" id="3pfFnS02_Kp" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="1fTj9HrD$Ut" role="lGtFl">
+        <node concept="TZ5HA" id="1fTj9HrD$Uu" role="TZ5H$">
+          <node concept="1dT_AC" id="1fTj9HrD$Uv" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns a child link of given node at given index." />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="4X6IwqdOFBo" role="jymVt" />
@@ -1131,8 +1204,22 @@
         <property role="TrG5h" value="structureModel" />
         <node concept="H_c77" id="2Dfqp1I5RnW" role="1tU5fm" />
       </node>
+      <node concept="P$JXv" id="1fTj9HrD_0R" role="lGtFl">
+        <node concept="TZ5HA" id="1fTj9HrD_0S" role="TZ5H$">
+          <node concept="1dT_AC" id="1fTj9HrD_0T" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns all classic concepts (not interfaces or data types) from a given model." />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3Tm1VV" id="5Jh2F9ez5NE" role="1B3o_S" />
+    <node concept="3UR2Jj" id="1fTj9HrD_6h" role="lGtFl">
+      <node concept="TZ5HA" id="1fTj9HrD_6i" role="TZ5H$">
+        <node concept="1dT_AC" id="1fTj9HrD_6j" role="1dT_Ay">
+          <property role="1dT_AB" value="Helper class encapsulating simple operation with SNodes." />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="5Jh2F9eAzqK">
     <property role="TrG5h" value="NodeFactory" />
@@ -1495,6 +1582,13 @@
       <node concept="3Tm1VV" id="4X6IwqdNksx" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="5Jh2F9eAzqL" role="1B3o_S" />
+    <node concept="3UR2Jj" id="1fTj9HrD_ZR" role="lGtFl">
+      <node concept="TZ5HA" id="1fTj9HrD_ZS" role="TZ5H$">
+        <node concept="1dT_AC" id="1fTj9HrD_ZT" role="1dT_Ay">
+          <property role="1dT_AB" value="Helper class for creating new SNodes." />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="4X6IwqdMGRX">
     <property role="TrG5h" value="EditorHelper" />
@@ -2011,6 +2105,13 @@
       <node concept="3Tm1VV" id="4X6IwqdNFQc" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="4X6IwqdMGRY" role="1B3o_S" />
+    <node concept="3UR2Jj" id="1fTj9HrD_Rd" role="lGtFl">
+      <node concept="TZ5HA" id="1fTj9HrD_Re" role="TZ5H$">
+        <node concept="1dT_AC" id="1fTj9HrD_Rf" role="1dT_Ay">
+          <property role="1dT_AB" value="Helper class for creating projectional editors." />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="Qs71p" id="2Dfqp1I6aeb">
     <property role="TrG5h" value="Property" />
@@ -2026,6 +2127,13 @@
     <node concept="QsSxf" id="2Dfqp1I6byS" role="Qtgdg">
       <property role="TrG5h" value="VirtualPackage" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+    </node>
+    <node concept="3UR2Jj" id="1fTj9HrDA2_" role="lGtFl">
+      <node concept="TZ5HA" id="1fTj9HrDA2A" role="TZ5H$">
+        <node concept="1dT_AC" id="1fTj9HrDA2B" role="1dT_Ay">
+          <property role="1dT_AB" value="Enum used for targeting properties." />
+        </node>
+      </node>
     </node>
   </node>
 </model>

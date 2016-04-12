@@ -49,7 +49,8 @@ public class GrammarImporter {
             new ConceptImporter(),
             new ConceptLinker(),
             new EditorBuilder(),
-            new AliasFinder()
+            new AliasFinder(),
+            new RegexTransformer()
         };
 
         this.executeSteps(steps);

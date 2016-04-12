@@ -40,7 +40,7 @@ NameStartChar
 LT          :   '<'
             ;
 
-TEXT        : [a-zA-Z0-9 ]*
+TEXT        : [a-zA-Z0-9\-?\.\* ]*
             ;
 
 /*document    :   prolog? element
