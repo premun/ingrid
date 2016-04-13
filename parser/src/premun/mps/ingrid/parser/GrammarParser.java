@@ -4,6 +4,7 @@ import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import premun.mps.ingrid.parser.antlr.*;
 import premun.mps.ingrid.parser.grammar.*;
+import premun.mps.ingrid.parser.grammar.exception.*;
 
 import java.io.*;
 
@@ -15,8 +16,7 @@ public class GrammarParser {
         try {
             fis = new FileInputStream(file);
         } catch (FileNotFoundException e) {
-            System.out.println("File '" + fileName + "' not found");
-            return null;
+            throw new IngridParserException("File '" + fileName + "' not found");
         }
 
         byte[] data = new byte[(int) file.length()];
@@ -26,7 +26,7 @@ public class GrammarParser {
             fis.close();
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
+            throw new IngridParserException("Error while reading the file: " + e.getMessage());
         }
 
         return parseString(new String(data));
