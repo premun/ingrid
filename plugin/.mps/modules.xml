@@ -2,6 +2,9 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/JSON/JSON.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/JSON/sandbox/JSON.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/SimpleXML/SimpleXML.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/imported.language/imported.language.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/imported.language/sandbox/imported.language.sandbox.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/imported/imported.mpl" folder="" />
