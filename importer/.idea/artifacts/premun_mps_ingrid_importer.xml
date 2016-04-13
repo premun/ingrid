@@ -3,6 +3,9 @@
     <output-path>$PROJECT_DIR$/../lib</output-path>
     <root id="archive" name="premun.mps.ingrid.importer.jar">
       <element id="module-output" name="importer" />
+      <element id="module-output" name="source_gen" />
+      <element id="library" level="project" name="mps" />
+      <element id="library" level="project" name="premun.mps.ingrid.parser" />
     </root>
   </artifact>
 </component>

@@ -7,10 +7,8 @@ import java.util.*;
 
 // TODO: Delete Main
 public class Main {
-    private static GrammarInfo grammar;
-
     public static void main(String[] args) {
-        grammar = GrammarParser.parseFile("/home/premun/Diplomka/ingrid/grammars/XML.g4");
+        GrammarInfo grammar = GrammarParser.parseFile("/home/premun/Diplomka/ingrid/grammars/XML.g4");
 
         grammar.rules
             .values()

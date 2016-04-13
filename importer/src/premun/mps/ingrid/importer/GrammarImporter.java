@@ -7,6 +7,7 @@ import premun.mps.ingrid.importer.exceptions.*;
 import premun.mps.ingrid.importer.steps.*;
 import premun.mps.ingrid.parser.*;
 import premun.mps.ingrid.parser.grammar.*;
+import premun.mps.ingrid.parser.grammar.exception.*;
 
 public class GrammarImporter {
     private SModel editorModel;
