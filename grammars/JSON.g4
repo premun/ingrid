@@ -31,7 +31,7 @@ value
 
 
 STRING
-   : '"' (ESC | ~ ["\\])* '"'
+   : '"' (ESC | ~["\\])* '"'
    ;
 fragment ESC
    : '\\' (["\\/bfnrt] | UNICODE)

@@ -39,9 +39,22 @@ public class AliasFinder extends ImportStep {
                 .map(r -> (LiteralRule) r.rule)
                 .forEach(r -> alias.append(alias.length() == 0 ? "" : " ").append(r.value));
 
+            if (alias.length() == 0) {
+                if(alternative.size() == 1) {
+                    alias
+                        .append(this.capitalize(alternative.get(0).rule.name))
+                        .append(" ")
+                        .append(rule.name.toLowerCase());
+                }
+            }
+
             if(alias.length() > 0) {
                 NodeHelper.setProperty(concept, Property.Alias, alias.toString());
             }
         }
+    }
+
+    private String capitalize(String s) {
+        return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
     }
 }

@@ -30,10 +30,12 @@ public class RegexTransformer extends ImportStep {
 
         // Regex is stored as a string inside the constraint data type,
         // so slashes need to be double-escaped..
-        constraint = constraint.replaceAll("\\\\", "\\\\\\\\");
+        constraint = constraint
+            .replaceAll("\\\\", "\\\\\\\\")
 
         // All-except-from has different notation
-        constraint = constraint.replaceAll("~\\[", "[^");
+            .replaceAll("~\\[", "[^")
+            .replaceAll("~ \\[", "[^");
 
         // TODO: more escape sequences (\\uXXX) etc.
 
