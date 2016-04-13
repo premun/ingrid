@@ -2,7 +2,7 @@ package premun.mps.ingrid.importer.steps;
 
 import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.parser.grammar.*;
-import premun.mps.ingrid.plugin.import_process.utility.*;
+import premun.mps.ingrid.plugin.library.*;
 
 import java.util.*;
 

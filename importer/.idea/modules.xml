@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/importer.iml" filepath="$PROJECT_DIR$/importer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../plugin/solutions/premun.mps.ingrid.plugin.import_process/source_gen/source_gen.iml" filepath="$PROJECT_DIR$/../plugin/solutions/premun.mps.ingrid.plugin.import_process/source_gen/source_gen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../plugin/solutions/premun.mps.ingrid.plugin/source_gen/source_gen.iml" filepath="$PROJECT_DIR$/../plugin/solutions/premun.mps.ingrid.plugin/source_gen/source_gen.iml" />
     </modules>
   </component>
 </project>
