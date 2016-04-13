@@ -1,5 +1,6 @@
 package premun.mps.ingrid.importer;
 
+import jetbrains.mps.lang.smodel.*;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.*;
 import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.importer.steps.*;
@@ -23,7 +24,6 @@ public class GrammarImporter {
      * Prepares the target language for import (clears it away).
      */
     private void initializeLanguage() {
-        // TODO: Check if language exists and create it if it doesn't (or delete it and create it every time)
         // Delete all nodes
         SModelOperations
             .nodes(this.structureModel, null)
@@ -34,6 +34,11 @@ public class GrammarImporter {
             .nodes(this.editorModel, null)
             .stream()
             .forEach(SNodeOperations::deleteNode);
+
+        SModelOperations
+            .nodes(this.textGenModel, null)
+            .stream()
+            .forEach(SNodeOperations::deleteNode);
     }
 
     /**
@@ -42,7 +47,6 @@ public class GrammarImporter {
      * @param fileName Name of the ANTLR grammar file to be imported.
      */
     public void importGrammar(String fileName) {
-        // TODO: should receive name of the language too
         initializeLanguage();
 
         this.grammar = GrammarParser.parseFile(fileName);

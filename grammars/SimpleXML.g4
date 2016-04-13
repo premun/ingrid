@@ -1,7 +1,9 @@
 grammar SimpleXML;
 
-document    :   comment? element
+document    :   prolog? comment? element
             ;
+
+prolog      :   '<?xml ' attribute* '?>';
 
 comment     :   '<!--' TEXT '-->'
             ;
@@ -13,8 +15,9 @@ element     :   LT Name attribute* '>' content* '</' Name '>'
 attribute   :   Name '="' TEXT '"'
             ;
 
-content     :   TEXT*
-            |   element*
+content     :   TEXT
+            |   element
+            |   comment
             ;
             
 Name        :   NameStartChar NameChar* 
@@ -40,56 +43,5 @@ NameStartChar
 LT          :   '<'
             ;
 
-TEXT        : [a-zA-Z0-9\-?\.\* ]*
+TEXT        :   ~[<"]*
             ;
-
-/*document    :   prolog? element
-            ;
-
-prolog      :   '<?xml' WS attribute* WS '?>' 
-            ;
-
-content     :   element
-            |   chardata 
-            |
-            ;
-
-element     :   '<' Name attribute* '>' content '<' '/' Name '>'
-            |   '<' Name attribute* '/>'
-            ;
-
-attribute   :   WS* Name WS* '=' WS* ATTRVALUE WS*
-            ;
-
-chardata    :   TEXT | WS 
-            ;
-
-WS          :   (' '|'\t'|'\r'? '\n')+ 
-            ;
-
-TEXT        :   ~[<>]+ 
-            ;
-
-ATTRVALUE   :   '"' ~[<"]* '"'
-            |   '\'' ~[<']* '\''
-            ;
-
-Name        :   NameStartChar NameChar* 
-            ;
-
-fragment
-DIGIT       :   [0-9] 
-            ;
-
-fragment
-NameChar    :   NameStartChar
-            |   '-' 
-            |   '_' 
-            |   '.' 
-            |   DIGIT 
-            ;
-
-fragment
-NameStartChar
-            :   [:a-zA-Z]
-            ;*/
