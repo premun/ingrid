@@ -18,6 +18,7 @@ attribute   :   Name '="' TEXT '"'
 content     :   TEXT
             |   element
             |   comment
+            |   CDATA
             ;
             
 Name        :   NameStartChar NameChar* 
@@ -44,4 +45,7 @@ LT          :   '<'
             ;
 
 TEXT        :   ~[<"]*
+            ;
+
+CDATA       :   '<![CDATA[' .*? ']]>' 
             ;

@@ -19,4 +19,7 @@
       </profile>
     </annotationProcessing>
   </component>
+  <component name="CompilerSettings">
+    <option name="targetVersion" value="1.8" />
+  </component>
 </project>

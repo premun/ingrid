@@ -5,7 +5,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="2" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" name="jetbrains.mps.lang.textGen" version="0" />
@@ -21,8 +21,6 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="kr2q" ref="66ae852b-d084-4d2e-b9bc-dad381ea9aea/java:premun.mps.ingrid.parser.grammar(premun.mps.ingrid.plugin/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <import index="b3x4" ref="r:c9ec5779-d606-46da-9a30-1aecd7b674d7(premun.mps.ingrid.plugin.library)" />
-    <import index="zslq" ref="8f833572-184a-4705-be72-ff2712986984/java:jetbrains.mps.lang.structure.structure(premun.mps.ingrid.plugin.import_action/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
   </imports>
@@ -2553,7 +2551,7 @@
                             </node>
                           </node>
                           <node concept="34jXtK" id="57NWWvUdfGX" role="2OqNvi">
-                            <node concept="3cmrfG" id="57NWWvUdfGY" role="25WWJ7">
+                            <node concept="3cmrfG" id="6$MHGUSb8KO" role="25WWJ7">
                               <property role="3cmrfH" value="2" />
                             </node>
                           </node>
