@@ -63,5 +63,8 @@ public class FullTest {
         Rule elementAlternative = blockRule.alternatives.get(1).get(0).rule;
         assertEquals(grammar.rules.get("element").getClass(), elementAlternative.getClass());
         assertTrue(grammar.rules.get("element") == elementAlternative);
+
+        RegexRule nameRule = (RegexRule) grammar.rules.get("Name");
+        assertEquals(nameRule.regexp, "[:a-zA-Z]((([:a-zA-Z])|(-)|(_)|(.)|((([0-9])|([0-9])))))*");
     }
 }

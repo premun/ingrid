@@ -18,6 +18,7 @@ Name        :   NameStartChar NameChar*
 
 fragment
 DIGIT       :   [0-9]
+            |   '0'..'9'
             ;
 
 fragment
