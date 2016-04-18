@@ -8,7 +8,7 @@ prolog      :   '<?xml ' attribute* '?>';
 comment     :   '<!--' TEXT '-->'
             ;
 
-element     :   LT Name attribute* '>' content* '</' Name '>'
+element     :   '<' Name attribute* '>' content* '</' Name '>'
             |   '<' Name attribute* '/>'
             ;
 
@@ -20,20 +20,20 @@ content     :   TEXT
             |   comment
             |   CDATA
             ;
-            
-Name        :   NameStartChar NameChar* 
+
+Name        :   NameStartChar NameChar*
             ;
 
 fragment
-DIGIT       :   [0-9] 
+DIGIT       :   [0-9]
             ;
 
 fragment
 NameChar    :   NameStartChar
-            |   '-' 
-            |   '_' 
-            |   '.' 
-            |   DIGIT 
+            |   '-'
+            |   '_'
+            |   '.'
+            |   DIGIT
             ;
 
 fragment
@@ -41,11 +41,8 @@ NameStartChar
             :   [:a-zA-Z]
             ;
 
-LT          :   '<'
-            ;
-
 TEXT        :   ~[<"]*
             ;
 
-CDATA       :   '<![CDATA[' .*? ']]>' 
+CDATA       :   '<![CDATA[' .*? ']]>'
             ;
