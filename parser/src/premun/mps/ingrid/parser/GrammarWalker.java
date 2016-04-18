@@ -260,19 +260,31 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
      * @param elements Output parameter containing all found Rule objects
      */
     private void parseLexerAlternativeElement(ParseTree node, List<Rule> elements) {
-        // Either a lexer rule name, regex or 'string'
+        // Either a lexer rule name, regex (range) or 'string'
         if (node instanceof LexerAtomContext || node instanceof TerminalContext) {
-            String name = node.getText();
-
             Rule rule;
 
-            char first = name.charAt(0);
-            if ('A' <= first && first <= 'Z') {
-                rule = new UnresolvedLexerRule(name);
-            } else if (first == '\'') {
-                rule = new LiteralRule(name);
+            if (node.getChildCount() == 1 && node.getChild(0) instanceof RangeContext) {
+                ParseTree range = node.getChild(0);
+                String rangeStart = range.getChild(0).getText();
+                String rangeEnd = range.getChild(2).getText();
+
+                // We have quoted literals, we need to strip quotes (apostrophes)
+                rangeStart = rangeStart.substring(1, rangeStart.length() - 1);
+                rangeEnd = rangeEnd.substring(1, rangeEnd.length() - 1);
+
+                rule = new RegexRule("[" + rangeStart + "-" + rangeEnd + "]");
             } else {
-                rule = new RegexRule(name);
+                String value = node.getText();
+
+                char first = value.charAt(0);
+                if ('A' <= first && first <= 'Z') {
+                    rule = new UnresolvedLexerRule(value);
+                } else if (first == '\'') {
+                    rule = new LiteralRule(value);
+                } else {
+                    rule = new RegexRule(value);
+                }
             }
 
             elements.add(rule);
