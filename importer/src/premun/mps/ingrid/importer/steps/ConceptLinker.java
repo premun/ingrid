@@ -29,26 +29,27 @@ public class ConceptLinker extends ImportStep {
     private void linkRuleChildren(ParserRule rule) {
         // For each alternative..
         for (int altIndex = 0; altIndex < rule.alternatives.size(); altIndex++) {
-            // Concept representing current alternative
-            SNode parent = this.findAlternativeConcept(rule, altIndex);
+            Alternative alternative = rule.alternatives.get(altIndex);
 
-            List<RuleReference> alternative = rule.alternatives.get(altIndex);
+            // Concept representing current alternative
+            SNode parent = alternative.node;
+
             int childIndex = 0;
             int propertyIndex = 0;
 
             // For each element of that alternative..
-            for (RuleReference childRef : alternative) {
+            for (RuleReference childRef : alternative.elements) {
                 if (childRef.rule instanceof LiteralRule) {
                     // Literal rule will only appear in editor
                 } else if (childRef.rule instanceof RegexRule) {
                     // Find regex type and create property for it
                     String linkName = childRef.rule.name + "_" + (++propertyIndex);
-                    SNode tokenRule = this.findConceptByRule(childRef.rule);
+                    SNode tokenRule = ((RegexRule) childRef.rule).node;
                     NodeHelper.addPropertyToNode(parent, linkName, tokenRule);
                 } else if (childRef.rule instanceof ParserRule) {
                     // Find referenced interface / concept
                     ParserRule child = (ParserRule) childRef.rule;
-                    SNode childConcept = this.findConceptByRule(child);
+                    SNode childConcept = child.node;
                     NodeHelper.addChildToNode(parent, childConcept, child.name + "_" + (++childIndex), childRef.quantity);
                 }
             }

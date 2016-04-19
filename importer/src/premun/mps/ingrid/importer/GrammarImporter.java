@@ -1,13 +1,14 @@
 package premun.mps.ingrid.importer;
 
-import jetbrains.mps.lang.smodel.*;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.*;
 import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.importer.exceptions.*;
 import premun.mps.ingrid.importer.steps.*;
 import premun.mps.ingrid.parser.*;
 import premun.mps.ingrid.parser.grammar.*;
-import premun.mps.ingrid.parser.grammar.exception.*;
+
+import java.io.*;
+import java.util.logging.*;
 
 public class GrammarImporter {
     private SModel editorModel;
@@ -21,6 +22,8 @@ public class GrammarImporter {
         this.structureModel = structureModel;
         this.textGenModel = textGenModel;
     }
+
+    public static final Logger LOGGER = Logger.getLogger("GrammarImporter");
 
     /**
      * Prepares the target language for import (clears it away).
@@ -49,6 +52,15 @@ public class GrammarImporter {
      * @param fileName Name of the ANTLR grammar file to be imported.
      */
     public void importGrammar(String fileName) {
+        FileHandler fileHandler = null;
+        try {
+            fileHandler = new FileHandler("/home/premun/Diplomka/log/importer.log");
+            fileHandler.setFormatter(new SimpleFormatter());
+            GrammarImporter.LOGGER.addHandler(fileHandler);
+        } catch (IOException e) {
+            throw new IngridException("Cannot open /home/premun/Diplomka/log/importer.log for logging");
+        }
+
         initializeLanguage();
 
         this.grammar = GrammarParser.parseFile(fileName);
@@ -63,6 +75,8 @@ public class GrammarImporter {
         };
 
         this.executeSteps(steps);
+
+        fileHandler.close();
     }
 
     private void executeSteps(ImportStep[] steps) {

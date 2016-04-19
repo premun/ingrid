@@ -53,7 +53,7 @@ public abstract class ImportStep {
      */
     protected final SNode findConceptByRule(Rule rule) throws IngridException {
         for (SNode node : this.structureModel.getRootNodes()) {
-            if (node.getName().equals(rule.name) || node.getName().equals(rule.name + "_1")) {
+            if (rule.name.equals(node.getName()) || (rule.name + "_1").equals(node.getName())) {
                 return node;
             }
         }
@@ -69,7 +69,7 @@ public abstract class ImportStep {
      * @return Concept node belonging to given alternative.
      * @throws IngridException
      */
-    protected final SNode findAlternativeConcept(ParserRule rule, int index) throws IngridException {
+    protected final SNode findConceptByAlternative(ParserRule rule, int index) throws IngridException {
         if (rule.alternatives.size() == 1) {
             return this.findConceptByRule(rule);
         } else {

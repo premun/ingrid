@@ -1,11 +1,14 @@
 package premun.mps.ingrid.parser.grammar;
 
+import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.parser.antlr.ANTLRv4Parser.*;
 
 import java.util.*;
 
 public class ParserRule extends Rule {
-    public List<List<RuleReference>> alternatives = new ArrayList<>();
+    public List<Alternative> alternatives = new ArrayList<>();
+
+    public SNode node = null;
 
     public ParserRule(String name) {
         super(name);
@@ -23,10 +26,10 @@ public class ParserRule extends Rule {
             .append(this.name)
             .append(System.lineSeparator());
 
-        for (List<RuleReference> alternatives : this.alternatives) {
+        for (Alternative alternative : this.alternatives) {
             sb.append("\t\t|   ");
 
-            for (RuleReference ref : alternatives) {
+            for (RuleReference ref : alternative.elements) {
                 if (ref.rule instanceof FlatLexerRule) {
                     sb
                         .append(((FlatLexerRule) ref.rule).getContent())

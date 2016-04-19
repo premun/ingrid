@@ -1,6 +1,7 @@
 package premun.mps.ingrid.importer.steps;
 
 import org.jetbrains.mps.openapi.model.*;
+import premun.mps.ingrid.importer.exceptions.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.library.*;
 
@@ -27,29 +28,40 @@ public class AliasFinder extends ImportStep {
      */
     private void findAlias(ParserRule rule) {
         for (int i = 0; i < rule.alternatives.size(); i++) {
-            List<RuleReference> alternative = rule.alternatives.get(i);
-            SNode concept = this.findAlternativeConcept(rule, i);
+            Alternative alternative = rule.alternatives.get(i);
+            SNode concept = alternative.node;
 
             StringBuilder alias = new StringBuilder();
 
             // Try to find a literals inside
-            alternative
+            alternative.elements
                 .stream()
                 .filter(r -> r.rule instanceof LiteralRule)
                 .map(r -> (LiteralRule) r.rule)
                 .forEach(r -> alias.append(alias.length() == 0 ? "" : " ").append(r.value));
 
             if (alias.length() == 0) {
-                if(alternative.size() == 1) {
+                if(alternative.elements.size() == 1) {
                     alias
-                        .append(this.capitalize(alternative.get(0).rule.name))
+                        .append(this.capitalize(alternative.elements.get(0).rule.name))
                         .append(" ")
                         .append(rule.name.toLowerCase());
                 }
             }
 
             if(alias.length() > 0) {
-                NodeHelper.setProperty(concept, Property.Alias, alias.toString());
+                String newAlias = alias.toString();
+
+                NodeHelper.setProperty(concept, Property.Alias, newAlias);
+                alternative.alias = newAlias;
+//                String realAlias = NodeHelper.getProperty(concept, Property.Alias);
+//                if (!newAlias.equals(realAlias)) {
+//                    throw new IngridException(String.format(
+//                        "Failed to set alias of a concept '%s'. Set to '%s', is '%s'.",
+//                        concept.getName(),
+//                        newAlias,
+//                        realAlias));
+//                }
             }
         }
     }

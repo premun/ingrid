@@ -66,10 +66,10 @@ class GrammarResolver {
      */
     private static void resolveParserRule(ParserRule rule, Map<String, Rule> rules) throws IngridParserException {
         // For each alternative line..
-        for (List<RuleReference> alternative : rule.alternatives) {
+        for (Alternative alternative : rule.alternatives) {
             // For each element on the line..
-            for (int i = 0; i < alternative.size(); ++i) {
-                RuleReference ref = alternative.get(i);
+            for (int i = 0; i < alternative.elements.size(); ++i) {
+                RuleReference ref = alternative.elements.get(i);
 
                 // Rule referenced in this alternative element
                 Rule r = ref.rule;
@@ -78,7 +78,7 @@ class GrammarResolver {
                     // Lexer rules were resolved first, so they are ready to be referenced
                     if (rules.containsKey(r.name)) {
                         Rule lookedUpRule = rules.get(r.name);
-                        alternative.set(i, new RuleReference(lookedUpRule, ref.quantity));
+                        alternative.elements.set(i, new RuleReference(lookedUpRule, ref.quantity));
                     } else {
                         throw new IngridParserException(
                             "Couldn't resolve rule '" + r.name + "' (inside " + rule.name + ")");
@@ -90,9 +90,9 @@ class GrammarResolver {
                     }
 
                     // Apply quantifier to previous element of alternative
-                    alternative.get(i - 1).quantity = ((QuantifierRule) r).quantity;
+                    alternative.elements.get(i - 1).quantity = ((QuantifierRule) r).quantity;
                     // Remove quantifier itself
-                    alternative.remove(i);
+                    alternative.elements.remove(i);
                     --i;
                 }
             }

@@ -60,32 +60,32 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
 
     @Override
     public void enterLabeledAlt(LabeledAltContext context) {
-        List<RuleReference> elements = parseParserAlternative(context.alternative());
-        currentParserRule.alternatives.add(elements);
+        Alternative alternative = parseParserAlternative(context.alternative());
+        currentParserRule.alternatives.add(alternative);
     }
 
     /**
      * Parses an alternative of a parser rule (the whole rule line).
      *
-     * @param alternative Rule alternative
+     * @param context Rule alternative
      * @return List of elements that make up the alternative
      */
-    private List<RuleReference> parseParserAlternative(AlternativeContext alternative) {
-        ArrayList<RuleReference> elements = new ArrayList<>();
+    private Alternative parseParserAlternative(AlternativeContext context) {
+        Alternative alternative = new Alternative();
 
-        if (alternative == null || alternative.children == null) {
+        if (context == null || context.children == null) {
             // TODO: warning?
-            return elements;
+            return alternative;
         }
 
         // Parse every element into a RuleReference
-        alternative
+        context
             .children
             .stream()
             .map(c -> parseParserAlternativeElement((ElementContext) c))
-            .forEach(elements::add);
+            .forEach(alternative.elements::add);
 
-        return elements;
+        return alternative;
     }
 
     /**

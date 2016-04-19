@@ -24,8 +24,7 @@ public class RegexTransformer extends ImportStep {
      * @param rule Constraint data type's rule.
      */
     private void transformRegex(RegexRule rule) {
-        SNode concept = this.findConceptByRule(rule);
-
+        SNode concept = rule.node;
         String constraint = rule.regexp;
 
         // Regex is stored as a string inside the constraint data type,

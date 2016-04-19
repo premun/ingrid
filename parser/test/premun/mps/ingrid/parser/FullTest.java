@@ -37,13 +37,13 @@ public class FullTest {
         ParserRule document = (ParserRule) grammar.rootRule;
 
         // document: comment? element
-        List<RuleReference> ruleRefs = document.alternatives.get(0);
-        assertEquals(2, ruleRefs.size());
-        assertEquals(Quantity.MAX_ONE, ruleRefs.get(0).quantity);
-        assertEquals(Quantity.EXACTLY_ONE, ruleRefs.get(1).quantity);
-        assertTrue(ruleRefs.get(1).rule instanceof ParserRule);
+        Alternative alternative = document.alternatives.get(0);
+        assertEquals(2, alternative.elements.size());
+        assertEquals(Quantity.MAX_ONE, alternative.elements.get(0).quantity);
+        assertEquals(Quantity.EXACTLY_ONE, alternative.elements.get(1).quantity);
+        assertTrue(alternative.elements.get(1).rule instanceof ParserRule);
 
-        ParserRule element = (ParserRule) ruleRefs.get(1).rule;
+        ParserRule element = (ParserRule) alternative.elements.get(1).rule;
         assertEquals("element", element.name);
         assertEquals(2, element.alternatives.size());
 
@@ -51,16 +51,16 @@ public class FullTest {
         assertTrue(grammar.rules.get("Content") instanceof RegexRule);
 
         // Test the rule block that was inside first alternative
-        RuleReference block = ((ParserRule) grammar.rules.get("element")).alternatives.get(0).get(3);
+        RuleReference block = ((ParserRule) grammar.rules.get("element")).alternatives.get(0).elements.get(3);
         assertEquals(Quantity.ANY, block.quantity);
 
         ParserRule blockRule = (ParserRule) block.rule;
 
-        Rule contentAlternative = blockRule.alternatives.get(0).get(0).rule;
+        Rule contentAlternative = blockRule.alternatives.get(0).elements.get(0).rule;
         assertEquals(grammar.rules.get("Content").getClass(), contentAlternative.getClass());
         assertTrue(grammar.rules.get("Content") == contentAlternative);
 
-        Rule elementAlternative = blockRule.alternatives.get(1).get(0).rule;
+        Rule elementAlternative = blockRule.alternatives.get(1).elements.get(0).rule;
         assertEquals(grammar.rules.get("element").getClass(), elementAlternative.getClass());
         assertTrue(grammar.rules.get("element") == elementAlternative);
 

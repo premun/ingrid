@@ -23,11 +23,8 @@ public class TextGenBuilder extends ImportStep {
     }
 
     private void buildTextGen(ParserRule rule) {
-        for (int i = 0; i < rule.alternatives.size(); i++) {
-            List<RuleReference> elements = rule.alternatives.get(i);
-            SNode node = this.findAlternativeConcept(rule, i);
-
-            SNode textGen = TextGenHelper.buildTextGen(node, elements);
+        for (Alternative alternative : rule.alternatives) {
+            SNode textGen = TextGenHelper.buildTextGen(alternative.node, alternative.elements);
             this.textGenModel.addRootNode(textGen);
         }
     }

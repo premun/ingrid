@@ -51,6 +51,7 @@ public class ConceptImporter extends ImportStep {
             // and a child for each alternative that will inherit this interface
             SNode iface = this.nodeFactory.createInterface(rule.name, "Interfaces." + rule.name);
             this.structureModel.addRootNode(iface);
+            rule.node = iface;
 
             // For each alternative, there will be a concept
             for (int i = 0; i < rule.alternatives.size(); ++i) {
@@ -58,6 +59,7 @@ public class ConceptImporter extends ImportStep {
 
                 // Concrete element, we can create a concept
                 SNode concept = this.nodeFactory.createConcept(name, name, "Rules." + rule.name, rule.equals(this.grammar.rootRule));
+                rule.alternatives.get(i).node = concept;
 
                 // Link the parent split rule interface to this rule
                 NodeHelper.linkInterfaceToConcept(concept, iface);
@@ -67,6 +69,8 @@ public class ConceptImporter extends ImportStep {
             // Not a rule that splits into more rules - we create it directly
             SNode concept = this.nodeFactory.createConcept(rule.name, rule.name, "Rules." + rule.name, rule.equals(this.grammar.rootRule));
             this.structureModel.addRootNode(concept);
+            rule.node = concept;
+            rule.alternatives.get(0).node = concept;
         }
     }
 
@@ -79,5 +83,6 @@ public class ConceptImporter extends ImportStep {
         rule.name = this.namingService.generateName(rule.name);
         SNode node = this.nodeFactory.createConstraintDataType(rule.name, rule.regexp, "Tokens");
         this.structureModel.addRootNode(node);
+        rule.node = node;
     }
 }

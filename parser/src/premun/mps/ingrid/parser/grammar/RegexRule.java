@@ -1,7 +1,11 @@
 package premun.mps.ingrid.parser.grammar;
 
+import org.jetbrains.mps.openapi.model.*;
+
 public class RegexRule extends FlatLexerRule {
     public String regexp;
+
+    public SNode node = null;
 
     public RegexRule(String name, String regexp) {
         super(name);
