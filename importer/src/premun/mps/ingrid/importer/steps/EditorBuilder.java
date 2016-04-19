@@ -56,6 +56,8 @@ public class EditorBuilder extends ImportStep {
         // Rules without shortcuts
         if (result.size() == 1) return;
 
+        // TODO: find shortest common prefix and set it as matchingText
+
         // Save all shortcuts for this rule
         this.shortcuts.put(rule, result);
     }
@@ -81,7 +83,7 @@ public class EditorBuilder extends ImportStep {
      * Then findShortcuts(s) will find 3 different paths:
      *   1) s -> STRING (s->a_1->c)
      *   2) s -> DIGIT  (s->a_2->d)
-     *   3) s -> 'xxx'  (s->a_3->c)
+     *   3) s -> 'xxx'  (s->a_3)
      *
      * @param rule Rule for which we want to find shortcuts.
      * @param path Alternatives that lead to that end node.
