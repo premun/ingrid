@@ -51,17 +51,8 @@ public class AliasFinder extends ImportStep {
 
             if(alias.length() > 0) {
                 String newAlias = alias.toString();
-
                 NodeHelper.setProperty(concept, Property.Alias, newAlias);
                 alternative.alias = newAlias;
-//                String realAlias = NodeHelper.getProperty(concept, Property.Alias);
-//                if (!newAlias.equals(realAlias)) {
-//                    throw new IngridException(String.format(
-//                        "Failed to set alias of a concept '%s'. Set to '%s', is '%s'.",
-//                        concept.getName(),
-//                        newAlias,
-//                        realAlias));
-//                }
             }
         }
     }

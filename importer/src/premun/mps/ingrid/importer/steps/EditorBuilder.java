@@ -1,8 +1,6 @@
 package premun.mps.ingrid.importer.steps;
 
 import org.jetbrains.mps.openapi.model.*;
-import premun.mps.ingrid.importer.*;
-import premun.mps.ingrid.importer.exceptions.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.library.*;
 
@@ -13,15 +11,18 @@ import java.util.*;
  */
 public class EditorBuilder extends ImportStep {
     private Shortcuts shortcuts = new Shortcuts();
+    private EditorHelper editorHelper;
 
     @Override
     public void Execute() {
-        /*this.grammar.rules
+        this.grammar.rules
             .values()
             .stream()
             .filter(r -> r instanceof ParserRule)
             .map(r -> (ParserRule) r)
-            .forEach(this::findShortcuts);*/
+            .forEach(this::findShortcuts);
+
+        this.editorHelper = new EditorHelper(this.shortcuts);
 
         this.grammar.rules
             .values()
@@ -37,84 +38,80 @@ public class EditorBuilder extends ImportStep {
      * @param rule Rule for which the editor is built.
      */
     private void buildEditor(ParserRule rule) {
-        if (rule.alternatives.size() > 1) {
-            // Interface - we need to find implementors
-            for (Alternative alternative : rule.alternatives) {
-                SNode editor = EditorHelper.createEditor(alternative, shortcuts);
-                this.editorModel.addRootNode(editor);
-            }
-        } else {
-            SNode concept = rule.node;
-
-            if (concept == null) {
-                throw new IngridException("Concept " + rule.name + " not found!");
-            } else {
-                SNode editor = EditorHelper.createEditor(rule.alternatives.get(0), shortcuts);
-                this.editorModel.addRootNode(editor);
-            }
+        // Interface - we need to find implementors
+        for (Alternative alternative : rule.alternatives) {
+            SNode editor = this.editorHelper.createEditor(alternative);
+            this.editorModel.addRootNode(editor);
         }
     }
 
-    /*private void findShortcuts(ParserRule rule) {
-        List<ShortcutItem> result = findEndNodes(rule);
+    /**
+     * Finds a list of shortcuts for given rule and saves it into the shortcuts field.
+     *
+     * @param rule Rule
+     */
+    private void findShortcuts(ParserRule rule) {
+        List<ShortcutItem> result = findShortcuts(rule, new ArrayList<>());
 
         // Rules without shortcuts
         if (result.size() == 1) return;
 
-
-        // Debug
-        {
-            StringBuilder sb = new StringBuilder();
-            for (ShortcutItem item : result) {
-                sb
-                    .append("\n")
-                    .append(rule.name)
-                    .append(" (")
-                    .append(item.description)
-                    .append(")")
-                    .append("\n");
-
-                item.path.stream().forEach(
-                    n -> sb
-                        .append("  ")
-                        .append(NodeHelper.getProperty(n, Property.Alias))
-                        .append("\n")
-                );
-            }
-            sb.append("#####################");
-
-            GrammarImporter.LOGGER.info(sb.toString());
-        }
-
+        // Save all shortcuts for this rule
         this.shortcuts.put(rule, result);
     }
 
-    // TODO: better name
-    private List<ShortcutItem> findEndNodes(ParserRule rule) {
-        return this.findEndNodes(rule, new ArrayList<>());
-    }
-
-    private List<ShortcutItem> findEndNodes(ParserRule rule, List<SNode> path) {
+    /**
+     * Finds a list of paths that lead from a rule to an end node
+     * (a rule represented by a classic concept).
+     *
+     * Example:
+     *           s :  a;
+     *
+     *           a :  c
+     *             |  d
+     *             |  'xxx'
+     *             ;
+     *
+     *           c :  STRING;
+     *           d :  DIGIT;
+     *
+     *           STRING : .+;
+     *           DIGIT  : [0-9]+;
+     *
+     * Then findShortcuts(s) will find 3 different paths:
+     *   1) s -> STRING (s->a_1->c)
+     *   2) s -> DIGIT  (s->a_2->d)
+     *   3) s -> 'xxx'  (s->a_3->c)
+     *
+     * @param rule Rule for which we want to find shortcuts.
+     * @param path Alternatives that lead to that end node.
+     * @return List of shortcuts.
+     */
+    private List<ShortcutItem> findShortcuts(ParserRule rule, List<SNode> path) {
         List<ShortcutItem> result = new ArrayList<>();
 
         // Interface - we need to find implementors
         for (Alternative alternative : rule.alternatives) {
             List<RuleReference> elements = alternative.elements;
+
+            // Each alternative needs it's own path
             List<SNode> clonedPath = clonePath(path);
 
-            // Is it a single parser rule reference (shortcut) or complicated rule with multiple elements (end rule)?
             if (elements.size() == 1 && elements.get(0).rule instanceof ParserRule && elements.get(0).quantity == Quantity.EXACTLY_ONE) {
-                RuleReference onlyChild = elements.get(0);
+                // A single parser rule reference (shortcut)
+                ParserRule next = (ParserRule) elements.get(0).rule;
 
                 // Add current rule to path
-                SNode concept = this.findConceptByRule(onlyChild.rule);
-                clonedPath.add(concept);
+                clonedPath.add(alternative.node);
 
                 // Recursively find all end nodes
-                result.addAll(this.findEndNodes((ParserRule) onlyChild.rule, clonedPath));
+                result.addAll(this.findShortcuts(next, clonedPath));
             } else {
-                // More elements in an alternative -> not a shortcut
-                clonedPath.add(alternative.node);
+                // More elements in an alternative -> not a shortcut but an end node
+                if (clonedPath.isEmpty() || clonedPath.get(clonedPath.size() - 1) != alternative.node){
+                    clonedPath.add(alternative.node);
+                }
+
                 result.add(new ShortcutItem(clonedPath));
             }
         }
@@ -126,5 +123,5 @@ public class EditorBuilder extends ImportStep {
         List<SNode> clone = new ArrayList<>(list.size());
         clone.addAll(list);
         return clone;
-    }*/
+    }
 }
