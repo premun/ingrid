@@ -1,6 +1,7 @@
 package premun.mps.ingrid.importer.steps;
 
 import org.jetbrains.mps.openapi.model.*;
+import premun.mps.ingrid.importer.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.library.*;
 
@@ -53,10 +54,38 @@ public class EditorBuilder extends ImportStep {
     private void findShortcuts(ParserRule rule) {
         List<ShortcutItem> result = findShortcuts(rule, new ArrayList<>());
 
-        // Rules without shortcuts
-        if (result.size() == 1) return;
+        // Rules without shortcuts, are rules that all have paths of length 1
+        // If one of them had length > 1, we need to create the menu because of that
+        if (result.stream().allMatch(s -> s.path.size() == 1)) return;
+
+        // Debug
+        {
+            StringBuilder sb = new StringBuilder();
+            sb
+                .append(rule.name)
+                .append(":\n");
+
+            for (ShortcutItem item : result) {
+                sb
+                    .append("  To:  ")
+                    .append(item.description)
+                    .append("\n  ");
+
+                item.path.stream().forEach(
+                    n -> sb
+                        .append(" -> ")
+                        .append(n.getName())
+                );
+
+                sb.append("\n");
+            }
+            sb.append("\n#####################\n");
+
+            GrammarImporter.LOGGER.info(sb.toString());
+        }
 
         // TODO: find shortest common prefix and set it as matchingText
+        result.stream().forEach(s -> s.matchingText = s.description);
 
         // Save all shortcuts for this rule
         this.shortcuts.put(rule, result);
@@ -114,7 +143,8 @@ public class EditorBuilder extends ImportStep {
                     clonedPath.add(alternative.node);
                 }
 
-                result.add(new ShortcutItem(clonedPath));
+                ShortcutItem shortcut = new ShortcutItem(clonedPath);
+                result.add(shortcut);
             }
         }
 

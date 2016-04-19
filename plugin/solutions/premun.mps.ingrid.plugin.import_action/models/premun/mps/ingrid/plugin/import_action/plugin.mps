@@ -203,7 +203,7 @@
   <node concept="2DaZZR" id="7u4wmVSPxcW" />
   <node concept="sE7Ow" id="3_5Fm_0LVav">
     <property role="TrG5h" value="ImportAction" />
-    <property role="2uzpH1" value="Import Grammar" />
+    <property role="2uzpH1" value="Import grammar (Debug)" />
     <property role="1WHSii" value="Imports selected grammar into an MPS language" />
     <property role="fJN8o" value="true" />
     <node concept="2XrIbr" id="4F6jbA$ln8h" role="32lrUH">
@@ -861,7 +861,7 @@
                     <ref role="2WH_rO" node="5_E18HdnRZc" resolve="mpsProject" />
                   </node>
                 </node>
-                <node concept="10Nm6u" id="5_E18HdnRWY" role="37wK5m" />
+                <node concept="10Nm6u" id="5_E18Hdo2kY" role="37wK5m" />
               </node>
             </node>
           </node>

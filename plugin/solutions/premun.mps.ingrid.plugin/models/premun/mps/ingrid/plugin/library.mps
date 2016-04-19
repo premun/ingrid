@@ -848,20 +848,16 @@
           </node>
           <node concept="3SKdUq" id="AdDO7XMwN4" role="3SKWNk" />
         </node>
-        <node concept="3cpWs8" id="AdDO7XMwN5" role="3cqZAp">
-          <node concept="3cpWsn" id="AdDO7XMwN6" role="3cpWs9">
-            <property role="TrG5h" value="cell" />
-            <node concept="3Tqbb2" id="AdDO7XMwN7" role="1tU5fm">
-              <ref role="ehGHo" to="tpc2:g_$h64z" resolve="CellModel_WithRole" />
-            </node>
+        <node concept="3SKdUt" id="5_E18HdpySI" role="3cqZAp">
+          <node concept="3SKdUq" id="5_E18HdpySK" role="3SKWNk">
+            <property role="3SKdUp" value="Depending on cardinality a list or a single reference" />
           </node>
         </node>
-        <node concept="3clFbH" id="AdDO7XMwN8" role="3cqZAp" />
         <node concept="3clFbJ" id="AdDO7XMwN9" role="3cqZAp">
           <node concept="3clFbS" id="AdDO7XMwNa" role="3clFbx">
             <node concept="3cpWs8" id="AdDO7XMwNb" role="3cqZAp">
               <node concept="3cpWsn" id="AdDO7XMwNc" role="3cpWs9">
-                <property role="TrG5h" value="c" />
+                <property role="TrG5h" value="cell" />
                 <node concept="3Tqbb2" id="AdDO7XMwNd" role="1tU5fm">
                   <ref role="ehGHo" to="tpc2:fBF1sR7" resolve="CellModel_RefNode" />
                 </node>
@@ -885,7 +881,7 @@
                 </node>
                 <node concept="2OqwBi" id="AdDO7XMwNl" role="37vLTJ">
                   <node concept="37vLTw" id="AdDO7XMwNm" role="2Oq$k0">
-                    <ref role="3cqZAo" node="AdDO7XMwNc" resolve="c" />
+                    <ref role="3cqZAo" node="AdDO7XMwNc" resolve="cell" />
                   </node>
                   <node concept="3TrcHB" id="AdDO7XMwNn" role="2OqNvi">
                     <ref role="3TsBF5" to="tpc2:Ujlmrg18k" resolve="customizeEmptyCell" />
@@ -897,7 +893,7 @@
               <node concept="37vLTI" id="AdDO7XMwNp" role="3clFbG">
                 <node concept="2OqwBi" id="AdDO7XMwNq" role="37vLTJ">
                   <node concept="37vLTw" id="AdDO7XMwNr" role="2Oq$k0">
-                    <ref role="3cqZAo" node="AdDO7XMwNc" resolve="c" />
+                    <ref role="3cqZAo" node="AdDO7XMwNc" resolve="cell" />
                   </node>
                   <node concept="3TrEf2" id="AdDO7XMwNs" role="2OqNvi">
                     <ref role="3Tt5mk" to="tpc2:UjlmrgInb" />
@@ -910,7 +906,9 @@
                       <property role="P4ACc" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006/1073389577007" />
                       <property role="2qtEX9" value="text" />
                       <property role="3hQQBS" value="CellModel_Constant" />
-                      <node concept="Xl_RD" id="AdDO7XMwNw" role="2c44t1" />
+                      <node concept="Xl_RD" id="AdDO7XMwNw" role="2c44t1">
+                        <property role="Xl_RC" value=" " />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -929,27 +927,45 @@
             </node>
             <node concept="3clFbJ" id="AdDO7XMwNA" role="3cqZAp">
               <node concept="3clFbS" id="AdDO7XMwNB" role="3clFbx">
-                <node concept="3clFbF" id="AdDO7XMwNC" role="3cqZAp">
-                  <node concept="2YIFZM" id="AdDO7XMwND" role="3clFbG">
-                    <ref role="37wK5l" node="AdDO7XJxKl" resolve="generateShortcutMenu" />
-                    <ref role="1Pybhc" node="AdDO7XJrN2" resolve="ShortcutAutocompleteHelper" />
-                    <node concept="37vLTw" id="AdDO7XMwNE" role="37wK5m">
-                      <ref role="3cqZAo" node="AdDO7XMwNc" resolve="c" />
+                <node concept="3cpWs8" id="5_E18HdoTdt" role="3cqZAp">
+                  <node concept="3cpWsn" id="5_E18HdoTdu" role="3cpWs9">
+                    <property role="TrG5h" value="shortcutMenu" />
+                    <node concept="3Tqbb2" id="5_E18HdoTds" role="1tU5fm">
+                      <ref role="ehGHo" to="tpc2:gWOXEEG" resolve="CellMenuDescriptor" />
                     </node>
-                    <node concept="2OqwBi" id="AdDO7XMwNF" role="37wK5m">
-                      <node concept="37vLTw" id="AdDO7XMyHi" role="2Oq$k0">
-                        <ref role="3cqZAo" node="AdDO7XMuT6" resolve="shortcuts" />
-                      </node>
-                      <node concept="liA8E" id="AdDO7XMwNH" role="2OqNvi">
-                        <ref role="37wK5l" to="33ny:~HashMap.get(java.lang.Object):java.lang.Object" resolve="get" />
-                        <node concept="2OqwBi" id="AdDO7XM$m1" role="37wK5m">
-                          <node concept="37vLTw" id="AdDO7XM$cK" role="2Oq$k0">
-                            <ref role="3cqZAo" node="AdDO7XMyWy" resolve="reference" />
-                          </node>
-                          <node concept="2OwXpG" id="AdDO7XM$vy" role="2OqNvi">
-                            <ref role="2Oxat5" to="kr2q:~RuleReference.rule" resolve="rule" />
+                    <node concept="2YIFZM" id="5_E18HdoTdv" role="33vP2m">
+                      <ref role="37wK5l" node="AdDO7XJxKl" resolve="generateShortcutMenu" />
+                      <ref role="1Pybhc" node="AdDO7XJrN2" resolve="ShortcutAutocompleteHelper" />
+                      <node concept="2OqwBi" id="5_E18HdoTdw" role="37wK5m">
+                        <node concept="37vLTw" id="5_E18HdoTdx" role="2Oq$k0">
+                          <ref role="3cqZAo" node="AdDO7XMuT6" resolve="shortcuts" />
+                        </node>
+                        <node concept="liA8E" id="5_E18HdoTdy" role="2OqNvi">
+                          <ref role="37wK5l" to="33ny:~HashMap.get(java.lang.Object):java.lang.Object" resolve="get" />
+                          <node concept="2OqwBi" id="5_E18HdoTdz" role="37wK5m">
+                            <node concept="37vLTw" id="5_E18HdoTd$" role="2Oq$k0">
+                              <ref role="3cqZAo" node="AdDO7XMyWy" resolve="reference" />
+                            </node>
+                            <node concept="2OwXpG" id="5_E18HdoTd_" role="2OqNvi">
+                              <ref role="2Oxat5" to="kr2q:~RuleReference.rule" resolve="rule" />
+                            </node>
                           </node>
                         </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="5_E18HdoTWl" role="3cqZAp">
+                  <node concept="37vLTI" id="5_E18HdoUri" role="3clFbG">
+                    <node concept="37vLTw" id="5_E18Hdpa6G" role="37vLTx">
+                      <ref role="3cqZAo" node="5_E18HdoTdu" resolve="shortcutMenu" />
+                    </node>
+                    <node concept="2OqwBi" id="5_E18HdoU2P" role="37vLTJ">
+                      <node concept="37vLTw" id="5_E18HdoTWj" role="2Oq$k0">
+                        <ref role="3cqZAo" node="AdDO7XMwNc" resolve="cell" />
+                      </node>
+                      <node concept="3TrEf2" id="5_E18HdoUdN" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpc2:gWP5bHW" />
                       </node>
                     </node>
                   </node>
@@ -972,14 +988,21 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="AdDO7XMwNN" role="3cqZAp" />
-            <node concept="3clFbF" id="AdDO7XMwNO" role="3cqZAp">
-              <node concept="37vLTI" id="AdDO7XMwNP" role="3clFbG">
-                <node concept="37vLTw" id="AdDO7XMwNQ" role="37vLTJ">
-                  <ref role="3cqZAo" node="AdDO7XMwN6" resolve="cell" />
+            <node concept="3clFbH" id="AdDO7XMwOk" role="3cqZAp" />
+            <node concept="3clFbF" id="AdDO7XMwOl" role="3cqZAp">
+              <node concept="2OqwBi" id="AdDO7XMwOm" role="3clFbG">
+                <node concept="2OqwBi" id="AdDO7XMwOn" role="2Oq$k0">
+                  <node concept="37vLTw" id="AdDO7XMyz1" role="2Oq$k0">
+                    <ref role="3cqZAo" node="AdDO7XMvho" resolve="cellModel" />
+                  </node>
+                  <node concept="3Tsc0h" id="AdDO7XMwOp" role="2OqNvi">
+                    <ref role="3TtcxE" to="tpc2:fBEZMko" />
+                  </node>
                 </node>
-                <node concept="37vLTw" id="AdDO7XMwNR" role="37vLTx">
-                  <ref role="3cqZAo" node="AdDO7XMwNc" resolve="c" />
+                <node concept="TSZUe" id="AdDO7XMwOq" role="2OqNvi">
+                  <node concept="37vLTw" id="AdDO7XMwOr" role="25WWJ7">
+                    <ref role="3cqZAo" node="AdDO7XMwNc" resolve="cell" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1002,7 +1025,7 @@
             <node concept="3clFbS" id="AdDO7XMwNY" role="9aQI4">
               <node concept="3cpWs8" id="AdDO7XMwNZ" role="3cqZAp">
                 <node concept="3cpWsn" id="AdDO7XMwO0" role="3cpWs9">
-                  <property role="TrG5h" value="c" />
+                  <property role="TrG5h" value="cell" />
                   <node concept="3Tqbb2" id="AdDO7XMwO1" role="1tU5fm">
                     <ref role="ehGHo" to="tpc2:fBF2Hee" resolve="CellModel_RefNodeList" />
                   </node>
@@ -1026,7 +1049,7 @@
                 <node concept="37vLTI" id="AdDO7XMwO8" role="3clFbG">
                   <node concept="2OqwBi" id="AdDO7XMwO9" role="37vLTJ">
                     <node concept="37vLTw" id="AdDO7XMwOa" role="2Oq$k0">
-                      <ref role="3cqZAo" node="AdDO7XMwO0" resolve="c" />
+                      <ref role="3cqZAo" node="AdDO7XMwO0" resolve="cell" />
                     </node>
                     <node concept="3TrEf2" id="AdDO7XMwOb" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpc2:gAczzzB" />
@@ -1039,39 +1062,120 @@
                         <property role="P4ACc" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006/1073389577007" />
                         <property role="2qtEX9" value="text" />
                         <property role="3hQQBS" value="CellModel_Constant" />
-                        <node concept="Xl_RD" id="AdDO7XMwOf" role="2c44t1" />
+                        <node concept="Xl_RD" id="AdDO7XMwOf" role="2c44t1">
+                          <property role="Xl_RC" value=" " />
+                        </node>
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="AdDO7XMwOg" role="3cqZAp">
-                <node concept="37vLTI" id="AdDO7XMwOh" role="3clFbG">
-                  <node concept="37vLTw" id="AdDO7XMwOi" role="37vLTJ">
-                    <ref role="3cqZAo" node="AdDO7XMwN6" resolve="cell" />
+              <node concept="3clFbH" id="5_E18HdofLP" role="3cqZAp" />
+              <node concept="3SKdUt" id="5_E18HdofN1" role="3cqZAp">
+                <node concept="3SKdUq" id="5_E18HdofN2" role="3SKWNk">
+                  <property role="3SKdUp" value="If there are shortcuts for this rule (we can skip some autocomplete levels), " />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="5_E18HdofN3" role="3cqZAp">
+                <node concept="3SKdUq" id="5_E18HdofN4" role="3SKWNk">
+                  <property role="3SKdUp" value="we will build special menu for that.." />
+                </node>
+              </node>
+              <node concept="3clFbJ" id="5_E18HdofN5" role="3cqZAp">
+                <node concept="3clFbS" id="5_E18HdofN6" role="3clFbx">
+                  <node concept="3cpWs8" id="5_E18HdoUvH" role="3cqZAp">
+                    <node concept="3cpWsn" id="5_E18HdoUvI" role="3cpWs9">
+                      <property role="TrG5h" value="shortcutMenu" />
+                      <node concept="3Tqbb2" id="5_E18HdoUvJ" role="1tU5fm">
+                        <ref role="ehGHo" to="tpc2:gWOXEEG" resolve="CellMenuDescriptor" />
+                      </node>
+                      <node concept="2YIFZM" id="5_E18HdoUvK" role="33vP2m">
+                        <ref role="37wK5l" node="AdDO7XJxKl" resolve="generateShortcutMenu" />
+                        <ref role="1Pybhc" node="AdDO7XJrN2" resolve="ShortcutAutocompleteHelper" />
+                        <node concept="2OqwBi" id="5_E18HdoUvL" role="37wK5m">
+                          <node concept="37vLTw" id="5_E18HdoUvM" role="2Oq$k0">
+                            <ref role="3cqZAo" node="AdDO7XMuT6" resolve="shortcuts" />
+                          </node>
+                          <node concept="liA8E" id="5_E18HdoUvN" role="2OqNvi">
+                            <ref role="37wK5l" to="33ny:~HashMap.get(java.lang.Object):java.lang.Object" resolve="get" />
+                            <node concept="2OqwBi" id="5_E18HdoUvO" role="37wK5m">
+                              <node concept="37vLTw" id="5_E18HdoUvP" role="2Oq$k0">
+                                <ref role="3cqZAo" node="AdDO7XMyWy" resolve="reference" />
+                              </node>
+                              <node concept="2OwXpG" id="5_E18HdoUvQ" role="2OqNvi">
+                                <ref role="2Oxat5" to="kr2q:~RuleReference.rule" resolve="rule" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
-                  <node concept="37vLTw" id="AdDO7XMwOj" role="37vLTx">
-                    <ref role="3cqZAo" node="AdDO7XMwO0" resolve="c" />
+                  <node concept="3clFbF" id="5_E18HdoUvR" role="3cqZAp">
+                    <node concept="37vLTI" id="5_E18HdoUvS" role="3clFbG">
+                      <node concept="37vLTw" id="5_E18HdoUvT" role="37vLTx">
+                        <ref role="3cqZAo" node="5_E18HdoUvI" resolve="shortcutMenu" />
+                      </node>
+                      <node concept="2OqwBi" id="5_E18HdoUvU" role="37vLTJ">
+                        <node concept="37vLTw" id="5_E18HdoUvV" role="2Oq$k0">
+                          <ref role="3cqZAo" node="AdDO7XMwO0" resolve="cell" />
+                        </node>
+                        <node concept="3TrEf2" id="5_E18HdoUvW" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpc2:gWP5bHW" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="5_E18HdpbFu" role="3cqZAp">
+                    <node concept="37vLTI" id="5_E18Hdpcea" role="3clFbG">
+                      <node concept="37vLTw" id="5_E18Hdpcgz" role="37vLTx">
+                        <ref role="3cqZAo" node="5_E18HdoUvI" resolve="shortcutMenu" />
+                      </node>
+                      <node concept="2OqwBi" id="5_E18HdpbME" role="37vLTJ">
+                        <node concept="37vLTw" id="5_E18HdpbFs" role="2Oq$k0">
+                          <ref role="3cqZAo" node="AdDO7XMwO0" resolve="cell" />
+                        </node>
+                        <node concept="3TrEf2" id="5_E18Hdpc0s" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpc2:gXk68OO" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="5_E18HdofNg" role="3clFbw">
+                  <node concept="37vLTw" id="5_E18HdofNh" role="2Oq$k0">
+                    <ref role="3cqZAo" node="AdDO7XMuT6" resolve="shortcuts" />
+                  </node>
+                  <node concept="liA8E" id="5_E18HdofNi" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~HashMap.containsKey(java.lang.Object):boolean" resolve="containsKey" />
+                    <node concept="2OqwBi" id="5_E18HdofNj" role="37wK5m">
+                      <node concept="37vLTw" id="5_E18HdofNk" role="2Oq$k0">
+                        <ref role="3cqZAo" node="AdDO7XMyWy" resolve="reference" />
+                      </node>
+                      <node concept="2OwXpG" id="5_E18HdofNl" role="2OqNvi">
+                        <ref role="2Oxat5" to="kr2q:~RuleReference.rule" resolve="rule" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="AdDO7XMwOk" role="3cqZAp" />
-        <node concept="3clFbF" id="AdDO7XMwOl" role="3cqZAp">
-          <node concept="2OqwBi" id="AdDO7XMwOm" role="3clFbG">
-            <node concept="2OqwBi" id="AdDO7XMwOn" role="2Oq$k0">
-              <node concept="37vLTw" id="AdDO7XMyz1" role="2Oq$k0">
-                <ref role="3cqZAo" node="AdDO7XMvho" resolve="cellModel" />
-              </node>
-              <node concept="3Tsc0h" id="AdDO7XMwOp" role="2OqNvi">
-                <ref role="3TtcxE" to="tpc2:fBEZMko" />
-              </node>
-            </node>
-            <node concept="TSZUe" id="AdDO7XMwOq" role="2OqNvi">
-              <node concept="37vLTw" id="AdDO7XMwOr" role="25WWJ7">
-                <ref role="3cqZAo" node="AdDO7XMwN6" resolve="cell" />
+              <node concept="3clFbH" id="5_E18HdofMc" role="3cqZAp" />
+              <node concept="3clFbF" id="5_E18Hdp2_4" role="3cqZAp">
+                <node concept="2OqwBi" id="5_E18Hdp2_5" role="3clFbG">
+                  <node concept="2OqwBi" id="5_E18Hdp2_6" role="2Oq$k0">
+                    <node concept="37vLTw" id="5_E18Hdp2_7" role="2Oq$k0">
+                      <ref role="3cqZAo" node="AdDO7XMvho" resolve="cellModel" />
+                    </node>
+                    <node concept="3Tsc0h" id="5_E18Hdp2_8" role="2OqNvi">
+                      <ref role="3TtcxE" to="tpc2:fBEZMko" />
+                    </node>
+                  </node>
+                  <node concept="TSZUe" id="5_E18Hdp2_9" role="2OqNvi">
+                    <node concept="37vLTw" id="5_E18Hdp2SM" role="25WWJ7">
+                      <ref role="3cqZAo" node="AdDO7XMwO0" resolve="cell" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -2047,8 +2151,8 @@
                   <node concept="37vLTw" id="34Jgz4O9aP4" role="2Oq$k0">
                     <ref role="3cqZAo" node="34Jgz4O9alR" resolve="node" />
                   </node>
-                  <node concept="3TrcHB" id="34Jgz4O9aZq" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpck:gOOYy9I" resolve="alias" />
+                  <node concept="3TrcHB" id="5_E18HdoeI1" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
                   </node>
                 </node>
               </node>
@@ -2146,8 +2250,8 @@
                     <node concept="37vLTw" id="2Dfqp1I6vNf" role="2Oq$k0">
                       <ref role="3cqZAo" node="4X6IwqdOETq" resolve="node" />
                     </node>
-                    <node concept="3TrcHB" id="AdDO7XHyLg" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:gOOYy9I" resolve="alias" />
+                    <node concept="3TrcHB" id="5_E18HdoeXn" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
                     </node>
                   </node>
                   <node concept="tyxLq" id="2Dfqp1I6wpR" role="2OqNvi">
@@ -3376,8 +3480,8 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3TrcHB" id="34Jgz4O9lup" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpck:gOOYy9I" resolve="alias" />
+                  <node concept="3TrcHB" id="5_E18HdotKK" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="34Jgz4O9lkN" role="37vLTJ">
@@ -3439,22 +3543,18 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="AdDO7XJxKo" role="3clF47">
-        <node concept="3clFbF" id="AdDO7XJPmw" role="3cqZAp">
-          <node concept="37vLTI" id="AdDO7XJPKz" role="3clFbG">
-            <node concept="2c44tf" id="AdDO7XJPPH" role="37vLTx">
-              <node concept="OXEIz" id="AdDO7XJPQW" role="2c44tc" />
+        <node concept="3cpWs8" id="5_E18HdoEA0" role="3cqZAp">
+          <node concept="3cpWsn" id="5_E18HdoEA1" role="3cpWs9">
+            <property role="TrG5h" value="menu" />
+            <node concept="3Tqbb2" id="5_E18HdoE_Z" role="1tU5fm">
+              <ref role="ehGHo" to="tpc2:gWOXEEG" resolve="CellMenuDescriptor" />
             </node>
-            <node concept="2OqwBi" id="AdDO7XJPxu" role="37vLTJ">
-              <node concept="37vLTw" id="AdDO7XJPmu" role="2Oq$k0">
-                <ref role="3cqZAo" node="AdDO7XJyfN" resolve="cell" />
-              </node>
-              <node concept="3TrEf2" id="AdDO7XJPIE" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpc2:gWP5bHW" />
-              </node>
+            <node concept="2c44tf" id="5_E18HdoEA2" role="33vP2m">
+              <node concept="OXEIz" id="5_E18HdoEA3" role="2c44tc" />
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="AdDO7XKaQB" role="3cqZAp" />
+        <node concept="3clFbH" id="5_E18HdoG$p" role="3cqZAp" />
         <node concept="3SKdUt" id="5_E18HdmPrz" role="3cqZAp">
           <node concept="3SKdUq" id="5_E18HdmPr_" role="3SKWNk">
             <property role="3SKdUp" value="For every shortcut, we create one menu item" />
@@ -4013,13 +4113,8 @@
             <node concept="3clFbF" id="34Jgz4O9wC$" role="3cqZAp">
               <node concept="2OqwBi" id="34Jgz4O9x_y" role="3clFbG">
                 <node concept="2OqwBi" id="34Jgz4O9xey" role="2Oq$k0">
-                  <node concept="2OqwBi" id="34Jgz4O9wFV" role="2Oq$k0">
-                    <node concept="37vLTw" id="AdDO7XJzfY" role="2Oq$k0">
-                      <ref role="3cqZAo" node="AdDO7XJyfN" resolve="cell" />
-                    </node>
-                    <node concept="3TrEf2" id="34Jgz4O9x1L" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpc2:gWP5bHW" />
-                    </node>
+                  <node concept="37vLTw" id="5_E18HdoJmf" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5_E18HdoEA1" resolve="menu" />
                   </node>
                   <node concept="3Tsc0h" id="34Jgz4O9xj3" role="2OqNvi">
                     <ref role="3TtcxE" to="tpc2:gWOY2$g" />
@@ -4043,14 +4138,16 @@
             <ref role="3cqZAo" node="AdDO7XJyzt" resolve="shortcuts" />
           </node>
         </node>
+        <node concept="3clFbH" id="5_E18HdoJrH" role="3cqZAp" />
+        <node concept="3cpWs6" id="5_E18HdoLg8" role="3cqZAp">
+          <node concept="37vLTw" id="5_E18HdoM8y" role="3cqZAk">
+            <ref role="3cqZAo" node="5_E18HdoEA1" resolve="menu" />
+          </node>
+        </node>
       </node>
       <node concept="3Tm1VV" id="AdDO7XJxHz" role="1B3o_S" />
-      <node concept="3cqZAl" id="AdDO7XJxKa" role="3clF45" />
-      <node concept="37vLTG" id="AdDO7XJyfN" role="3clF46">
-        <property role="TrG5h" value="cell" />
-        <node concept="3Tqbb2" id="AdDO7XJyyY" role="1tU5fm">
-          <ref role="ehGHo" to="tpc2:g_$h64z" resolve="CellModel_WithRole" />
-        </node>
+      <node concept="3Tqbb2" id="5_E18HdoHw_" role="3clF45">
+        <ref role="ehGHo" to="tpc2:gWOXEEG" resolve="CellMenuDescriptor" />
       </node>
       <node concept="37vLTG" id="AdDO7XJyzt" role="3clF46">
         <property role="TrG5h" value="shortcuts" />
