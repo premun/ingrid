@@ -24,7 +24,11 @@ public class EditorBuilder extends ImportStep {
             .map(r -> (ParserRule) r)
             .forEach(this::findShortcuts);
 
-        this.editorHelper = new EditorHelper(this.structureModel, this.shortcuts);
+        // Creates the backspace Action, that is used together with the shortcut autocomplete
+        SNode backspaceAction = ShortcutActionHelper.createBackspaceAction(this.structureModel);
+        this.editorModel.addRootNode(backspaceAction);
+
+        this.editorHelper = new EditorHelper(this.structureModel, this.shortcuts, backspaceAction);
 
         this.grammar.rules
             .values()

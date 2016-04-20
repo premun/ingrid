@@ -788,19 +788,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5_E18HdnRWo" role="3cqZAp">
-          <node concept="2OqwBi" id="5_E18HdnRWp" role="3clFbG">
-            <node concept="37vLTw" id="5_E18HdnRWq" role="2Oq$k0">
-              <ref role="3cqZAo" node="5_E18HdnRWe" resolve="fd" />
-            </node>
-            <node concept="liA8E" id="5_E18HdnRWr" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~FileDialog.setFile(java.lang.String):void" resolve="setFile" />
-              <node concept="Xl_RD" id="5_E18HdnRWs" role="37wK5m">
-                <property role="Xl_RC" value="*.g4" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="5_E18HdnRWu" role="3cqZAp">
           <node concept="2OqwBi" id="5_E18HdnRWv" role="3clFbG">
             <node concept="37vLTw" id="5_E18HdnRWw" role="2Oq$k0">
@@ -810,6 +797,25 @@
               <ref role="37wK5l" to="z60i:~Dialog.setVisible(boolean):void" resolve="setVisible" />
               <node concept="3clFbT" id="5_E18HdnRWy" role="37wK5m">
                 <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="hj2V9aB_HC" role="3cqZAp" />
+        <node concept="3clFbJ" id="hj2V9aB_T4" role="3cqZAp">
+          <node concept="3clFbS" id="hj2V9aB_T6" role="3clFbx">
+            <node concept="3cpWs6" id="hj2V9aBAE0" role="3cqZAp">
+              <node concept="10Nm6u" id="hj2V9aBAHT" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="3clFbC" id="hj2V9aBAxg" role="3clFbw">
+            <node concept="10Nm6u" id="hj2V9aBA_7" role="3uHU7w" />
+            <node concept="2OqwBi" id="hj2V9aBA4i" role="3uHU7B">
+              <node concept="37vLTw" id="hj2V9aB_Ye" role="2Oq$k0">
+                <ref role="3cqZAo" node="5_E18HdnRWe" resolve="fd" />
+              </node>
+              <node concept="liA8E" id="hj2V9aBAus" role="2OqNvi">
+                <ref role="37wK5l" to="z60i:~FileDialog.getFile():java.lang.String" resolve="getFile" />
               </node>
             </node>
           </node>

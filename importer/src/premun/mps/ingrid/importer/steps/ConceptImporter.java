@@ -58,7 +58,7 @@ public class ConceptImporter extends ImportStep {
                 String name = this.namingService.generateName(rule.name + "_" + (i + 1));
 
                 // Concrete element, we can create a concept
-                SNode concept = this.nodeFactory.createConcept(name, name, "Rules." + rule.name, rule.equals(this.grammar.rootRule));
+                SNode concept = this.nodeFactory.createConcept(name, name, rule.name, "Rules." + rule.name, rule.equals(this.grammar.rootRule));
                 rule.alternatives.get(i).node = concept;
 
                 // Link the parent split rule interface to this rule
@@ -67,7 +67,7 @@ public class ConceptImporter extends ImportStep {
             }
         } else {
             // Not a rule that splits into more rules - we create it directly
-            SNode concept = this.nodeFactory.createConcept(rule.name, rule.name, "Rules." + rule.name, rule.equals(this.grammar.rootRule));
+            SNode concept = this.nodeFactory.createConcept(rule.name, rule.name, rule.name, "Rules." + rule.name, rule.equals(this.grammar.rootRule));
             this.structureModel.addRootNode(concept);
             rule.node = concept;
             rule.alternatives.get(0).node = concept;
