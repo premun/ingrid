@@ -6,6 +6,7 @@ import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.library.*;
 
 import java.util.*;
+import java.util.function.*;
 
 /**
  * Import step that creates projection editors for all concepts.
@@ -58,34 +59,7 @@ public class EditorBuilder extends ImportStep {
         // If one of them had length > 1, we need to create the menu because of that
         if (result.stream().allMatch(s -> s.path.size() == 1)) return;
 
-        // Debug
-        {
-            StringBuilder sb = new StringBuilder();
-            sb
-                .append(rule.name)
-                .append(":\n");
-
-            for (ShortcutItem item : result) {
-                sb
-                    .append("  To:  ")
-                    .append(item.description)
-                    .append("\n  ");
-
-                item.path.stream().forEach(
-                    n -> sb
-                        .append(" -> ")
-                        .append(n.getName())
-                );
-
-                sb.append("\n");
-            }
-            sb.append("\n#####################\n");
-
-            GrammarImporter.LOGGER.info(sb.toString());
-        }
-
-        // TODO: find shortest common prefix and set it as matchingText
-        result.stream().forEach(s -> s.matchingText = s.description);
+        this.findMatchingTexts(result);
 
         // Save all shortcuts for this rule
         this.shortcuts.put(rule, result);
@@ -151,6 +125,43 @@ public class EditorBuilder extends ImportStep {
         return result;
     }
 
+    /**
+     * Finds the shortest unique description prefix for each item of a shortcut list
+     * and saves it to the matchingText field.
+     *
+     * @param items Shortcut items.
+     */
+    private void findMatchingTexts(List<ShortcutItem> items) {
+        for (ShortcutItem item : items) {
+            int length = 1;
+
+            while (length < item.description.length()) {
+                String prefix = item.description.substring(0, length);
+
+                final int finalLength = length;
+
+                boolean samePrefixExists = items
+                    .stream()
+                    .filter(i -> i != item && i.description.length() >= finalLength)
+                    .anyMatch(i -> prefix.equals(i.description.substring(0, finalLength)));
+
+                if (samePrefixExists) {
+                    ++length;
+                } else {
+                    break;
+                }
+            }
+
+            item.matchingText = item.description.substring(0, length);
+        }
+    }
+
+    /**
+     * Makes a shallow copy of a List.
+     *
+     * @param list List to be copied.
+     * @return Input copy.
+     */
     private static List<SNode> clonePath(List<SNode> list) {
         List<SNode> clone = new ArrayList<>(list.size());
         clone.addAll(list);

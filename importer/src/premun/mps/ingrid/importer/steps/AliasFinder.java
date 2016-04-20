@@ -41,7 +41,7 @@ public class AliasFinder extends ImportStep {
                 .forEach(r -> alias.append(alias.length() == 0 ? "" : " ").append(r.value));
 
             if (alias.length() == 0) {
-                if(alternative.elements.size() == 1) {
+                if(alternative.elements.size() == 1 && alternative.elements.get(0).rule != null) {
                     alias
                         .append(this.capitalize(alternative.elements.get(0).rule.name))
                         .append(" ")
@@ -49,11 +49,13 @@ public class AliasFinder extends ImportStep {
                 }
             }
 
-            if(alias.length() > 0) {
-                String newAlias = alias.toString();
-                NodeHelper.setProperty(concept, Property.Alias, newAlias);
-                alternative.alias = newAlias;
+            if(alias.length() == 0) {
+                alias.append(concept.getName());
             }
+
+            String newAlias = alias.toString();
+            NodeHelper.setProperty(concept, Property.Alias, newAlias);
+            alternative.alias = newAlias;
         }
     }
 
