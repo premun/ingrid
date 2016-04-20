@@ -24,7 +24,7 @@ public class EditorBuilder extends ImportStep {
             .map(r -> (ParserRule) r)
             .forEach(this::findShortcuts);
 
-        this.editorHelper = new EditorHelper(this.shortcuts);
+        this.editorHelper = new EditorHelper(this.structureModel, this.shortcuts);
 
         this.grammar.rules
             .values()
