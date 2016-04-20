@@ -45,12 +45,12 @@ public class ConceptLinker extends ImportStep {
                     // Find regex type and create property for it
                     String linkName = childRef.rule.name + "_" + (++propertyIndex);
                     SNode tokenRule = ((RegexRule) childRef.rule).node;
-                    NodeHelper.addPropertyToNode(parent, linkName, tokenRule);
+                    childRef.nodeReference = NodeHelper.addPropertyToNode(parent, linkName, tokenRule);
                 } else if (childRef.rule instanceof ParserRule) {
                     // Find referenced interface / concept
                     ParserRule child = (ParserRule) childRef.rule;
                     SNode childConcept = child.node;
-                    NodeHelper.addChildToNode(parent, childConcept, child.name + "_" + (++childIndex), childRef.quantity);
+                    childRef.nodeReference = NodeHelper.addChildToNode(parent, childConcept, child.name + "_" + (++childIndex), childRef.quantity);
                 }
             }
         }
