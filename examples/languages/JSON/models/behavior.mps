@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:c3d269fa-9260-4427-b3d3-361b48a302fd(JSON.behavior)">
+<model ref="r:4e405dc5-fcaf-402c-aa39-12de3339d860(JSON.behavior)">
   <persistence version="9" />
   <languages>
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />

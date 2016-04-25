@@ -7,7 +7,7 @@
   </models>
   <sourcePath />
   <languageVersions>
-    <language id="8e0eb9a3-9612-43ef-a143-f863592ac256" fqName="JSON" version="-1" />
+    <language id="780356ec-bea6-49ce-926e-ee10c93bb814" fqName="JSON" version="0" />
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />
   </languageVersions>
   <dependencyVersions>

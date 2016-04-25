@@ -7,7 +7,7 @@
   </models>
   <sourcePath />
   <languageVersions>
-    <language id="4b92f2b0-d54a-44bf-b6dc-4617e76a42ef" fqName="SimpleXML" version="-1" />
+    <language id="8b0509f1-6b8e-42bf-9ce8-e5a32a069e83" fqName="SimpleXML" version="0" />
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />
   </languageVersions>
   <dependencyVersions>
