@@ -2,7 +2,6 @@ package premun.mps.ingrid.importer.steps;
 
 import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.parser.grammar.*;
-import premun.mps.ingrid.plugin.library.*;
 
 /**
  * Import step that creates concepts, constraint data concepts and interface concepts for grammar rules.
@@ -62,7 +61,7 @@ public class ConceptImporter extends ImportStep {
                 rule.alternatives.get(i).node = concept;
 
                 // Link the parent split rule interface to this rule
-                NodeHelper.linkInterfaceToConcept(concept, iface);
+                // NodeHelper.linkInterfaceToConcept(concept, iface);
                 this.structureModel.addRootNode(concept);
             }
         } else {

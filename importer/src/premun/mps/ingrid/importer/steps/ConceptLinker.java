@@ -4,10 +4,14 @@ import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.library.*;
 
+import java.util.*;
+
 /**
  * Import step that links concepts together by creating properties and children.
  */
 public class ConceptLinker extends ImportStep {
+
+    private Shortcuts shortcuts = new Shortcuts();
 
     @Override
     public void Execute() {
@@ -16,7 +20,9 @@ public class ConceptLinker extends ImportStep {
             .stream()
             .filter(r -> r instanceof ParserRule)
             .map(r -> (ParserRule) r)
-            .forEach(this::linkRuleChildren);
+            .forEach(this::createConceptFields);
+
+        addInterfacesToEndNodes();
     }
 
     /**
@@ -24,7 +30,7 @@ public class ConceptLinker extends ImportStep {
      *
      * @param rule Rule to be imported.
      */
-    private void linkRuleChildren(ParserRule rule) {
+    private void createConceptFields(ParserRule rule) {
         // For each alternative..
         for (int altIndex = 0; altIndex < rule.alternatives.size(); altIndex++) {
             Alternative alternative = rule.alternatives.get(altIndex);
@@ -52,5 +58,117 @@ public class ConceptLinker extends ImportStep {
                 }
             }
         }
+    }
+
+    /**
+     * Finds all paths from interfaces to end nodes and link interfaces there.
+     */
+    private void addInterfacesToEndNodes() {
+        this.grammar.rules
+            .values()
+            .stream()
+            .filter(r -> r instanceof ParserRule)
+            .map(r -> (ParserRule) r)
+            .forEach(this::findPaths);
+
+        for (ParserRule key : this.shortcuts.keySet()) {
+            for (ShortcutItem shortcut : this.shortcuts.get(key)) {
+                // Last node is the target node, nodes before represent interfaces bound to parser rules
+                SNode endNode = shortcut.path.get(shortcut.path.size() - 1);
+
+                for (int i = 0; i < shortcut.path.size() - 1; i++) {
+                    NodeHelper.linkInterfaceToConcept(endNode, shortcut.path.get(i));
+                }
+            }
+        }
+    }
+
+    /**
+     * Finds a list of shortcuts for given rule and saves it into the shortcuts field.
+     *
+     * @param rule Rule
+     */
+    private void findPaths(ParserRule rule) {
+        List<ShortcutItem> result = findPaths(rule, new ArrayList<>());
+
+        // Rules without shortcuts, are rules that all have paths of length 1
+        // If one of them had length > 1, we need to create the menu because of that
+        if (result.stream().allMatch(s -> s.path.size() == 1)) return;
+
+        // Save all shortcuts for this rule
+        this.shortcuts.put(rule, result);
+    }
+
+    /**
+     * Finds a list of paths that lead from a rule to an end node
+     * (a rule represented by a classic concept).
+     *
+     * Example:
+     *           s :  a;
+     *
+     *           a :  c
+     *             |  d
+     *             |  'xxx'
+     *             ;
+     *
+     *           c :  STRING;
+     *           d :  DIGIT;
+     *
+     *           STRING : .+;
+     *           DIGIT  : [0-9]+;
+     *
+     * Then findPaths(s) will find 3 different paths:
+     *   1) s -> STRING (s->a_1->c)
+     *   2) s -> DIGIT  (s->a_2->d)
+     *   3) s -> 'xxx'  (s->a_3)
+     *
+     * @param rule Rule for which we want to find shortcuts.
+     * @param path Alternatives that lead to that end node.
+     * @return List of shortcuts.
+     */
+    private List<ShortcutItem> findPaths(ParserRule rule, List<SNode> path) {
+        List<ShortcutItem> result = new ArrayList<>();
+
+        // Interface - we need to find implementors
+        for (Alternative alternative : rule.alternatives) {
+            List<RuleReference> elements = alternative.elements;
+
+            // Each alternative needs it's own path
+            List<SNode> clonedPath = clonePath(path);
+
+            if (elements.size() == 1 && elements.get(0).rule instanceof ParserRule && elements.get(0).quantity == Quantity.EXACTLY_ONE) {
+                // A single parser rule reference (shortcut)
+                ParserRule next = (ParserRule) elements.get(0).rule;
+
+                // Add current rule to path
+                clonedPath.add(rule.node);
+
+                // Recursively find all end nodes
+                result.addAll(this.findPaths(next, clonedPath));
+            } else {
+                // More elements in an alternative -> not a shortcut but an end node
+                clonedPath.add(rule.node);
+                if (clonedPath.isEmpty() || clonedPath.get(clonedPath.size() - 1) != alternative.node){
+                    clonedPath.add(alternative.node);
+                }
+
+                ShortcutItem shortcut = new ShortcutItem(clonedPath);
+                result.add(shortcut);
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * Makes a shallow copy of a List.
+     *
+     * @param list List to be copied.
+     * @return Input copy.
+     */
+    private static List<SNode> clonePath(List<SNode> list) {
+        List<SNode> clone = new ArrayList<>(list.size());
+        clone.addAll(list);
+        return clone;
     }
 }
