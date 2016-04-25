@@ -4,8 +4,6 @@ import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.library.*;
 
-import java.util.*;
-
 /**
  * Import step that links concepts together by creating properties and children.
  */

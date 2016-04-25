@@ -1,12 +1,10 @@
 package premun.mps.ingrid.importer.steps;
 
 import org.jetbrains.mps.openapi.model.*;
-import premun.mps.ingrid.importer.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.library.*;
 
 import java.util.*;
-import java.util.function.*;
 
 /**
  * Import step that creates projection editors for all concepts.

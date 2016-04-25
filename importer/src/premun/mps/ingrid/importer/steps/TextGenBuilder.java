@@ -4,8 +4,6 @@ import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.library.*;
 
-import java.util.*;
-
 /**
  * Step tries to generate text_gen aspects of the language.
  */

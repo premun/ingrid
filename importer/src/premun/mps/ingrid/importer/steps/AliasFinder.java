@@ -1,11 +1,8 @@
 package premun.mps.ingrid.importer.steps;
 
 import org.jetbrains.mps.openapi.model.*;
-import premun.mps.ingrid.importer.exceptions.*;
 import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.plugin.library.*;
-
-import java.util.*;
 
 /**
  * Step tries to build an alias for each concept out of literals contained inside.
