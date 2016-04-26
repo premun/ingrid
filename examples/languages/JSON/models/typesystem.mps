@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:e86f1e61-7e17-4967-b989-789dd65427b2(JSON.typesystem)">
+<model ref="r:2bb12833-9e32-4461-a3ab-f317127d8020(JSON.typesystem)">
   <persistence version="9" />
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
