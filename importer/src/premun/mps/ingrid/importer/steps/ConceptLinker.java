@@ -69,7 +69,7 @@ public class ConceptLinker extends ImportStep {
             .stream()
             .filter(r -> r instanceof ParserRule)
             .map(r -> (ParserRule) r)
-            .forEach(this::findPaths);
+            .forEach(this::findEndNodes);
 
         for (ParserRule key : this.shortcuts.keySet()) {
             for (ShortcutItem shortcut : this.shortcuts.get(key)) {
@@ -88,8 +88,8 @@ public class ConceptLinker extends ImportStep {
      *
      * @param rule Rule
      */
-    private void findPaths(ParserRule rule) {
-        List<ShortcutItem> result = findPaths(rule, new ArrayList<>());
+    private void findEndNodes(ParserRule rule) {
+        List<ShortcutItem> result = findEndNodes(rule, new ArrayList<>());
 
         // Rules without shortcuts, are rules that all have paths of length 1
         // If one of them had length > 1, we need to create the menu because of that
@@ -117,7 +117,7 @@ public class ConceptLinker extends ImportStep {
      *           STRING : .+;
      *           DIGIT  : [0-9]+;
      *
-     * Then findPaths(s) will find 3 different paths:
+     * Then findEndNodes(s) will find 3 different paths:
      *   1) s -> STRING (s->a_1->c)
      *   2) s -> DIGIT  (s->a_2->d)
      *   3) s -> 'xxx'  (s->a_3)
@@ -126,7 +126,7 @@ public class ConceptLinker extends ImportStep {
      * @param path Alternatives that lead to that end node.
      * @return List of shortcuts.
      */
-    private List<ShortcutItem> findPaths(ParserRule rule, List<SNode> path) {
+    private List<ShortcutItem> findEndNodes(ParserRule rule, List<SNode> path) {
         List<ShortcutItem> result = new ArrayList<>();
 
         // Interface - we need to find implementors
@@ -144,7 +144,7 @@ public class ConceptLinker extends ImportStep {
                 clonedPath.add(rule.node);
 
                 // Recursively find all end nodes
-                result.addAll(this.findPaths(next, clonedPath));
+                result.addAll(this.findEndNodes(next, clonedPath));
             } else {
                 // More elements in an alternative -> not a shortcut but an end node
                 clonedPath.add(rule.node);

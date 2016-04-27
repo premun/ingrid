@@ -293,9 +293,6 @@
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
-      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
-        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
-      </concept>
       <concept id="1206482823744" name="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" flags="nn" index="3BYIHo">
         <child id="1206482823746" name="nodeArgument" index="3BYIHq" />
       </concept>
@@ -511,7 +508,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbH" id="AdDO7XMulJ" role="3cqZAp" />
               </node>
               <node concept="2ZW3vV" id="AdDO7XMulK" role="3clFbw">
                 <node concept="3uibUv" id="AdDO7XMulL" role="2ZW6by">
@@ -565,7 +561,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbH" id="AdDO7XMum5" role="3cqZAp" />
                 </node>
               </node>
               <node concept="3eNFk2" id="AdDO7XMum6" role="3eNLev">
@@ -1230,35 +1225,6 @@
                   <node concept="37vLTw" id="5lY$Gq$NslT" role="3BYIHq">
                     <ref role="3cqZAo" node="5lY$Gq$MNgT" resolve="baseConcept" />
                   </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbH" id="5lY$Gq$MY$E" role="3cqZAp" />
-            <node concept="3SKdUt" id="5lY$Gq$L7AL" role="3cqZAp">
-              <node concept="3SKdUq" id="5lY$Gq$L7AN" role="3SKWNk">
-                <property role="3SKdUp" value="TODO: I didn't find another non-deprecated way how to insert a node " />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="hj2V9aBdTg" role="3cqZAp">
-              <node concept="3SKdUq" id="hj2V9aBdTh" role="3SKWNk">
-                <property role="3SKdUp" value="      of the jetbrains.mps.lang.core.structure.integer concept" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="5lY$Gq$Ki9j" role="3cqZAp">
-              <node concept="2YIFZM" id="5lY$Gq$KifI" role="3clFbG">
-                <ref role="37wK5l" node="5Jh2F9eAeF4" resolve="addPropertyToNode" />
-                <ref role="1Pybhc" node="Pei6ieTS8A" resolve="NodeHelper" />
-                <node concept="2OqwBi" id="5lY$Gq$MYH$" role="37wK5m">
-                  <node concept="Xjq3P" id="5lY$Gq$MYG3" role="2Oq$k0" />
-                  <node concept="2OwXpG" id="5lY$Gq$MYLE" role="2OqNvi">
-                    <ref role="2Oxat5" node="5lY$Gq$MNgT" resolve="baseConcept" />
-                  </node>
-                </node>
-                <node concept="37vLTw" id="hj2V9aBd_1" role="37wK5m">
-                  <ref role="3cqZAo" node="5lY$Gq$LoVg" resolve="DELETE_CONTEXT_PROPERTY_NAME" />
-                </node>
-                <node concept="3B5_sB" id="KaYFCsYuV" role="37wK5m">
-                  <ref role="3B5MYn" to="tpck:fKAQMTA" resolve="integer" />
                 </node>
               </node>
             </node>

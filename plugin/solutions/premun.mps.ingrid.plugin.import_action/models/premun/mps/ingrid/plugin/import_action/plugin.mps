@@ -329,7 +329,7 @@
         </node>
         <node concept="3cpWs6" id="nYv$LOtMGs" role="3cqZAp">
           <node concept="Xl_RD" id="5Jh2F9ezZdF" role="3cqZAk">
-            <property role="Xl_RC" value="/home/premun/Diplomka/ingrid/grammars/SimpleXML.g4" />
+            <property role="Xl_RC" value="/home/premun/Diplomka/ingrid/grammars/XML.g4" />
           </node>
         </node>
       </node>
