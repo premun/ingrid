@@ -6,8 +6,8 @@ document    :   comment? element
 comment     :   '/*' Content '*/'
             ;
 
-element     :   LT Name '>' ( Content | element )* '</' Name '>'
-            |   '<' Name '/>'
+element     :   LT Name '>' ( Content | element )* '</' Name '>'    # FullElement
+            |   '<' Name '/>'                                       # SelfclosingElement
             ;
 
 Content     :   [a-zA-Z0-9 ]*

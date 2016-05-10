@@ -61,6 +61,14 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
     @Override
     public void enterLabeledAlt(LabeledAltContext context) {
         Alternative alternative = parseParserAlternative(context.alternative());
+
+        if (context.children.size() > 0) {
+            ParseTree lastChild = context.children.get(context.children.size() - 1);
+            if (lastChild instanceof IdContext) {
+                alternative.comment = lastChild.getText();
+            }
+        }
+
         currentParserRule.alternatives.add(alternative);
     }
 

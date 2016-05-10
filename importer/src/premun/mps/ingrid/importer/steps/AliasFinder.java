@@ -38,11 +38,23 @@ public class AliasFinder extends ImportStep {
                 .forEach(r -> alias.append(alias.length() == 0 ? "" : " ").append(r.value));
 
             if (alias.length() == 0) {
+                // If only one rule reference is inside, try to use that
                 if(alternative.elements.size() == 1 && alternative.elements.get(0).rule != null) {
                     alias
-                        .append(this.capitalize(alternative.elements.get(0).rule.name))
-                        .append(" ")
-                        .append(rule.name.toLowerCase());
+                        .append(this.capitalize(alternative.elements.get(0).rule.name));
+
+                    if (!rule.name.contains("_block_")) {
+                        alias
+                            .append(" ")
+                            .append(rule.name.toLowerCase());
+                    }
+                }
+            }
+
+            if(alias.length() == 0) {
+                // Try to use ID
+                if (alternative.comment != null && !alternative.comment.isEmpty()) {
+                    alias.append(alternative.comment);
                 }
             }
 
