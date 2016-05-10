@@ -888,17 +888,33 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbC" id="AdDO7XMwNS" role="3clFbw">
-            <node concept="Rm8GO" id="AdDO7XMwNT" role="3uHU7w">
-              <ref role="Rm8GQ" to="kr2q:~Quantity.EXACTLY_ONE" resolve="EXACTLY_ONE" />
-              <ref role="1Px2BO" to="kr2q:~Quantity" resolve="Quantity" />
-            </node>
-            <node concept="2OqwBi" id="AdDO7XMwNU" role="3uHU7B">
-              <node concept="37vLTw" id="AdDO7XMzr$" role="2Oq$k0">
-                <ref role="3cqZAo" node="AdDO7XMyWy" resolve="reference" />
+          <node concept="22lmx$" id="7BzywMDf3ev" role="3clFbw">
+            <node concept="3clFbC" id="7BzywMDf3ES" role="3uHU7w">
+              <node concept="Rm8GO" id="7BzywMDf3Jf" role="3uHU7w">
+                <ref role="Rm8GQ" to="kr2q:~Quantity.MAX_ONE" resolve="MAX_ONE" />
+                <ref role="1Px2BO" to="kr2q:~Quantity" resolve="Quantity" />
               </node>
-              <node concept="2OwXpG" id="AdDO7XMwNW" role="2OqNvi">
-                <ref role="2Oxat5" to="kr2q:~RuleReference.quantity" resolve="quantity" />
+              <node concept="2OqwBi" id="7BzywMDf3yY" role="3uHU7B">
+                <node concept="37vLTw" id="7BzywMDf3xp" role="2Oq$k0">
+                  <ref role="3cqZAo" node="AdDO7XMyWy" resolve="reference" />
+                </node>
+                <node concept="2OwXpG" id="7BzywMDf3_Z" role="2OqNvi">
+                  <ref role="2Oxat5" to="kr2q:~RuleReference.quantity" resolve="quantity" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="AdDO7XMwNS" role="3uHU7B">
+              <node concept="2OqwBi" id="AdDO7XMwNU" role="3uHU7B">
+                <node concept="37vLTw" id="AdDO7XMzr$" role="2Oq$k0">
+                  <ref role="3cqZAo" node="AdDO7XMyWy" resolve="reference" />
+                </node>
+                <node concept="2OwXpG" id="AdDO7XMwNW" role="2OqNvi">
+                  <ref role="2Oxat5" to="kr2q:~RuleReference.quantity" resolve="quantity" />
+                </node>
+              </node>
+              <node concept="Rm8GO" id="AdDO7XMwNT" role="3uHU7w">
+                <ref role="Rm8GQ" to="kr2q:~Quantity.EXACTLY_ONE" resolve="EXACTLY_ONE" />
+                <ref role="1Px2BO" to="kr2q:~Quantity" resolve="Quantity" />
               </node>
             </node>
           </node>
