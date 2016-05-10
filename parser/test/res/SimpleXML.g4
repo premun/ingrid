@@ -1,6 +1,6 @@
 grammar SimpleXML;
 
-document    :   comment? element
+document    :   comment? element EOF
             ;
 
 comment     :   '/*' Content '*/'

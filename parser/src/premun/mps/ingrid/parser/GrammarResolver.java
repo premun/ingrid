@@ -72,25 +72,33 @@ class GrammarResolver {
                 RuleReference ref = alternative.elements.get(i);
 
                 // Rule referenced in this alternative element
-                Rule r = ref.rule;
+                Rule element = ref.rule;
 
-                if (r instanceof UnresolvedRule) {
+                if (element instanceof UnresolvedRule) {
                     // Lexer rules were resolved first, so they are ready to be referenced
-                    if (rules.containsKey(r.name)) {
-                        Rule lookedUpRule = rules.get(r.name);
+                    if (rules.containsKey(element.name)) {
+                        Rule lookedUpRule = rules.get(element.name);
                         alternative.elements.set(i, new RuleReference(lookedUpRule, ref.quantity));
                     } else {
+                        // Special EOF token might not be defined, but is a valid reference
+                        if (element.name.equals("EOF")) {
+                            // We can ignore this rule
+                            alternative.elements.remove(i);
+                            --i;
+                            continue;
+                        }
+
                         throw new IngridParserException(
-                            "Couldn't resolve rule '" + r.name + "' (inside " + rule.name + ")");
+                            "Couldn't resolve rule '" + element.name + "' (inside " + rule.name + ")");
                     }
-                } else if (r instanceof QuantifierRule) {
+                } else if (element instanceof QuantifierRule) {
                     if (i == 0) {
                         throw new IngridParserException(
                             "Quantifier suffix found with no previous reference");
                     }
 
                     // Apply quantifier to previous element of alternative
-                    alternative.elements.get(i - 1).quantity = ((QuantifierRule) r).quantity;
+                    alternative.elements.get(i - 1).quantity = ((QuantifierRule) element).quantity;
                     // Remove quantifier itself
                     alternative.elements.remove(i);
                     --i;
