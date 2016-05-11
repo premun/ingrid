@@ -180,9 +180,6 @@
         <child id="1206060619838" name="condition" index="3eO9$A" />
         <child id="1206060644605" name="statementList" index="3eOfB_" />
       </concept>
-      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
-        <child id="1079359253376" name="expression" index="1eOMHV" />
-      </concept>
       <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -242,10 +239,24 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
+        <property id="5858074156537516431" name="text" index="x79VB" />
+      </concept>
+      <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
+      <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
+        <reference id="6832197706140518108" name="param" index="zr_51" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
+        <child id="5858074156537516440" name="return" index="x79VK" />
+        <child id="8465538089690917625" name="param" index="TUOzN" />
+      </concept>
+      <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
+        <property id="8465538089690881934" name="text" index="TUZQ4" />
+        <child id="6832197706140518123" name="parameter" index="zr_5Q" />
+      </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -514,14 +525,12 @@
                 <node concept="3clFbF" id="AdDO7XMulC" role="3cqZAp">
                   <node concept="1rXfSq" id="AdDO7XMulD" role="3clFbG">
                     <ref role="37wK5l" node="AdDO7XMwge" resolve="createLiteralRuleCell" />
-                    <node concept="1eOMI4" id="AdDO7XMulF" role="37wK5m">
-                      <node concept="10QFUN" id="AdDO7XMulG" role="1eOMHV">
-                        <node concept="3uibUv" id="AdDO7XMulH" role="10QFUM">
-                          <ref role="3uigEE" to="kr2q:~LiteralRule" resolve="LiteralRule" />
-                        </node>
-                        <node concept="37vLTw" id="AdDO7XMulI" role="10QFUP">
-                          <ref role="3cqZAo" node="AdDO7XMulw" resolve="r" />
-                        </node>
+                    <node concept="10QFUN" id="AdDO7XMulG" role="37wK5m">
+                      <node concept="3uibUv" id="AdDO7XMulH" role="10QFUM">
+                        <ref role="3uigEE" to="kr2q:~LiteralRule" resolve="LiteralRule" />
+                      </node>
+                      <node concept="37vLTw" id="AdDO7XMulI" role="10QFUP">
+                        <ref role="3cqZAo" node="AdDO7XMulw" resolve="r" />
                       </node>
                     </node>
                   </node>
@@ -545,37 +554,11 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="AdDO7XMulR" role="3eOfB_">
-                  <node concept="3SKdUt" id="AdDO7XMulS" role="3cqZAp">
-                    <node concept="3SKdUq" id="AdDO7XMulT" role="3SKWNk">
-                      <property role="3SKdUp" value="Regex rules are saved as properties of the concept" />
-                    </node>
-                  </node>
-                  <node concept="3cpWs8" id="AdDO7XMulU" role="3cqZAp">
-                    <node concept="3cpWsn" id="AdDO7XMulV" role="3cpWs9">
-                      <property role="TrG5h" value="property" />
-                      <node concept="3Tqbb2" id="AdDO7XMulW" role="1tU5fm">
-                        <ref role="ehGHo" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
-                      </node>
-                      <node concept="10QFUN" id="5lY$Gq$JTSc" role="33vP2m">
-                        <node concept="3Tqbb2" id="5lY$Gq$JTTG" role="10QFUM">
-                          <ref role="ehGHo" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
-                        </node>
-                        <node concept="2OqwBi" id="5lY$Gq$JTNT" role="10QFUP">
-                          <node concept="37vLTw" id="5lY$Gq$JTMt" role="2Oq$k0">
-                            <ref role="3cqZAo" node="AdDO7XMumo" resolve="reference" />
-                          </node>
-                          <node concept="2OwXpG" id="5lY$Gq$JTQD" role="2OqNvi">
-                            <ref role="2Oxat5" to="kr2q:~RuleReference.nodeReference" resolve="nodeReference" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3clFbF" id="AdDO7XMum1" role="3cqZAp">
                     <node concept="1rXfSq" id="AdDO7XMum2" role="3clFbG">
                       <ref role="37wK5l" node="AdDO7XMwwM" resolve="createRegexRuleCell" />
-                      <node concept="37vLTw" id="AdDO7XMum4" role="37wK5m">
-                        <ref role="3cqZAo" node="AdDO7XMulV" resolve="property" />
+                      <node concept="37vLTw" id="3aST2zGrEFB" role="37wK5m">
+                        <ref role="3cqZAo" node="AdDO7XMumo" resolve="reference" />
                       </node>
                     </node>
                   </node>
@@ -591,40 +574,11 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="AdDO7XMuma" role="3eOfB_">
-                  <node concept="3SKdUt" id="AdDO7XMumb" role="3cqZAp">
-                    <node concept="3SKdUq" id="AdDO7XMumc" role="3SKWNk">
-                      <property role="3SKdUp" value="Parser rules are saved as children of the concept" />
-                    </node>
-                  </node>
-                  <node concept="3cpWs8" id="AdDO7XMumd" role="3cqZAp">
-                    <node concept="3cpWsn" id="AdDO7XMume" role="3cpWs9">
-                      <property role="TrG5h" value="childLink" />
-                      <node concept="3Tqbb2" id="AdDO7XMumf" role="1tU5fm">
-                        <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-                      </node>
-                      <node concept="10QFUN" id="5lY$Gq$JU1g" role="33vP2m">
-                        <node concept="3Tqbb2" id="5lY$Gq$JU1h" role="10QFUM">
-                          <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-                        </node>
-                        <node concept="2OqwBi" id="5lY$Gq$JU1i" role="10QFUP">
-                          <node concept="37vLTw" id="5lY$Gq$JU1j" role="2Oq$k0">
-                            <ref role="3cqZAo" node="AdDO7XMumo" resolve="reference" />
-                          </node>
-                          <node concept="2OwXpG" id="5lY$Gq$JU1k" role="2OqNvi">
-                            <ref role="2Oxat5" to="kr2q:~RuleReference.nodeReference" resolve="nodeReference" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3clFbF" id="AdDO7XMumk" role="3cqZAp">
                     <node concept="1rXfSq" id="AdDO7XMuml" role="3clFbG">
                       <ref role="37wK5l" node="AdDO7XMwMZ" resolve="createParserRuleCell" />
                       <node concept="37vLTw" id="AdDO7XMzAD" role="37wK5m">
                         <ref role="3cqZAo" node="AdDO7XMumo" resolve="reference" />
-                      </node>
-                      <node concept="37vLTw" id="AdDO7XMumn" role="37wK5m">
-                        <ref role="3cqZAo" node="AdDO7XMume" resolve="childLink" />
                       </node>
                     </node>
                   </node>
@@ -654,8 +608,8 @@
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="AdDO7XMumw" role="3clF45">
-        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      <node concept="3Tqbb2" id="3aST2zGr_SA" role="3clF45">
+        <ref role="ehGHo" to="tpc2:fA4kQeF" resolve="ConceptEditorDeclaration" />
       </node>
       <node concept="37vLTG" id="AdDO7XMumx" role="3clF46">
         <property role="TrG5h" value="alternative" />
@@ -664,11 +618,20 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="AdDO7XMum_" role="1B3o_S" />
-      <node concept="P$JXv" id="AdDO7XMumE" role="lGtFl">
-        <node concept="TZ5HA" id="AdDO7XMumF" role="TZ5H$">
-          <node concept="1dT_AC" id="AdDO7XMumG" role="1dT_Ay">
+      <node concept="P$JXv" id="3aST2zGr_nX" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGr_nY" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGr_nZ" role="1dT_Ay">
             <property role="1dT_AB" value="Takes alternative's contents and puts them into a projectional editor." />
           </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGr_o0" role="TUOzN">
+          <property role="TUZQ4" value="Alternative for which we are creating the editor" />
+          <node concept="zr_55" id="3aST2zGr_o2" role="zr_5Q">
+            <ref role="zr_51" node="AdDO7XMumx" resolve="alternative" />
+          </node>
+        </node>
+        <node concept="x79VA" id="3aST2zGr_o3" role="x79VK">
+          <property role="x79VB" value="Editor declaration" />
         </node>
       </node>
     </node>
@@ -736,10 +699,16 @@
         </node>
       </node>
       <node concept="3Tm6S6" id="AdDO7XMwgz" role="1B3o_S" />
-      <node concept="P$JXv" id="AdDO7XMMZW" role="lGtFl">
-        <node concept="TZ5HA" id="AdDO7XMMZX" role="TZ5H$">
-          <node concept="1dT_AC" id="AdDO7XMMZY" role="1dT_Ay">
+      <node concept="P$JXv" id="3aST2zGrBqS" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrBqT" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrBqU" role="1dT_Ay">
             <property role="1dT_AB" value="Creates an editor cell for a constant value." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrBqV" role="TUOzN">
+          <property role="TUZQ4" value="Literal rule" />
+          <node concept="zr_55" id="3aST2zGrBqX" role="zr_5Q">
+            <ref role="zr_51" node="AdDO7XMwgA" resolve="rule" />
           </node>
         </node>
       </node>
@@ -767,8 +736,13 @@
                 <node concept="2c44tb" id="AdDO7XMwwW" role="lGtFl">
                   <property role="P3scX" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140103550593" />
                   <property role="2qtEX8" value="relationDeclaration" />
-                  <node concept="37vLTw" id="AdDO7XMwwX" role="2c44t1">
-                    <ref role="3cqZAo" node="AdDO7XMwx8" resolve="property" />
+                  <node concept="2OqwBi" id="3aST2zGrECk" role="2c44t1">
+                    <node concept="37vLTw" id="3aST2zGrEBu" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3aST2zGrE4m" resolve="reference" />
+                    </node>
+                    <node concept="2OwXpG" id="3aST2zGrEEy" role="2OqNvi">
+                      <ref role="2Oxat5" to="kr2q:~RuleReference.nodeReference" resolve="nodeReference" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -794,17 +768,23 @@
         </node>
       </node>
       <node concept="3cqZAl" id="AdDO7XMwxa" role="3clF45" />
-      <node concept="37vLTG" id="AdDO7XMwx8" role="3clF46">
-        <property role="TrG5h" value="property" />
-        <node concept="3Tqbb2" id="AdDO7XMwx9" role="1tU5fm">
-          <ref role="ehGHo" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
+      <node concept="37vLTG" id="3aST2zGrE4m" role="3clF46">
+        <property role="TrG5h" value="reference" />
+        <node concept="3uibUv" id="3aST2zGrE_5" role="1tU5fm">
+          <ref role="3uigEE" to="kr2q:~RuleReference" resolve="RuleReference" />
         </node>
       </node>
       <node concept="3Tm6S6" id="AdDO7XMwx5" role="1B3o_S" />
-      <node concept="P$JXv" id="AdDO7XMLZW" role="lGtFl">
-        <node concept="TZ5HA" id="AdDO7XMLZX" role="TZ5H$">
-          <node concept="1dT_AC" id="AdDO7XMLZY" role="1dT_Ay">
+      <node concept="P$JXv" id="3aST2zGrCrc" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrCrd" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrCre" role="1dT_Ay">
             <property role="1dT_AB" value="Creates an editor cell for a property reference." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrCrf" role="TUOzN">
+          <property role="TUZQ4" value="Property reference" />
+          <node concept="zr_55" id="3aST2zGrNNT" role="zr_5Q">
+            <ref role="zr_51" node="3aST2zGrE4m" resolve="reference" />
           </node>
         </node>
       </node>
@@ -840,8 +820,13 @@
                     <node concept="2c44tb" id="AdDO7XMwNg" role="lGtFl">
                       <property role="P3scX" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140103550593" />
                       <property role="2qtEX8" value="relationDeclaration" />
-                      <node concept="37vLTw" id="AdDO7XMwNh" role="2c44t1">
-                        <ref role="3cqZAo" node="AdDO7XMwOv" resolve="child" />
+                      <node concept="2OqwBi" id="3aST2zGrE1F" role="2c44t1">
+                        <node concept="37vLTw" id="3aST2zGrE0T" role="2Oq$k0">
+                          <ref role="3cqZAo" node="AdDO7XMyWy" resolve="reference" />
+                        </node>
+                        <node concept="2OwXpG" id="3aST2zGrE3U" role="2OqNvi">
+                          <ref role="2Oxat5" to="kr2q:~RuleReference.nodeReference" resolve="nodeReference" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -952,8 +937,13 @@
                       <node concept="2c44tb" id="AdDO7XMwO5" role="lGtFl">
                         <property role="P3scX" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140103550593" />
                         <property role="2qtEX8" value="relationDeclaration" />
-                        <node concept="37vLTw" id="AdDO7XMzsI" role="2c44t1">
-                          <ref role="3cqZAo" node="AdDO7XMwOv" resolve="child" />
+                        <node concept="2OqwBi" id="3aST2zGrDXl" role="2c44t1">
+                          <node concept="37vLTw" id="3aST2zGrDWz" role="2Oq$k0">
+                            <ref role="3cqZAo" node="AdDO7XMyWy" resolve="reference" />
+                          </node>
+                          <node concept="2OwXpG" id="3aST2zGrDYG" role="2OqNvi">
+                            <ref role="2Oxat5" to="kr2q:~RuleReference.nodeReference" resolve="nodeReference" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -1013,17 +1003,17 @@
           <ref role="3uigEE" to="kr2q:~RuleReference" resolve="RuleReference" />
         </node>
       </node>
-      <node concept="37vLTG" id="AdDO7XMwOv" role="3clF46">
-        <property role="TrG5h" value="child" />
-        <node concept="3Tqbb2" id="AdDO7XMwOw" role="1tU5fm">
-          <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-        </node>
-      </node>
       <node concept="3Tm6S6" id="AdDO7XMwOs" role="1B3o_S" />
-      <node concept="P$JXv" id="AdDO7XMKsx" role="lGtFl">
-        <node concept="TZ5HA" id="AdDO7XMKsy" role="TZ5H$">
-          <node concept="1dT_AC" id="AdDO7XMKsz" role="1dT_Ay">
+      <node concept="P$JXv" id="3aST2zGrDrA" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrDrB" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrDrC" role="1dT_Ay">
             <property role="1dT_AB" value="Creates an editor cell for a child reference." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrDrD" role="TUOzN">
+          <property role="TUZQ4" value="Parser rule reference" />
+          <node concept="zr_55" id="3aST2zGrDrF" role="zr_5Q">
+            <ref role="zr_51" node="AdDO7XMyWy" resolve="reference" />
           </node>
         </node>
       </node>
@@ -1100,6 +1090,19 @@
       <node concept="37vLTG" id="4X6IwqdNjJW" role="3clF46">
         <property role="TrG5h" value="structureModel" />
         <node concept="H_c77" id="4X6IwqdNjJV" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="3aST2zGrzVe" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrzVf" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrzVg" role="1dT_Ay">
+            <property role="1dT_AB" value="Initializes the factory to work with given structure model." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrzVh" role="TUOzN">
+          <property role="TUZQ4" value="Target structure model that we will use." />
+          <node concept="zr_55" id="3aST2zGrzVj" role="zr_5Q">
+            <ref role="zr_51" node="4X6IwqdNjJW" resolve="structureModel" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="hj2V9aBbv2" role="jymVt" />
@@ -1265,9 +1268,9 @@
       </node>
       <node concept="3Tm6S6" id="hj2V9aBc7N" role="1B3o_S" />
       <node concept="3cqZAl" id="hj2V9aBc6M" role="3clF45" />
-      <node concept="P$JXv" id="hj2V9aBc$s" role="lGtFl">
-        <node concept="TZ5HA" id="hj2V9aBc$t" role="TZ5H$">
-          <node concept="1dT_AC" id="hj2V9aBc$u" role="1dT_Ay">
+      <node concept="P$JXv" id="3aST2zGrzuy" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrzuz" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrzu$" role="1dT_Ay">
             <property role="1dT_AB" value="Checkes whether there is a base concept in the target language and loads it or creates it." />
           </node>
         </node>
@@ -1445,6 +1448,46 @@
         <node concept="10P_77" id="4X6IwqdNjSA" role="1tU5fm" />
       </node>
       <node concept="3Tm1VV" id="4X6IwqdNjSt" role="1B3o_S" />
+      <node concept="P$JXv" id="3aST2zGrzAt" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrzAu" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrzAv" role="1dT_Ay">
+            <property role="1dT_AB" value="Creates new classical concept." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrzAw" role="TUOzN">
+          <property role="TUZQ4" value="Name" />
+          <node concept="zr_55" id="3aST2zGrzAy" role="zr_5Q">
+            <ref role="zr_51" node="4X6IwqdNjSv" resolve="name" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrzAz" role="TUOzN">
+          <property role="TUZQ4" value="Alias" />
+          <node concept="zr_55" id="3aST2zGrzA_" role="zr_5Q">
+            <ref role="zr_51" node="4X6IwqdNjSx" resolve="alias" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrzAA" role="TUOzN">
+          <property role="TUZQ4" value="Description" />
+          <node concept="zr_55" id="3aST2zGrzAC" role="zr_5Q">
+            <ref role="zr_51" node="hj2V9aB2Gt" resolve="description" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrzAD" role="TUOzN">
+          <property role="TUZQ4" value="Virtual package" />
+          <node concept="zr_55" id="3aST2zGrzAF" role="zr_5Q">
+            <ref role="zr_51" node="4X6IwqdNjSz" resolve="virtualPackage" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrzAG" role="TUOzN">
+          <property role="TUZQ4" value="Is root?" />
+          <node concept="zr_55" id="3aST2zGrzAI" role="zr_5Q">
+            <ref role="zr_51" node="4X6IwqdNjS_" resolve="rootable" />
+          </node>
+        </node>
+        <node concept="x79VA" id="3aST2zGrzAJ" role="x79VK">
+          <property role="x79VB" value="Concept declaration" />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="5Jh2F9ezaZb" role="jymVt" />
     <node concept="3clFb_" id="4X6IwqdNkjw" role="jymVt">
@@ -1543,6 +1586,28 @@
         <node concept="17QB3L" id="4X6IwqdNkk8" role="1tU5fm" />
       </node>
       <node concept="3Tm1VV" id="4X6IwqdNkk3" role="1B3o_S" />
+      <node concept="P$JXv" id="3aST2zGrzL0" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrzL1" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrzL2" role="1dT_Ay">
+            <property role="1dT_AB" value="Creates new interface concept." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrzL3" role="TUOzN">
+          <property role="TUZQ4" value="Name" />
+          <node concept="zr_55" id="3aST2zGrzL5" role="zr_5Q">
+            <ref role="zr_51" node="4X6IwqdNkk5" resolve="name" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrzL6" role="TUOzN">
+          <property role="TUZQ4" value="Virtual package" />
+          <node concept="zr_55" id="3aST2zGrzL8" role="zr_5Q">
+            <ref role="zr_51" node="4X6IwqdNkk7" resolve="virtualPackage" />
+          </node>
+        </node>
+        <node concept="x79VA" id="3aST2zGrzL9" role="x79VK">
+          <property role="x79VB" value="Interface concept declaration" />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="5Jh2F9ezbnX" role="jymVt" />
     <node concept="3clFb_" id="4X6IwqdNks2" role="jymVt">
@@ -1635,6 +1700,34 @@
         <node concept="17QB3L" id="4X6IwqdNksC" role="1tU5fm" />
       </node>
       <node concept="3Tm1VV" id="4X6IwqdNksx" role="1B3o_S" />
+      <node concept="P$JXv" id="3aST2zGrzWi" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrzWj" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrzWk" role="1dT_Ay">
+            <property role="1dT_AB" value="Creates new constraint data type concept." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrzWl" role="TUOzN">
+          <property role="TUZQ4" value="Name" />
+          <node concept="zr_55" id="3aST2zGrzWn" role="zr_5Q">
+            <ref role="zr_51" node="4X6IwqdNksz" resolve="name" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrzWo" role="TUOzN">
+          <property role="TUZQ4" value="Regex representing the constraint" />
+          <node concept="zr_55" id="3aST2zGrzWq" role="zr_5Q">
+            <ref role="zr_51" node="4X6IwqdNks_" resolve="constraint" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrzWr" role="TUOzN">
+          <property role="TUZQ4" value="Virtual package" />
+          <node concept="zr_55" id="3aST2zGrzWt" role="zr_5Q">
+            <ref role="zr_51" node="4X6IwqdNksB" resolve="virtualPackage" />
+          </node>
+        </node>
+        <node concept="x79VA" id="3aST2zGrzWu" role="x79VK">
+          <property role="x79VB" value="Data type declaration" />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="Pei6ieTR2v" role="jymVt" />
     <node concept="3Tm1VV" id="Pei6ieTQT$" role="1B3o_S" />
@@ -1804,10 +1897,22 @@
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
-      <node concept="P$JXv" id="5Jh2F9ezyzL" role="lGtFl">
-        <node concept="TZ5HA" id="5Jh2F9ezyzM" role="TZ5H$">
-          <node concept="1dT_AC" id="5Jh2F9ezyzN" role="1dT_Ay">
-            <property role="1dT_AB" value="Links an interface node and a concept node together (adds the interface to &quot;implements&quot; field)." />
+      <node concept="P$JXv" id="3aST2zGrwDq" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrwDr" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrwDs" role="1dT_Ay">
+            <property role="1dT_AB" value="Links an interface node and a concept node together (adds the interface to &quot;implements&quot; field). " />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrwDt" role="TUOzN">
+          <property role="TUZQ4" value="Concept that will implement the interface" />
+          <node concept="zr_55" id="3aST2zGrwDv" role="zr_5Q">
+            <ref role="zr_51" node="5Jh2F9ezcqI" resolve="concept" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrwDw" role="TUOzN">
+          <property role="TUZQ4" value="Interface to be pinned to the concept" />
+          <node concept="zr_55" id="3aST2zGrwDy" role="zr_5Q">
+            <ref role="zr_51" node="5Jh2F9ezcrR" resolve="iface" />
           </node>
         </node>
       </node>
@@ -1991,11 +2096,38 @@
           <ref role="3uigEE" to="kr2q:~Quantity" resolve="Quantity" />
         </node>
       </node>
-      <node concept="P$JXv" id="5Jh2F9eAcmt" role="lGtFl">
-        <node concept="TZ5HA" id="5Jh2F9eAcmu" role="TZ5H$">
-          <node concept="1dT_AC" id="5Jh2F9eAcmv" role="1dT_Ay">
+      <node concept="P$JXv" id="3aST2zGrwHP" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrwHQ" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrwHR" role="1dT_Ay">
             <property role="1dT_AB" value="Adds a child concept to a parent concept with given cardinality." />
           </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrwHS" role="TUOzN">
+          <property role="TUZQ4" value="Parent concept" />
+          <node concept="zr_55" id="3aST2zGrwHU" role="zr_5Q">
+            <ref role="zr_51" node="5Jh2F9e$iQu" resolve="parent" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrwHV" role="TUOzN">
+          <property role="TUZQ4" value="Child concept" />
+          <node concept="zr_55" id="3aST2zGrwHX" role="zr_5Q">
+            <ref role="zr_51" node="5Jh2F9e$iQE" resolve="child" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrwHY" role="TUOzN">
+          <property role="TUZQ4" value="Child link name" />
+          <node concept="zr_55" id="3aST2zGrwI0" role="zr_5Q">
+            <ref role="zr_51" node="5Jh2F9eAcuK" resolve="name" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrwI1" role="TUOzN">
+          <property role="TUZQ4" value="Cardinality" />
+          <node concept="zr_55" id="3aST2zGrwI3" role="zr_5Q">
+            <ref role="zr_51" node="5Jh2F9e$klv" resolve="quantity" />
+          </node>
+        </node>
+        <node concept="x79VA" id="3aST2zGrwI4" role="x79VK">
+          <property role="x79VB" value="Parent-child link that was created to bind concepts" />
         </node>
       </node>
     </node>
@@ -2017,7 +2149,7 @@
                 <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
               </node>
               <node concept="37vLTw" id="5Jh2F9eAeRQ" role="10QFUP">
-                <ref role="3cqZAo" node="5Jh2F9eAeNs" resolve="node" />
+                <ref role="3cqZAo" node="5Jh2F9eAeNs" resolve="concept" />
               </node>
             </node>
           </node>
@@ -2114,7 +2246,7 @@
         <ref role="ehGHo" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
       </node>
       <node concept="37vLTG" id="5Jh2F9eAeNs" role="3clF46">
-        <property role="TrG5h" value="node" />
+        <property role="TrG5h" value="concept" />
         <node concept="3uibUv" id="5Jh2F9eAeNr" role="1tU5fm">
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
@@ -2129,11 +2261,32 @@
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>
-      <node concept="P$JXv" id="5Jh2F9eAqw4" role="lGtFl">
-        <node concept="TZ5HA" id="5Jh2F9eAqw5" role="TZ5H$">
-          <node concept="1dT_AC" id="5Jh2F9eAqw6" role="1dT_Ay">
+      <node concept="P$JXv" id="3aST2zGrwLS" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrwLT" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrwLU" role="1dT_Ay">
             <property role="1dT_AB" value="Adds a target regex rule's data constraint type as a property to node." />
           </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrwLV" role="TUOzN">
+          <property role="TUZQ4" value="Target concept" />
+          <node concept="zr_55" id="3aST2zGrwLX" role="zr_5Q">
+            <ref role="zr_51" node="5Jh2F9eAeNs" resolve="concept" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrwLY" role="TUOzN">
+          <property role="TUZQ4" value="Name of the property" />
+          <node concept="zr_55" id="3aST2zGrwM0" role="zr_5Q">
+            <ref role="zr_51" node="5Jh2F9eAeNA" resolve="name" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrwM1" role="TUOzN">
+          <property role="TUZQ4" value="Constraint data type of the property" />
+          <node concept="zr_55" id="3aST2zGrwM3" role="zr_5Q">
+            <ref role="zr_51" node="5Jh2F9eAeO0" resolve="type" />
+          </node>
+        </node>
+        <node concept="x79VA" id="3aST2zGrwM4" role="x79VK">
+          <property role="x79VB" value="Property declaration created during the process" />
         </node>
       </node>
     </node>
@@ -2206,11 +2359,26 @@
         <property role="TrG5h" value="propertyName" />
         <node concept="17QB3L" id="2Dfqp1I661N" role="1tU5fm" />
       </node>
-      <node concept="P$JXv" id="5lY$Gq$IVIi" role="lGtFl">
-        <node concept="TZ5HA" id="5lY$Gq$IVIj" role="TZ5H$">
-          <node concept="1dT_AC" id="5lY$Gq$IVIk" role="1dT_Ay">
+      <node concept="P$JXv" id="3aST2zGrxwE" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrxwF" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrxwG" role="1dT_Ay">
             <property role="1dT_AB" value="Gets a property of a given node with given name." />
           </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrxwH" role="TUOzN">
+          <property role="TUZQ4" value="Target node" />
+          <node concept="zr_55" id="3aST2zGrxwJ" role="zr_5Q">
+            <ref role="zr_51" node="2Dfqp1I661K" resolve="node" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrxwK" role="TUOzN">
+          <property role="TUZQ4" value="Name of the property" />
+          <node concept="zr_55" id="3aST2zGrxwM" role="zr_5Q">
+            <ref role="zr_51" node="2Dfqp1I661M" resolve="propertyName" />
+          </node>
+        </node>
+        <node concept="x79VA" id="3aST2zGrxwN" role="x79VK">
+          <property role="x79VB" value="Property declaration that represents the link" />
         </node>
       </node>
     </node>
@@ -2304,11 +2472,26 @@
         </node>
       </node>
       <node concept="17QB3L" id="34Jgz4O9bEF" role="3clF45" />
-      <node concept="P$JXv" id="34Jgz4O9alY" role="lGtFl">
-        <node concept="TZ5HA" id="34Jgz4O9alZ" role="TZ5H$">
-          <node concept="1dT_AC" id="34Jgz4O9am0" role="1dT_Ay">
-            <property role="1dT_AB" value="Gets a given basic (alias, name...) property of a given node." />
+      <node concept="P$JXv" id="3aST2zGrx$H" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrx$I" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrx$J" role="1dT_Ay">
+            <property role="1dT_AB" value="Gets a given basic (alias, name...) property value of a given node." />
           </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrx$K" role="TUOzN">
+          <property role="TUZQ4" value="Target node" />
+          <node concept="zr_55" id="3aST2zGrx$M" role="zr_5Q">
+            <ref role="zr_51" node="34Jgz4O9alR" resolve="node" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrx$N" role="TUOzN">
+          <property role="TUZQ4" value="Which property" />
+          <node concept="zr_55" id="3aST2zGrx$P" role="zr_5Q">
+            <ref role="zr_51" node="34Jgz4O9alT" resolve="property" />
+          </node>
+        </node>
+        <node concept="x79VA" id="3aST2zGrx$Q" role="x79VK">
+          <property role="x79VB" value="Property value" />
         </node>
       </node>
     </node>
@@ -2430,10 +2613,28 @@
         <node concept="17QB3L" id="2Dfqp1I67BZ" role="1tU5fm" />
       </node>
       <node concept="3cqZAl" id="2Dfqp1I68fz" role="3clF45" />
-      <node concept="P$JXv" id="1fTj9HrD$ma" role="lGtFl">
-        <node concept="TZ5HA" id="1fTj9HrD$mb" role="TZ5H$">
-          <node concept="1dT_AC" id="1fTj9HrD$mc" role="1dT_Ay">
+      <node concept="P$JXv" id="3aST2zGrxBd" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrxBe" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrxBf" role="1dT_Ay">
             <property role="1dT_AB" value="Sets a given basic (alias, name...) property of a given node to a given value." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrxBg" role="TUOzN">
+          <property role="TUZQ4" value="Target node" />
+          <node concept="zr_55" id="3aST2zGrxBi" role="zr_5Q">
+            <ref role="zr_51" node="4X6IwqdOETq" resolve="node" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrxBj" role="TUOzN">
+          <property role="TUZQ4" value="Which property" />
+          <node concept="zr_55" id="3aST2zGrxBl" role="zr_5Q">
+            <ref role="zr_51" node="4X6IwqdOETs" resolve="property" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrxBm" role="TUOzN">
+          <property role="TUZQ4" value="New value" />
+          <node concept="zr_55" id="3aST2zGrxBo" role="zr_5Q">
+            <ref role="zr_51" node="2Dfqp1I67B5" resolve="value" />
           </node>
         </node>
       </node>
@@ -2452,7 +2653,7 @@
             </node>
             <node concept="2OqwBi" id="1fTj9HrDAG1" role="37vLTJ">
               <node concept="37vLTw" id="1fTj9HrDAE_" role="2Oq$k0">
-                <ref role="3cqZAo" node="1fTj9HrDADk" resolve="node" />
+                <ref role="3cqZAo" node="1fTj9HrDADk" resolve="concept" />
               </node>
               <node concept="3TrcHB" id="1fTj9HrDAOR" role="2OqNvi">
                 <ref role="3TsBF5" to="tpce:fKFLfW2" resolve="constraint" />
@@ -2464,7 +2665,7 @@
       <node concept="3Tm1VV" id="1fTj9HrDAtS" role="1B3o_S" />
       <node concept="3cqZAl" id="1fTj9HrDAzz" role="3clF45" />
       <node concept="37vLTG" id="1fTj9HrDADk" role="3clF46">
-        <property role="TrG5h" value="node" />
+        <property role="TrG5h" value="concept" />
         <node concept="3Tqbb2" id="1fTj9HrDADj" role="1tU5fm">
           <ref role="ehGHo" to="tpce:fKAz7CR" resolve="ConstrainedDataTypeDeclaration" />
         </node>
@@ -2473,10 +2674,22 @@
         <property role="TrG5h" value="value" />
         <node concept="17QB3L" id="1fTj9HrDADA" role="1tU5fm" />
       </node>
-      <node concept="P$JXv" id="1fTj9HrDAZs" role="lGtFl">
-        <node concept="TZ5HA" id="1fTj9HrDAZt" role="TZ5H$">
-          <node concept="1dT_AC" id="1fTj9HrDAZu" role="1dT_Ay">
+      <node concept="P$JXv" id="3aST2zGrxD0" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrxD1" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrxD2" role="1dT_Ay">
             <property role="1dT_AB" value="Sets the regex value of a given constrain data type node." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrxD3" role="TUOzN">
+          <property role="TUZQ4" value="Target constraint data type concept" />
+          <node concept="zr_55" id="3aST2zGrxD5" role="zr_5Q">
+            <ref role="zr_51" node="1fTj9HrDADk" resolve="concept" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrxD6" role="TUOzN">
+          <property role="TUZQ4" value="Regex representing the constraint" />
+          <node concept="zr_55" id="3aST2zGrxD8" role="zr_5Q">
+            <ref role="zr_51" node="1fTj9HrDADu" resolve="value" />
           </node>
         </node>
       </node>
@@ -2550,11 +2763,26 @@
         <property role="TrG5h" value="childName" />
         <node concept="17QB3L" id="3pfFnS02$if" role="1tU5fm" />
       </node>
-      <node concept="P$JXv" id="1fTj9HrD$It" role="lGtFl">
-        <node concept="TZ5HA" id="1fTj9HrD$Iu" role="TZ5H$">
-          <node concept="1dT_AC" id="1fTj9HrD$Iv" role="1dT_Ay">
+      <node concept="P$JXv" id="3aST2zGrxIB" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrxIC" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrxID" role="1dT_Ay">
             <property role="1dT_AB" value="Returns a child link of given node with given name." />
           </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrxIE" role="TUOzN">
+          <property role="TUZQ4" value="Target node" />
+          <node concept="zr_55" id="3aST2zGrxIG" role="zr_5Q">
+            <ref role="zr_51" node="3pfFnS02$ic" resolve="node" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrxIH" role="TUOzN">
+          <property role="TUZQ4" value="Child link name" />
+          <node concept="zr_55" id="3aST2zGrxIJ" role="zr_5Q">
+            <ref role="zr_51" node="3pfFnS02$ie" resolve="childName" />
+          </node>
+        </node>
+        <node concept="x79VA" id="3aST2zGrxIK" role="x79VK">
+          <property role="x79VB" value="Link representing the parent-child relationship" />
         </node>
       </node>
     </node>
@@ -2630,11 +2858,20 @@
         <property role="TrG5h" value="structureModel" />
         <node concept="H_c77" id="2Dfqp1I5RnW" role="1tU5fm" />
       </node>
-      <node concept="P$JXv" id="1fTj9HrD_0R" role="lGtFl">
-        <node concept="TZ5HA" id="1fTj9HrD_0S" role="TZ5H$">
-          <node concept="1dT_AC" id="1fTj9HrD_0T" role="1dT_Ay">
+      <node concept="P$JXv" id="3aST2zGry8J" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGry8K" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGry8L" role="1dT_Ay">
             <property role="1dT_AB" value="Returns all classic concepts (not interfaces or data types) from a given model." />
           </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGry8M" role="TUOzN">
+          <property role="TUZQ4" value="Model" />
+          <node concept="zr_55" id="3aST2zGry8O" role="zr_5Q">
+            <ref role="zr_51" node="2Dfqp1I5RnX" resolve="structureModel" />
+          </node>
+        </node>
+        <node concept="x79VA" id="3aST2zGry8P" role="x79VK">
+          <property role="x79VB" value="List of all concepts (not interface or constraint data type concepts)" />
         </node>
       </node>
     </node>
@@ -2704,15 +2941,24 @@
         <property role="TrG5h" value="structureModel" />
         <node concept="H_c77" id="5lY$Gq$O9Dy" role="1tU5fm" />
       </node>
-      <node concept="P$JXv" id="5lY$Gq$O9Dz" role="lGtFl">
-        <node concept="TZ5HA" id="5lY$Gq$O9D$" role="TZ5H$">
-          <node concept="1dT_AC" id="5lY$Gq$O9D_" role="1dT_Ay">
-            <property role="1dT_AB" value="Returns all classic concepts (not interfaces or data types) from a given model." />
-          </node>
-        </node>
-      </node>
       <node concept="3Tqbb2" id="5lY$Gq$OarB" role="3clF45">
         <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+      </node>
+      <node concept="P$JXv" id="3aST2zGrz1w" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrz1x" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrz1y" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the BaseConcept, which is the abstract parent for all concepts." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrz1z" role="TUOzN">
+          <property role="TUZQ4" value="Model" />
+          <node concept="zr_55" id="3aST2zGrz1_" role="zr_5Q">
+            <ref role="zr_51" node="5lY$Gq$O9Dx" resolve="structureModel" />
+          </node>
+        </node>
+        <node concept="x79VA" id="3aST2zGrz1A" role="x79VK">
+          <property role="x79VB" value="BaseConcept declaration" />
+        </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="Pei6ieTS8B" role="1B3o_S" />
@@ -2736,6 +2982,7 @@
         <ref role="ehGHo" to="2omo:hWWtQdD" resolve="ConceptTextGenDeclaration" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3aST2zGrbyJ" role="jymVt" />
     <node concept="312cEg" id="3aST2zGnjLR" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -2746,6 +2993,7 @@
         <ref role="3qa414" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3aST2zGraQK" role="jymVt" />
     <node concept="312cEg" id="3aST2zGnoVU" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -2983,6 +3231,13 @@
         <property role="TrG5h" value="value" />
         <node concept="17QB3L" id="3aST2zGnzOM" role="1tU5fm" />
       </node>
+      <node concept="P$JXv" id="3aST2zGrdaO" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrdaP" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrdaQ" role="1dT_Ay">
+            <property role="1dT_AB" value="Creates an append statement that adds a specific string value." />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="3aST2zGlNWR" role="jymVt" />
     <node concept="3clFb_" id="3aST2zGnPB9" role="jymVt">
@@ -3062,6 +3317,11 @@
           </node>
         </node>
         <node concept="3clFbH" id="3aST2zGnPBC" role="3cqZAp" />
+        <node concept="3SKdUt" id="3aST2zGreZJ" role="3cqZAp">
+          <node concept="3SKdUq" id="3aST2zGreZL" role="3SKWNk">
+            <property role="3SKdUp" value="Only when property is not empty" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="3aST2zGnPBD" role="3cqZAp">
           <node concept="3cpWsn" id="3aST2zGnPBE" role="3cpWs9">
             <property role="TrG5h" value="ifStatement" />
@@ -3174,14 +3434,26 @@
         <property role="TrG5h" value="prependSpace" />
         <node concept="10P_77" id="3aST2zGnPCx" role="1tU5fm" />
       </node>
-      <node concept="P$JXv" id="3aST2zGnPCy" role="lGtFl">
-        <node concept="TZ5HA" id="3aST2zGnPCz" role="TZ5H$">
-          <node concept="1dT_AC" id="3aST2zGnPC$" role="1dT_Ay">
+      <node concept="3Tm1VV" id="3aST2zGnPCo" role="1B3o_S" />
+      <node concept="P$JXv" id="3aST2zGrmwO" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrmwP" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrmwQ" role="1dT_Ay">
             <property role="1dT_AB" value="Creates an append statement that includes a property's value." />
           </node>
         </node>
+        <node concept="TUZQ0" id="3aST2zGrmwR" role="TUOzN">
+          <property role="TUZQ4" value="Reference to a regex rule (property)." />
+          <node concept="zr_55" id="3aST2zGrmwT" role="zr_5Q">
+            <ref role="zr_51" node="3aST2zGnPCs" resolve="reference" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrmwU" role="TUOzN">
+          <property role="TUZQ4" value="Do we want to prepend a space before we prepend the property?" />
+          <node concept="zr_55" id="3aST2zGrmwW" role="zr_5Q">
+            <ref role="zr_51" node="3aST2zGnPCw" resolve="prependSpace" />
+          </node>
+        </node>
       </node>
-      <node concept="3Tm1VV" id="3aST2zGnPCo" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="3aST2zGmaLU" role="jymVt" />
     <node concept="3clFb_" id="3aST2zGnUmO" role="jymVt">
@@ -3278,6 +3550,11 @@
               </node>
             </node>
             <node concept="3clFbH" id="3aST2zGoKdn" role="3cqZAp" />
+            <node concept="3SKdUt" id="3aST2zGrfjJ" role="3cqZAp">
+              <node concept="3SKdUq" id="3aST2zGrfjL" role="3SKWNk">
+                <property role="3SKdUp" value="Only when child is there" />
+              </node>
+            </node>
             <node concept="3clFbF" id="3aST2zGoAHj" role="3cqZAp">
               <node concept="37vLTI" id="3aST2zGoAS8" role="3clFbG">
                 <node concept="37vLTw" id="3aST2zGoAHh" role="37vLTJ">
@@ -3369,6 +3646,11 @@
                 </node>
               </node>
               <node concept="3clFbH" id="3aST2zGoKcp" role="3cqZAp" />
+              <node concept="3SKdUt" id="3aST2zGrflu" role="3cqZAp">
+                <node concept="3SKdUq" id="3aST2zGrflw" role="3SKWNk">
+                  <property role="3SKdUp" value="Only when at least one child is there" />
+                </node>
+              </node>
               <node concept="3clFbF" id="3aST2zGoK9q" role="3cqZAp">
                 <node concept="37vLTI" id="3aST2zGoK9r" role="3clFbG">
                   <node concept="37vLTw" id="3aST2zGoK9s" role="37vLTJ">
@@ -3462,6 +3744,11 @@
           </node>
         </node>
         <node concept="3clFbH" id="3aST2zGoD0h" role="3cqZAp" />
+        <node concept="3SKdUt" id="3aST2zGrfEG" role="3cqZAp">
+          <node concept="3SKdUq" id="3aST2zGrfEI" role="3SKWNk">
+            <property role="3SKdUp" value="Did we want to prepend a statement?" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="3aST2zGohTo" role="3cqZAp">
           <node concept="3clFbS" id="3aST2zGohTp" role="3clFbx">
             <node concept="3clFbF" id="3aST2zGohTq" role="3cqZAp">
@@ -3521,10 +3808,22 @@
         <node concept="10P_77" id="3aST2zGofpv" role="1tU5fm" />
       </node>
       <node concept="3Tm1VV" id="3aST2zGnUol" role="1B3o_S" />
-      <node concept="P$JXv" id="3aST2zGnUor" role="lGtFl">
-        <node concept="TZ5HA" id="3aST2zGnUos" role="TZ5H$">
-          <node concept="1dT_AC" id="3aST2zGnUot" role="1dT_Ay">
+      <node concept="P$JXv" id="3aST2zGrnVP" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrnVQ" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrnVR" role="1dT_Ay">
             <property role="1dT_AB" value="Creates an append statement that includes a child's value." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrnVS" role="TUOzN">
+          <property role="TUZQ4" value="Reference to a parser rule (child)." />
+          <node concept="zr_55" id="3aST2zGrnVU" role="zr_5Q">
+            <ref role="zr_51" node="3aST2zGnUmQ" resolve="reference" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrnVV" role="TUOzN">
+          <property role="TUZQ4" value="Do we want to prepend a space before we prepend the child/children?" />
+          <node concept="zr_55" id="3aST2zGrnVX" role="zr_5Q">
+            <ref role="zr_51" node="3aST2zGofpu" resolve="prependSpace" />
           </node>
         </node>
       </node>
@@ -3547,6 +3846,16 @@
       <node concept="3Tqbb2" id="3aST2zGnGfv" role="3clF45">
         <ref role="ehGHo" to="2omo:hWWtQdD" resolve="ConceptTextGenDeclaration" />
       </node>
+      <node concept="P$JXv" id="3aST2zGrqhR" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrqhS" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrqhT" role="1dT_Ay">
+            <property role="1dT_AB" value="Retrieves the TextGen aspect." />
+          </node>
+        </node>
+        <node concept="x79VA" id="3aST2zGrqhU" role="x79VK">
+          <property role="x79VB" value="The TextGen aspect that was built using this class." />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="3aST2zGpfpf" role="jymVt" />
     <node concept="3clFb_" id="3aST2zGpoyj" role="jymVt">
@@ -3562,7 +3871,7 @@
         </node>
         <node concept="3cpWs8" id="3aST2zGpoys" role="3cqZAp">
           <node concept="3cpWsn" id="3aST2zGpoyt" role="3cpWs9">
-            <property role="TrG5h" value="fn" />
+            <property role="TrG5h" value="literal" />
             <node concept="3Tqbb2" id="3aST2zGpoyu" role="1tU5fm">
               <ref role="ehGHo" to="tpee:f$Xl_Og" resolve="StringLiteral" />
             </node>
@@ -3582,7 +3891,7 @@
             </node>
             <node concept="2OqwBi" id="3aST2zGpoy_" role="37vLTJ">
               <node concept="37vLTw" id="3aST2zGpoyA" role="2Oq$k0">
-                <ref role="3cqZAo" node="3aST2zGpoyt" resolve="fn" />
+                <ref role="3cqZAo" node="3aST2zGpoyt" resolve="literal" />
               </node>
               <node concept="3TrcHB" id="3aST2zGpoyB" role="2OqNvi">
                 <ref role="3TsBF5" to="tpee:f$Xl_Oh" resolve="value" />
@@ -3600,7 +3909,7 @@
                     <node concept="33vP2n" id="3aST2zGq1aA" role="3cqZAk">
                       <node concept="2c44te" id="3aST2zGq1eu" role="lGtFl">
                         <node concept="37vLTw" id="3aST2zGq1gE" role="2c44t1">
-                          <ref role="3cqZAo" node="3aST2zGpoyt" resolve="fn" />
+                          <ref role="3cqZAo" node="3aST2zGpoyt" resolve="literal" />
                         </node>
                       </node>
                     </node>
@@ -3624,24 +3933,9 @@
             <property role="3SKdUp" value="Extension method" />
           </node>
         </node>
-        <node concept="3cpWs8" id="3aST2zGpoyW" role="3cqZAp">
-          <node concept="3cpWsn" id="3aST2zGpoyX" role="3cpWs9">
-            <property role="TrG5h" value="extStatement" />
-            <node concept="3Tqbb2" id="3aST2zGpoyY" role="1tU5fm">
-              <ref role="ehGHo" to="tpee:fzclF8j" resolve="ExpressionStatement" />
-            </node>
-            <node concept="2ShNRf" id="3aST2zGpoyZ" role="33vP2m">
-              <node concept="3zrR0B" id="3aST2zGpoz0" role="2ShVmc">
-                <node concept="3Tqbb2" id="3aST2zGpoz1" role="3zrR0E">
-                  <ref role="ehGHo" to="tpee:fzclF8j" resolve="ExpressionStatement" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="3aST2zGpoz2" role="3cqZAp">
           <node concept="3cpWsn" id="3aST2zGpoz3" role="3cpWs9">
-            <property role="TrG5h" value="ext" />
+            <property role="TrG5h" value="literal2" />
             <node concept="3Tqbb2" id="3aST2zGpoz4" role="1tU5fm">
               <ref role="ehGHo" to="tpee:f$Xl_Og" resolve="StringLiteral" />
             </node>
@@ -3661,7 +3955,7 @@
             </node>
             <node concept="2OqwBi" id="3aST2zGpozb" role="37vLTJ">
               <node concept="37vLTw" id="3aST2zGpozc" role="2Oq$k0">
-                <ref role="3cqZAo" node="3aST2zGpoz3" resolve="ext" />
+                <ref role="3cqZAo" node="3aST2zGpoz3" resolve="literal2" />
               </node>
               <node concept="3TrcHB" id="3aST2zGpozd" role="2OqNvi">
                 <ref role="3TsBF5" to="tpee:f$Xl_Oh" resolve="value" />
@@ -3679,7 +3973,7 @@
                     <node concept="33vP2n" id="3aST2zGq1JZ" role="3cqZAk">
                       <node concept="2c44te" id="3aST2zGq1Ny" role="lGtFl">
                         <node concept="37vLTw" id="3aST2zGq1QZ" role="2c44t1">
-                          <ref role="3cqZAo" node="3aST2zGpoz3" resolve="ext" />
+                          <ref role="3cqZAo" node="3aST2zGpoz3" resolve="literal2" />
                         </node>
                       </node>
                     </node>
@@ -3708,12 +4002,41 @@
         <node concept="17QB3L" id="3aST2zGpozA" role="1tU5fm" />
       </node>
       <node concept="3Tm1VV" id="3aST2zGpozv" role="1B3o_S" />
+      <node concept="P$JXv" id="3aST2zGrrGL" role="lGtFl">
+        <node concept="TZ5HA" id="3aST2zGrrGM" role="TZ5H$">
+          <node concept="1dT_AC" id="3aST2zGrrGN" role="1dT_Ay">
+            <property role="1dT_AB" value="Root concepts need definitions of filename and extension string." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrrGO" role="TUOzN">
+          <property role="TUZQ4" value="Filename that will be returned by the filename method." />
+          <node concept="zr_55" id="3aST2zGrrGQ" role="zr_5Q">
+            <ref role="zr_51" node="3aST2zGpozz" resolve="filename" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3aST2zGrrGR" role="TUOzN">
+          <property role="TUZQ4" value="Extension that will be returned by the extension method." />
+          <node concept="zr_55" id="3aST2zGrrGT" role="zr_5Q">
+            <ref role="zr_51" node="3aST2zGpoz_" resolve="extension" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3Tm1VV" id="Pei6ieTWbX" role="1B3o_S" />
     <node concept="3UR2Jj" id="Pei6ieTWF6" role="lGtFl">
       <node concept="TZ5HA" id="Pei6ieTWF7" role="TZ5H$">
         <node concept="1dT_AC" id="Pei6ieTWF8" role="1dT_Ay">
-          <property role="1dT_AB" value="Helper for generating TextGen aspects." />
+          <property role="1dT_AB" value="Helper class for generating TextGen aspects." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3aST2zGraQg" role="TZ5H$">
+        <node concept="1dT_AC" id="3aST2zGraQh" role="1dT_Ay">
+          <property role="1dT_AB" value="With each instance, one textgen is created and can be filled with statements." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3aST2zGraQC" role="TZ5H$">
+        <node concept="1dT_AC" id="3aST2zGraQD" role="1dT_Ay">
+          <property role="1dT_AB" value="After we are done with it, we call getTextGen() to retrieve it." />
         </node>
       </node>
     </node>
@@ -3928,13 +4251,20 @@
       <node concept="3uibUv" id="34Jgz4O9l7t" role="11_B2D">
         <ref role="3uigEE" to="33ny:~List" resolve="List" />
         <node concept="3uibUv" id="34Jgz4O9lvF" role="11_B2D">
-          <ref role="3uigEE" node="34Jgz4O9lb4" resolve="ShortcutItem" />
+          <ref role="3uigEE" node="34Jgz4O9lb4" resolve="Shortcut" />
+        </node>
+      </node>
+    </node>
+    <node concept="3UR2Jj" id="3aST2zGrj2Z" role="lGtFl">
+      <node concept="TZ5HA" id="3aST2zGrj30" role="TZ5H$">
+        <node concept="1dT_AC" id="3aST2zGrj31" role="1dT_Ay">
+          <property role="1dT_AB" value="Shortcut typedef for mapping between rules and shortcut paths." />
         </node>
       </node>
     </node>
   </node>
   <node concept="312cEu" id="34Jgz4O9lb4">
-    <property role="TrG5h" value="ShortcutItem" />
+    <property role="TrG5h" value="Shortcut" />
     <node concept="312cEg" id="34Jgz4O9lbM" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -3943,6 +4273,7 @@
       <node concept="3Tm1VV" id="34Jgz4O9lbw" role="1B3o_S" />
       <node concept="17QB3L" id="34Jgz4O9lcb" role="1tU5fm" />
     </node>
+    <node concept="2tJIrI" id="3aST2zGrtOj" role="jymVt" />
     <node concept="312cEg" id="2SZ78Xpg9Jp" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -3951,6 +4282,7 @@
       <node concept="3Tm1VV" id="2SZ78Xpg9Jq" role="1B3o_S" />
       <node concept="17QB3L" id="2SZ78Xpg9Jr" role="1tU5fm" />
     </node>
+    <node concept="2tJIrI" id="3aST2zGrtTD" role="jymVt" />
     <node concept="312cEg" id="2vxS1yp4F7H" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -3975,6 +4307,11 @@
     <node concept="3clFbW" id="34Jgz4O9ldZ" role="jymVt">
       <node concept="3cqZAl" id="34Jgz4O9le0" role="3clF45" />
       <node concept="3clFbS" id="34Jgz4O9le2" role="3clF47">
+        <node concept="3SKdUt" id="3aST2zGru5n" role="3cqZAp">
+          <node concept="3SKdUq" id="3aST2zGru5p" role="3SKWNk">
+            <property role="3SKdUp" value="Description is inferred from the alias of the end concept." />
+          </node>
+        </node>
         <node concept="3clFbJ" id="2SZ78XpgBOz" role="3cqZAp">
           <node concept="3clFbS" id="2SZ78XpgBO_" role="3clFbx">
             <node concept="3clFbF" id="34Jgz4O9ljY" role="3cqZAp">
@@ -4055,6 +4392,13 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="34Jgz4O9lb5" role="1B3o_S" />
+    <node concept="3UR2Jj" id="3aST2zGrsJ4" role="lGtFl">
+      <node concept="TZ5HA" id="3aST2zGrsJ5" role="TZ5H$">
+        <node concept="1dT_AC" id="3aST2zGrsJ6" role="1dT_Ay">
+          <property role="1dT_AB" value="Represents a shortcut to some end concept." />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

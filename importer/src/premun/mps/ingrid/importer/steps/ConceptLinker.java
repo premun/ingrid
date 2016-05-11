@@ -72,7 +72,7 @@ public class ConceptLinker extends ImportStep {
             .forEach(this::findEndNodes);
 
         for (ParserRule key : this.shortcuts.keySet()) {
-            for (ShortcutItem shortcut : this.shortcuts.get(key)) {
+            for (Shortcut shortcut : this.shortcuts.get(key)) {
                 // Last node is the target node, nodes before represent interfaces bound to parser rules
                 SNode endNode = shortcut.path.get(shortcut.path.size() - 1);
 
@@ -89,7 +89,7 @@ public class ConceptLinker extends ImportStep {
      * @param rule Rule
      */
     private void findEndNodes(ParserRule rule) {
-        List<ShortcutItem> result = findEndNodes(rule, new ArrayList<>());
+        List<Shortcut> result = findEndNodes(rule, new ArrayList<>());
 
         // Rules without shortcuts, are rules that all have paths of length 1
         // If one of them had length > 1, we need to create the menu because of that
@@ -126,8 +126,8 @@ public class ConceptLinker extends ImportStep {
      * @param path Alternatives that lead to that end node.
      * @return List of shortcuts.
      */
-    private List<ShortcutItem> findEndNodes(ParserRule rule, List<SNode> path) {
-        List<ShortcutItem> result = new ArrayList<>();
+    private List<Shortcut> findEndNodes(ParserRule rule, List<SNode> path) {
+        List<Shortcut> result = new ArrayList<>();
 
         // Interface - we need to find implementors
         for (Alternative alternative : rule.alternatives) {
@@ -152,7 +152,7 @@ public class ConceptLinker extends ImportStep {
                     clonedPath.add(alternative.node);
                 }
 
-                ShortcutItem shortcut = new ShortcutItem(clonedPath);
+                Shortcut shortcut = new Shortcut(clonedPath);
                 result.add(shortcut);
             }
         }

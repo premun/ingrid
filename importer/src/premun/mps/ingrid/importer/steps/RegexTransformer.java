@@ -36,8 +36,6 @@ public class RegexTransformer extends ImportStep {
             .replaceAll("~\\[", "[^")
             .replaceAll("~ \\[", "[^");
 
-        // TODO: more escape sequences (\\uXXX) etc.
-
         NodeHelper.setConstraint(concept, constraint);
     }
 }
