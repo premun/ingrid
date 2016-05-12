@@ -62,8 +62,6 @@ public class ConceptImporter extends ImportStep {
                 SNode concept = this.nodeFactory.createConcept(name, name, description, "Rules." + rule.name, rule.equals(this.grammar.rootRule));
                 alternative.node = concept;
 
-                // Link the parent split rule interface to this rule
-                // NodeHelper.linkInterfaceToConcept(concept, iface);
                 this.structureModel.addRootNode(concept);
             }
         } else {

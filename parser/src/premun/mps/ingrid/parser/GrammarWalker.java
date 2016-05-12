@@ -319,11 +319,11 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
         }
     }
 
-    private void debugPrintANTLRTree(ParseTree tree) {
+    private static void debugPrintANTLRTree(ParseTree tree) {
         debugPrintANTLRTree(tree, 0);
     }
 
-    private void debugPrintANTLRTree(ParseTree tree, int indent) {
+    private static void debugPrintANTLRTree(ParseTree tree, int indent) {
         System.out.print(new String(new char[indent]).replace("\0", " "));
 
         String classname = tree.getClass().getSimpleName();
