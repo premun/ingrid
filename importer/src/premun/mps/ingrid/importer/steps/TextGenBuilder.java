@@ -40,8 +40,9 @@ public class TextGenBuilder extends ImportStep {
                         Rule prevRule = elements.get(i - 1).rule;
                         if(prevRule instanceof LiteralRule) {
                             // We will only put space when tokens like "function" or "return" are present
+                            // We check, whether the last character is alphabetic
                             // Turns out it works nice in a lot of cases, since user usually inserts alphanumeric content
-                            prependSpace = Pattern.matches("^[a-zA-Z_]+$", ((LiteralRule) prevRule).value);
+                            prependSpace = Pattern.matches(".*[a-zA-Z_]$", ((LiteralRule) prevRule).value);
                         } else {
                             prependSpace = true;
                         }
