@@ -4,6 +4,7 @@ import org.antlr.v4.runtime.tree.*;
 import premun.mps.ingrid.parser.antlr.ANTLRv4Parser.*;
 import premun.mps.ingrid.parser.antlr.*;
 import premun.mps.ingrid.parser.grammar.*;
+import premun.mps.ingrid.parser.grammar.exception.*;
 
 import java.util.*;
 
@@ -233,7 +234,19 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
             ;
         */
         currentLexerRule = new LexerRule(context);
+
         this.rules.put(currentLexerRule.name, currentLexerRule);
+
+        // Parse all alternatives of this rule
+        context
+            .lexerRuleBlock()
+            .lexerAltList()
+            .children
+            .stream()
+            .filter(alternative -> alternative instanceof LexerAltContext)
+            .forEach(alternative ->
+                this.parseLexerRule((LexerAltContext) alternative)
+            );
     }
 
     /**
@@ -241,8 +254,7 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
      *
      * @param context Parser context.
      */
-    @Override
-    public void enterLexerAlt(LexerAltContext context) {
+    public void parseLexerRule(LexerAltContext context) {
         ArrayList<Rule> elements = new ArrayList<>();
 
         // Rules that can dissolve into empty string
@@ -313,12 +325,40 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
             return;
         }
 
+        // Subrule blocks
+        // Name : NonDigit (NonDigit | Digit)* ;
+        //                 ^         ^      ^
+        // When we meet this block, we just surround it with ()
+        // Then, whenever we meet the | character, we know, we are inside a block,
+        // because top level | are ignored in the enterLexerRuleSpec() method.
+        if (node instanceof TerminalNodeImpl) {
+            if (node.getText().equals("(")) {
+                elements.add(new BlockStartRule());
+                return;
+            }
+
+            if (node.getText().equals(")")) {
+                elements.add(new BlockEndRule());
+                return;
+            }
+
+            if (node.getText().equals("|")) {
+                elements.add(new BlockAltRule());
+                return;
+            }
+        }
+
         // Recursively explore further
         for (int i = 0; i < node.getChildCount(); i++) {
             parseLexerAlternativeElement(node.getChild(i), elements);
         }
     }
 
+    /**
+     * Method useful for debugging - prints the full AST, that ANTLR parsed.
+     *
+     * @param tree AST to be printed
+     */
     private static void debugPrintANTLRTree(ParseTree tree) {
         debugPrintANTLRTree(tree, 0);
     }

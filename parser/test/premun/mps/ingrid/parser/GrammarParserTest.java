@@ -67,6 +67,6 @@ public class GrammarParserTest {
         assertTrue(grammar.rules.get("element") == elementAlternative);
 
         RegexRule nameRule = (RegexRule) grammar.rules.get("Name");
-        assertEquals("[:a-zA-Z](([:a-zA-Z]|\\-|_|\\.|(([0-9]|[0-9]))))*", nameRule.regexp);
+        assertEquals("[:a-zA-Z](([:a-zA-Z]|(((\\-)?|(_|\\.)+)*)|(([0-9]|[0-9]))))*", nameRule.regexp);
     }
 }

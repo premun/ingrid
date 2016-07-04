@@ -23,9 +23,7 @@ DIGIT       :   [0-9]
 
 fragment
 NameChar    :   NameStartChar
-            |   '-'
-            |   '_'
-            |   '.'
+            |   ('-'? | ('_' | '.')+)*
             |   DIGIT
             ;
 

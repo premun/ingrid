@@ -170,6 +170,12 @@ class GrammarResolver {
 
                         subRegex.set(lastIndex, prevRegex + quantifier);
 
+                    } else if(element instanceof BlockStartRule) {
+                        subRegex.add("(");
+                    } else if(element instanceof BlockEndRule) {
+                        subRegex.add(")");
+                    } else if(element instanceof BlockAltRule) {
+                        subRegex.add("|");
                     } else if (element instanceof UnresolvedLexerRule) {
                         if (!rules.containsKey(element.name)) {
                             throw new UnresolvableRuleException("Failed to resolve lexer rule '" + element.name + "'");
