@@ -12,15 +12,9 @@ public class ConceptImporter extends ImportStep {
 
     @Override
     public void Execute() {
-        // Creates constraint data concepts
-        this.grammar.rules
-            .values()
-            .stream()
-            .filter(r -> r instanceof RegexRule)
-            .map(r -> (RegexRule) r)
-            .forEach(this::importToken);
-
         // Creates interfaces for parser rules and concepts for alternatives
+        // Constraint data types for Lexer rules are created later, during node linking,
+        // so that only those, that are really referenced (e.g. not fragments), are created.
         this.grammar.rules
             .values()
             .stream()
@@ -79,18 +73,6 @@ public class ConceptImporter extends ImportStep {
             rule.node = concept;
             alternative.node = concept;
         }
-    }
-
-    /**
-     * Imports a regex rule as a constraint data type element.
-     *
-     * @param rule Rule to be imported.
-     */
-    private void importToken(RegexRule rule) {
-        rule.name = this.namingService.generateName(rule.name);
-        SNode node = this.nodeFactory.createConstraintDataType(rule.name, rule.regexp, "Tokens");
-        this.structureModel.addRootNode(node);
-        rule.node = node;
     }
 
     /**

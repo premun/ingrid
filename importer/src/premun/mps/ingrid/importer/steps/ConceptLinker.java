@@ -46,9 +46,18 @@ public class ConceptLinker extends ImportStep {
                 if (childRef.rule instanceof LiteralRule) {
                     // Literal rule will only appear in editor
                 } else if (childRef.rule instanceof RegexRule) {
+                    // Create concept for token, if referenced for the first time
+                    RegexRule regexRule = ((RegexRule) childRef.rule);
+                    if (regexRule.node == null) {
+                        regexRule.name = this.namingService.generateName(regexRule.name);
+                        SNode node = this.nodeFactory.createConstraintDataType(regexRule.name, regexRule.regexp, "Tokens");
+                        this.structureModel.addRootNode(node);
+                        regexRule.node = node;
+                    }
+
                     // Find regex type and create property for it
-                    String linkName = childRef.rule.name + "_" + (++propertyIndex);
-                    SNode tokenRule = ((RegexRule) childRef.rule).node;
+                    String linkName = regexRule.name + "_" + (++propertyIndex);
+                    SNode tokenRule = regexRule.node;
                     childRef.nodeReference = NodeHelper.addPropertyToNode(parent, linkName, tokenRule);
                 } else if (childRef.rule instanceof ParserRule) {
                     // Find referenced interface / concept
