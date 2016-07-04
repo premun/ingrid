@@ -3,6 +3,8 @@ package premun.mps.ingrid.importer.steps;
 import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.parser.grammar.*;
 
+import java.util.*;
+
 /**
  * Import step that creates concepts, constraint data concepts and interface concepts for grammar rules.
  */
@@ -42,12 +44,11 @@ public class ConceptImporter extends ImportStep {
      * @param rule Rule to be imported.
      */
     private void importRule(ParserRule rule) {
-        // Generate unique name
-        rule.name = this.namingService.generateName(rule.name);
+        if (this.isInterfaceNeeded(rule)) {
+            // Generate unique name
+            rule.name = this.namingService.generateName(rule.name);
 
-        if (rule.alternatives.size() > 1) {
-            // Rule with more alternatives - we will create an interface
-            // and a child for each alternative that will inherit this interface
+            // We will create an interface and a child for each alternative that will inherit this interface
             SNode iface = this.nodeFactory.createInterface(rule.name, "Interfaces." + rule.name);
             this.structureModel.addRootNode(iface);
             rule.node = iface;
@@ -65,6 +66,10 @@ public class ConceptImporter extends ImportStep {
                 this.structureModel.addRootNode(concept);
             }
         } else {
+            // Generate unique name
+            rule.name = this.namingService.generateName("I" + rule.name);
+
+            // We will create plain old concept
             Alternative alternative = rule.alternatives.get(0);
             String description = alternative.comment != null ? alternative.comment : rule.name;
 
@@ -86,5 +91,47 @@ public class ConceptImporter extends ImportStep {
         SNode node = this.nodeFactory.createConstraintDataType(rule.name, rule.regexp, "Tokens");
         this.structureModel.addRootNode(node);
         rule.node = node;
+    }
+
+    /**
+     * Detects, whether we need to create an interface for a rule.
+     *
+     * 1) When has more alternatives - then we need it to
+     * 2) Or, when there could a shortcut lead through this concept. Then we need it, so that all end nodes can inherit it.
+     *    Example situation:
+     *    a  : a1
+     *       | a2
+     *       | a3
+     *       ;
+     *
+     *    a2 : b1
+     *       ;
+     *
+     *    b1 : C1
+     *       | C2
+     *       ;
+     *
+     *    Then, even when a2 is simple, we need an IA2 interface, so that nodes B1_1 and B1_2 can inherit it.
+     *
+     * @param rule Rule, to be verified
+     * @return True, when we need to create an interface for this node.
+     */
+    private boolean isInterfaceNeeded(ParserRule rule) {
+        // Case 1)
+        if (rule.alternatives.size() > 1) {
+            return true;
+        }
+
+        // Case 2)
+        List<RuleReference> elements = rule.alternatives.get(0).elements;
+        if (elements.size() == 1) {
+            RuleReference element = elements.get(0);
+
+            if (element.quantity == Quantity.EXACTLY_ONE && element.rule instanceof ParserRule) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
