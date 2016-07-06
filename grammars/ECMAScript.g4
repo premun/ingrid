@@ -27,7 +27,7 @@
 grammar ECMAScript;
 
 @parser::members {
-  
+
     /**
      * Returns {@code true} iff on the current index of the parser's
      * token stream a token of the given {@code type} exists on the
@@ -51,52 +51,10 @@ grammar ECMAScript;
         // provided type.
         return (ahead.getChannel() == Lexer.HIDDEN) && (ahead.getType() == type);
     }
-
-    /**
-     * Returns {@code true} iff on the current index of the parser's
-     * token stream a token exists on the {@code HIDDEN} channel which
-     * either is a line terminator, or is a multi line comment that
-     * contains a line terminator.
-     *
-     * @return {@code true} iff on the current index of the parser's
-     * token stream a token exists on the {@code HIDDEN} channel which
-     * either is a line terminator, or is a multi line comment that
-     * contains a line terminator.
-     */
-    private boolean lineTerminatorAhead() {
-
-        // Get the token ahead of the current index.
-        int possibleIndexEosToken = this.getCurrentToken().getTokenIndex() - 1;
-        Token ahead = _input.get(possibleIndexEosToken);
-
-        if (ahead.getChannel() != Lexer.HIDDEN) {
-            // We're only interested in tokens on the HIDDEN channel.
-            return false;
-        }
-
-        if (ahead.getType() == LineTerminator) {
-            // There is definitely a line terminator ahead.
-            return true;
-        }
-
-        if (ahead.getType() == WhiteSpaces) {
-            // Get the token ahead of the current whitespaces.
-            possibleIndexEosToken = this.getCurrentToken().getTokenIndex() - 2;
-            ahead = _input.get(possibleIndexEosToken);
-        }
-
-        // Get the token's text and type.
-        String text = ahead.getText();
-        int type = ahead.getType();
-
-        // Check if the token is, or contains a line terminator.
-        return (type == MultiLineComment && (text.contains("\r") || text.contains("\n"))) ||
-                (type == LineTerminator);
-    }                                
 }
 
 @lexer::members {
-                 
+
     // A flag indicating if the lexer should operate in strict mode.
     // When set to true, FutureReservedWords are tokenized, when false,
     // an octal literal can be tokenized.
@@ -134,15 +92,15 @@ grammar ECMAScript;
      */
     @Override
     public Token nextToken() {
-        
+
         // Get the next token.
         Token next = super.nextToken();
-        
+
         if (next.getChannel() == Token.DEFAULT_CHANNEL) {
-            // Keep track of the last token on the default channel.                                              
+            // Keep track of the last token on the default channel.
             this.lastToken = next;
         }
-        
+
         return next;
     }
 
@@ -152,13 +110,13 @@ grammar ECMAScript;
      * @return {@code true} iff the lexer can match a regex literal.
      */
     private boolean isRegexPossible() {
-                                       
+
         if (this.lastToken == null) {
             // No token has been produced yet: at the start of the input,
             // no division is possible, so a regex literal _is_ possible.
             return true;
         }
-        
+
         switch (this.lastToken.getType()) {
             case Identifier:
             case NullLiteral:
@@ -243,7 +201,7 @@ statementList
 /// VariableStatement :
 ///     var VariableDeclarationList ;
 variableStatement
- : Var variableDeclarationList eos
+ : Var variableDeclarationList SemiColon
  ;
 
 /// VariableDeclarationList :
@@ -274,14 +232,14 @@ emptyStatement
 /// ExpressionStatement :
 ///     [lookahead ∉ {{, function}] Expression ;
 expressionStatement
- : {(_input.LA(1) != OpenBrace) && (_input.LA(1) != Function)}? expressionSequence eos
+ : {(_input.LA(1) != OpenBrace) && (_input.LA(1) != Function)}? singleExpression SemiColon
  ;
 
 /// IfStatement :
 ///     if ( Expression ) Statement else Statement
 ///     if ( Expression ) Statement
 ifStatement
- : If '(' expressionSequence ')' statement ( Else statement )?
+ : If '(' singleExpression ')' statement ( Else statement )?
  ;
 
 /// IterationStatement :
@@ -292,45 +250,45 @@ ifStatement
 ///     for ( LeftHandSideExpression in Expression ) Statement
 ///     for ( var VariableDeclaration in Expression ) Statement
 iterationStatement
- : Do statement While '(' expressionSequence ')' eos                                                 # DoStatement
- | While '(' expressionSequence ')' statement                                                        # WhileStatement
- | For '(' expressionSequence? ';' expressionSequence? ';' expressionSequence? ')' statement         # ForStatement
- | For '(' Var variableDeclarationList ';' expressionSequence? ';' expressionSequence? ')' statement # ForVarStatement
- | For '(' singleExpression In expressionSequence ')' statement                                      # ForInStatement
- | For '(' Var variableDeclaration In expressionSequence ')' statement                               # ForVarInStatement
+ : Do statement While '(' singleExpression ')' SemiColon                                                 # DoStatement
+ | While '(' singleExpression ')' statement                                                        # WhileStatement
+ | For '(' singleExpression? ';' singleExpression? ';' singleExpression? ')' statement         # ForStatement
+ | For '(' Var variableDeclarationList ';' singleExpression? ';' singleExpression? ')' statement # ForVarStatement
+ | For '(' singleExpression In singleExpression ')' statement                                      # ForInStatement
+ | For '(' Var variableDeclaration In singleExpression ')' statement                               # ForVarInStatement
  ;
 
 /// ContinueStatement :
 ///     continue ;
 ///     continue [no LineTerminator here] Identifier ;
 continueStatement
- : Continue Identifier? eos
+ : Continue Identifier? SemiColon
  ;
 
 /// BreakStatement :
 ///     break ;
 ///     break [no LineTerminator here] Identifier ;
 breakStatement
- : Break Identifier? eos
+ : Break Identifier? SemiColon
  ;
 
 /// ReturnStatement :
 ///     return ;
 ///     return [no LineTerminator here] Expression ;
 returnStatement
- : Return expressionSequence? eos
+ : Return singleExpression? SemiColon
  ;
 
 /// WithStatement :
 ///     with ( Expression ) Statement
 withStatement
- : With '(' expressionSequence ')' statement
+ : With '(' singleExpression ')' statement
  ;
 
 /// SwitchStatement :
 ///     switch ( Expression ) CaseBlock
 switchStatement
- : Switch '(' expressionSequence ')' caseBlock
+ : Switch '(' singleExpression ')' caseBlock
  ;
 
 /// CaseBlock :
@@ -350,7 +308,7 @@ caseClauses
 /// CaseClause :
 ///     case Expression ':' StatementList?
 caseClause
- : Case expressionSequence ':' statementList?
+ : Case singleExpression ':' statementList?
  ;
 
 /// DefaultClause :
@@ -368,7 +326,7 @@ labelledStatement
 /// ThrowStatement :
 ///     throw [no LineTerminator here] Expression ;
 throwStatement
- : Throw expressionSequence eos
+ : Throw singleExpression SemiColon
  ;
 
 /// TryStatement :
@@ -396,7 +354,7 @@ finallyProduction
 /// DebuggerStatement :
 ///     debugger ;
 debuggerStatement
- : Debugger eos
+ : Debugger SemiColon
  ;
 
 /// FunctionDeclaration :
@@ -417,7 +375,7 @@ formalParameterList
 functionBody
  : sourceElement*
  ;
-    
+
 /// ArrayLiteral :
 ///     [ Elision? ]
 ///     [ ElementList ]
@@ -454,7 +412,7 @@ objectLiteral
 propertyNameAndValueList
  : propertyAssignment ( ',' propertyAssignment )*
  ;
-    
+
 /// PropertyAssignment :
 ///     PropertyName : AssignmentExpression
 ///     get PropertyName ( ) { FunctionBody }
@@ -463,18 +421,18 @@ propertyAssignment
  : propertyName ':' singleExpression                            # PropertyExpressionAssignment
  | getter '(' ')' '{' functionBody '}'                          # PropertyGetter
  | setter '(' propertySetParameterList ')' '{' functionBody '}' # PropertySetter
- ;           
-    
+ ;
+
 /// PropertyName :
 ///     IdentifierName
 ///     StringLiteral
 ///     NumericLiteral
 propertyName
- : identifierName
+ : Identifier
  | StringLiteral
  | numericLiteral
  ;
-    
+
 /// PropertySetParameterList :
 ///     Identifier
 propertySetParameterList
@@ -487,14 +445,14 @@ propertySetParameterList
 arguments
  : '(' argumentList? ')'
  ;
-    
+
 /// ArgumentList :
 ///     AssignmentExpression
 ///     ArgumentList , AssignmentExpression
 argumentList
  : singleExpression ( ',' singleExpression )*
  ;
-    
+
 /// Expression :
 ///     AssignmentExpression
 ///     Expression , AssignmentExpression
@@ -541,7 +499,7 @@ argumentList
 ///     RelationalExpression > ShiftExpression
 ///     RelationalExpression <= ShiftExpression
 ///     RelationalExpression >= ShiftExpression
-///     RelationalExpression instanceof ShiftExpression 
+///     RelationalExpression instanceof ShiftExpression
 ///     RelationalExpression in ShiftExpression
 ///
 /// ShiftExpression :
@@ -549,7 +507,7 @@ argumentList
 ///     ShiftExpression << AdditiveExpression
 ///     ShiftExpression >> AdditiveExpression
 ///     ShiftExpression >>> AdditiveExpression
-/// 
+///
 /// AdditiveExpression :
 ///     MultiplicativeExpression
 ///     AdditiveExpression + MultiplicativeExpression
@@ -610,14 +568,10 @@ argumentList
 ///     ObjectLiteral
 ///     ( Expression )
 ///
-expressionSequence
- : singleExpression ( ',' singleExpression )*
- ;
-
 singleExpression
  : Function Identifier? '(' formalParameterList? ')' '{' functionBody '}' # FunctionExpression
- | singleExpression '[' expressionSequence ']'                            # MemberIndexExpression
- | singleExpression '.' identifierName                                    # MemberDotExpression
+ | singleExpression '[' singleExpression ']'                            # MemberIndexExpression
+ | singleExpression '.' Identifier                                        # MemberDotExpression
  | singleExpression arguments                                             # ArgumentsExpression
  | New singleExpression arguments?                                        # NewExpression
  | singleExpression {!here(LineTerminator)}? '++'                         # PostIncrementExpression
@@ -648,7 +602,7 @@ singleExpression
  | singleExpression '==' singleExpression                                 # EqualityExpression
  | singleExpression '===' singleExpression                                # IdentityExpression
  | singleExpression '!=' singleExpression                                 # InequalityExpression
- | singleExpression '!==' singleExpression                                # NotIdentityExpression
+ | singleExpression '!==' singleExpression                                # InidentityExpression
  | singleExpression '&' singleExpression                                  # BitAndExpression
  | singleExpression '^' singleExpression                                  # BitXOrExpression
  | singleExpression '|' singleExpression                                  # BitOrExpression
@@ -656,27 +610,33 @@ singleExpression
  | singleExpression '||' singleExpression                                 # LogicalOrExpression
  | singleExpression '?' singleExpression ':' singleExpression             # TernaryExpression
  | singleExpression '=' singleExpression                                  # AssignmentExpression
- | singleExpression '*=' singleExpression                                 # AssignmentExpression
- | singleExpression '/=' singleExpression                                 # AssignmentExpression
- | singleExpression '%=' singleExpression                                 # AssignmentExpression
- | singleExpression '+=' singleExpression                                 # AssignmentExpression
- | singleExpression '-=' singleExpression                                 # AssignmentExpression
- | singleExpression '<<=' singleExpression                                # AssignmentExpression
- | singleExpression '>>=' singleExpression                                # AssignmentExpression
- | singleExpression '>>>=' singleExpression                               # AssignmentExpression
- | singleExpression '&=' singleExpression                                 # AssignmentExpression
- | singleExpression '^=' singleExpression                                 # AssignmentExpression
- | singleExpression '|=' singleExpression                                 # AssignmentExpression
+ | singleExpression assignmentOperator singleExpression                   # AssignmentOperatorExpression
  | This                                                                   # ThisExpression
  | Identifier                                                             # IdentifierExpression
  | literal                                                                # LiteralExpression
  | arrayLiteral                                                           # ArrayLiteralExpression
  | objectLiteral                                                          # ObjectLiteralExpression
- | '(' expressionSequence ')'                                             # ParenthesizedExpression
+ | '(' singleExpression ')'                                             # ParenthesizedExpression
+ ;
+
+/// AssignmentOperator : one of
+///     *=	/=	%=	+=	-=	<<=	>>=	>>>=	&=	^=	|=
+assignmentOperator
+ : '*='
+ | '/='
+ | '%='
+ | '+='
+ | '-='
+ | '<<='
+ | '>>='
+ | '>>>='
+ | '&='
+ | '^='
+ | '|='
  ;
 
 literal
- : ( NullLiteral 
+ : ( NullLiteral
    | BooleanLiteral
    | StringLiteral
    | RegularExpressionLiteral
@@ -688,11 +648,6 @@ numericLiteral
  : DecimalLiteral
  | HexIntegerLiteral
  | OctalIntegerLiteral
- ;
-
-identifierName
- : Identifier
- | reservedWord
  ;
 
 reservedWord
@@ -759,12 +714,6 @@ setter
  : {_input.LT(1).getText().equals("set")}? Identifier propertyName
  ;
 
-eos
- : SemiColon
- | {lineTerminatorAhead()}?
- | {_input.LT(1).getType() == CloseBrace}?
- ;
-
 eof
  : '\r\n'
  ;
@@ -818,15 +767,15 @@ BitOr                      : '|';
 And                        : '&&';
 Or                         : '||';
 MultiplyAssign             : '*=';
-DivideAssign               : '/='; 
-ModulusAssign              : '%='; 
-PlusAssign                 : '+='; 
-MinusAssign                : '-='; 
-LeftShiftArithmeticAssign  : '<<='; 
-RightShiftArithmeticAssign : '>>='; 
-RightShiftLogicalAssign    : '>>>='; 
-BitAndAssign               : '&='; 
-BitXorAssign               : '^='; 
+DivideAssign               : '/=';
+ModulusAssign              : '%=';
+PlusAssign                 : '+=';
+MinusAssign                : '-=';
+LeftShiftArithmeticAssign  : '<<=';
+RightShiftArithmeticAssign : '>>=';
+RightShiftLogicalAssign    : '>>>=';
+BitAndAssign               : '&=';
+BitXorAssign               : '^=';
 BitOrAssign                : '|=';
 
 /// 7.8.1 Null Literals
@@ -893,8 +842,8 @@ Const   : 'const';
 Export  : 'export';
 Import  : 'import';
 
-/// The following tokens are also considered to be FutureReservedWords 
-/// when parsing strict mode  
+/// The following tokens are also considered to be FutureReservedWords
+/// when parsing strict mode
 Implements : {strictMode}? 'implements';
 Let        : {strictMode}? 'let';
 Private    : {strictMode}? 'private';
@@ -980,7 +929,7 @@ fragment EscapeCharacter
  ;
 
 fragment LineContinuation
- : '\\' LineTerminatorSequence 
+ : '\\' LineTerminatorSequence
  ;
 
 fragment LineTerminatorSequence
@@ -1295,7 +1244,7 @@ fragment UnicodeCombiningMark
  | [\u0591-\u05A1]
  | [\u05A3-\u05B9]
  | [\u05BB-\u05BD]
- | [\u05BF] 
+ | [\u05BF]
  | [\u05C1-\u05C2]
  | [\u05C4]
  | [\u064B-\u0655]
@@ -1480,7 +1429,7 @@ fragment RegularExpressionNonTerminator
 fragment RegularExpressionBackslashSequence
  : '\\' RegularExpressionNonTerminator
  ;
- 
+
 /// RegularExpressionClass ::
 ///     [ RegularExpressionClassChars ]
 ///
@@ -1490,7 +1439,7 @@ fragment RegularExpressionBackslashSequence
 fragment RegularExpressionClass
   : '[' RegularExpressionClassChar* ']'
   ;
- 
+
 /// RegularExpressionClassChar ::
 ///     RegularExpressionNonTerminator but not ] or \
 ///     RegularExpressionBackslashSequence
