@@ -1,6 +1,7 @@
 package premun.mps.ingrid.importer.steps;
 
 import org.jetbrains.mps.openapi.model.*;
+import premun.mps.ingrid.importer.*;
 import premun.mps.ingrid.parser.grammar.*;
 
 import java.util.*;
@@ -39,11 +40,11 @@ public class ConceptImporter extends ImportStep {
      */
     private void importRule(ParserRule rule) {
         if (this.isInterfaceNeeded(rule)) {
-            // Generate unique name
-            rule.name = this.namingService.generateName(rule.name);
+            // Generate interface name
+            String interfaceName = this.namingService.generateName("I" + NamingService.capitalize(rule.name));
 
             // We will create an interface and a child for each alternative that will inherit this interface
-            SNode iface = this.nodeFactory.createInterface(rule.name, "Interfaces." + rule.name);
+            SNode iface = this.nodeFactory.createInterface(interfaceName, "Interfaces." + interfaceName);
             this.structureModel.addRootNode(iface);
             rule.node = iface;
 
@@ -61,7 +62,7 @@ public class ConceptImporter extends ImportStep {
             }
         } else {
             // Generate unique name
-            rule.name = this.namingService.generateName("I" + rule.name);
+            rule.name = this.namingService.generateName(rule.name);
 
             // We will create plain old concept
             Alternative alternative = rule.alternatives.get(0);
