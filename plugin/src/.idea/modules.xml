@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/importer/importer.iml" filepath="$PROJECT_DIR$/importer/importer.iml" />
       <module fileurl="file://$PROJECT_DIR$/parser/parser.iml" filepath="$PROJECT_DIR$/parser/parser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parser_tests/parser_tests.iml" filepath="$PROJECT_DIR$/parser_tests/parser_tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/../solutions/premun.mps.ingrid.plugin/source_gen/source_gen.iml" filepath="$PROJECT_DIR$/../solutions/premun.mps.ingrid.plugin/source_gen/source_gen.iml" />
     </modules>
   </component>
