@@ -4,16 +4,12 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
-    <modelRoot contentPath="/home/premun/Diplomka/ingrid/lib" type="java_classes">
-      <sourceRoot location="premun.mps.ingrid.parser.jar" />
-      <excluded location="premun.mps.ingrid.importer.jar" />
-      <excluded location="mps" />
-      <excluded location=".gitignore" />
-      <excluded location="antlr-4.5.2-complete.jar" />
+    <modelRoot contentPath="/media/premun/Data/MFF/Diplomka/ingrid/plugin/lib" type="java_classes">
+      <sourceRoot location="parser.jar" />
     </modelRoot>
   </models>
   <stubModelEntries>
-    <stubModelEntry path="/home/premun/Diplomka/ingrid/lib/premun.mps.ingrid.parser.jar" />
+    <stubModelEntry path="/home/premun/Diplomka/ingrid/plugin/lib/parser.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
