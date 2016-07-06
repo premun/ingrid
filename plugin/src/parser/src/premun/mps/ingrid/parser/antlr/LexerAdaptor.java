@@ -3,7 +3,7 @@ package premun.mps.ingrid.parser.antlr;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.misc.*;
 
-public abstract class LexerAdaptor extends Lexer {
+abstract class LexerAdaptor extends Lexer {
 
     /**
      * Track whether we are inside of a rule and whether it is lexical parser. _currentRuleType==Token.INVALID_TYPE
@@ -31,7 +31,7 @@ public abstract class LexerAdaptor extends Lexer {
         this._currentRuleType = ruleType;
     }
 
-    protected void handleBeginArgument() {
+    void handleBeginArgument() {
         if (inLexerRule()) {
             pushMode(ANTLRv4Lexer.LexerCharSet);
             more();
@@ -40,14 +40,14 @@ public abstract class LexerAdaptor extends Lexer {
         }
     }
 
-    protected void handleEndArgument() {
+    void handleEndArgument() {
         popMode();
         if (_modeStack.size() > 0) {
             setType(ANTLRv4Lexer.ARGUMENT_CONTENT);
         }
     }
 
-    protected void handleEndAction() {
+    void handleEndAction() {
         popMode();
         if (_modeStack.size() > 0) {
             setType(ANTLRv4Lexer.ACTION_CONTENT);

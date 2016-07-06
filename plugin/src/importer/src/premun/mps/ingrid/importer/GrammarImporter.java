@@ -45,7 +45,7 @@ public class GrammarImporter {
     /**
      * Main method of the import process.
      *
-     * @param fileName Name of the ANTLR grammar file to be imported.
+     * @param files List of ANTLR grammar files to be imported.
      */
     public void importGrammars(File[] files) {
         initializeLanguage();

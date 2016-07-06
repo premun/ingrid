@@ -2,7 +2,6 @@ package premun.mps.ingrid.parser;
 
 import premun.mps.ingrid.parser.grammar.*;
 
-// TODO: Delete Main, keep as library only
 public class Main {
     public static void main(String[] args) {
         if (args.length < 1) {

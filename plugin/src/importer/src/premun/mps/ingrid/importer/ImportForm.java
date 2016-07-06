@@ -2,7 +2,6 @@ package premun.mps.ingrid.importer;
 
 import javax.swing.*;
 import javax.swing.filechooser.*;
-import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.util.*;

@@ -4,7 +4,6 @@ import org.antlr.v4.runtime.tree.*;
 import premun.mps.ingrid.parser.antlr.ANTLRv4Parser.*;
 import premun.mps.ingrid.parser.antlr.*;
 import premun.mps.ingrid.parser.grammar.*;
-import premun.mps.ingrid.parser.grammar.exception.*;
 
 import java.util.*;
 
@@ -257,7 +256,7 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
      *
      * @param context Parser context.
      */
-    public void parseLexerRule(LexerAltContext context) {
+    private void parseLexerRule(LexerAltContext context) {
         ArrayList<Rule> elements = new ArrayList<>();
 
         // Rules that can dissolve into empty string

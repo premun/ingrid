@@ -10,12 +10,12 @@ import premun.mps.ingrid.plugin.library.*;
  * Abstract import step.
  */
 public abstract class ImportStep {
-    protected GrammarInfo grammar;
-    protected SModel structureModel;
-    protected SModel editorModel;
-    protected SModel textGenModel;
-    protected NodeFactory nodeFactory;
-    protected NamingService namingService;
+    GrammarInfo grammar;
+    SModel structureModel;
+    SModel editorModel;
+    SModel textGenModel;
+    NodeFactory nodeFactory;
+    NamingService namingService;
 
     public void Initialize(GrammarInfo grammar, SModel structureModel, SModel editorModel, SModel textGenModel) {
         this.grammar = grammar;
@@ -35,7 +35,7 @@ public abstract class ImportStep {
      * @param name Concept to be matched.
      * @return Concept node belonging to given rule.
      */
-    protected final SNode findConceptByName(String name) throws IngridException {
+    final SNode findConceptByName(String name) throws IngridException {
         for (SNode node : this.structureModel.getRootNodes()) {
             if (name.equals(node.getName())) {
                 return node;
@@ -51,7 +51,7 @@ public abstract class ImportStep {
      * @param rule Rule to be matched.
      * @return Concept node belonging to given rule.
      */
-    protected final SNode findConceptByRule(Rule rule) throws IngridException {
+    final SNode findConceptByRule(Rule rule) throws IngridException {
         for (SNode node : this.structureModel.getRootNodes()) {
             if (rule.name.equals(node.getName()) || (rule.name + "_1").equals(node.getName())) {
                 return node;
