@@ -10,7 +10,7 @@ element     :   LT Name '>' ( Content | element )* '</' Name '>'    # FullElemen
             |   '<' Name '/>'                                       # SelfclosingElement
             ;
 
-Content     :   [a-zA-Z0-9 ]*
+Content     :   [a-zA-Z0-9 ]+
             ;
 
 Name        :   NameStartChar NameChar*
@@ -33,4 +33,10 @@ NameStartChar
             ;
 
 LT          :   '<'
+            ;
+
+actionRule  : {_input.LT(1).getText().equals("set")}? Name LT
+            ;
+
+S           :   [ \t\r\n]               -> skip
             ;

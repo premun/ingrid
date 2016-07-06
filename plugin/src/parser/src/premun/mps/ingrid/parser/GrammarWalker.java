@@ -92,6 +92,7 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
             .children
             .stream()
             .map(c -> parseParserAlternativeElement((ElementContext) c))
+            .filter(ref -> ref != null)
             .forEach(alternative.elements::add);
 
         return alternative;
@@ -171,7 +172,9 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
         }
 
         if (rule == null) {
-            // TODO: log error!
+            // This happens, when rule contains some action block, such as:
+            // actionRule  : {_input.LT(1).getText().equals("set")}? Name LT ;
+            return null;
         }
 
         return new RuleReference(rule, quantity);

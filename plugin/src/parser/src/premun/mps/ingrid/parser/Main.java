@@ -5,12 +5,18 @@ import premun.mps.ingrid.parser.grammar.*;
 // TODO: Delete Main, keep as library only
 public class Main {
     public static void main(String[] args) {
-        if (args.length != 1) {
-            System.err.println("No arguments supplied. First argument must be name of the grammar file.");
+        if (args.length < 1) {
+            System.err.println("No arguments supplied. Arguments must be names of grammar files.");
             return;
         }
 
-        GrammarInfo grammar = GrammarParser.parseFile(args[0]);
+        GrammarParser parser = new GrammarParser();
+
+        for (String file : args) {
+            parser.parseFile(file);
+        }
+
+        GrammarInfo grammar = parser.resolveGrammar();
         System.out.println(grammar != null ? grammar.toString() : null);
     }
 }

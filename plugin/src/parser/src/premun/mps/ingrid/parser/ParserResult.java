@@ -9,6 +9,10 @@ class ParserResult {
     public Map<String, Rule> rules;
     public String rootRule;
 
+    public ParserResult() {
+        this.rules = new HashMap<>();
+    }
+
     public ParserResult(String grammarName, Map<String, Rule> rules, String rootRule) {
         this.grammarName = grammarName;
         this.rules = rules;

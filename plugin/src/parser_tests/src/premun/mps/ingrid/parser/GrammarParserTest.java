@@ -10,9 +10,12 @@ import static org.junit.Assert.*;
 
 public class GrammarParserTest {
     @Test
-    public void testGenerateGrammar() throws Exception {
+    public void testFullGrammar() throws Exception {
         String filePath = getClass().getResource("/SimpleXML.g4").getPath();
-        GrammarInfo grammar = GrammarParser.parseFile(filePath);
+
+        GrammarParser parser = new GrammarParser();
+        parser.parseFile(filePath);
+        GrammarInfo grammar = parser.resolveGrammar();
 
         assertNotNull(grammar);
         assertEquals("SimpleXML", grammar.name);
@@ -68,5 +71,46 @@ public class GrammarParserTest {
 
         RegexRule nameRule = (RegexRule) grammar.rules.get("Name");
         assertEquals("[:a-zA-Z](([:a-zA-Z]|(((\\-)?|(_|\\.)+)*)|(([0-9]|[0-9]))))*", nameRule.regexp);
+
+        assertEquals(2, ((ParserRule) grammar.rules.get("actionRule")).alternatives.get(0).elements.size());
+        assertEquals("[ \\t\\r\\n]", ((RegexRule) grammar.rules.get("S")).regexp);
+    }
+
+    @Test
+    public void testMultipleFiles() throws Exception {
+        String filePath1 = getClass().getResource("/MySQLLexer.g4").getPath();
+        String filePath2 = getClass().getResource("/MySQLParser.g4").getPath();
+
+        GrammarParser parser = new GrammarParser();
+        parser.parseFile(filePath1);
+        parser.parseFile(filePath2);
+        GrammarInfo grammar = parser.resolveGrammar();
+
+        assertEquals(5, grammar.rules.size());
+        assertNotNull(grammar.rules.get("select_clause"));
+
+        assertNotNull(grammar.rules.get("SELECT"));
+        assertNotNull(grammar.rules.get("ASTERISK"));
+        assertNotNull(grammar.rules.get("FROM"));
+        assertNotNull(grammar.rules.get("TableName"));
+    }
+
+    @Test
+    public void testMultipleFilesReverseOrder() throws Exception {
+        String filePath1 = getClass().getResource("/MySQLLexer.g4").getPath();
+        String filePath2 = getClass().getResource("/MySQLParser.g4").getPath();
+
+        GrammarParser parser = new GrammarParser();
+        parser.parseFile(filePath2);
+        parser.parseFile(filePath1);
+        GrammarInfo grammar = parser.resolveGrammar();
+
+        assertEquals(5, grammar.rules.size());
+        assertNotNull(grammar.rules.get("select_clause"));
+
+        assertNotNull(grammar.rules.get("SELECT"));
+        assertNotNull(grammar.rules.get("ASTERISK"));
+        assertNotNull(grammar.rules.get("FROM"));
+        assertNotNull(grammar.rules.get("TableName"));
     }
 }

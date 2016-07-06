@@ -31,7 +31,7 @@ public class NamingService {
         return suggested;
     }
 
-    private String capitalize(String s) {
+    public static String capitalize(String s) {
         return Character.toUpperCase(s.charAt(0)) + s.substring(1);
     }
 

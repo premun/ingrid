@@ -15,7 +15,7 @@ public class ParserRule extends Rule {
     }
 
     public ParserRule(ParserRuleSpecContext ruleContext) {
-        super(ruleContext.RULE_REF().getText());
+        super(ruleContext.RULE_REF().getText().trim());
     }
 
     @Override

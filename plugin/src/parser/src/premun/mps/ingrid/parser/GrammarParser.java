@@ -7,9 +7,12 @@ import premun.mps.ingrid.parser.grammar.*;
 import premun.mps.ingrid.parser.grammar.exception.*;
 
 import java.io.*;
+import java.util.*;
 
 public class GrammarParser {
-    public static GrammarInfo parseFile(String fileName) {
+    private ParserResult data = new ParserResult();
+
+    public void parseFile(String fileName) {
         File file = new File(fileName);
 
         FileInputStream fis;
@@ -29,10 +32,10 @@ public class GrammarParser {
             throw new IngridParserException("Error while reading the file: " + e.getMessage());
         }
 
-        return parseString(new String(data));
+        parseString(new String(data));
     }
 
-    public static GrammarInfo parseString(String grammar) {
+    public void parseString(String grammar) {
         ANTLRv4Lexer lexer = new ANTLRv4Lexer(new ANTLRInputStream(grammar));
 
         // Get a list of matched tokens
@@ -48,6 +51,21 @@ public class GrammarParser {
 
         ParserResult parseResult = listener.getParseResult();
 
-        return GrammarResolver.generateGrammar(parseResult);
+        // Merge results with previous results
+        if (parseResult.grammarName != null) {
+            this.data.grammarName = parseResult.grammarName;
+        }
+
+        if (parseResult.rootRule != null) {
+            this.data.rootRule = parseResult.rootRule;
+        }
+
+        for (Map.Entry<String, Rule> entry : parseResult.rules.entrySet()) {
+            this.data.rules.put(entry.getKey(), entry.getValue());
+        }
+    }
+
+    public GrammarInfo resolveGrammar() {
+        return GrammarResolver.generateGrammar(this.data);
     }
 }

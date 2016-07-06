@@ -19,7 +19,8 @@
     <import index="zkjw" ref="8f833572-184a-4705-be72-ff2712986984/java:premun.mps.ingrid.importer(premun.mps.ingrid.plugin.import_action/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="dsk9" ref="r:8bdc9cf5-28de-48ab-8b85-36b2d96bc635(jetbrains.mps.ide.newModuleDialogs)" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" implicit="true" />
   </imports>
@@ -66,6 +67,7 @@
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
+      <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -89,9 +91,6 @@
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -126,7 +125,6 @@
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
-      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
@@ -135,6 +133,13 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
+      </concept>
+      <concept id="1154542696413" name="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" flags="nn" index="3g6Rrh">
+        <child id="1154542793668" name="componentType" index="3g7fb8" />
+        <child id="1154542803372" name="initValue" index="3g7hyw" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -150,10 +155,23 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
+    </language>
+    <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
+        <child id="1199569906740" name="parameter" index="1bW2Oz" />
+        <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
     </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
       <concept id="1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" flags="nn" index="2WthIp" />
@@ -174,9 +192,16 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
+        <child id="1204796294226" name="closure" index="23t8la" />
+      </concept>
+      <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
+        <child id="1151688676805" name="elementType" index="_ZDj9" />
+      </concept>
       <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
         <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
+      <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
       <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
         <child id="1153944400369" name="variable" index="2Gsz3X" />
         <child id="1153944424730" name="inputSequence" index="2GsD0m" />
@@ -185,9 +210,11 @@
       <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
+      <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="4611582986551314327" name="jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation" flags="nn" index="UnYns">
         <child id="4611582986551314344" name="requestedType" index="UnYnz" />
       </concept>
+      <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
     </language>
   </registry>
   <node concept="2DaZZR" id="7u4wmVSPxcW" />
@@ -215,17 +242,6 @@
         <property role="TrG5h" value="message" />
         <node concept="17QB3L" id="4F6jbA$lnfX" role="1tU5fm" />
       </node>
-    </node>
-    <node concept="2XrIbr" id="nYv$LOtLrx" role="32lrUH">
-      <property role="TrG5h" value="getGrammarFile" />
-      <node concept="3clFbS" id="nYv$LOtLry" role="3clF47">
-        <node concept="3cpWs6" id="nYv$LOtMGs" role="3cqZAp">
-          <node concept="Xl_RD" id="5Jh2F9ezZdF" role="3cqZAk">
-            <property role="Xl_RC" value="/home/premun/Diplomka/playground/JavaScript/ECMAScript.g4" />
-          </node>
-        </node>
-      </node>
-      <node concept="17QB3L" id="nYv$LOtLPO" role="3clF45" />
     </node>
     <node concept="2XrIbr" id="7FauAAmwr7b" role="32lrUH">
       <property role="TrG5h" value="getLanguage" />
@@ -306,56 +322,21 @@
     </node>
     <node concept="tnohg" id="3_5Fm_0LVaw" role="tncku">
       <node concept="3clFbS" id="3_5Fm_0LVax" role="2VODD2">
-        <node concept="3cpWs8" id="nYv$LOtNJz" role="3cqZAp">
-          <node concept="3cpWsn" id="nYv$LOtNJA" role="3cpWs9">
-            <property role="TrG5h" value="grammarFile" />
-            <node concept="17QB3L" id="nYv$LOtNJx" role="1tU5fm" />
-            <node concept="2OqwBi" id="nYv$LOtNQJ" role="33vP2m">
-              <node concept="2WthIp" id="nYv$LOtNQM" role="2Oq$k0" />
-              <node concept="2XshWL" id="nYv$LOtNQO" role="2OqNvi">
-                <ref role="2WH_rO" node="nYv$LOtLrx" resolve="getGrammarFile" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="nYv$LOtPzT" role="3cqZAp">
-          <node concept="3clFbS" id="nYv$LOtPzV" role="3clFbx">
-            <node concept="3cpWs6" id="nYv$LOtPNB" role="3cqZAp" />
-          </node>
-          <node concept="3clFbC" id="nYv$LOtPJj" role="3clFbw">
-            <node concept="10Nm6u" id="nYv$LOtPK8" role="3uHU7w" />
-            <node concept="37vLTw" id="nYv$LOtPFf" role="3uHU7B">
-              <ref role="3cqZAo" node="nYv$LOtNJA" resolve="grammarFile" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="7FauAAmwnZz" role="3cqZAp" />
-        <node concept="3cpWs8" id="7FauAAmwtJk" role="3cqZAp">
-          <node concept="3cpWsn" id="7FauAAmwtJl" role="3cpWs9">
+        <node concept="3cpWs8" id="33RGotrJ4zR" role="3cqZAp">
+          <node concept="3cpWsn" id="33RGotrJ4zS" role="3cpWs9">
             <property role="TrG5h" value="language" />
-            <node concept="3uibUv" id="3qa8fBrMSLM" role="1tU5fm">
+            <node concept="3uibUv" id="33RGotrJ4zT" role="1tU5fm">
               <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
             </node>
-            <node concept="2OqwBi" id="7FauAAmwtQ2" role="33vP2m">
-              <node concept="2WthIp" id="7FauAAmwtQ5" role="2Oq$k0" />
-              <node concept="2XshWL" id="7FauAAmwtQ7" role="2OqNvi">
+            <node concept="2OqwBi" id="33RGotrJ4D9" role="33vP2m">
+              <node concept="2WthIp" id="33RGotrJ4Bu" role="2Oq$k0" />
+              <node concept="2XshWL" id="33RGotrJ4Mi" role="2OqNvi">
                 <ref role="2WH_rO" node="7FauAAmwr7b" resolve="getLanguage" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="7FauAAmwyqo" role="3cqZAp">
-          <node concept="3clFbS" id="7FauAAmwyqq" role="3clFbx">
-            <node concept="3cpWs6" id="7FauAAmwyBv" role="3cqZAp" />
-          </node>
-          <node concept="3clFbC" id="7FauAAmwyzb" role="3clFbw">
-            <node concept="10Nm6u" id="7FauAAmwy$0" role="3uHU7w" />
-            <node concept="37vLTw" id="7FauAAmwyuF" role="3uHU7B">
-              <ref role="3cqZAo" node="7FauAAmwtJl" resolve="language" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="5Jh2F9ezXzW" role="3cqZAp" />
+        <node concept="3clFbH" id="33RGotrJ4mI" role="3cqZAp" />
         <node concept="3cpWs8" id="4X6IwqdNpSM" role="3cqZAp">
           <node concept="3cpWsn" id="4X6IwqdNpSN" role="3cpWs9">
             <property role="TrG5h" value="structureModel" />
@@ -369,8 +350,8 @@
               </node>
               <node concept="liA8E" id="4X6IwqdNpSR" role="2OqNvi">
                 <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                <node concept="37vLTw" id="7FauAAmwtR1" role="37wK5m">
-                  <ref role="3cqZAo" node="7FauAAmwtJl" resolve="language" />
+                <node concept="37vLTw" id="33RGotrJ5U$" role="37wK5m">
+                  <ref role="3cqZAo" node="33RGotrJ4zS" resolve="language" />
                 </node>
               </node>
             </node>
@@ -389,8 +370,8 @@
               </node>
               <node concept="liA8E" id="5Jh2F9ezYib" role="2OqNvi">
                 <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                <node concept="37vLTw" id="7FauAAmwtSA" role="37wK5m">
-                  <ref role="3cqZAo" node="7FauAAmwtJl" resolve="language" />
+                <node concept="37vLTw" id="33RGotrJ5VB" role="37wK5m">
+                  <ref role="3cqZAo" node="33RGotrJ4zS" resolve="language" />
                 </node>
               </node>
             </node>
@@ -409,8 +390,8 @@
               </node>
               <node concept="liA8E" id="7FauAAmwu$d" role="2OqNvi">
                 <ref role="37wK5l" to="w1kc:~LanguageAspect.get(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="get" />
-                <node concept="37vLTw" id="7FauAAmwu$e" role="37wK5m">
-                  <ref role="3cqZAo" node="7FauAAmwtJl" resolve="language" />
+                <node concept="37vLTw" id="33RGotrJ5WU" role="37wK5m">
+                  <ref role="3cqZAo" node="33RGotrJ4zS" resolve="language" />
                 </node>
               </node>
             </node>
@@ -428,8 +409,8 @@
                   </node>
                   <node concept="liA8E" id="7FauAAmwBtz" role="2OqNvi">
                     <ref role="37wK5l" to="w1kc:~LanguageAspect.createNew(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.model.SModel" resolve="createNew" />
-                    <node concept="37vLTw" id="7FauAAmwBt$" role="37wK5m">
-                      <ref role="3cqZAo" node="7FauAAmwtJl" resolve="language" />
+                    <node concept="37vLTw" id="33RGotrJ5YO" role="37wK5m">
+                      <ref role="3cqZAo" node="33RGotrJ4zS" resolve="language" />
                     </node>
                   </node>
                 </node>
@@ -443,6 +424,16 @@
             <node concept="10Nm6u" id="7FauAAmwBtB" role="3uHU7w" />
             <node concept="37vLTw" id="7FauAAmwBtC" role="3uHU7B">
               <ref role="3cqZAo" node="6B2Ha6FnxDU" resolve="textGenModel" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="33RGotrJ5MY" role="3cqZAp" />
+        <node concept="3cpWs8" id="33RGotrJ54Y" role="3cqZAp">
+          <node concept="3cpWsn" id="33RGotrJ54Z" role="3cpWs9">
+            <property role="TrG5h" value="grammarFile" />
+            <node concept="17QB3L" id="33RGotrJ5bZ" role="1tU5fm" />
+            <node concept="Xl_RD" id="33RGotrJ5fQ" role="33vP2m">
+              <property role="Xl_RC" value="/home/premun/Diplomka/ingrid/grammars/ECMAScript.g4" />
             </node>
           </node>
         </node>
@@ -475,9 +466,21 @@
               <ref role="3cqZAo" node="2CENt80j8HN" resolve="grammarImporter" />
             </node>
             <node concept="liA8E" id="2CENt80jbxG" role="2OqNvi">
-              <ref role="37wK5l" to="zkjw:~GrammarImporter.importGrammar(java.lang.String):void" resolve="importGrammar" />
-              <node concept="37vLTw" id="nYv$LOtNSE" role="37wK5m">
-                <ref role="3cqZAo" node="nYv$LOtNJA" resolve="grammarFile" />
+              <ref role="37wK5l" to="zkjw:~GrammarImporter.importGrammars(java.io.File[]):void" resolve="importGrammars" />
+              <node concept="2ShNRf" id="33RGotrJ62m" role="37wK5m">
+                <node concept="3g6Rrh" id="33RGotrJ6sG" role="2ShVmc">
+                  <node concept="3uibUv" id="33RGotrJ6Ds" role="3g7fb8">
+                    <ref role="3uigEE" to="guwi:~File" resolve="File" />
+                  </node>
+                  <node concept="2ShNRf" id="33RGotrJ6Mo" role="3g7hyw">
+                    <node concept="1pGfFk" id="33RGotrJ7dl" role="2ShVmc">
+                      <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                      <node concept="37vLTw" id="33RGotrJ7ev" role="37wK5m">
+                        <ref role="3cqZAo" node="33RGotrJ54Z" resolve="grammarFile" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -540,7 +543,12 @@
           <node concept="2YIFZM" id="5_E18HdnRW4" role="3clFbG">
             <ref role="37wK5l" to="dxuu:~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object):void" resolve="showMessageDialog" />
             <ref role="1Pybhc" to="dxuu:~JOptionPane" resolve="JOptionPane" />
-            <node concept="10Nm6u" id="5_E18HdnRW5" role="37wK5m" />
+            <node concept="2OqwBi" id="16XQ_36ALT8" role="37wK5m">
+              <node concept="2WthIp" id="16XQ_36ALTb" role="2Oq$k0" />
+              <node concept="1DTwFV" id="16XQ_36ALTd" role="2OqNvi">
+                <ref role="2WH_rO" node="5_E18HdnRZi" resolve="frame" />
+              </node>
+            </node>
             <node concept="37vLTw" id="5_E18HdnRW6" role="37wK5m">
               <ref role="3cqZAo" node="5_E18HdnRW8" resolve="message" />
             </node>
@@ -553,99 +561,95 @@
         <node concept="17QB3L" id="5_E18HdnRW9" role="1tU5fm" />
       </node>
     </node>
-    <node concept="2XrIbr" id="5_E18HdnRWa" role="32lrUH">
-      <property role="TrG5h" value="getGrammarFile" />
-      <node concept="3clFbS" id="5_E18HdnRWb" role="3clF47">
-        <node concept="3cpWs8" id="5_E18HdnRWd" role="3cqZAp">
-          <node concept="3cpWsn" id="5_E18HdnRWe" role="3cpWs9">
-            <property role="TrG5h" value="fd" />
-            <node concept="3uibUv" id="5_E18HdnRWf" role="1tU5fm">
-              <ref role="3uigEE" to="z60i:~FileDialog" resolve="FileDialog" />
-            </node>
-            <node concept="2ShNRf" id="5_E18HdnRWg" role="33vP2m">
-              <node concept="1pGfFk" id="5_E18HdnRWh" role="2ShVmc">
-                <ref role="37wK5l" to="z60i:~FileDialog.&lt;init&gt;(java.awt.Frame,java.lang.String,int)" resolve="FileDialog" />
-                <node concept="2OqwBi" id="5_E18HdnRWi" role="37wK5m">
-                  <node concept="2WthIp" id="5_E18HdnRWj" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="5_E18HdnRWk" role="2OqNvi">
-                    <ref role="2WH_rO" node="5_E18HdnRZi" resolve="frame" />
-                  </node>
-                </node>
-                <node concept="Xl_RD" id="5_E18HdnRWl" role="37wK5m">
-                  <property role="Xl_RC" value="Choose a grammar file" />
-                </node>
-                <node concept="10M0yZ" id="5_E18HdnRWm" role="37wK5m">
-                  <ref role="3cqZAo" to="z60i:~FileDialog.LOAD" resolve="LOAD" />
-                  <ref role="1PxDUh" to="z60i:~FileDialog" resolve="FileDialog" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5_E18HdnRWu" role="3cqZAp">
-          <node concept="2OqwBi" id="5_E18HdnRWv" role="3clFbG">
-            <node concept="37vLTw" id="5_E18HdnRWw" role="2Oq$k0">
-              <ref role="3cqZAo" node="5_E18HdnRWe" resolve="fd" />
-            </node>
-            <node concept="liA8E" id="5_E18HdnRWx" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Dialog.setVisible(boolean):void" resolve="setVisible" />
-              <node concept="3clFbT" id="5_E18HdnRWy" role="37wK5m">
-                <property role="3clFbU" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="hj2V9aB_HC" role="3cqZAp" />
-        <node concept="3clFbJ" id="hj2V9aB_T4" role="3cqZAp">
-          <node concept="3clFbS" id="hj2V9aB_T6" role="3clFbx">
-            <node concept="3cpWs6" id="hj2V9aBAE0" role="3cqZAp">
-              <node concept="10Nm6u" id="hj2V9aBAHT" role="3cqZAk" />
-            </node>
-          </node>
-          <node concept="3clFbC" id="hj2V9aBAxg" role="3clFbw">
-            <node concept="10Nm6u" id="hj2V9aBA_7" role="3uHU7w" />
-            <node concept="2OqwBi" id="hj2V9aBA4i" role="3uHU7B">
-              <node concept="37vLTw" id="hj2V9aB_Ye" role="2Oq$k0">
-                <ref role="3cqZAo" node="5_E18HdnRWe" resolve="fd" />
-              </node>
-              <node concept="liA8E" id="hj2V9aBAus" role="2OqNvi">
-                <ref role="37wK5l" to="z60i:~FileDialog.getFile():java.lang.String" resolve="getFile" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="5_E18HdnRW$" role="3cqZAp" />
-        <node concept="3cpWs6" id="5_E18HdnRWA" role="3cqZAp">
-          <node concept="3cpWs3" id="5_E18HdnRWB" role="3cqZAk">
-            <node concept="2OqwBi" id="5_E18HdnRWC" role="3uHU7w">
-              <node concept="37vLTw" id="5_E18HdnRWD" role="2Oq$k0">
-                <ref role="3cqZAo" node="5_E18HdnRWe" resolve="fd" />
-              </node>
-              <node concept="liA8E" id="5_E18HdnRWE" role="2OqNvi">
-                <ref role="37wK5l" to="z60i:~FileDialog.getFile():java.lang.String" resolve="getFile" />
-              </node>
-            </node>
-            <node concept="3cpWs3" id="5_E18HdnRWF" role="3uHU7B">
-              <node concept="2OqwBi" id="5_E18HdnRWG" role="3uHU7B">
-                <node concept="37vLTw" id="5_E18HdnRWH" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5_E18HdnRWe" resolve="fd" />
-                </node>
-                <node concept="liA8E" id="5_E18HdnRWI" role="2OqNvi">
-                  <ref role="37wK5l" to="z60i:~FileDialog.getDirectory():java.lang.String" resolve="getDirectory" />
-                </node>
-              </node>
-              <node concept="Xl_RD" id="5_E18HdnRWJ" role="3uHU7w">
-                <property role="Xl_RC" value="/" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="17QB3L" id="5_E18HdnRWM" role="3clF45" />
-    </node>
     <node concept="2XrIbr" id="5_E18HdnRWN" role="32lrUH">
       <property role="TrG5h" value="getLanguage" />
       <node concept="3clFbS" id="5_E18HdnRWO" role="3clF47">
+        <node concept="3SKdUt" id="33RGotrJslC" role="3cqZAp">
+          <node concept="3SKdUq" id="33RGotrJslE" role="3SKWNk">
+            <property role="3SKdUp" value="Test for language existence" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="16XQ_36AOvR" role="3cqZAp">
+          <node concept="3clFbS" id="16XQ_36AOvT" role="3clFbx">
+            <node concept="3cpWs8" id="33RGotrJqFD" role="3cqZAp">
+              <node concept="3cpWsn" id="33RGotrJqFE" role="3cpWs9">
+                <property role="TrG5h" value="modules" />
+                <node concept="A3Dl8" id="33RGotrJqFF" role="1tU5fm">
+                  <node concept="3qUE_q" id="33RGotrJqFG" role="A3Ik2">
+                    <node concept="3uibUv" id="33RGotrJqFH" role="3qUE_r">
+                      <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="33RGotrJqFI" role="33vP2m">
+                  <node concept="2OqwBi" id="33RGotrJqFJ" role="2Oq$k0">
+                    <node concept="2WthIp" id="33RGotrJqFK" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="33RGotrJqFL" role="2OqNvi">
+                      <ref role="2WH_rO" node="5_E18HdnRZc" resolve="mpsProject" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="33RGotrJqFM" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getModules():java.lang.Iterable" resolve="getModules" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2Gpval" id="33RGotrJqFN" role="3cqZAp">
+              <node concept="2GrKxI" id="33RGotrJqFO" role="2Gsz3X">
+                <property role="TrG5h" value="module" />
+              </node>
+              <node concept="3clFbS" id="33RGotrJqFP" role="2LFqv$">
+                <node concept="3clFbJ" id="33RGotrJqFQ" role="3cqZAp">
+                  <node concept="3clFbS" id="33RGotrJqFR" role="3clFbx">
+                    <node concept="3cpWs6" id="33RGotrJqFS" role="3cqZAp">
+                      <node concept="2GrUjf" id="33RGotrJqFT" role="3cqZAk">
+                        <ref role="2Gs0qQ" node="33RGotrJqFO" resolve="module" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="33RGotrJqFU" role="3clFbw">
+                    <node concept="liA8E" id="33RGotrJqFW" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                      <node concept="37vLTw" id="33RGotrJrKF" role="37wK5m">
+                        <ref role="3cqZAo" node="33RGotrJ7l$" resolve="name" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="33RGotrJqFX" role="2Oq$k0">
+                      <node concept="2GrUjf" id="33RGotrJqFY" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="33RGotrJqFO" resolve="module" />
+                      </node>
+                      <node concept="liA8E" id="33RGotrJqFZ" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="33RGotrJqG0" role="2GsD0m">
+                <node concept="37vLTw" id="33RGotrJqG1" role="2Oq$k0">
+                  <ref role="3cqZAo" node="33RGotrJqFE" resolve="modules" />
+                </node>
+                <node concept="UnYns" id="33RGotrJqG2" role="2OqNvi">
+                  <node concept="3uibUv" id="33RGotrJqG3" role="UnYnz">
+                    <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="16XQ_36AP4s" role="3clFbw">
+            <node concept="10Nm6u" id="16XQ_36APkb" role="3uHU7w" />
+            <node concept="37vLTw" id="16XQ_36AOM5" role="3uHU7B">
+              <ref role="3cqZAo" node="33RGotrJ7l$" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="33RGotrJqhh" role="3cqZAp" />
+        <node concept="3SKdUt" id="33RGotrJsTB" role="3cqZAp">
+          <node concept="3SKdUq" id="33RGotrJsTD" role="3SKWNk">
+            <property role="3SKdUp" value="If not found, create a new language" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="5_E18HdnRWQ" role="3cqZAp">
           <node concept="3cpWsn" id="5_E18HdnRWR" role="3cpWs9">
             <property role="TrG5h" value="dialog" />
@@ -661,18 +665,33 @@
                     <ref role="2WH_rO" node="5_E18HdnRZc" resolve="mpsProject" />
                   </node>
                 </node>
-                <node concept="10Nm6u" id="5_E18Hdo2kY" role="37wK5m" />
+                <node concept="37vLTw" id="16XQ_36AZlz" role="37wK5m">
+                  <ref role="3cqZAo" node="33RGotrJ7l$" resolve="name" />
+                </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5_E18HdnRX0" role="3cqZAp">
-          <node concept="2OqwBi" id="5_E18HdnRX1" role="3clFbG">
-            <node concept="37vLTw" id="5_E18HdnRX2" role="2Oq$k0">
+        <node concept="3clFbF" id="16XQ_36BjSy" role="3cqZAp">
+          <node concept="2OqwBi" id="16XQ_36Bkbh" role="3clFbG">
+            <node concept="37vLTw" id="16XQ_36BjSw" role="2Oq$k0">
               <ref role="3cqZAo" node="5_E18HdnRWR" resolve="dialog" />
             </node>
-            <node concept="liA8E" id="5_E18HdnRX3" role="2OqNvi">
-              <ref role="37wK5l" to="jkm4:~DialogWrapper.showAndGet():boolean" resolve="showAndGet" />
+            <node concept="liA8E" id="16XQ_36Bkvz" role="2OqNvi">
+              <ref role="37wK5l" to="jkm4:~DialogWrapper.setModal(boolean):void" resolve="setModal" />
+              <node concept="3clFbT" id="16XQ_36Bkw5" role="37wK5m">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="16XQ_36BkSq" role="3cqZAp">
+          <node concept="2OqwBi" id="16XQ_36BlbC" role="3clFbG">
+            <node concept="37vLTw" id="16XQ_36BkSo" role="2Oq$k0">
+              <ref role="3cqZAo" node="5_E18HdnRWR" resolve="dialog" />
+            </node>
+            <node concept="liA8E" id="16XQ_36Blxr" role="2OqNvi">
+              <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
             </node>
           </node>
         </node>
@@ -693,6 +712,21 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="16XQ_36BlxO" role="3cqZAp" />
+        <node concept="3clFbJ" id="16XQ_36BmcM" role="3cqZAp">
+          <node concept="3clFbS" id="16XQ_36BmcO" role="3clFbx">
+            <node concept="3cpWs6" id="16XQ_36Bo78" role="3cqZAp">
+              <node concept="10Nm6u" id="16XQ_36Bo7L" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="3clFbC" id="16XQ_36Bnt$" role="3clFbw">
+            <node concept="10Nm6u" id="16XQ_36BnJ1" role="3uHU7w" />
+            <node concept="37vLTw" id="16XQ_36Bn9S" role="3uHU7B">
+              <ref role="3cqZAo" node="5_E18HdnRX8" resolve="language" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="16XQ_36BgkR" role="3cqZAp" />
         <node concept="3clFbF" id="5_E18HdnRXe" role="3cqZAp">
           <node concept="2OqwBi" id="5_E18HdnRXf" role="3clFbG">
             <node concept="2OqwBi" id="5_E18HdnRXg" role="2Oq$k0">
@@ -719,33 +753,127 @@
       <node concept="3uibUv" id="5_E18HdnRXT" role="3clF45">
         <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
       </node>
+      <node concept="37vLTG" id="33RGotrJ7l$" role="3clF46">
+        <property role="TrG5h" value="name" />
+        <node concept="17QB3L" id="33RGotrJ7lz" role="1tU5fm" />
+      </node>
     </node>
     <node concept="tnohg" id="5_E18HdnRXU" role="tncku">
       <node concept="3clFbS" id="5_E18HdnRXV" role="2VODD2">
-        <node concept="3cpWs8" id="5_E18HdnRXW" role="3cqZAp">
-          <node concept="3cpWsn" id="5_E18HdnRXX" role="3cpWs9">
-            <property role="TrG5h" value="grammarFile" />
-            <node concept="17QB3L" id="5_E18HdnRXY" role="1tU5fm" />
-            <node concept="2OqwBi" id="5_E18HdnRXZ" role="33vP2m">
-              <node concept="2WthIp" id="5_E18HdnRY0" role="2Oq$k0" />
-              <node concept="2XshWL" id="5_E18HdnRY1" role="2OqNvi">
-                <ref role="2WH_rO" node="5_E18HdnRWa" resolve="getGrammarFile" />
+        <node concept="3SKdUt" id="33RGotrJncS" role="3cqZAp">
+          <node concept="3SKdUq" id="33RGotrJncU" role="3SKWNk">
+            <property role="3SKdUp" value="Get list of languages inside the project" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="33RGotrJaBU" role="3cqZAp">
+          <node concept="3cpWsn" id="33RGotrJaBV" role="3cpWs9">
+            <property role="TrG5h" value="modules" />
+            <node concept="A3Dl8" id="33RGotrJaBW" role="1tU5fm">
+              <node concept="3qUE_q" id="33RGotrJaBX" role="A3Ik2">
+                <node concept="3uibUv" id="33RGotrJaBY" role="3qUE_r">
+                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="33RGotrJaBZ" role="33vP2m">
+              <node concept="2OqwBi" id="33RGotrJaC0" role="2Oq$k0">
+                <node concept="2WthIp" id="33RGotrJaC1" role="2Oq$k0" />
+                <node concept="1DTwFV" id="33RGotrJaC2" role="2OqNvi">
+                  <ref role="2WH_rO" node="5_E18HdnRZc" resolve="mpsProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="33RGotrJaC3" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getModules():java.lang.Iterable" resolve="getModules" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="5_E18HdnRY2" role="3cqZAp">
-          <node concept="3clFbS" id="5_E18HdnRY3" role="3clFbx">
-            <node concept="3cpWs6" id="5_E18HdnRY4" role="3cqZAp" />
-          </node>
-          <node concept="3clFbC" id="5_E18HdnRY5" role="3clFbw">
-            <node concept="10Nm6u" id="5_E18HdnRY6" role="3uHU7w" />
-            <node concept="37vLTw" id="5_E18HdnRY7" role="3uHU7B">
-              <ref role="3cqZAo" node="5_E18HdnRXX" resolve="grammarFile" />
+        <node concept="3cpWs8" id="33RGotrJHt5" role="3cqZAp">
+          <node concept="3cpWsn" id="33RGotrJHt6" role="3cpWs9">
+            <property role="TrG5h" value="languages" />
+            <node concept="_YKpA" id="33RGotrJHrT" role="1tU5fm">
+              <node concept="17QB3L" id="33RGotrJIwg" role="_ZDj9" />
+            </node>
+            <node concept="2OqwBi" id="33RGotrJHt7" role="33vP2m">
+              <node concept="2OqwBi" id="33RGotrJHt8" role="2Oq$k0">
+                <node concept="2OqwBi" id="33RGotrJMwv" role="2Oq$k0">
+                  <node concept="37vLTw" id="33RGotrJHt9" role="2Oq$k0">
+                    <ref role="3cqZAo" node="33RGotrJaBV" resolve="modules" />
+                  </node>
+                  <node concept="UnYns" id="33RGotrJMHQ" role="2OqNvi">
+                    <node concept="3uibUv" id="33RGotrJMSE" role="UnYnz">
+                      <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3$u5V9" id="33RGotrJHta" role="2OqNvi">
+                  <node concept="1bVj0M" id="33RGotrJHtb" role="23t8la">
+                    <node concept="3clFbS" id="33RGotrJHtc" role="1bW5cS">
+                      <node concept="3clFbF" id="33RGotrJHtd" role="3cqZAp">
+                        <node concept="2OqwBi" id="33RGotrJHte" role="3clFbG">
+                          <node concept="37vLTw" id="33RGotrJHtf" role="2Oq$k0">
+                            <ref role="3cqZAo" node="33RGotrJHth" resolve="it" />
+                          </node>
+                          <node concept="liA8E" id="33RGotrJHtg" role="2OqNvi">
+                            <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Rh6nW" id="33RGotrJHth" role="1bW2Oz">
+                      <property role="TrG5h" value="it" />
+                      <node concept="2jxLKc" id="33RGotrJHti" role="1tU5fm" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="ANE8D" id="33RGotrJHtj" role="2OqNvi" />
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5_E18HdnRY8" role="3cqZAp" />
+        <node concept="3clFbH" id="33RGotrJns8" role="3cqZAp" />
+        <node concept="3SKdUt" id="33RGotrJnUG" role="3cqZAp">
+          <node concept="3SKdUq" id="33RGotrJnUI" role="3SKWNk">
+            <property role="3SKdUp" value="Show import form" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="33RGotrJ8Bc" role="3cqZAp">
+          <node concept="3cpWsn" id="33RGotrJ8Bd" role="3cpWs9">
+            <property role="TrG5h" value="form" />
+            <node concept="3uibUv" id="33RGotrJ8Be" role="1tU5fm">
+              <ref role="3uigEE" to="zkjw:~ImportForm" resolve="ImportForm" />
+            </node>
+            <node concept="2ShNRf" id="33RGotrJ8FN" role="33vP2m">
+              <node concept="1pGfFk" id="33RGotrJ967" role="2ShVmc">
+                <ref role="37wK5l" to="zkjw:~ImportForm.&lt;init&gt;(java.util.List)" resolve="ImportForm" />
+                <node concept="37vLTw" id="33RGotrJOjb" role="37wK5m">
+                  <ref role="3cqZAo" node="33RGotrJHt6" resolve="languages" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="33RGotrJgyF" role="3cqZAp">
+          <node concept="3clFbS" id="33RGotrJgyH" role="3clFbx">
+            <node concept="3cpWs6" id="33RGotrJiD_" role="3cqZAp" />
+          </node>
+          <node concept="3fqX7Q" id="33RGotrJi_A" role="3clFbw">
+            <node concept="2OqwBi" id="33RGotrJi_C" role="3fr31v">
+              <node concept="37vLTw" id="33RGotrJi_D" role="2Oq$k0">
+                <ref role="3cqZAo" node="33RGotrJ8Bd" resolve="form" />
+              </node>
+              <node concept="liA8E" id="33RGotrJi_E" role="2OqNvi">
+                <ref role="37wK5l" to="zkjw:~ImportForm.openAndGet():boolean" resolve="openAndGet" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="33RGotrJjPK" role="3cqZAp" />
+        <node concept="3SKdUt" id="33RGotrJorR" role="3cqZAp">
+          <node concept="3SKdUq" id="33RGotrJorT" role="3SKWNk">
+            <property role="3SKdUp" value="Either create new language or " />
+          </node>
+        </node>
         <node concept="3cpWs8" id="5_E18HdnRY9" role="3cqZAp">
           <node concept="3cpWsn" id="5_E18HdnRYa" role="3cpWs9">
             <property role="TrG5h" value="language" />
@@ -756,6 +884,14 @@
               <node concept="2WthIp" id="5_E18HdnRYd" role="2Oq$k0" />
               <node concept="2XshWL" id="5_E18HdnRYe" role="2OqNvi">
                 <ref role="2WH_rO" node="5_E18HdnRWN" resolve="getLanguage" />
+                <node concept="2OqwBi" id="33RGotrJkrU" role="2XxRq1">
+                  <node concept="37vLTw" id="33RGotrJkkC" role="2Oq$k0">
+                    <ref role="3cqZAo" node="33RGotrJ8Bd" resolve="form" />
+                  </node>
+                  <node concept="liA8E" id="33RGotrJl7v" role="2OqNvi">
+                    <ref role="37wK5l" to="zkjw:~ImportForm.getLanguage():java.lang.String" resolve="getLanguage" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -891,9 +1027,14 @@
               <ref role="3cqZAo" node="5_E18HdnRYU" resolve="grammarImporter" />
             </node>
             <node concept="liA8E" id="5_E18HdnRZ4" role="2OqNvi">
-              <ref role="37wK5l" to="zkjw:~GrammarImporter.importGrammar(java.lang.String):void" resolve="importGrammar" />
-              <node concept="37vLTw" id="5_E18HdnRZ5" role="37wK5m">
-                <ref role="3cqZAo" node="5_E18HdnRXX" resolve="grammarFile" />
+              <ref role="37wK5l" to="zkjw:~GrammarImporter.importGrammars(java.io.File[]):void" resolve="importGrammars" />
+              <node concept="2OqwBi" id="33RGotrJtgc" role="37wK5m">
+                <node concept="37vLTw" id="33RGotrJtbu" role="2Oq$k0">
+                  <ref role="3cqZAo" node="33RGotrJ8Bd" resolve="form" />
+                </node>
+                <node concept="liA8E" id="33RGotrJt$T" role="2OqNvi">
+                  <ref role="37wK5l" to="zkjw:~ImportForm.getFiles():java.io.File[]" resolve="getFiles" />
+                </node>
               </node>
             </node>
           </node>
