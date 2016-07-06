@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/JSON.adjusted/JSON.adjusted.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/JSON.adjusted/sandbox/JSON.adjusted.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/JSON/JSON.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/JSON/sandbox/JSON.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/JavaScript.adjusted/JavaScript.adjusted.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/JavaScript/JavaScript.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/JavaScript/sandbox/JavaScript.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/SimpleXML.adjusted/SimpleXML.adjusted.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/SimpleXML.adjusted/sandbox/SimpleXML.adjusted.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/SimpleXML/SimpleXML.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/SimpleXML/sandbox/SimpleXML.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/JavaScript.adjusted.sandbox/JavaScript.adjusted.sandbox.msd" folder="" />
+    </projectModules>
+  </component>
+</project>
