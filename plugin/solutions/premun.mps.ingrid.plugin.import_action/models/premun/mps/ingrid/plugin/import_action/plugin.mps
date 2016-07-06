@@ -359,7 +359,7 @@
         <node concept="3cpWs8" id="4X6IwqdNpSM" role="3cqZAp">
           <node concept="3cpWsn" id="4X6IwqdNpSN" role="3cpWs9">
             <property role="TrG5h" value="structureModel" />
-            <node concept="3uibUv" id="4X6IwqdNpSO" role="1tU5fm">
+            <node concept="3uibUv" id="mPzN$arLNs" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
             <node concept="2OqwBi" id="4X6IwqdNpSP" role="33vP2m">
@@ -775,7 +775,7 @@
         <node concept="3cpWs8" id="5_E18HdnRYm" role="3cqZAp">
           <node concept="3cpWsn" id="5_E18HdnRYn" role="3cpWs9">
             <property role="TrG5h" value="structureModel" />
-            <node concept="3uibUv" id="5_E18HdnRYo" role="1tU5fm">
+            <node concept="3uibUv" id="mPzN$arSMi" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
             <node concept="2OqwBi" id="5_E18HdnRYp" role="33vP2m">
@@ -795,7 +795,7 @@
         <node concept="3cpWs8" id="5_E18HdnRYt" role="3cqZAp">
           <node concept="3cpWsn" id="5_E18HdnRYu" role="3cpWs9">
             <property role="TrG5h" value="editorModel" />
-            <node concept="3uibUv" id="5_E18HdnRYv" role="1tU5fm">
+            <node concept="3uibUv" id="mPzN$arSQK" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
             <node concept="2OqwBi" id="5_E18HdnRYw" role="33vP2m">
@@ -815,7 +815,7 @@
         <node concept="3cpWs8" id="5_E18HdnRY$" role="3cqZAp">
           <node concept="3cpWsn" id="5_E18HdnRY_" role="3cpWs9">
             <property role="TrG5h" value="textGenModel" />
-            <node concept="3uibUv" id="5_E18HdnRYA" role="1tU5fm">
+            <node concept="3uibUv" id="mPzN$arTjr" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
             </node>
             <node concept="2OqwBi" id="5_E18HdnRYB" role="33vP2m">
@@ -872,13 +872,13 @@
             <node concept="2ShNRf" id="5_E18HdnRYW" role="33vP2m">
               <node concept="1pGfFk" id="5_E18HdnRYX" role="2ShVmc">
                 <ref role="37wK5l" to="zkjw:~GrammarImporter.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SModel)" resolve="GrammarImporter" />
-                <node concept="37vLTw" id="5_E18HdnRYY" role="37wK5m">
+                <node concept="37vLTw" id="mPzN$arSES" role="37wK5m">
                   <ref role="3cqZAo" node="5_E18HdnRYn" resolve="structureModel" />
                 </node>
                 <node concept="37vLTw" id="5_E18HdnRYZ" role="37wK5m">
                   <ref role="3cqZAo" node="5_E18HdnRYu" resolve="editorModel" />
                 </node>
-                <node concept="37vLTw" id="5_E18HdnRZ0" role="37wK5m">
+                <node concept="37vLTw" id="mPzN$arSIi" role="37wK5m">
                   <ref role="3cqZAo" node="5_E18HdnRY_" resolve="textGenModel" />
                 </node>
               </node>
