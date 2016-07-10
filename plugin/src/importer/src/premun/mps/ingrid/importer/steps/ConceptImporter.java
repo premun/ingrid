@@ -7,7 +7,8 @@ import premun.mps.ingrid.parser.grammar.*;
 import java.util.*;
 
 /**
- * Import step that creates concepts, constraint data concepts and interface concepts for grammar rules.
+ * Import step that creates concepts and interface concepts for grammar rules.
+ * (constraint data concepts for lexer rules are created in the linking step)
  */
 public class ConceptImporter extends ImportStep {
 
@@ -40,8 +41,10 @@ public class ConceptImporter extends ImportStep {
      */
     private void importRule(ParserRule rule) {
         if (this.isInterfaceNeeded(rule)) {
+            rule.name = NamingService.capitalize(rule.name);
+
             // Generate interface name
-            String interfaceName = this.namingService.generateName("I" + NamingService.capitalize(rule.name));
+            String interfaceName = this.namingService.generateName("I" + rule.name);
 
             // We will create an interface and a child for each alternative that will inherit this interface
             SNode iface = this.nodeFactory.createInterface(interfaceName, "Interfaces." + interfaceName);

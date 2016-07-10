@@ -2639,61 +2639,6 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="1fTj9HrDAiD" role="jymVt" />
-    <node concept="2YIFZL" id="1fTj9HrDAz_" role="jymVt">
-      <property role="TrG5h" value="setConstraint" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="1fTj9HrDAzC" role="3clF47">
-        <node concept="3clFbF" id="1fTj9HrDAEA" role="3cqZAp">
-          <node concept="37vLTI" id="1fTj9HrDAQq" role="3clFbG">
-            <node concept="37vLTw" id="1fTj9HrDASS" role="37vLTx">
-              <ref role="3cqZAo" node="1fTj9HrDADu" resolve="value" />
-            </node>
-            <node concept="2OqwBi" id="1fTj9HrDAG1" role="37vLTJ">
-              <node concept="37vLTw" id="1fTj9HrDAE_" role="2Oq$k0">
-                <ref role="3cqZAo" node="1fTj9HrDADk" resolve="concept" />
-              </node>
-              <node concept="3TrcHB" id="1fTj9HrDAOR" role="2OqNvi">
-                <ref role="3TsBF5" to="tpce:fKFLfW2" resolve="constraint" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="1fTj9HrDAtS" role="1B3o_S" />
-      <node concept="3cqZAl" id="1fTj9HrDAzz" role="3clF45" />
-      <node concept="37vLTG" id="1fTj9HrDADk" role="3clF46">
-        <property role="TrG5h" value="concept" />
-        <node concept="3Tqbb2" id="1fTj9HrDADj" role="1tU5fm">
-          <ref role="ehGHo" to="tpce:fKAz7CR" resolve="ConstrainedDataTypeDeclaration" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1fTj9HrDADu" role="3clF46">
-        <property role="TrG5h" value="value" />
-        <node concept="17QB3L" id="1fTj9HrDADA" role="1tU5fm" />
-      </node>
-      <node concept="P$JXv" id="3aST2zGrxD0" role="lGtFl">
-        <node concept="TZ5HA" id="3aST2zGrxD1" role="TZ5H$">
-          <node concept="1dT_AC" id="3aST2zGrxD2" role="1dT_Ay">
-            <property role="1dT_AB" value="Sets the regex value of a given constrain data type node." />
-          </node>
-        </node>
-        <node concept="TUZQ0" id="3aST2zGrxD3" role="TUOzN">
-          <property role="TUZQ4" value="Target constraint data type concept" />
-          <node concept="zr_55" id="3aST2zGrxD5" role="zr_5Q">
-            <ref role="zr_51" node="1fTj9HrDADk" resolve="concept" />
-          </node>
-        </node>
-        <node concept="TUZQ0" id="3aST2zGrxD6" role="TUOzN">
-          <property role="TUZQ4" value="Regex representing the constraint" />
-          <node concept="zr_55" id="3aST2zGrxD8" role="zr_5Q">
-            <ref role="zr_51" node="1fTj9HrDADu" resolve="value" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="2tJIrI" id="3pfFnS02$hN" role="jymVt" />
     <node concept="2YIFZL" id="3pfFnS02$hO" role="jymVt">
       <property role="TrG5h" value="getChildLink" />

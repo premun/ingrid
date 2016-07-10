@@ -1,11 +1,10 @@
 package premun.mps.ingrid.importer.steps;
 
-import org.jetbrains.mps.openapi.model.*;
 import premun.mps.ingrid.parser.grammar.*;
-import premun.mps.ingrid.plugin.library.*;
 
 /**
- * Import step that closes the gap between ANTLRv4 regexes and MPS's format.
+ * Import step that closes the gap between ANTLRv4 regexes and MPS's format (Java).
+ * https://github.com/antlr/antlr4/blob/master/doc/lexer-rules.md#lexer-rule-elements
  */
 public class RegexTransformer extends ImportStep {
     @Override
@@ -24,18 +23,13 @@ public class RegexTransformer extends ImportStep {
      * @param rule Constraint data type's rule.
      */
     private void transformRegex(RegexRule rule) {
-        SNode concept = rule.node;
-        String constraint = rule.regexp;
-
         // Regex is stored as a string inside the constraint data type,
-        // so slashes need to be double-escaped..
-        constraint = constraint
+        // so slashes need to be doubly-escaped..
+        rule.regexp = rule.regexp
             .replaceAll("\\\\", "\\\\\\\\")
 
         // All-except-from has different notation
             .replaceAll("~\\[", "[^")
             .replaceAll("~ \\[", "[^");
-
-        NodeHelper.setConstraint(concept, constraint);
     }
 }

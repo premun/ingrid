@@ -59,8 +59,8 @@ public class GrammarImporter {
         this.grammar = parser.resolveGrammar();
 
         ImportStep[] steps = new ImportStep[] {
-            new ConceptImporter(),
             new RegexTransformer(),
+            new ConceptImporter(),
             new ConceptLinker(),
             new AliasFinder(),
             new EditorBuilder(),
