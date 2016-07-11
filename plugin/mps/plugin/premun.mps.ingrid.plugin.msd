@@ -11,9 +11,13 @@
     <dependency reexport="false">742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)</dependency>
     <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
     <dependency reexport="false">498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)</dependency>
-    <dependency reexport="false">f0276ed1-44e5-4463-9cfe-cf15618e4974(premun.mps.ingrid.importer)</dependency>
+    <dependency reexport="true">f0276ed1-44e5-4463-9cfe-cf15618e4974(premun.mps.ingrid.importer)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
+    <dependency reexport="true">9450b346-4f8d-4243-9894-05b73fc17e09(premun.mps.ingrid.library)</dependency>
+    <dependency reexport="true">a34e01c8-8c6f-48c5-a512-bb294cca062e(premun.mps.ingrid.model)</dependency>
+    <dependency reexport="true">66288791-e621-45d1-bebf-408d2568bbe6(premun.mps.ingrid.parser)</dependency>
+    <dependency reexport="true">4db458f1-215f-424c-8756-4cc4b0227697(org.antlr)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="4" />
@@ -42,7 +46,11 @@
     <module reference="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" version="0" />
     <module reference="20351dc3-a2df-46f5-b667-fc9adab1f1c9(jetbrains.mps.make)" version="0" />
     <module reference="a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)" version="0" />
+    <module reference="4db458f1-215f-424c-8756-4cc4b0227697(org.antlr)" version="0" />
     <module reference="f0276ed1-44e5-4463-9cfe-cf15618e4974(premun.mps.ingrid.importer)" version="0" />
+    <module reference="9450b346-4f8d-4243-9894-05b73fc17e09(premun.mps.ingrid.library)" version="0" />
+    <module reference="a34e01c8-8c6f-48c5-a512-bb294cca062e(premun.mps.ingrid.model)" version="0" />
+    <module reference="66288791-e621-45d1-bebf-408d2568bbe6(premun.mps.ingrid.parser)" version="0" />
     <module reference="c07252ce-2a36-4086-8c09-08109b3e573d(premun.mps.ingrid.plugin)" version="0" />
   </dependencyVersions>
 </solution>

@@ -12,12 +12,12 @@
     <source path="${INGRID_HOME}/plugin/idea/importer/src" />
   </sourcePath>
   <dependencies>
-    <dependency reexport="false">f0276ed1-44e5-4463-9cfe-cf15618e4974(premun.mps.ingrid.importer)</dependency>
-    <dependency reexport="false">a34e01c8-8c6f-48c5-a512-bb294cca062e(premun.mps.ingrid.model)</dependency>
-    <dependency reexport="false">9450b346-4f8d-4243-9894-05b73fc17e09(premun.mps.ingrid.library)</dependency>
-    <dependency reexport="false">66288791-e621-45d1-bebf-408d2568bbe6(premun.mps.ingrid.parser)</dependency>
+    <dependency reexport="true">a34e01c8-8c6f-48c5-a512-bb294cca062e(premun.mps.ingrid.model)</dependency>
+    <dependency reexport="true">9450b346-4f8d-4243-9894-05b73fc17e09(premun.mps.ingrid.library)</dependency>
+    <dependency reexport="true">66288791-e621-45d1-bebf-408d2568bbe6(premun.mps.ingrid.parser)</dependency>
     <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
     <dependency reexport="false">7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</dependency>
+    <dependency reexport="true">4db458f1-215f-424c-8756-4cc4b0227697(org.antlr)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="4" />
@@ -40,6 +40,7 @@
     <module reference="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" version="1" />
     <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
     <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
+    <module reference="4db458f1-215f-424c-8756-4cc4b0227697(org.antlr)" version="0" />
     <module reference="f0276ed1-44e5-4463-9cfe-cf15618e4974(premun.mps.ingrid.importer)" version="0" />
     <module reference="9450b346-4f8d-4243-9894-05b73fc17e09(premun.mps.ingrid.library)" version="0" />
     <module reference="a34e01c8-8c6f-48c5-a512-bb294cca062e(premun.mps.ingrid.model)" version="0" />

@@ -12,8 +12,8 @@
     <source path="${INGRID_HOME}/plugin/idea/model/src" />
   </sourcePath>
   <dependencies>
-    <dependency reexport="false">4db458f1-215f-424c-8756-4cc4b0227697(org.antlr)</dependency>
-    <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
+    <dependency reexport="true">4db458f1-215f-424c-8756-4cc4b0227697(org.antlr)</dependency>
+    <dependency reexport="true">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="4" />
