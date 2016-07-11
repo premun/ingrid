@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/importer/premun.mps.ingrid.importer.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/library/premun.mps.ingrid.library.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/model/premun.mps.ingrid.model.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/org.antlr/org.antlr.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/parser/premun.mps.ingrid.parser.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/plugin/premun.mps.ingrid.plugin.msd" folder="" />
+    </projectModules>
+  </component>
+</project>

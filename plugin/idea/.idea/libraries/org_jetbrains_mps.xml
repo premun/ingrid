@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="org.jetbrains.mps">
+    <CLASSES>
+      <root url="jar://$MPS_HOME$/lib/mps-behavior-api.jar!/" />
+      <root url="jar://$MPS_HOME$/lib/mps-closures.jar!/" />
+      <root url="jar://$MPS_HOME$/lib/mps-collections.jar!/" />
+      <root url="jar://$MPS_HOME$/lib/mps-core.jar!/" />
+      <root url="jar://$MPS_HOME$/lib/mps-openapi.jar!/" />
+      <root url="jar://$MPS_HOME$/languages/baseLanguage/jetbrains.mps.baseLanguage.jar!/" />
+      <root url="jar://$MPS_HOME$/languages/languageDesign/jetbrains.mps.lang.smodel.jar!/" />
+      <root url="jar://$MPS_HOME$/languages/languageDesign/jetbrains.mps.lang.structure.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
