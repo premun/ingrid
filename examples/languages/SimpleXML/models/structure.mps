@@ -97,7 +97,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7493426444128839422" />
-      <ref role="20lvS9" node="6vXZUoCOmrT" resolve="Element" />
+      <ref role="20lvS9" node="6vXZUoCOmrT" resolve="IElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6vXZUoCOmrL">
@@ -114,7 +114,7 @@
       <ref role="AX2Wp" node="6vXZUoCOmrG" resolve="TEXT" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmsi" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOmrO" resolve="Content" />
+      <ref role="PrY4T" node="6vXZUoCOmrO" resolve="IContent" />
     </node>
   </node>
   <node concept="1TIwiD" id="6vXZUoCOmrM">
@@ -153,8 +153,8 @@
     </node>
   </node>
   <node concept="PlHQZ" id="6vXZUoCOmrO">
-    <property role="TrG5h" value="Content" />
-    <property role="3GE5qa" value="Interfaces.Content" />
+    <property role="TrG5h" value="IContent" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7493426444128839412" />
   </node>
   <node concept="1TIwiD" id="6vXZUoCOmrP">
@@ -171,7 +171,7 @@
       <ref role="AX2Wp" node="6vXZUoCOmrG" resolve="TEXT" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmsd" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOmrO" resolve="Content" />
+      <ref role="PrY4T" node="6vXZUoCOmrO" resolve="IContent" />
     </node>
   </node>
   <node concept="1TIwiD" id="6vXZUoCOmrQ">
@@ -187,7 +187,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7493426444128839428" />
-      <ref role="20lvS9" node="6vXZUoCOmrT" resolve="Element" />
+      <ref role="20lvS9" node="6vXZUoCOmrT" resolve="IElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6vXZUoCOmrR">
@@ -220,12 +220,12 @@
       <ref role="AX2Wp" node="6vXZUoCOmrI" resolve="CDATA" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmsj" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOmrO" resolve="Content" />
+      <ref role="PrY4T" node="6vXZUoCOmrO" resolve="IContent" />
     </node>
   </node>
   <node concept="PlHQZ" id="6vXZUoCOmrT">
-    <property role="TrG5h" value="Element" />
-    <property role="3GE5qa" value="Interfaces.Element" />
+    <property role="TrG5h" value="IElement" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7493426444128839417" />
   </node>
   <node concept="1TIwiD" id="6vXZUoCOmrU">
@@ -253,7 +253,7 @@
       <property role="20lbJX" value="0..n" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7493426444128839433" />
-      <ref role="20lvS9" node="6vXZUoCOmrO" resolve="Content" />
+      <ref role="20lvS9" node="6vXZUoCOmrO" resolve="IContent" />
     </node>
     <node concept="1TJgyi" id="6vXZUoCOmsa" role="1TKVEl">
       <property role="TrG5h" value="Name_2" />
@@ -261,10 +261,10 @@
       <ref role="AX2Wp" node="6vXZUoCOmrJ" resolve="Name" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmse" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOmrO" resolve="Content" />
+      <ref role="PrY4T" node="6vXZUoCOmrO" resolve="IContent" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmsf" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOmrT" resolve="Element" />
+      <ref role="PrY4T" node="6vXZUoCOmrT" resolve="IElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6vXZUoCOmrV">
@@ -288,10 +288,10 @@
       <ref role="20lvS9" node="6vXZUoCOmrM" resolve="Attribute" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmsg" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOmrO" resolve="Content" />
+      <ref role="PrY4T" node="6vXZUoCOmrO" resolve="IContent" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmsh" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOmrT" resolve="Element" />
+      <ref role="PrY4T" node="6vXZUoCOmrT" resolve="IElement" />
     </node>
   </node>
 </model>

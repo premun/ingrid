@@ -105,7 +105,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206152" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSd9" role="1TKVEi">
       <property role="20kJfa" value="ArgumentList_block_1_1_2" />
@@ -116,8 +116,8 @@
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XS9U">
-    <property role="TrG5h" value="NumericLiteral" />
-    <property role="3GE5qa" value="Interfaces.NumericLiteral" />
+    <property role="TrG5h" value="INumericLiteral" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024205946" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XS9V">
@@ -134,16 +134,16 @@
       <ref role="AX2Wp" node="6QvHUa1XS9m" resolve="DecimalLiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShg" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShh" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="Literal" />
+      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="ILiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShi" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XS9U" resolve="NumericLiteral" />
+      <ref role="PrY4T" node="6QvHUa1XS9U" resolve="INumericLiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjo" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSae" resolve="PropertyName" />
+      <ref role="PrY4T" node="6QvHUa1XSae" resolve="IPropertyName" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XS9W">
@@ -160,16 +160,16 @@
       <ref role="AX2Wp" node="6QvHUa1XS9g" resolve="HexIntegerLiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShj" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShk" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="Literal" />
+      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="ILiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShl" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XS9U" resolve="NumericLiteral" />
+      <ref role="PrY4T" node="6QvHUa1XS9U" resolve="INumericLiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjp" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSae" resolve="PropertyName" />
+      <ref role="PrY4T" node="6QvHUa1XSae" resolve="IPropertyName" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XS9X">
@@ -186,16 +186,16 @@
       <ref role="AX2Wp" node="6QvHUa1XS9n" resolve="OctalIntegerLiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShm" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShn" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="Literal" />
+      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="ILiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSho" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XS9U" resolve="NumericLiteral" />
+      <ref role="PrY4T" node="6QvHUa1XS9U" resolve="INumericLiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjq" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSae" resolve="PropertyName" />
+      <ref role="PrY4T" node="6QvHUa1XSae" resolve="IPropertyName" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XS9Y">
@@ -216,18 +216,18 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206158" />
-      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjf" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjE" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XS9Z">
-    <property role="TrG5h" value="IterationStatement" />
-    <property role="3GE5qa" value="Interfaces.IterationStatement" />
+    <property role="TrG5h" value="IIterationStatement" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024205951" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSa0">
@@ -243,23 +243,23 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206159" />
-      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSdg" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206160" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiZ" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSj0" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XS9Z" resolve="IterationStatement" />
+      <ref role="PrY4T" node="6QvHUa1XS9Z" resolve="IIterationStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjw" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSa1">
@@ -275,23 +275,23 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206161" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSdi" role="1TKVEi">
       <property role="20kJfa" value="Statement_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206162" />
-      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSj1" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSj2" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XS9Z" resolve="IterationStatement" />
+      <ref role="PrY4T" node="6QvHUa1XS9Z" resolve="IIterationStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjx" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSa2">
@@ -307,37 +307,37 @@
       <property role="20lbJX" value="0..1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206163" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSdk" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="0..1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206164" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSdl" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_3" />
       <property role="20lbJX" value="0..1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206165" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSdm" role="1TKVEi">
       <property role="20kJfa" value="Statement_4" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206166" />
-      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSj3" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSj4" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XS9Z" resolve="IterationStatement" />
+      <ref role="PrY4T" node="6QvHUa1XS9Z" resolve="IIterationStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjy" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSa3">
@@ -360,30 +360,30 @@
       <property role="20lbJX" value="0..1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206168" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSdp" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_3" />
       <property role="20lbJX" value="0..1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206169" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSdq" role="1TKVEi">
       <property role="20kJfa" value="Statement_4" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206170" />
-      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSj5" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSj6" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XS9Z" resolve="IterationStatement" />
+      <ref role="PrY4T" node="6QvHUa1XS9Z" resolve="IIterationStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjz" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSa4">
@@ -399,30 +399,30 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206171" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSds" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206172" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSdt" role="1TKVEi">
       <property role="20kJfa" value="Statement_3" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206173" />
-      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSj7" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSj8" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XS9Z" resolve="IterationStatement" />
+      <ref role="PrY4T" node="6QvHUa1XS9Z" resolve="IIterationStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSj$" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSa5">
@@ -445,23 +445,23 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206175" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSdw" role="1TKVEi">
       <property role="20kJfa" value="Statement_3" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206176" />
-      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSj9" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSja" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XS9Z" resolve="IterationStatement" />
+      <ref role="PrY4T" node="6QvHUa1XS9Z" resolve="IIterationStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSj_" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSa6">
@@ -477,20 +477,20 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206177" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSdy" role="1TKVEi">
       <property role="20kJfa" value="Statement_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206178" />
-      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSje" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjD" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSa7">
@@ -506,7 +506,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206179" />
-      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSa8">
@@ -532,7 +532,7 @@
       <ref role="20lvS9" node="6QvHUa1XSbC" resolve="Elision" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShp" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSa9">
@@ -548,18 +548,18 @@
       <property role="20lbJX" value="0..1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206182" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjd" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjC" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XSaa">
-    <property role="TrG5h" value="Literal" />
-    <property role="3GE5qa" value="Interfaces.Literal" />
+    <property role="TrG5h" value="ILiteral" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024205962" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSab">
@@ -575,7 +575,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206183" />
-      <ref role="20lvS9" node="6QvHUa1XScN" resolve="Literal_block_1_1" />
+      <ref role="20lvS9" node="6QvHUa1XScN" resolve="ILiteral_block_1_1" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSac">
@@ -591,7 +591,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206184" />
-      <ref role="20lvS9" node="6QvHUa1XS9U" resolve="NumericLiteral" />
+      <ref role="20lvS9" node="6QvHUa1XS9U" resolve="INumericLiteral" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSad">
@@ -607,18 +607,18 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206185" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjh" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjG" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XSae">
-    <property role="TrG5h" value="PropertyName" />
-    <property role="3GE5qa" value="Interfaces.PropertyName" />
+    <property role="TrG5h" value="IPropertyName" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024205966" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaf">
@@ -635,7 +635,7 @@
       <ref role="AX2Wp" node="6QvHUa1XS9r" resolve="Identifier" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjm" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSae" resolve="PropertyName" />
+      <ref role="PrY4T" node="6QvHUa1XSae" resolve="IPropertyName" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSag">
@@ -652,7 +652,7 @@
       <ref role="AX2Wp" node="6QvHUa1XS9B" resolve="StringLiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjn" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSae" resolve="PropertyName" />
+      <ref role="PrY4T" node="6QvHUa1XSae" resolve="IPropertyName" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSah">
@@ -668,7 +668,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206188" />
-      <ref role="20lvS9" node="6QvHUa1XS9U" resolve="NumericLiteral" />
+      <ref role="20lvS9" node="6QvHUa1XS9U" resolve="INumericLiteral" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSai">
@@ -689,7 +689,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206190" />
-      <ref role="20lvS9" node="6QvHUa1XSae" resolve="PropertyName" />
+      <ref role="20lvS9" node="6QvHUa1XSae" resolve="IPropertyName" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaj">
@@ -710,12 +710,12 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206192" />
-      <ref role="20lvS9" node="6QvHUa1XSae" resolve="PropertyName" />
+      <ref role="20lvS9" node="6QvHUa1XSae" resolve="IPropertyName" />
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XSak">
-    <property role="TrG5h" value="FutureReservedWord" />
-    <property role="3GE5qa" value="Interfaces.FutureReservedWord" />
+    <property role="TrG5h" value="IFutureReservedWord" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024205972" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSal">
@@ -727,10 +727,10 @@
     <property role="EcuMT" value="7899234180024205973" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSij" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSik" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSam">
@@ -742,10 +742,10 @@
     <property role="EcuMT" value="7899234180024205974" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSil" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSim" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSan">
@@ -757,10 +757,10 @@
     <property role="EcuMT" value="7899234180024205975" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSin" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSio" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSao">
@@ -772,10 +772,10 @@
     <property role="EcuMT" value="7899234180024205976" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSip" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiq" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSap">
@@ -787,10 +787,10 @@
     <property role="EcuMT" value="7899234180024205977" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSir" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSis" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaq">
@@ -802,10 +802,10 @@
     <property role="EcuMT" value="7899234180024205978" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSit" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiu" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSar">
@@ -817,10 +817,10 @@
     <property role="EcuMT" value="7899234180024205979" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSiv" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiw" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSas">
@@ -832,10 +832,10 @@
     <property role="EcuMT" value="7899234180024205980" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSix" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiy" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSat">
@@ -847,10 +847,10 @@
     <property role="EcuMT" value="7899234180024205981" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSiz" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSi$" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSau">
@@ -862,10 +862,10 @@
     <property role="EcuMT" value="7899234180024205982" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSi_" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiA" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSav">
@@ -877,10 +877,10 @@
     <property role="EcuMT" value="7899234180024205983" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSiB" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiC" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaw">
@@ -892,10 +892,10 @@
     <property role="EcuMT" value="7899234180024205984" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSiD" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiE" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSax">
@@ -907,10 +907,10 @@
     <property role="EcuMT" value="7899234180024205985" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSiF" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiG" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSay">
@@ -922,10 +922,10 @@
     <property role="EcuMT" value="7899234180024205986" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSiH" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiI" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaz">
@@ -937,10 +937,10 @@
     <property role="EcuMT" value="7899234180024205987" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSiJ" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiK" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSa$">
@@ -952,10 +952,10 @@
     <property role="EcuMT" value="7899234180024205988" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSiL" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiM" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSa_">
@@ -971,12 +971,12 @@
       <property role="20lbJX" value="1..n" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206193" />
-      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XSaA">
-    <property role="TrG5h" value="Keyword" />
-    <property role="3GE5qa" value="Interfaces.Keyword" />
+    <property role="TrG5h" value="IKeyword" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024205990" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaB">
@@ -988,10 +988,10 @@
     <property role="EcuMT" value="7899234180024205991" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShv" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShw" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaC">
@@ -1003,10 +1003,10 @@
     <property role="EcuMT" value="7899234180024205992" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShx" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShy" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaD">
@@ -1018,10 +1018,10 @@
     <property role="EcuMT" value="7899234180024205993" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShz" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSh$" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaE">
@@ -1033,10 +1033,10 @@
     <property role="EcuMT" value="7899234180024205994" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSh_" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShA" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaF">
@@ -1048,10 +1048,10 @@
     <property role="EcuMT" value="7899234180024205995" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShB" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShC" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaG">
@@ -1063,10 +1063,10 @@
     <property role="EcuMT" value="7899234180024205996" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShD" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShE" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaH">
@@ -1078,10 +1078,10 @@
     <property role="EcuMT" value="7899234180024205997" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShF" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShG" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaI">
@@ -1093,10 +1093,10 @@
     <property role="EcuMT" value="7899234180024205998" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShH" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShI" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaJ">
@@ -1108,10 +1108,10 @@
     <property role="EcuMT" value="7899234180024205999" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShJ" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShK" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaK">
@@ -1123,10 +1123,10 @@
     <property role="EcuMT" value="7899234180024206000" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShL" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShM" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaL">
@@ -1138,10 +1138,10 @@
     <property role="EcuMT" value="7899234180024206001" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShN" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShO" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaM">
@@ -1153,10 +1153,10 @@
     <property role="EcuMT" value="7899234180024206002" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShP" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShQ" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaN">
@@ -1168,10 +1168,10 @@
     <property role="EcuMT" value="7899234180024206003" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShR" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShS" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaO">
@@ -1183,10 +1183,10 @@
     <property role="EcuMT" value="7899234180024206004" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShT" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShU" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaP">
@@ -1198,10 +1198,10 @@
     <property role="EcuMT" value="7899234180024206005" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShV" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShW" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaQ">
@@ -1213,10 +1213,10 @@
     <property role="EcuMT" value="7899234180024206006" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShX" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShY" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaR">
@@ -1228,10 +1228,10 @@
     <property role="EcuMT" value="7899234180024206007" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XShZ" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSi0" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaS">
@@ -1243,10 +1243,10 @@
     <property role="EcuMT" value="7899234180024206008" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSi1" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSi2" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaT">
@@ -1258,10 +1258,10 @@
     <property role="EcuMT" value="7899234180024206009" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSi3" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSi4" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaU">
@@ -1273,10 +1273,10 @@
     <property role="EcuMT" value="7899234180024206010" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSi5" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSi6" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaV">
@@ -1288,10 +1288,10 @@
     <property role="EcuMT" value="7899234180024206011" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSi7" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSi8" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaW">
@@ -1303,10 +1303,10 @@
     <property role="EcuMT" value="7899234180024206012" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSi9" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSia" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaX">
@@ -1318,10 +1318,10 @@
     <property role="EcuMT" value="7899234180024206013" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSib" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSic" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaY">
@@ -1333,10 +1333,10 @@
     <property role="EcuMT" value="7899234180024206014" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSid" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSie" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSaZ">
@@ -1348,10 +1348,10 @@
     <property role="EcuMT" value="7899234180024206015" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSif" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSig" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSb0">
@@ -1363,10 +1363,10 @@
     <property role="EcuMT" value="7899234180024206016" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSih" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSii" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="PrY4T" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSb1">
@@ -1413,10 +1413,10 @@
     <property role="EcuMT" value="7899234180024206019" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSjl" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjK" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSb4">
@@ -1435,15 +1435,15 @@
       <ref role="20lvS9" node="6QvHUa1XSbJ" resolve="VariableDeclarationList" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiV" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjs" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XSb5">
-    <property role="TrG5h" value="Statement" />
-    <property role="3GE5qa" value="Interfaces.Statement" />
+    <property role="TrG5h" value="IStatement" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024206021" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSb6">
@@ -1539,7 +1539,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206203" />
-      <ref role="20lvS9" node="6QvHUa1XS9Z" resolve="IterationStatement" />
+      <ref role="20lvS9" node="6QvHUa1XS9Z" resolve="IIterationStatement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbc">
@@ -1667,7 +1667,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206211" />
-      <ref role="20lvS9" node="6QvHUa1XScS" resolve="TryStatement" />
+      <ref role="20lvS9" node="6QvHUa1XScS" resolve="ITryStatement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbk">
@@ -1699,7 +1699,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206213" />
-      <ref role="20lvS9" node="6QvHUa1XScJ" resolve="PropertyAssignment" />
+      <ref role="20lvS9" node="6QvHUa1XScJ" resolve="IPropertyAssignment" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSe6" role="1TKVEi">
       <property role="20kJfa" value="PropertyNameAndValueList_block_1_1_2" />
@@ -1722,12 +1722,12 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206215" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XSbn">
-    <property role="TrG5h" value="SourceElement" />
-    <property role="3GE5qa" value="Interfaces.SourceElement" />
+    <property role="TrG5h" value="ISourceElement" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024206039" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbo">
@@ -1743,7 +1743,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206216" />
-      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbp">
@@ -1798,14 +1798,14 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206220" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSed" role="1TKVEi">
       <property role="20kJfa" value="Statement_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206221" />
-      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="20lvS9" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSee" role="1TKVEi">
       <property role="20kJfa" value="IfStatement_block_1_1_3" />
@@ -1815,10 +1815,10 @@
       <ref role="20lvS9" node="6QvHUa1XSa7" resolve="IfStatement_block_1_1" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiY" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjv" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbs">
@@ -1848,12 +1848,12 @@
       <property role="20lbJX" value="0..n" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206224" />
-      <ref role="20lvS9" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="20lvS9" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XSbu">
-    <property role="TrG5h" value="ReservedWord_block_3_1" />
-    <property role="3GE5qa" value="Interfaces.ReservedWord_block_3_1" />
+    <property role="TrG5h" value="IReservedWord_block_3_1" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024206046" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbv">
@@ -1865,10 +1865,10 @@
     <property role="EcuMT" value="7899234180024206047" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSiN" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiO" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbu" resolve="ReservedWord_block_3_1" />
+      <ref role="PrY4T" node="6QvHUa1XSbu" resolve="IReservedWord_block_3_1" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbw">
@@ -1885,10 +1885,10 @@
       <ref role="AX2Wp" node="6QvHUa1XS9N" resolve="BooleanLiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiP" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="ReservedWord" />
+      <ref role="PrY4T" node="6QvHUa1XScZ" resolve="IReservedWord" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiQ" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbu" resolve="ReservedWord_block_3_1" />
+      <ref role="PrY4T" node="6QvHUa1XSbu" resolve="IReservedWord_block_3_1" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbx">
@@ -1913,7 +1913,7 @@
       <property role="20lbJX" value="0..n" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206226" />
-      <ref role="20lvS9" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="20lvS9" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbz">
@@ -1929,7 +1929,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206227" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSb$">
@@ -1948,10 +1948,10 @@
       <ref role="20lvS9" node="6QvHUa1XSa_" resolve="StatementList" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiU" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjr" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSb_">
@@ -1967,13 +1967,13 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206229" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiX" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSju" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbA">
@@ -1985,10 +1985,10 @@
     <property role="EcuMT" value="7899234180024206054" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSiW" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjt" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbB">
@@ -2087,7 +2087,7 @@
       <ref role="20lvS9" node="6QvHUa1XSbl" resolve="PropertyNameAndValueList" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShq" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbH">
@@ -2124,7 +2124,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206238" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSev" role="1TKVEi">
       <property role="20kJfa" value="StatementList_2" />
@@ -2185,12 +2185,12 @@
       <ref role="20lvS9" node="6QvHUa1XSbt" resolve="FunctionBody" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjL" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XSbL">
-    <property role="TrG5h" value="SingleExpression" />
-    <property role="3GE5qa" value="Interfaces.SingleExpression" />
+    <property role="TrG5h" value="ISingleExpression" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024206065" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbM">
@@ -2221,7 +2221,7 @@
       <ref role="20lvS9" node="6QvHUa1XSbt" resolve="FunctionBody" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgo" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbN">
@@ -2237,17 +2237,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206248" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSeD" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206249" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgp" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbO">
@@ -2263,7 +2263,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206250" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyi" id="6QvHUa1XSeF" role="1TKVEl">
       <property role="TrG5h" value="Identifier_1" />
@@ -2271,7 +2271,7 @@
       <ref role="AX2Wp" node="6QvHUa1XS9r" resolve="Identifier" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgq" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbP">
@@ -2287,7 +2287,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206252" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSeH" role="1TKVEi">
       <property role="20kJfa" value="Arguments_2" />
@@ -2297,7 +2297,7 @@
       <ref role="20lvS9" node="6QvHUa1XSd7" resolve="Arguments" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgr" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbQ">
@@ -2313,7 +2313,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206254" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSeJ" role="1TKVEi">
       <property role="20kJfa" value="Arguments_2" />
@@ -2323,7 +2323,7 @@
       <ref role="20lvS9" node="6QvHUa1XSd7" resolve="Arguments" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgs" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbR">
@@ -2339,10 +2339,10 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206256" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgt" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbS">
@@ -2358,10 +2358,10 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206257" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgu" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbT">
@@ -2377,10 +2377,10 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206258" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgv" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbU">
@@ -2396,10 +2396,10 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206259" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgw" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbV">
@@ -2415,10 +2415,10 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206260" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgx" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbW">
@@ -2434,10 +2434,10 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206261" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgy" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbX">
@@ -2453,10 +2453,10 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206262" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgz" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbY">
@@ -2472,10 +2472,10 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206263" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSg$" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSbZ">
@@ -2491,10 +2491,10 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206264" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSg_" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSc0">
@@ -2510,10 +2510,10 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206265" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgA" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSc1">
@@ -2529,10 +2529,10 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206266" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgB" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSc2">
@@ -2548,17 +2548,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206267" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSeW" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206268" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgC" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSc3">
@@ -2574,17 +2574,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206269" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSeY" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206270" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgD" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSc4">
@@ -2600,17 +2600,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206271" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSf0" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206272" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgE" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSc5">
@@ -2626,17 +2626,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206273" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSf2" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206274" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgF" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSc6">
@@ -2652,17 +2652,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206275" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSf4" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206276" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgG" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSc7">
@@ -2678,17 +2678,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206277" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSf6" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206278" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgH" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSc8">
@@ -2704,17 +2704,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206279" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSf8" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206280" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgI" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSc9">
@@ -2730,17 +2730,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206281" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfa" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206282" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgJ" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSca">
@@ -2756,17 +2756,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206283" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfc" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206284" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgK" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScb">
@@ -2782,17 +2782,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206285" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfe" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206286" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgL" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScc">
@@ -2808,17 +2808,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206287" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfg" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206288" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgM" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScd">
@@ -2834,17 +2834,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206289" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfi" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206290" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgN" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSce">
@@ -2860,17 +2860,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206291" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfk" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206292" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgO" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScf">
@@ -2886,17 +2886,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206293" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfm" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206294" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgP" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScg">
@@ -2912,17 +2912,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206295" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfo" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206296" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgQ" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSch">
@@ -2938,17 +2938,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206297" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfq" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206298" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgR" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSci">
@@ -2964,17 +2964,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206299" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfs" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206300" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgS" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScj">
@@ -2990,17 +2990,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206301" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfu" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206302" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgT" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSck">
@@ -3016,17 +3016,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206303" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfw" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206304" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgU" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScl">
@@ -3042,17 +3042,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206305" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfy" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206306" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgV" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScm">
@@ -3068,17 +3068,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206307" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSf$" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206308" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgW" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScn">
@@ -3094,17 +3094,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206309" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfA" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206310" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgX" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSco">
@@ -3120,17 +3120,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206311" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfC" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206312" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgY" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScp">
@@ -3146,24 +3146,24 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206313" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfE" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206314" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfF" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_3" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206315" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSgZ" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScq">
@@ -3179,17 +3179,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206316" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfH" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206317" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSh0" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScr">
@@ -3205,24 +3205,24 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206318" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfJ" role="1TKVEi">
       <property role="20kJfa" value="AssignmentOperator_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206319" />
-      <ref role="20lvS9" node="6QvHUa1XScy" resolve="AssignmentOperator" />
+      <ref role="20lvS9" node="6QvHUa1XScy" resolve="IAssignmentOperator" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfK" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_3" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206320" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSh1" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScs">
@@ -3234,7 +3234,7 @@
     <property role="EcuMT" value="7899234180024206108" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSh2" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSct">
@@ -3251,7 +3251,7 @@
       <ref role="AX2Wp" node="6QvHUa1XS9r" resolve="Identifier" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSh3" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScu">
@@ -3267,7 +3267,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206322" />
-      <ref role="20lvS9" node="6QvHUa1XSaa" resolve="Literal" />
+      <ref role="20lvS9" node="6QvHUa1XSaa" resolve="ILiteral" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScv">
@@ -3315,15 +3315,15 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206325" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShr" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XScy">
-    <property role="TrG5h" value="AssignmentOperator" />
-    <property role="3GE5qa" value="Interfaces.AssignmentOperator" />
+    <property role="TrG5h" value="IAssignmentOperator" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024206114" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScz">
@@ -3335,7 +3335,7 @@
     <property role="EcuMT" value="7899234180024206115" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSjM" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScy" resolve="AssignmentOperator" />
+      <ref role="PrY4T" node="6QvHUa1XScy" resolve="IAssignmentOperator" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSc$">
@@ -3347,7 +3347,7 @@
     <property role="EcuMT" value="7899234180024206116" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSjN" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScy" resolve="AssignmentOperator" />
+      <ref role="PrY4T" node="6QvHUa1XScy" resolve="IAssignmentOperator" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSc_">
@@ -3359,7 +3359,7 @@
     <property role="EcuMT" value="7899234180024206117" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSjO" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScy" resolve="AssignmentOperator" />
+      <ref role="PrY4T" node="6QvHUa1XScy" resolve="IAssignmentOperator" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScA">
@@ -3371,7 +3371,7 @@
     <property role="EcuMT" value="7899234180024206118" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSjP" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScy" resolve="AssignmentOperator" />
+      <ref role="PrY4T" node="6QvHUa1XScy" resolve="IAssignmentOperator" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScB">
@@ -3383,7 +3383,7 @@
     <property role="EcuMT" value="7899234180024206119" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSjQ" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScy" resolve="AssignmentOperator" />
+      <ref role="PrY4T" node="6QvHUa1XScy" resolve="IAssignmentOperator" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScC">
@@ -3395,7 +3395,7 @@
     <property role="EcuMT" value="7899234180024206120" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSjR" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScy" resolve="AssignmentOperator" />
+      <ref role="PrY4T" node="6QvHUa1XScy" resolve="IAssignmentOperator" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScD">
@@ -3407,7 +3407,7 @@
     <property role="EcuMT" value="7899234180024206121" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSjS" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScy" resolve="AssignmentOperator" />
+      <ref role="PrY4T" node="6QvHUa1XScy" resolve="IAssignmentOperator" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScE">
@@ -3419,7 +3419,7 @@
     <property role="EcuMT" value="7899234180024206122" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSjT" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScy" resolve="AssignmentOperator" />
+      <ref role="PrY4T" node="6QvHUa1XScy" resolve="IAssignmentOperator" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScF">
@@ -3431,7 +3431,7 @@
     <property role="EcuMT" value="7899234180024206123" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSjU" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScy" resolve="AssignmentOperator" />
+      <ref role="PrY4T" node="6QvHUa1XScy" resolve="IAssignmentOperator" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScG">
@@ -3443,7 +3443,7 @@
     <property role="EcuMT" value="7899234180024206124" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSjV" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScy" resolve="AssignmentOperator" />
+      <ref role="PrY4T" node="6QvHUa1XScy" resolve="IAssignmentOperator" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScH">
@@ -3455,7 +3455,7 @@
     <property role="EcuMT" value="7899234180024206125" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSjW" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScy" resolve="AssignmentOperator" />
+      <ref role="PrY4T" node="6QvHUa1XScy" resolve="IAssignmentOperator" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScI">
@@ -3478,7 +3478,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206327" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfS" role="1TKVEi">
       <property role="20kJfa" value="ElementList_block_1_1_3" />
@@ -3489,8 +3489,8 @@
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XScJ">
-    <property role="TrG5h" value="PropertyAssignment" />
-    <property role="3GE5qa" value="Interfaces.PropertyAssignment" />
+    <property role="TrG5h" value="IPropertyAssignment" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024206127" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScK">
@@ -3506,17 +3506,17 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206329" />
-      <ref role="20lvS9" node="6QvHUa1XSae" resolve="PropertyName" />
+      <ref role="20lvS9" node="6QvHUa1XSae" resolve="IPropertyName" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSfU" role="1TKVEi">
       <property role="20kJfa" value="SingleExpression_2" />
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206330" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShs" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScJ" resolve="PropertyAssignment" />
+      <ref role="PrY4T" node="6QvHUa1XScJ" resolve="IPropertyAssignment" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScL">
@@ -3542,7 +3542,7 @@
       <ref role="20lvS9" node="6QvHUa1XSbt" resolve="FunctionBody" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSht" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScJ" resolve="PropertyAssignment" />
+      <ref role="PrY4T" node="6QvHUa1XScJ" resolve="IPropertyAssignment" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScM">
@@ -3575,12 +3575,12 @@
       <ref role="20lvS9" node="6QvHUa1XSbt" resolve="FunctionBody" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShu" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScJ" resolve="PropertyAssignment" />
+      <ref role="PrY4T" node="6QvHUa1XScJ" resolve="IPropertyAssignment" />
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XScN">
-    <property role="TrG5h" value="Literal_block_1_1" />
-    <property role="3GE5qa" value="Interfaces.Literal_block_1_1" />
+    <property role="TrG5h" value="ILiteral_block_1_1" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024206131" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScO">
@@ -3592,13 +3592,13 @@
     <property role="EcuMT" value="7899234180024206132" />
     <ref role="1TJDcQ" node="6QvHUa1XS9e" resolve="BaseConcept" />
     <node concept="PrWs8" id="6QvHUa1XSh4" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSh5" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="Literal" />
+      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="ILiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSh6" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScN" resolve="Literal_block_1_1" />
+      <ref role="PrY4T" node="6QvHUa1XScN" resolve="ILiteral_block_1_1" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScP">
@@ -3615,13 +3615,13 @@
       <ref role="AX2Wp" node="6QvHUa1XS9N" resolve="BooleanLiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSh7" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSh8" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="Literal" />
+      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="ILiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSh9" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScN" resolve="Literal_block_1_1" />
+      <ref role="PrY4T" node="6QvHUa1XScN" resolve="ILiteral_block_1_1" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScQ">
@@ -3638,13 +3638,13 @@
       <ref role="AX2Wp" node="6QvHUa1XS9B" resolve="StringLiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSha" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShb" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="Literal" />
+      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="ILiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShc" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScN" resolve="Literal_block_1_1" />
+      <ref role="PrY4T" node="6QvHUa1XScN" resolve="ILiteral_block_1_1" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScR">
@@ -3661,18 +3661,18 @@
       <ref role="AX2Wp" node="6QvHUa1XS9G" resolve="RegularExpressionLiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShd" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="PrY4T" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShe" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="Literal" />
+      <ref role="PrY4T" node="6QvHUa1XSaa" resolve="ILiteral" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XShf" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScN" resolve="Literal_block_1_1" />
+      <ref role="PrY4T" node="6QvHUa1XScN" resolve="ILiteral_block_1_1" />
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XScS">
-    <property role="TrG5h" value="TryStatement" />
-    <property role="3GE5qa" value="Interfaces.TryStatement" />
+    <property role="TrG5h" value="ITryStatement" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024206136" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScT">
@@ -3698,13 +3698,13 @@
       <ref role="20lvS9" node="6QvHUa1XSd5" resolve="CatchProduction" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiR" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScS" resolve="TryStatement" />
+      <ref role="PrY4T" node="6QvHUa1XScS" resolve="ITryStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSji" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjH" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScU">
@@ -3730,13 +3730,13 @@
       <ref role="20lvS9" node="6QvHUa1XSd3" resolve="FinallyProduction" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiS" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScS" resolve="TryStatement" />
+      <ref role="PrY4T" node="6QvHUa1XScS" resolve="ITryStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjj" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjI" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScV">
@@ -3769,13 +3769,13 @@
       <ref role="20lvS9" node="6QvHUa1XSd3" resolve="FinallyProduction" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSiT" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XScS" resolve="TryStatement" />
+      <ref role="PrY4T" node="6QvHUa1XScS" resolve="ITryStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjk" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjJ" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScW">
@@ -3791,7 +3791,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206346" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
     <node concept="1TJgyj" id="6QvHUa1XSgb" role="1TKVEi">
       <property role="20kJfa" value="CaseBlock_2" />
@@ -3801,10 +3801,10 @@
       <ref role="20lvS9" node="6QvHUa1XSbE" resolve="CaseBlock" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjg" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjF" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScX">
@@ -3820,7 +3820,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206348" />
-      <ref role="20lvS9" node="6QvHUa1XScJ" resolve="PropertyAssignment" />
+      <ref role="20lvS9" node="6QvHUa1XScJ" resolve="IPropertyAssignment" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XScY">
@@ -3837,15 +3837,15 @@
       <ref role="AX2Wp" node="6QvHUa1XS9r" resolve="Identifier" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjc" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjB" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="PlHQZ" id="6QvHUa1XScZ">
-    <property role="TrG5h" value="ReservedWord" />
-    <property role="3GE5qa" value="Interfaces.ReservedWord" />
+    <property role="TrG5h" value="IReservedWord" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7899234180024206143" />
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSd0">
@@ -3861,7 +3861,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206350" />
-      <ref role="20lvS9" node="6QvHUa1XSaA" resolve="Keyword" />
+      <ref role="20lvS9" node="6QvHUa1XSaA" resolve="IKeyword" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSd1">
@@ -3877,7 +3877,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206351" />
-      <ref role="20lvS9" node="6QvHUa1XSak" resolve="FutureReservedWord" />
+      <ref role="20lvS9" node="6QvHUa1XSak" resolve="IFutureReservedWord" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSd2">
@@ -3893,7 +3893,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206352" />
-      <ref role="20lvS9" node="6QvHUa1XSbu" resolve="ReservedWord_block_3_1" />
+      <ref role="20lvS9" node="6QvHUa1XSbu" resolve="IReservedWord_block_3_1" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSd3">
@@ -3932,7 +3932,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7899234180024206355" />
-      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="SingleExpression" />
+      <ref role="20lvS9" node="6QvHUa1XSbL" resolve="ISingleExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSd5">
@@ -3970,10 +3970,10 @@
       <ref role="AX2Wp" node="6QvHUa1XS9r" resolve="Identifier" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjb" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6QvHUa1XSjA" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="6QvHUa1XSd7">
@@ -4000,10 +4000,10 @@
     <property role="EcuMT" value="7493426444131569721" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="6vXZUoCZahB" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="Statement" />
+      <ref role="PrY4T" node="6QvHUa1XSb5" resolve="IStatement" />
     </node>
     <node concept="PrWs8" id="6vXZUoCZzxf" role="PzmwI">
-      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="SourceElement" />
+      <ref role="PrY4T" node="6QvHUa1XSbn" resolve="ISourceElement" />
     </node>
   </node>
 </model>

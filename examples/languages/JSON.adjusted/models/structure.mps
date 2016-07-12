@@ -83,12 +83,12 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7493426444128838277" />
-      <ref role="20lvS9" node="6vXZUoCOm9S" resolve="Value" />
+      <ref role="20lvS9" node="6vXZUoCOm9S" resolve="IValue" />
     </node>
   </node>
   <node concept="PlHQZ" id="6vXZUoCOm9M">
-    <property role="TrG5h" value="Array" />
-    <property role="3GE5qa" value="Interfaces.Array" />
+    <property role="TrG5h" value="IArray" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7493426444128838258" />
   </node>
   <node concept="1TIwiD" id="6vXZUoCOm9N">
@@ -104,21 +104,21 @@
       <property role="20lbJX" value="0..n" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7493426444128838279" />
-      <ref role="20lvS9" node="6vXZUoCOm9S" resolve="Value" />
+      <ref role="20lvS9" node="6vXZUoCOm9S" resolve="IValue" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmal" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOm9P" resolve="Json" />
+      <ref role="PrY4T" node="6vXZUoCOm9P" resolve="IJson" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmam" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOm9M" resolve="Array" />
+      <ref role="PrY4T" node="6vXZUoCOm9M" resolve="IArray" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmat" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="Value" />
+      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="IValue" />
     </node>
   </node>
   <node concept="PlHQZ" id="6vXZUoCOm9P">
-    <property role="TrG5h" value="Json" />
-    <property role="3GE5qa" value="Interfaces.Json" />
+    <property role="TrG5h" value="IJson" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7493426444128838261" />
   </node>
   <node concept="1TIwiD" id="6vXZUoCOm9Q">
@@ -134,7 +134,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7493426444128838281" />
-      <ref role="20lvS9" node="6vXZUoCOma0" resolve="Object" />
+      <ref role="20lvS9" node="6vXZUoCOma0" resolve="IObject" />
     </node>
   </node>
   <node concept="1TIwiD" id="6vXZUoCOm9R">
@@ -150,12 +150,12 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7493426444128838282" />
-      <ref role="20lvS9" node="6vXZUoCOm9M" resolve="Array" />
+      <ref role="20lvS9" node="6vXZUoCOm9M" resolve="IArray" />
     </node>
   </node>
   <node concept="PlHQZ" id="6vXZUoCOm9S">
-    <property role="TrG5h" value="Value" />
-    <property role="3GE5qa" value="Interfaces.Value" />
+    <property role="TrG5h" value="IValue" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7493426444128838264" />
   </node>
   <node concept="1TIwiD" id="6vXZUoCOm9T">
@@ -172,7 +172,7 @@
       <ref role="AX2Wp" node="6vXZUoCOm9F" resolve="STRING" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmap" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="Value" />
+      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="IValue" />
     </node>
   </node>
   <node concept="1TIwiD" id="6vXZUoCOm9U">
@@ -189,7 +189,7 @@
       <ref role="AX2Wp" node="6vXZUoCOm9B" resolve="NUMBER" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmaq" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="Value" />
+      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="IValue" />
     </node>
   </node>
   <node concept="1TIwiD" id="6vXZUoCOm9V">
@@ -205,7 +205,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7493426444128838285" />
-      <ref role="20lvS9" node="6vXZUoCOma0" resolve="Object" />
+      <ref role="20lvS9" node="6vXZUoCOma0" resolve="IObject" />
     </node>
   </node>
   <node concept="1TIwiD" id="6vXZUoCOm9W">
@@ -221,7 +221,7 @@
       <property role="20lbJX" value="1" />
       <property role="20lmBu" value="aggregation" />
       <property role="IQ2ns" value="7493426444128838286" />
-      <ref role="20lvS9" node="6vXZUoCOm9M" resolve="Array" />
+      <ref role="20lvS9" node="6vXZUoCOm9M" resolve="IArray" />
     </node>
   </node>
   <node concept="1TIwiD" id="6vXZUoCOm9X">
@@ -233,7 +233,7 @@
     <property role="EcuMT" value="7493426444128838269" />
     <ref role="1TJDcQ" node="6vXZUoCOm9A" resolve="BaseConcept" />
     <node concept="PrWs8" id="6vXZUoCOmav" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="Value" />
+      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="IValue" />
     </node>
   </node>
   <node concept="1TIwiD" id="6vXZUoCOm9Y">
@@ -245,7 +245,7 @@
     <property role="EcuMT" value="7493426444128838270" />
     <ref role="1TJDcQ" node="6vXZUoCOm9A" resolve="BaseConcept" />
     <node concept="PrWs8" id="6vXZUoCOmaw" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="Value" />
+      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="IValue" />
     </node>
   </node>
   <node concept="1TIwiD" id="6vXZUoCOm9Z">
@@ -257,12 +257,12 @@
     <property role="EcuMT" value="7493426444128838271" />
     <ref role="1TJDcQ" node="6vXZUoCOm9A" resolve="BaseConcept" />
     <node concept="PrWs8" id="6vXZUoCOmax" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="Value" />
+      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="IValue" />
     </node>
   </node>
   <node concept="PlHQZ" id="6vXZUoCOma0">
-    <property role="TrG5h" value="Object" />
-    <property role="3GE5qa" value="Interfaces.Object" />
+    <property role="TrG5h" value="IObject" />
+    <property role="3GE5qa" value="Interfaces" />
     <property role="EcuMT" value="7493426444128838272" />
   </node>
   <node concept="1TIwiD" id="6vXZUoCOma1">
@@ -281,13 +281,13 @@
       <ref role="20lvS9" node="6vXZUoCOm9K" resolve="Pair" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmah" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOm9P" resolve="Json" />
+      <ref role="PrY4T" node="6vXZUoCOm9P" resolve="IJson" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmai" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOma0" resolve="Object" />
+      <ref role="PrY4T" node="6vXZUoCOma0" resolve="IObject" />
     </node>
     <node concept="PrWs8" id="6vXZUoCOmar" role="PzmwI">
-      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="Value" />
+      <ref role="PrY4T" node="6vXZUoCOm9S" resolve="IValue" />
     </node>
   </node>
 </model>
