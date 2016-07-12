@@ -131,6 +131,15 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
         Rule rule = null;
 
         for (ParseTree child : element.children) {
+            if (child instanceof LabeledElementContext) {
+                // Labeled elements are in form of [name]=[element]
+                //   rule: label='foo';
+                // Rule's 1st element has 3 children:
+                //   IdContext TerminalNodeImpl(=) AtomContext
+                // We are interested in the third one
+                child = child.getChild(2);
+            }
+
             if (child instanceof AtomContext) {
                 ParseTree grandChild = child.getChild(0);
                 String name = grandChild.getText();
@@ -151,8 +160,6 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
                     }
                 }
             } else if (child instanceof EbnfContext) {
-                EbnfContext blockRule = (EbnfContext) child;
-
                 // We encountered a block rule inside alternative!
                 // We need to create a new rule that will represent this..
                 //
@@ -160,7 +167,9 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
                 //     rule : a (b | (c | d))* DIGIT?
                 //          ;
                 // Inside first alternative there is a block '(b | (c | d))*'
-                rule = createBlockRule(blockRule);
+                EbnfContext blockRule = (EbnfContext) child;
+
+                rule = createBlockRule(blockRule.block());
 
                 // For block rules, quantifier is bound to block suffix, not element ebnf suffix...
                 if (blockRule.blockSuffix() == null) {
@@ -168,6 +177,14 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
                 } else {
                     quantity = Quantity.FromString(blockRule.blockSuffix().getText());
                 }
+            } else if (child instanceof BlockContext) {
+                // We encountered a block rule inside alternative!
+                // Similar to the case above, but without a quantity operator.
+                //
+                // Example:
+                //    rule : INT op=(MUL | DIV | MOD) INT
+                //         ;
+                rule = createBlockRule((BlockContext) child);
             }
         }
 
@@ -191,7 +208,7 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
      * @param context Block context
      * @return Newly created rule
      */
-    private Rule createBlockRule(EbnfContext context) {
+    private Rule createBlockRule(BlockContext context) {
         // Generate a new name in the form of [RULE]_block_[A]_[I], where:
         //   RULE is name of the parent rule
         //   A is index of alternative inside rule
@@ -212,7 +229,6 @@ class GrammarWalker extends ANTLRv4ParserBaseListener {
         // The rule usually looks like (a | b | c)
         // We want to skip terminals '(', '|', ')' so we filter
         context
-            .block()
             .altList()
             .children
             .stream()
