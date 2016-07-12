@@ -47,7 +47,7 @@ public class ConceptImporter extends ImportStep {
             String interfaceName = this.namingService.generateName("I" + rule.name);
 
             // We will create an interface and a child for each alternative that will inherit this interface
-            SNode iface = this.nodeFactory.createInterface(interfaceName, "Interfaces." + interfaceName);
+            SNode iface = this.nodeFactory.createInterface(interfaceName, "Interfaces");
             this.structureModel.addRootNode(iface);
             rule.node = iface;
 
