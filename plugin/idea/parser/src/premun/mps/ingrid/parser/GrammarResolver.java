@@ -112,7 +112,7 @@ class GrammarResolver {
 
     /**
      * Flattens rule into a regex or string literal.
-     * TODO: Cyclic (faulty) ANTLR definition will cause endless loop and stack overflow.
+     * TODO: Handle cyclic rules differently?
      *
      * @param rule Rule to be resolved.
      * @param rules Set of rules where we look up references.
@@ -181,9 +181,15 @@ class GrammarResolver {
                             throw new UnresolvableRuleException("Failed to resolve lexer rule '" + element.name + "'");
                         }
 
-                        FlatLexerRule flatRule = flattenLexerRule(rules.get(element.name), rules);
-                        rules.put(element.name, flatRule);
-                        subRegex.add(flatRule.getContent());
+                        try {
+                            FlatLexerRule flatRule = flattenLexerRule(rules.get(element.name), rules);
+                            rules.put(element.name, flatRule);
+                            subRegex.add(flatRule.getContent());
+                        } catch (StackOverflowError t) {
+                            throw new IngridParserException(
+                                "Lexer rule '" + rule.name + "' or some of its subrules is recursive! " +
+                                    "Ingrid cannot handle cyclic rules :(");
+                        }
                     } else {
                         throw new IngridParserException(
                             "Rule '" + element.name + "' (" + element.getClass().getSimpleName() + ") failed to be flattened");
