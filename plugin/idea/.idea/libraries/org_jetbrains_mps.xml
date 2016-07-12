@@ -9,6 +9,7 @@
       <root url="jar://$MPS_HOME$/languages/baseLanguage/jetbrains.mps.baseLanguage.jar!/" />
       <root url="jar://$MPS_HOME$/languages/languageDesign/jetbrains.mps.lang.smodel.jar!/" />
       <root url="jar://$MPS_HOME$/languages/languageDesign/jetbrains.mps.lang.structure.jar!/" />
+      <root url="jar://$MPS_HOME$/lib/mps-editor.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
