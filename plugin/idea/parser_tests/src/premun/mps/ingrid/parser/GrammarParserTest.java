@@ -3,6 +3,7 @@ package premun.mps.ingrid.parser;
 import org.junit.*;
 import premun.mps.ingrid.model.*;
 import premun.mps.ingrid.model.Rule;
+import premun.mps.ingrid.parser.exception.*;
 
 import java.util.*;
 
@@ -112,5 +113,25 @@ public class GrammarParserTest {
         assertNotNull(grammar.rules.get("ASTERISK"));
         assertNotNull(grammar.rules.get("FROM"));
         assertNotNull(grammar.rules.get("TableName"));
+    }
+
+    @Test(expected = IngridParserException.class)
+    public void testInvalidFile1() throws Exception {
+        GrammarParser parser = new GrammarParser();
+        parser.parseString("ff");
+    }
+
+    @Test(expected = IngridParserException.class)
+    public void testInvalidFile2() throws Exception {
+        GrammarParser parser = new GrammarParser();
+        parser.parseString(
+            "grammar foo; " +
+                "Name        :   NameStartChar NameChar*\n");
+    }
+
+    @Test(expected = IngridParserException.class)
+    public void testNotexistentFile() throws Exception {
+        GrammarParser parser = new GrammarParser();
+        parser.parseFile("foo");
     }
 }

@@ -44,10 +44,18 @@ public class GrammarParser {
         // Pass the tokens to the parser
         ANTLRv4Parser parser = new ANTLRv4Parser(tokens);
 
+        CollectionErrorListener errorListener = new CollectionErrorListener();
+        parser.addErrorListener(errorListener);
+
         // Walk it and attach our listener
         ParseTreeWalker walker = new ParseTreeWalker();
         GrammarWalker listener = new GrammarWalker();
         walker.walk(listener, parser.grammarSpec());
+
+        List<String> errors = errorListener.getErrors();
+        if (errors.size() != 0) {
+            throw new IngridParserException("Couldn't parse the grammar file:\n" + String.join("\n", errors));
+        }
 
         ParserResult parseResult = listener.getParseResult();
 
