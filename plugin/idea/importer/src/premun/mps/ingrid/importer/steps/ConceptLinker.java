@@ -53,6 +53,8 @@ public class ConceptLinker extends ImportStep {
                         SNode node = this.nodeFactory.createConstraintDataType(regexRule.name, regexRule.regexp, "Tokens");
                         this.structureModel.addRootNode(node);
                         regexRule.node = node;
+
+                        ++this.grammarInfo.tokens;
                     }
 
                     // Find regex type and create property for it

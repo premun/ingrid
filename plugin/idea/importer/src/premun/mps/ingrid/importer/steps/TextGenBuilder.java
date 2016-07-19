@@ -60,7 +60,6 @@ public class TextGenBuilder extends ImportStep {
 
             // Root rule needs some extra information about output format
             if (rule == this.grammar.rootRule) {
-                // TODO: Get extension from user
                 textGen.setupAsRootConcept(rule.name, "");
             }
 

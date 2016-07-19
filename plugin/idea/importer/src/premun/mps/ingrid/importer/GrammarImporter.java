@@ -14,6 +14,7 @@ public class GrammarImporter {
     private SModel textGenModel;
 
     private GrammarInfo grammar;
+    private ImportInfo importInfo;
 
     public GrammarImporter(SModel structureModel, SModel editorModel, SModel textGenModel) {
         this.editorModel = editorModel;
@@ -57,6 +58,7 @@ public class GrammarImporter {
         }
 
         this.grammar = parser.resolveGrammar();
+        this.importInfo = new ImportInfo(this.grammar.rootRule.name);
 
         ImportStep[] steps = new ImportStep[] {
             new RegexTransformer(),
@@ -70,10 +72,14 @@ public class GrammarImporter {
         this.executeSteps(steps);
     }
 
+    public ImportInfo getImportInfo() {
+        return this.importInfo;
+    }
+
     private void executeSteps(ImportStep[] steps) {
         // Initialize steps with data
         for (ImportStep step : steps) {
-            step.Initialize(this.grammar, this.structureModel, this.editorModel, this.textGenModel);
+            step.Initialize(this.grammar, this.structureModel, this.editorModel, this.textGenModel, this.importInfo);
         }
 
         // Execute steps

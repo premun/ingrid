@@ -112,7 +112,7 @@ class GrammarResolver {
 
     /**
      * Flattens rule into a regex or string literal.
-     * TODO: Handle cyclic rules differently?
+     * When a cyclic rule is detected (references itself), an exception is raised.
      *
      * @param rule Rule to be resolved.
      * @param rules Set of rules where we look up references.

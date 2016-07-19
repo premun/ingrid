@@ -7,3 +7,4 @@ source_gen.caches
 junitvmwatcher*.properties
 
 *.class
+/build/

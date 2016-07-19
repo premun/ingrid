@@ -14,7 +14,6 @@ public class LiteralRule extends FlatLexerRule {
     }
 
     public LiteralRule(String value) {
-        // TODO: naming service
         this(java.util.UUID.randomUUID().toString(), value);
     }
 

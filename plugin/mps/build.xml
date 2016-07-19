@@ -3,7 +3,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/Ingrid" />
   <property name="build.layout" location="${build.dir}/artifacts/Ingrid" />
-  <property name="mps_home" location="" />
+  <property name="mps_home" location="${basedir}/../../../../../../../../opt/MPS" />
   <property name="INGRID_HOME" location="${basedir}/../.." />
   <property name="artifacts.mps" location="${mps_home}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
@@ -32,8 +32,8 @@
     <echoxml file="${build.tmp}/default/premun.mps.ingrid.zip/Ingrid/META-INF/plugin.xml">
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>Ingrid</id>
-        <name>Ingrid</name>
-        <description>ANTLRv4 grammar to MPS import plugin</description>
+        <name>Ingrid - ANTLRv4 grammar import</name>
+        <description><![CDATA[This plugin allows to create an MPS language out of its ANTLRv4 grammar definition. For more information, visit <a href="https://github.com/premun/ingrid">the official plugin repository</a>.]]></description>
         <version>1.0</version>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.ide.devkit</depends>

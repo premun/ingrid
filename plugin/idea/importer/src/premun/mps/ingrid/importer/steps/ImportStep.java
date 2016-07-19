@@ -11,17 +11,19 @@ import premun.mps.ingrid.model.*;
  */
 public abstract class ImportStep {
     GrammarInfo grammar;
+    ImportInfo grammarInfo;
     SModel structureModel;
     SModel editorModel;
     SModel textGenModel;
     NodeFactory nodeFactory;
     NamingService namingService;
 
-    public void Initialize(GrammarInfo grammar, SModel structureModel, SModel editorModel, SModel textGenModel) {
+    public void Initialize(GrammarInfo grammar, SModel structureModel, SModel editorModel, SModel textGenModel, ImportInfo grammarInfo) {
         this.grammar = grammar;
         this.structureModel = structureModel;
         this.editorModel = editorModel;
         this.textGenModel = textGenModel;
+        this.grammarInfo = grammarInfo;
 
         this.namingService = new NamingService(structureModel);
         this.nodeFactory = new NodeFactory(structureModel);

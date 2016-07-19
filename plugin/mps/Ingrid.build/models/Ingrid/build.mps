@@ -114,6 +114,38 @@
     <node concept="3b7kt6" id="5FaaOUBGVTs" role="10PD9s" />
     <node concept="398rNT" id="5FaaOUBGVTt" role="1l3spd">
       <property role="TrG5h" value="mps_home" />
+      <node concept="55IIr" id="6QABUZoy3cN" role="398pKh">
+        <node concept="2Ry0Ak" id="6QABUZoy3dW" role="iGT6I">
+          <property role="2Ry0Am" value=".." />
+          <node concept="2Ry0Ak" id="6QABUZoy3hq" role="2Ry0An">
+            <property role="2Ry0Am" value=".." />
+            <node concept="2Ry0Ak" id="6QABUZoy3jw" role="2Ry0An">
+              <property role="2Ry0Am" value=".." />
+              <node concept="2Ry0Ak" id="6QABUZoy3lH" role="2Ry0An">
+                <property role="2Ry0Am" value=".." />
+                <node concept="2Ry0Ak" id="6QABUZoy3o1" role="2Ry0An">
+                  <property role="2Ry0Am" value=".." />
+                  <node concept="2Ry0Ak" id="6QABUZoy3qs" role="2Ry0An">
+                    <property role="2Ry0Am" value=".." />
+                    <node concept="2Ry0Ak" id="6QABUZoy3sY" role="2Ry0An">
+                      <property role="2Ry0Am" value=".." />
+                      <node concept="2Ry0Ak" id="6QABUZoy3vB" role="2Ry0An">
+                        <property role="2Ry0Am" value=".." />
+                        <node concept="2Ry0Ak" id="6QABUZoy3Aw" role="2Ry0An">
+                          <property role="2Ry0Am" value="opt" />
+                          <node concept="2Ry0Ak" id="6QABUZoy3D1" role="2Ry0An">
+                            <property role="2Ry0Am" value="MPS" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="398rNT" id="5FaaOUBGVTw" role="1l3spd">
       <property role="TrG5h" value="INGRID_HOME" />
@@ -164,7 +196,7 @@
       <property role="m$_wk" value="Ingrid" />
       <node concept="3_J27D" id="5FaaOUBGVVl" role="m$_yQ">
         <node concept="3Mxwew" id="5FaaOUBGVVm" role="3MwsjC">
-          <property role="3MwjfP" value="Ingrid" />
+          <property role="3MwjfP" value="Ingrid - ANTLRv4 grammar import" />
         </node>
       </node>
       <node concept="3_J27D" id="5FaaOUBGVVn" role="m$_w8">
@@ -185,7 +217,7 @@
       </node>
       <node concept="3_J27D" id="5FaaOUBGVV$" role="3s6cr7">
         <node concept="3Mxwew" id="5FaaOUBGVVA" role="3MwsjC">
-          <property role="3MwjfP" value="ANTLRv4 grammar to MPS import plugin" />
+          <property role="3MwjfP" value="&lt;![CDATA[This plugin allows to create an MPS language out of its ANTLRv4 grammar definition. For more information, visit &lt;a href=&quot;https://github.com/premun/ingrid&quot;&gt;the official plugin repository&lt;/a&gt;.]]&gt;" />
         </node>
       </node>
       <node concept="m$f5U" id="5FaaOUBH0ni" role="m$_yh">

@@ -13,7 +13,6 @@ public class RegexRule extends FlatLexerRule {
     }
 
     public RegexRule(String regexp) {
-        // TODO: naming service
         this(java.util.UUID.randomUUID().toString(), regexp);
     }
 

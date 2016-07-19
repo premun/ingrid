@@ -51,6 +51,8 @@ public class ConceptImporter extends ImportStep {
             this.structureModel.addRootNode(iface);
             rule.node = iface;
 
+            ++this.grammarInfo.interfaces;
+
             // For each alternative, there will be a concept
             for (int i = 0; i < rule.alternatives.size(); ++i) {
                 Alternative alternative = rule.alternatives.get(i);
@@ -62,6 +64,8 @@ public class ConceptImporter extends ImportStep {
                 alternative.node = concept;
 
                 this.structureModel.addRootNode(concept);
+
+                ++this.grammarInfo.rules;
             }
         } else {
             // Generate unique name
@@ -76,6 +80,8 @@ public class ConceptImporter extends ImportStep {
             this.structureModel.addRootNode(concept);
             rule.node = concept;
             alternative.node = concept;
+
+            ++this.grammarInfo.rules;
         }
     }
 

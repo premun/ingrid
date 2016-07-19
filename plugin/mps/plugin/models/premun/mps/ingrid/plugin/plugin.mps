@@ -76,6 +76,9 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
+        <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
+      </concept>
       <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
         <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
         <reference id="1144432896254" name="enumClass" index="1Px2BO" />
@@ -556,7 +559,7 @@
         <node concept="3clFbH" id="33RGotrJjPK" role="3cqZAp" />
         <node concept="3SKdUt" id="33RGotrJorR" role="3cqZAp">
           <node concept="3SKdUq" id="33RGotrJorT" role="3SKWNk">
-            <property role="3SKdUp" value="Either create new language or " />
+            <property role="3SKdUp" value="Either create new language or get a reference to an existing one" />
           </node>
         </node>
         <node concept="3cpWs8" id="5_E18HdnRY9" role="3cqZAp">
@@ -686,6 +689,11 @@
         <node concept="3clFbH" id="5_E18HdnRYS" role="3cqZAp" />
         <node concept="SfApY" id="2tXpCR7i_$h" role="3cqZAp">
           <node concept="3clFbS" id="2tXpCR7i_$j" role="SfCbr">
+            <node concept="3SKdUt" id="4nttCU167o4" role="3cqZAp">
+              <node concept="3SKdUq" id="4nttCU167o6" role="3SKWNk">
+                <property role="3SKdUp" value="Import the grammar" />
+              </node>
+            </node>
             <node concept="3cpWs8" id="5_E18HdnRYT" role="3cqZAp">
               <node concept="3cpWsn" id="5_E18HdnRYU" role="3cpWs9">
                 <property role="TrG5h" value="grammarImporter" />
@@ -727,13 +735,105 @@
               </node>
             </node>
             <node concept="3clFbH" id="2tXpCR7iWnL" role="3cqZAp" />
+            <node concept="3SKdUt" id="4nttCU167Wt" role="3cqZAp">
+              <node concept="3SKdUq" id="4nttCU167Wv" role="3SKWNk">
+                <property role="3SKdUp" value="Get language statistics" />
+              </node>
+            </node>
+            <node concept="3cpWs8" id="4nttCU15icY" role="3cqZAp">
+              <node concept="3cpWsn" id="4nttCU15icZ" role="3cpWs9">
+                <property role="TrG5h" value="info" />
+                <node concept="3uibUv" id="4nttCU15id0" role="1tU5fm">
+                  <ref role="3uigEE" to="zkjw:~ImportInfo" resolve="ImportInfo" />
+                </node>
+                <node concept="2OqwBi" id="4nttCU15iw0" role="33vP2m">
+                  <node concept="37vLTw" id="4nttCU15ioN" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5_E18HdnRYU" resolve="grammarImporter" />
+                  </node>
+                  <node concept="liA8E" id="4nttCU15iLV" role="2OqNvi">
+                    <ref role="37wK5l" to="zkjw:~GrammarImporter.getImportInfo()" resolve="getImportInfo" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="4nttCU15hYL" role="3cqZAp" />
+            <node concept="3cpWs8" id="4nttCU15f2X" role="3cqZAp">
+              <node concept="3cpWsn" id="4nttCU15f30" role="3cpWs9">
+                <property role="TrG5h" value="message" />
+                <node concept="17QB3L" id="4nttCU15f2V" role="1tU5fm" />
+                <node concept="3cpWs3" id="4nttCU15w1W" role="33vP2m">
+                  <node concept="Xl_RD" id="4nttCU15wg_" role="3uHU7w">
+                    <property role="Xl_RC" value="'." />
+                  </node>
+                  <node concept="3cpWs3" id="4nttCU15qCy" role="3uHU7B">
+                    <node concept="3cpWs3" id="4nttCU15ncd" role="3uHU7B">
+                      <node concept="3cpWs3" id="4nttCU15mBg" role="3uHU7B">
+                        <node concept="3cpWs3" id="4nttCU15lFu" role="3uHU7B">
+                          <node concept="3cpWs3" id="4nttCU15kc6" role="3uHU7B">
+                            <node concept="3cpWs3" id="4nttCU15hRe" role="3uHU7B">
+                              <node concept="3cpWs3" id="4nttCU15fYh" role="3uHU7B">
+                                <node concept="Xl_RD" id="4nttCU15fkA" role="3uHU7B">
+                                  <property role="Xl_RC" value="Language successfully imported.\nFollowing items created:\n" />
+                                </node>
+                                <node concept="2OqwBi" id="4nttCU15jjS" role="3uHU7w">
+                                  <node concept="37vLTw" id="4nttCU15j8r" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4nttCU15icZ" resolve="info" />
+                                  </node>
+                                  <node concept="2OwXpG" id="4nttCU15juy" role="2OqNvi">
+                                    <ref role="2Oxat5" to="zkjw:~ImportInfo.rules" resolve="rules" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="Xl_RD" id="4nttCU15fYx" role="3uHU7w">
+                                <property role="Xl_RC" value=" rules\n" />
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="4nttCU15k$a" role="3uHU7w">
+                              <node concept="37vLTw" id="4nttCU15kn_" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4nttCU15icZ" resolve="info" />
+                              </node>
+                              <node concept="2OwXpG" id="4nttCU15kQW" role="2OqNvi">
+                                <ref role="2Oxat5" to="zkjw:~ImportInfo.interfaces" resolve="interfaces" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="Xl_RD" id="4nttCU15lFI" role="3uHU7w">
+                            <property role="Xl_RC" value=" interfaces\n" />
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="4nttCU15nDe" role="3uHU7w">
+                          <node concept="37vLTw" id="4nttCU15noT" role="2Oq$k0">
+                            <ref role="3cqZAo" node="4nttCU15icZ" resolve="info" />
+                          </node>
+                          <node concept="2OwXpG" id="4nttCU15nWK" role="2OqNvi">
+                            <ref role="2Oxat5" to="zkjw:~ImportInfo.tokens" resolve="tokens" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="4nttCU15mNA" role="3uHU7w">
+                        <property role="Xl_RC" value=" tokens\nRoot concept is called '" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="4nttCU15rGd" role="3uHU7w">
+                      <node concept="37vLTw" id="4nttCU15rrn" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4nttCU15icZ" resolve="info" />
+                      </node>
+                      <node concept="2OwXpG" id="4nttCU15s7J" role="2OqNvi">
+                        <ref role="2Oxat5" to="zkjw:~ImportInfo.rootRuleName" resolve="rootRuleName" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="4nttCU15eqr" role="3cqZAp" />
             <node concept="3clFbF" id="5_E18HdnRZ7" role="3cqZAp">
               <node concept="2OqwBi" id="5_E18HdnRZ8" role="3clFbG">
                 <node concept="2WthIp" id="5_E18HdnRZ9" role="2Oq$k0" />
                 <node concept="2XshWL" id="5_E18HdnRZa" role="2OqNvi">
                   <ref role="2WH_rO" node="75$k3hpG3Zl" resolve="showAlert" />
-                  <node concept="Xl_RD" id="5_E18HdnRZb" role="2XxRq1">
-                    <property role="Xl_RC" value="Language imported" />
+                  <node concept="37vLTw" id="4nttCU15wMZ" role="2XxRq1">
+                    <ref role="3cqZAo" node="4nttCU15f30" resolve="message" />
                   </node>
                 </node>
               </node>
