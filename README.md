@@ -5,28 +5,39 @@ The name **Ingrid** comes from a mix of an abbreviation of *Interactive Grammar 
 
 **[Here](https://github.com/premun/diploma-thesis) is a full diploma thesis describing the plugin.**
 
-## How to use the plugin
+## Requirements
+- MPS 3.4 EAP 3 and higher
+- Running the MPS using Java 8 (JDK 1.8)
+- JDK 1.8 for IntelliJ IDEA (needed when building the plugin)
 
-Prerequisites:
-- MPS 3.4+
-- JDK 1.8 (and also MPS must be run using this JDK)
+## How to use
 
-Steps required for importing a language:
+1. Download `premun.mps.ingrid.zip` **(TODO: add link)**, or DIY and follow steps bellow to build it from this repo.
+2. Open `File` > `Settings`.
+3. Go to the `Plugins` section.
+4. Click `Install plugin from disk...`
+5. Locate the plugin file `premun.mps.ingrid.zip`.
+6. Restart MPS.
+7. `Tools` -> `Import ANTLRv4 grammar`
+8. Add some `.g4` file. Either you can use any from the `grammars` directory or take a look at this [grammar repository](https://github.com/antlr/grammars-v4).
+9. Click `Import`.
+
+## How to build the plugin
 
 1. Download/clone the whole repository.
-2. Open the MPS project in `plugin/mps`.
+2. Open the MPS project located in `plugin/mps`.
 3. Set the `INGRID_HOME` path variable to the root of the ingrid repository (contains the plugin directory). This is not the root directory of the MPS project, but **the whole repository**.
 4. Restart MPS.
-5. Build solutions **one-by-one** in this order:
+5. Open the `Ingrid` build inside of the `Ingrid.build` solution. In `macros` section, set the **mps_home** macro to point to the root directory of your MPS installation. Unfortunately, a relative path starting in the home directory of the Ingrid MPS project must be used.
+6. Build solutions **one-by-one** in this order:
   - `org.antlr`
   - `premun.mps.ingrid.model`
   - `premun.mps.ingrid.parser`
   - `premun.mps.ingrid.library`
   - `premun.mps.ingrid.importer`
   - `premun.mps.ingrid.plugin`
-6. *Tools* -> *Import ANTLRv4 grammar*
-7. Add some `.g4` file. Either you can use any from the `grammars` directory or take a look at this [grammar repository](https://github.com/antlr/grammars-v4).
-8. Click **Import**.
+  - `Ingrid.build`
+7. Run the `Ingrid` build, this will produce the `premun.mps.ingrid.zip` plugin file in `plugin/mps/build/artifacts/Ingrid`. Alternatively, you can open terminal, go to the `plugin/mps` folder and call `ant clean && ant`.
 
 ## How to develop/change the plugin
 
@@ -36,7 +47,7 @@ IntelliJ IDEA is only necessary when you need to change the Java code.
 Otherwise, MPS will be sufficient on its own.
 Setting up dependencies correctly presents the only problematic part.
 
-The IDEA project requruires to set a path variable `MPS_HOME` to point to a directory, where MPS is installed.
+The IDEA project requires to set a path variable `MPS_HOME` to point to a directory, where MPS is installed.
 This is required, so that the library module of the IDEA project can use the MPS API.
 After setting this variable, it is recommended to restart the IDE.
 
@@ -107,9 +118,7 @@ It supplies the Import module with important handlers so that the module can lat
 
 The MPS project also contains a *Build solution*, which enables us to transform the plugin into an installable package.
 The output of this build process is a package in the form of a zip archive, containing all dependencies.
-This archive can then be uploaded to the JetBrains plugin store and installed inside any MPS instance.
-
-We will not go into more details here since the build process is only a configuration matter.
+This archive can then be permanently installed inside any MPS instance.
 
 ### Tests
 
