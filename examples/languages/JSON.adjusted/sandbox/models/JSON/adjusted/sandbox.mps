@@ -36,7 +36,7 @@
       <node concept="1fb9Rm" id="6vXZUoCSD_q" role="1fb9OD">
         <property role="1fb9Oy" value="name" />
         <node concept="1fb9Rv" id="6vXZUoCSD_u" role="1fb9Oz">
-          <property role="1fb9OH" value="John doe" />
+          <property role="1fb9OH" value="John Doe" />
         </node>
       </node>
       <node concept="1fb9Rm" id="6vXZUoCSD_x" role="1fb9OD">

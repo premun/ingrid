@@ -63,7 +63,7 @@
   <node concept="Az7Fb" id="6vXZUoCOm1G">
     <property role="TrG5h" value="STRING" />
     <property role="3GE5qa" value="Tokens" />
-    <property role="FLfZY" value="(((\\\\\\\\[&quot;\\\\/bfnrt]u[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]|[&quot;\\\\/bfnrt]|u[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F])([^&quot;\\\\])*)|((\\\\\\\\[&quot;\\\\/bfnrt]u[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]|[&quot;\\\\/bfnrt]|u[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]))|[^&quot;\\\\])" />
+    <property role="FLfZY" value="([^\&quot;]|\\\\\&quot;)*" />
   </node>
   <node concept="1TIwiD" id="6vXZUoCOm1K">
     <property role="TrG5h" value="Array_block_1_1" />
@@ -183,8 +183,8 @@
     <property role="34LRSv" value="Object json" />
     <property role="R4oN_" value="Json" />
     <property role="3GE5qa" value="Rules.Json" />
-    <property role="19KtqR" value="true" />
     <property role="EcuMT" value="7493426444128837751" />
+    <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" node="6vXZUoCOm1B" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6vXZUoCOm2a" role="1TKVEi">
       <property role="20kJfa" value="Object_1" />
