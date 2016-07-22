@@ -3,7 +3,7 @@ Ingrid is a plugin for JetBrains MPS language workbench allowing user to easily 
 
 The name **Ingrid** comes from a mix of an abbreviation of *Interactive Grammar Import* and a Scandinavian name of a Norse valkyrie, who was bringing dead warriors to Valhalla (as a parallel of bringing a language into MPS).
 
-**[Here](https://github.com/premun/diploma-thesis) is a full diploma thesis describing the plugin.**
+**[Here](https://github.com/premun/diploma-thesis/blob/master/Grammar%20to%20JetBrains%20MPS%20Convertor.pdf) is a full diploma thesis describing the plugin.**
 
 ## Requirements
 - MPS 3.4 EAP 3 and higher
