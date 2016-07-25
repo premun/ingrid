@@ -12,7 +12,7 @@ The name **Ingrid** comes from a mix of an abbreviation of *Interactive Grammar 
 
 ## How to use
 
-1. Download `premun.mps.ingrid.zip` **(TODO: add link)**, or DIY and follow steps bellow to build it from this repo.
+1. Download [`premun.mps.ingrid.zip`](https://raw.githubusercontent.com/premun/ingrid/master/out/premun.mps.ingrid.zip), or DIY and follow steps bellow to build it from sources.
 2. Open `File` > `Settings`.
 3. Go to the `Plugins` section.
 4. Click `Install plugin from disk...`
