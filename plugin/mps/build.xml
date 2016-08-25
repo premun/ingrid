@@ -59,7 +59,7 @@
     <jar destfile="${build.tmp}/default/premun.mps.ingrid.zip/Ingrid/languages/Ingrid/org.antlr.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/org.antlr" />
       <fileset dir="${basedir}/org.antlr" includes="icons/**, resources/**" />
-      <fileset dir="${INGRID_HOME}/plugin/mps/org.antlr/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${INGRID_HOME}/plugin/mps/org.antlr/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/org.antlr.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugin-mps-org.antlr-models">
@@ -69,6 +69,8 @@
       <fileset dir="${INGRID_HOME}/plugin/mps/org.antlr/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/org.antlr/org.antlr.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-org.antlr-models" prefix="module/../../../plugin/mps/org.antlr/models" />
@@ -98,7 +100,7 @@
     <jar destfile="${build.tmp}/default/premun.mps.ingrid.zip/Ingrid/languages/Ingrid/premun.mps.ingrid.plugin.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/premun.mps.ingrid.plugin" />
       <fileset dir="${basedir}/plugin" includes="icons/**, resources/**" />
-      <fileset dir="${INGRID_HOME}/plugin/mps/plugin/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${INGRID_HOME}/plugin/mps/plugin/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/premun.mps.ingrid.plugin.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugin-mps-plugin-models">
@@ -108,6 +110,8 @@
       <fileset dir="${INGRID_HOME}/plugin/mps/plugin/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugin/premun.mps.ingrid.plugin.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-plugin-models" prefix="module/../../../plugin/mps/plugin/models" />
@@ -125,8 +129,8 @@
     <jar destfile="${build.tmp}/default/premun.mps.ingrid.zip/Ingrid/languages/Ingrid/premun.mps.ingrid.importer.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/premun.mps.ingrid.importer" />
       <fileset dir="${basedir}/importer" includes="icons/**, resources/**" />
-      <fileset dir="${INGRID_HOME}/plugin/idea/importer/src" includes="**/trace.info, **/exports" />
-      <fileset dir="${INGRID_HOME}/plugin/mps/importer/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${INGRID_HOME}/plugin/idea/importer/src" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${INGRID_HOME}/plugin/mps/importer/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/premun.mps.ingrid.importer.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugin-mps-importer-models">
@@ -136,10 +140,14 @@
       <fileset dir="${INGRID_HOME}/plugin/idea/importer/src">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${INGRID_HOME}/plugin/mps/importer/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/importer/premun.mps.ingrid.importer.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-importer-models" prefix="module/../../../plugin/mps/importer/models" />
@@ -165,7 +173,7 @@
     <jar destfile="${build.tmp}/default/premun.mps.ingrid.zip/Ingrid/languages/Ingrid/premun.mps.ingrid.library.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/premun.mps.ingrid.library" />
       <fileset dir="${basedir}/library" includes="icons/**, resources/**" />
-      <fileset dir="${INGRID_HOME}/plugin/mps/library/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${INGRID_HOME}/plugin/mps/library/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/premun.mps.ingrid.library.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugin-mps-library-models">
@@ -175,6 +183,8 @@
       <fileset dir="${INGRID_HOME}/plugin/mps/library/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/library/premun.mps.ingrid.library.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-library-models" prefix="module/../../../plugin/mps/library/models" />
@@ -192,8 +202,8 @@
     <jar destfile="${build.tmp}/default/premun.mps.ingrid.zip/Ingrid/languages/Ingrid/premun.mps.ingrid.model.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/premun.mps.ingrid.model" />
       <fileset dir="${basedir}/model" includes="icons/**, resources/**" />
-      <fileset dir="${INGRID_HOME}/plugin/idea/model/src" includes="**/trace.info, **/exports" />
-      <fileset dir="${INGRID_HOME}/plugin/mps/model/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${INGRID_HOME}/plugin/idea/model/src" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${INGRID_HOME}/plugin/mps/model/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/premun.mps.ingrid.model.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugin-mps-model-models">
@@ -203,10 +213,14 @@
       <fileset dir="${INGRID_HOME}/plugin/idea/model/src">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${INGRID_HOME}/plugin/mps/model/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/model/premun.mps.ingrid.model.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-model-models" prefix="module/../../../plugin/mps/model/models" />
@@ -224,8 +238,8 @@
     <jar destfile="${build.tmp}/default/premun.mps.ingrid.zip/Ingrid/languages/Ingrid/premun.mps.ingrid.parser.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/premun.mps.ingrid.parser" />
       <fileset dir="${basedir}/parser" includes="icons/**, resources/**" />
-      <fileset dir="${INGRID_HOME}/plugin/idea/parser/src" includes="**/trace.info, **/exports" />
-      <fileset dir="${INGRID_HOME}/plugin/mps/parser/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${INGRID_HOME}/plugin/idea/parser/src" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${INGRID_HOME}/plugin/mps/parser/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/premun.mps.ingrid.parser.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugin-mps-parser-models">
@@ -235,10 +249,14 @@
       <fileset dir="${INGRID_HOME}/plugin/idea/parser/src">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <fileset dir="${INGRID_HOME}/plugin/mps/parser/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/parser/premun.mps.ingrid.parser.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-parser-models" prefix="module/../../../plugin/mps/parser/models" />
@@ -304,6 +322,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
@@ -372,7 +391,7 @@
   <target name="java.compile.org.antlr">
     <mkdir dir="${INGRID_HOME}/plugin/mps/org.antlr/source_gen" />
     <mkdir dir="${build.tmp}/java/out/org.antlr" />
-    <javac destdir="${build.tmp}/java/out/org.antlr" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/org.antlr" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${INGRID_HOME}/plugin/mps/org.antlr/source_gen" />
@@ -386,7 +405,7 @@
   <target name="java.compile.premun.mps.ingrid.plugin" depends="java.compile.org.antlr, java.compile.premun.mps.ingrid.importer, java.compile.premun.mps.ingrid.library, java.compile.premun.mps.ingrid.model, java.compile.premun.mps.ingrid.parser, fetchDependencies">
     <mkdir dir="${INGRID_HOME}/plugin/mps/plugin/source_gen" />
     <mkdir dir="${build.tmp}/java/out/premun.mps.ingrid.plugin" />
-    <javac destdir="${build.tmp}/java/out/premun.mps.ingrid.plugin" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/premun.mps.ingrid.plugin" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${INGRID_HOME}/plugin/mps/plugin/source_gen" />
@@ -403,6 +422,7 @@
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
         <pathelement path="${build.tmp}/java/out/premun.mps.ingrid.importer" />
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
@@ -433,7 +453,7 @@
     <mkdir dir="${INGRID_HOME}/plugin/idea/importer/src" />
     <mkdir dir="${INGRID_HOME}/plugin/mps/importer/source_gen" />
     <mkdir dir="${build.tmp}/java/out/premun.mps.ingrid.importer" />
-    <javac destdir="${build.tmp}/java/out/premun.mps.ingrid.importer" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/premun.mps.ingrid.importer" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${INGRID_HOME}/plugin/idea/importer/src" />
@@ -451,6 +471,7 @@
         <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
@@ -486,7 +507,7 @@
   <target name="java.compile.premun.mps.ingrid.library" depends="java.compile.org.antlr, java.compile.premun.mps.ingrid.model, fetchDependencies">
     <mkdir dir="${INGRID_HOME}/plugin/mps/library/source_gen" />
     <mkdir dir="${build.tmp}/java/out/premun.mps.ingrid.library" />
-    <javac destdir="${build.tmp}/java/out/premun.mps.ingrid.library" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/premun.mps.ingrid.library" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${INGRID_HOME}/plugin/mps/library/source_gen" />
@@ -504,6 +525,7 @@
         <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
@@ -542,7 +564,7 @@
     <mkdir dir="${INGRID_HOME}/plugin/idea/model/src" />
     <mkdir dir="${INGRID_HOME}/plugin/mps/model/source_gen" />
     <mkdir dir="${build.tmp}/java/out/premun.mps.ingrid.model" />
-    <javac destdir="${build.tmp}/java/out/premun.mps.ingrid.model" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/premun.mps.ingrid.model" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${INGRID_HOME}/plugin/idea/model/src" />
@@ -567,7 +589,7 @@
     <mkdir dir="${INGRID_HOME}/plugin/idea/parser/src" />
     <mkdir dir="${INGRID_HOME}/plugin/mps/parser/source_gen" />
     <mkdir dir="${build.tmp}/java/out/premun.mps.ingrid.parser" />
-    <javac destdir="${build.tmp}/java/out/premun.mps.ingrid.parser" fork="true" encoding="utf8" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/premun.mps.ingrid.parser" fork="true" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${INGRID_HOME}/plugin/idea/parser/src" />
