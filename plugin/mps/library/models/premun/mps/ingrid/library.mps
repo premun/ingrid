@@ -799,7 +799,6 @@
           <node concept="3SKdUq" id="AdDO7XMwN3" role="3SKWNk">
             <property role="3SKdUp" value="Parser rules are saved as children of the concept" />
           </node>
-          <node concept="3SKdUq" id="AdDO7XMwN4" role="3SKWNk" />
         </node>
         <node concept="3SKdUt" id="5_E18HdpySI" role="3cqZAp">
           <node concept="3SKdUq" id="5_E18HdpySK" role="3SKWNk">
