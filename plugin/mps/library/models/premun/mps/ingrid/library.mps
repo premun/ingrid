@@ -245,11 +245,9 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -625,13 +623,13 @@
             <property role="1dT_AB" value="Takes alternative's contents and puts them into a projectional editor." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGr_o0" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGr_o0" role="3nqlJM">
           <property role="TUZQ4" value="Alternative for which we are creating the editor" />
           <node concept="zr_55" id="3aST2zGr_o2" role="zr_5Q">
             <ref role="zr_51" node="AdDO7XMumx" resolve="alternative" />
           </node>
         </node>
-        <node concept="x79VA" id="3aST2zGr_o3" role="x79VK">
+        <node concept="x79VA" id="3aST2zGr_o3" role="3nqlJM">
           <property role="x79VB" value="Editor declaration" />
         </node>
       </node>
@@ -706,9 +704,9 @@
             <property role="1dT_AB" value="Creates an editor cell for a constant value." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrBqV" role="TUOzN">
+        <node concept="TUZQ0" id="PePnZszyBf" role="3nqlJM">
           <property role="TUZQ4" value="Literal rule" />
-          <node concept="zr_55" id="3aST2zGrBqX" role="zr_5Q">
+          <node concept="zr_55" id="PePnZszyBt" role="zr_5Q">
             <ref role="zr_51" node="AdDO7XMwgA" resolve="rule" />
           </node>
         </node>
@@ -782,7 +780,7 @@
             <property role="1dT_AB" value="Creates an editor cell for a property reference." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrCrf" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrCrf" role="3nqlJM">
           <property role="TUZQ4" value="Property reference" />
           <node concept="zr_55" id="3aST2zGrNNT" role="zr_5Q">
             <ref role="zr_51" node="3aST2zGrE4m" resolve="reference" />
@@ -1011,7 +1009,7 @@
             <property role="1dT_AB" value="Creates an editor cell for a child reference." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrDrD" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrDrD" role="3nqlJM">
           <property role="TUZQ4" value="Parser rule reference" />
           <node concept="zr_55" id="3aST2zGrDrF" role="zr_5Q">
             <ref role="zr_51" node="AdDO7XMyWy" resolve="reference" />
@@ -1098,7 +1096,7 @@
             <property role="1dT_AB" value="Initializes the factory to work with given structure model." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrzVh" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrzVh" role="3nqlJM">
           <property role="TUZQ4" value="Target structure model that we will use." />
           <node concept="zr_55" id="3aST2zGrzVj" role="zr_5Q">
             <ref role="zr_51" node="4X6IwqdNjJW" resolve="structureModel" />
@@ -1408,37 +1406,37 @@
             <property role="1dT_AB" value="Creates new classical concept." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrzAw" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrzAw" role="3nqlJM">
           <property role="TUZQ4" value="Name" />
           <node concept="zr_55" id="3aST2zGrzAy" role="zr_5Q">
             <ref role="zr_51" node="4X6IwqdNjSv" resolve="name" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrzAz" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrzAz" role="3nqlJM">
           <property role="TUZQ4" value="Alias" />
           <node concept="zr_55" id="3aST2zGrzA_" role="zr_5Q">
             <ref role="zr_51" node="4X6IwqdNjSx" resolve="alias" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrzAA" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrzAA" role="3nqlJM">
           <property role="TUZQ4" value="Description" />
           <node concept="zr_55" id="3aST2zGrzAC" role="zr_5Q">
             <ref role="zr_51" node="hj2V9aB2Gt" resolve="description" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrzAD" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrzAD" role="3nqlJM">
           <property role="TUZQ4" value="Virtual package" />
           <node concept="zr_55" id="3aST2zGrzAF" role="zr_5Q">
             <ref role="zr_51" node="4X6IwqdNjSz" resolve="virtualPackage" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrzAG" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrzAG" role="3nqlJM">
           <property role="TUZQ4" value="Is root?" />
           <node concept="zr_55" id="3aST2zGrzAI" role="zr_5Q">
             <ref role="zr_51" node="4X6IwqdNjS_" resolve="rootable" />
           </node>
         </node>
-        <node concept="x79VA" id="3aST2zGrzAJ" role="x79VK">
+        <node concept="x79VA" id="3aST2zGrzAJ" role="3nqlJM">
           <property role="x79VB" value="Concept declaration" />
         </node>
       </node>
@@ -1521,19 +1519,19 @@
             <property role="1dT_AB" value="Creates new interface concept." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrzL3" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrzL3" role="3nqlJM">
           <property role="TUZQ4" value="Name" />
           <node concept="zr_55" id="3aST2zGrzL5" role="zr_5Q">
             <ref role="zr_51" node="4X6IwqdNkk5" resolve="name" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrzL6" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrzL6" role="3nqlJM">
           <property role="TUZQ4" value="Virtual package" />
           <node concept="zr_55" id="3aST2zGrzL8" role="zr_5Q">
             <ref role="zr_51" node="4X6IwqdNkk7" resolve="virtualPackage" />
           </node>
         </node>
-        <node concept="x79VA" id="3aST2zGrzL9" role="x79VK">
+        <node concept="x79VA" id="3aST2zGrzL9" role="3nqlJM">
           <property role="x79VB" value="Interface concept declaration" />
         </node>
       </node>
@@ -1635,25 +1633,25 @@
             <property role="1dT_AB" value="Creates new constraint data type concept." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrzWl" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrzWl" role="3nqlJM">
           <property role="TUZQ4" value="Name" />
           <node concept="zr_55" id="3aST2zGrzWn" role="zr_5Q">
             <ref role="zr_51" node="4X6IwqdNksz" resolve="name" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrzWo" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrzWo" role="3nqlJM">
           <property role="TUZQ4" value="Regex representing the constraint" />
           <node concept="zr_55" id="3aST2zGrzWq" role="zr_5Q">
             <ref role="zr_51" node="4X6IwqdNks_" resolve="constraint" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrzWr" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrzWr" role="3nqlJM">
           <property role="TUZQ4" value="Virtual package" />
           <node concept="zr_55" id="3aST2zGrzWt" role="zr_5Q">
             <ref role="zr_51" node="4X6IwqdNksB" resolve="virtualPackage" />
           </node>
         </node>
-        <node concept="x79VA" id="3aST2zGrzWu" role="x79VK">
+        <node concept="x79VA" id="3aST2zGrzWu" role="3nqlJM">
           <property role="x79VB" value="Data type declaration" />
         </node>
       </node>
@@ -1804,13 +1802,13 @@
             <property role="1dT_AB" value="Links an interface node and a concept node together (adds the interface to &quot;implements&quot; field). " />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrwDt" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrwDt" role="3nqlJM">
           <property role="TUZQ4" value="Concept that will implement the interface" />
           <node concept="zr_55" id="3aST2zGrwDv" role="zr_5Q">
             <ref role="zr_51" node="5Jh2F9ezcqI" resolve="concept" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrwDw" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrwDw" role="3nqlJM">
           <property role="TUZQ4" value="Interface to be pinned to the concept" />
           <node concept="zr_55" id="3aST2zGrwDy" role="zr_5Q">
             <ref role="zr_51" node="5Jh2F9ezcrR" resolve="iface" />
@@ -1970,31 +1968,31 @@
             <property role="1dT_AB" value="Adds a child concept to a parent concept with given cardinality." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrwHS" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrwHS" role="3nqlJM">
           <property role="TUZQ4" value="Parent concept" />
           <node concept="zr_55" id="3aST2zGrwHU" role="zr_5Q">
             <ref role="zr_51" node="5Jh2F9e$iQu" resolve="parent" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrwHV" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrwHV" role="3nqlJM">
           <property role="TUZQ4" value="Child concept" />
           <node concept="zr_55" id="3aST2zGrwHX" role="zr_5Q">
             <ref role="zr_51" node="5Jh2F9e$iQE" resolve="child" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrwHY" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrwHY" role="3nqlJM">
           <property role="TUZQ4" value="Child link name" />
           <node concept="zr_55" id="3aST2zGrwI0" role="zr_5Q">
             <ref role="zr_51" node="5Jh2F9eAcuK" resolve="name" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrwI1" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrwI1" role="3nqlJM">
           <property role="TUZQ4" value="Cardinality" />
           <node concept="zr_55" id="3aST2zGrwI3" role="zr_5Q">
             <ref role="zr_51" node="5Jh2F9e$klv" resolve="quantity" />
           </node>
         </node>
-        <node concept="x79VA" id="3aST2zGrwI4" role="x79VK">
+        <node concept="x79VA" id="3aST2zGrwI4" role="3nqlJM">
           <property role="x79VB" value="Parent-child link that was created to bind concepts" />
         </node>
       </node>
@@ -2103,25 +2101,25 @@
             <property role="1dT_AB" value="Adds a target regex rule's data constraint type as a property to node." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrwLV" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrwLV" role="3nqlJM">
           <property role="TUZQ4" value="Target concept" />
           <node concept="zr_55" id="3aST2zGrwLX" role="zr_5Q">
             <ref role="zr_51" node="5Jh2F9eAeNs" resolve="node" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrwLY" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrwLY" role="3nqlJM">
           <property role="TUZQ4" value="Name of the property" />
           <node concept="zr_55" id="3aST2zGrwM0" role="zr_5Q">
             <ref role="zr_51" node="5Jh2F9eAeNA" resolve="name" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrwM1" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrwM1" role="3nqlJM">
           <property role="TUZQ4" value="Constraint data type of the property" />
           <node concept="zr_55" id="3aST2zGrwM3" role="zr_5Q">
             <ref role="zr_51" node="5Jh2F9eAeO0" resolve="type" />
           </node>
         </node>
-        <node concept="x79VA" id="3aST2zGrwM4" role="x79VK">
+        <node concept="x79VA" id="3aST2zGrwM4" role="3nqlJM">
           <property role="x79VB" value="Property declaration created during the process" />
         </node>
       </node>
@@ -2201,19 +2199,19 @@
             <property role="1dT_AB" value="Gets a property of a given node with given name." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrxwH" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrxwH" role="3nqlJM">
           <property role="TUZQ4" value="Target node" />
           <node concept="zr_55" id="3aST2zGrxwJ" role="zr_5Q">
             <ref role="zr_51" node="2Dfqp1I661K" resolve="node" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrxwK" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrxwK" role="3nqlJM">
           <property role="TUZQ4" value="Name of the property" />
           <node concept="zr_55" id="3aST2zGrxwM" role="zr_5Q">
             <ref role="zr_51" node="2Dfqp1I661M" resolve="propertyName" />
           </node>
         </node>
-        <node concept="x79VA" id="3aST2zGrxwN" role="x79VK">
+        <node concept="x79VA" id="3aST2zGrxwN" role="3nqlJM">
           <property role="x79VB" value="Property declaration that represents the link" />
         </node>
       </node>
@@ -2314,19 +2312,19 @@
             <property role="1dT_AB" value="Gets a given basic (alias, name...) property value of a given node." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrx$K" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrx$K" role="3nqlJM">
           <property role="TUZQ4" value="Target node" />
           <node concept="zr_55" id="3aST2zGrx$M" role="zr_5Q">
             <ref role="zr_51" node="34Jgz4O9alR" resolve="node" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrx$N" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrx$N" role="3nqlJM">
           <property role="TUZQ4" value="Which property" />
           <node concept="zr_55" id="3aST2zGrx$P" role="zr_5Q">
             <ref role="zr_51" node="34Jgz4O9alT" resolve="property" />
           </node>
         </node>
-        <node concept="x79VA" id="3aST2zGrx$Q" role="x79VK">
+        <node concept="x79VA" id="3aST2zGrx$Q" role="3nqlJM">
           <property role="x79VB" value="Property value" />
         </node>
       </node>
@@ -2455,19 +2453,19 @@
             <property role="1dT_AB" value="Sets a given basic (alias, name...) property of a given node to a given value." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrxBg" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrxBg" role="3nqlJM">
           <property role="TUZQ4" value="Target node" />
           <node concept="zr_55" id="3aST2zGrxBi" role="zr_5Q">
             <ref role="zr_51" node="4X6IwqdOETq" resolve="node" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrxBj" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrxBj" role="3nqlJM">
           <property role="TUZQ4" value="Which property" />
           <node concept="zr_55" id="3aST2zGrxBl" role="zr_5Q">
             <ref role="zr_51" node="4X6IwqdOETs" resolve="property" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrxBm" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrxBm" role="3nqlJM">
           <property role="TUZQ4" value="New value" />
           <node concept="zr_55" id="3aST2zGrxBo" role="zr_5Q">
             <ref role="zr_51" node="2Dfqp1I67B5" resolve="value" />
@@ -2550,19 +2548,19 @@
             <property role="1dT_AB" value="Returns a child link of given node with given name." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrxIE" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrxIE" role="3nqlJM">
           <property role="TUZQ4" value="Target node" />
           <node concept="zr_55" id="3aST2zGrxIG" role="zr_5Q">
             <ref role="zr_51" node="3pfFnS02$ic" resolve="node" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrxIH" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrxIH" role="3nqlJM">
           <property role="TUZQ4" value="Child link name" />
           <node concept="zr_55" id="3aST2zGrxIJ" role="zr_5Q">
             <ref role="zr_51" node="3pfFnS02$ie" resolve="childName" />
           </node>
         </node>
-        <node concept="x79VA" id="3aST2zGrxIK" role="x79VK">
+        <node concept="x79VA" id="3aST2zGrxIK" role="3nqlJM">
           <property role="x79VB" value="Link representing the parent-child relationship" />
         </node>
       </node>
@@ -2645,13 +2643,13 @@
             <property role="1dT_AB" value="Returns all classic concepts (not interfaces or data types) from a given model." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGry8M" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGry8M" role="3nqlJM">
           <property role="TUZQ4" value="Model" />
           <node concept="zr_55" id="3aST2zGry8O" role="zr_5Q">
             <ref role="zr_51" node="2Dfqp1I5RnX" resolve="structureModel" />
           </node>
         </node>
-        <node concept="x79VA" id="3aST2zGry8P" role="x79VK">
+        <node concept="x79VA" id="3aST2zGry8P" role="3nqlJM">
           <property role="x79VB" value="List of all concepts (not interface or constraint data type concepts)" />
         </node>
       </node>
@@ -2731,13 +2729,13 @@
             <property role="1dT_AB" value="Returns the BaseConcept, which is the abstract parent for all concepts." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrz1z" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrz1z" role="3nqlJM">
           <property role="TUZQ4" value="Model" />
           <node concept="zr_55" id="3aST2zGrz1_" role="zr_5Q">
             <ref role="zr_51" node="5lY$Gq$O9Dx" resolve="structureModel" />
           </node>
         </node>
-        <node concept="x79VA" id="3aST2zGrz1A" role="x79VK">
+        <node concept="x79VA" id="3aST2zGrz1A" role="3nqlJM">
           <property role="x79VB" value="BaseConcept declaration" />
         </node>
       </node>
@@ -3581,13 +3579,13 @@
             <property role="1dT_AB" value="Creates an append statement that includes a property's value." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrmwR" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrmwR" role="3nqlJM">
           <property role="TUZQ4" value="Reference to a regex rule (property)." />
           <node concept="zr_55" id="3aST2zGrmwT" role="zr_5Q">
             <ref role="zr_51" node="3aST2zGnPCs" resolve="reference" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrmwU" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrmwU" role="3nqlJM">
           <property role="TUZQ4" value="Do we want to prepend a space before we prepend the property?" />
           <node concept="zr_55" id="3aST2zGrmwW" role="zr_5Q">
             <ref role="zr_51" node="3aST2zGnPCw" resolve="prependSpace" />
@@ -3954,13 +3952,13 @@
             <property role="1dT_AB" value="Creates an append statement that includes a child's value." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrnVS" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrnVS" role="3nqlJM">
           <property role="TUZQ4" value="Reference to a parser rule (child)." />
           <node concept="zr_55" id="3aST2zGrnVU" role="zr_5Q">
             <ref role="zr_51" node="3aST2zGnUmQ" resolve="reference" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrnVV" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrnVV" role="3nqlJM">
           <property role="TUZQ4" value="Do we want to prepend a space before we prepend the child/children?" />
           <node concept="zr_55" id="3aST2zGrnVX" role="zr_5Q">
             <ref role="zr_51" node="3aST2zGofpu" resolve="prependSpace" />
@@ -3992,7 +3990,7 @@
             <property role="1dT_AB" value="Retrieves the TextGen aspect." />
           </node>
         </node>
-        <node concept="x79VA" id="3aST2zGrqhU" role="x79VK">
+        <node concept="x79VA" id="3aST2zGrqhU" role="3nqlJM">
           <property role="x79VB" value="The TextGen aspect that was built using this class." />
         </node>
       </node>
@@ -4148,13 +4146,13 @@
             <property role="1dT_AB" value="Root concepts need definitions of filename and extension string." />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrrGO" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrrGO" role="3nqlJM">
           <property role="TUZQ4" value="Filename that will be returned by the filename method." />
           <node concept="zr_55" id="3aST2zGrrGQ" role="zr_5Q">
             <ref role="zr_51" node="3aST2zGpozz" resolve="filename" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3aST2zGrrGR" role="TUOzN">
+        <node concept="TUZQ0" id="3aST2zGrrGR" role="3nqlJM">
           <property role="TUZQ4" value="Extension that will be returned by the extension method." />
           <node concept="zr_55" id="3aST2zGrrGT" role="zr_5Q">
             <ref role="zr_51" node="3aST2zGpoz_" resolve="extension" />
