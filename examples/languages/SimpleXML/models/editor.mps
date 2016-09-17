@@ -2,7 +2,7 @@
 <model ref="r:87a674a5-8233-455c-8ee6-ac389f9e0921(SimpleXML.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -51,21 +51,21 @@
       <node concept="l2Vlx" id="6vXZUoCOmsm" role="2iSdaV" />
       <node concept="3F1sOY" id="6vXZUoCOmsn" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="mspx:6vXZUoCOmrW" />
+        <ref role="1NtTu8" to="mspx:6vXZUoCOmrW" resolve="Prolog_1" />
         <node concept="3F0ifn" id="6vXZUoCOmso" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
       </node>
       <node concept="3F1sOY" id="6vXZUoCOmsp" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="mspx:6vXZUoCOmrX" />
+        <ref role="1NtTu8" to="mspx:6vXZUoCOmrX" resolve="Comment_2" />
         <node concept="3F0ifn" id="6vXZUoCOmsq" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
       </node>
       <node concept="3F1sOY" id="6vXZUoCOmsr" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="mspx:6vXZUoCOmrY" />
+        <ref role="1NtTu8" to="mspx:6vXZUoCOmrY" resolve="Element_3" />
         <node concept="3F0ifn" id="6vXZUoCOmss" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
@@ -116,7 +116,7 @@
         <property role="3F0ifm" value="&lt;?xml " />
       </node>
       <node concept="3F2HdR" id="6vXZUoCOmsI" role="3EZMnx">
-        <ref role="1NtTu8" to="mspx:6vXZUoCOms2" />
+        <ref role="1NtTu8" to="mspx:6vXZUoCOms2" resolve="Attribute_1" />
         <node concept="3F0ifn" id="6vXZUoCOmsK" role="2czzBI">
           <property role="3F0ifm" value=" " />
         </node>
@@ -143,7 +143,7 @@
       <node concept="l2Vlx" id="6vXZUoCOmsS" role="2iSdaV" />
       <node concept="3F1sOY" id="6vXZUoCOmsT" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="mspx:6vXZUoCOms4" />
+        <ref role="1NtTu8" to="mspx:6vXZUoCOms4" resolve="Element_1" />
         <node concept="3F0ifn" id="6vXZUoCOmsU" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
@@ -157,7 +157,7 @@
       <node concept="l2Vlx" id="6vXZUoCOmsX" role="2iSdaV" />
       <node concept="3F1sOY" id="6vXZUoCOmsY" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="mspx:6vXZUoCOms5" />
+        <ref role="1NtTu8" to="mspx:6vXZUoCOms5" resolve="Comment_1" />
         <node concept="3F0ifn" id="6vXZUoCOmsZ" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
@@ -186,7 +186,7 @@
         <ref role="1NtTu8" to="mspx:6vXZUoCOms7" resolve="Name_1" />
       </node>
       <node concept="3F2HdR" id="6vXZUoCOmt9" role="3EZMnx">
-        <ref role="1NtTu8" to="mspx:6vXZUoCOms8" />
+        <ref role="1NtTu8" to="mspx:6vXZUoCOms8" resolve="Attribute_1" />
         <node concept="3F0ifn" id="6vXZUoCOmtb" role="2czzBI">
           <property role="3F0ifm" value=" " />
         </node>
@@ -195,7 +195,7 @@
         <property role="3F0ifm" value="&gt;" />
       </node>
       <node concept="3F2HdR" id="6vXZUoCOmtd" role="3EZMnx">
-        <ref role="1NtTu8" to="mspx:6vXZUoCOms9" />
+        <ref role="1NtTu8" to="mspx:6vXZUoCOms9" resolve="Content_2" />
         <node concept="3F0ifn" id="6vXZUoCOmtf" role="2czzBI">
           <property role="3F0ifm" value=" " />
         </node>
@@ -223,7 +223,7 @@
         <ref role="1NtTu8" to="mspx:6vXZUoCOmsb" resolve="Name_1" />
       </node>
       <node concept="3F2HdR" id="6vXZUoCOmto" role="3EZMnx">
-        <ref role="1NtTu8" to="mspx:6vXZUoCOmsc" />
+        <ref role="1NtTu8" to="mspx:6vXZUoCOmsc" resolve="Attribute_1" />
         <node concept="3F0ifn" id="6vXZUoCOmtq" role="2czzBI">
           <property role="3F0ifm" value=" " />
         </node>

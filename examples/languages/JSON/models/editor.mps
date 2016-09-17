@@ -2,7 +2,7 @@
 <model ref="r:9ead6710-bcbb-465b-8ed9-e4b34f8ec3dc(JSON.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -54,7 +54,7 @@
       </node>
       <node concept="3F1sOY" id="6vXZUoCOm2B" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="qym2:6vXZUoCOm24" />
+        <ref role="1NtTu8" to="qym2:6vXZUoCOm24" resolve="Value_1" />
         <node concept="3F0ifn" id="6vXZUoCOm2C" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
@@ -77,7 +77,7 @@
       </node>
       <node concept="3F1sOY" id="6vXZUoCOm2J" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="qym2:6vXZUoCOm26" />
+        <ref role="1NtTu8" to="qym2:6vXZUoCOm26" resolve="Value_1" />
         <node concept="3F0ifn" id="6vXZUoCOm2K" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
@@ -94,7 +94,7 @@
       </node>
       <node concept="3F1sOY" id="6vXZUoCOm2P" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="qym2:6vXZUoCOm27" />
+        <ref role="1NtTu8" to="qym2:6vXZUoCOm27" resolve="Pair_1" />
         <node concept="3F0ifn" id="6vXZUoCOm2Q" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
@@ -111,13 +111,13 @@
       </node>
       <node concept="3F1sOY" id="6vXZUoCOm2V" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="qym2:6vXZUoCOm28" />
+        <ref role="1NtTu8" to="qym2:6vXZUoCOm28" resolve="Value_1" />
         <node concept="3F0ifn" id="6vXZUoCOm2W" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
       </node>
       <node concept="3F2HdR" id="6vXZUoCOm2X" role="3EZMnx">
-        <ref role="1NtTu8" to="qym2:6vXZUoCOm29" />
+        <ref role="1NtTu8" to="qym2:6vXZUoCOm29" resolve="Array_block_1_1_2" />
         <node concept="3F0ifn" id="6vXZUoCOm2Z" role="2czzBI">
           <property role="3F0ifm" value=" " />
         </node>
@@ -147,7 +147,7 @@
       <node concept="l2Vlx" id="6vXZUoCOm38" role="2iSdaV" />
       <node concept="3F1sOY" id="6vXZUoCOm39" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="qym2:6vXZUoCOm2a" />
+        <ref role="1NtTu8" to="qym2:6vXZUoCOm2a" resolve="Object_1" />
         <node concept="3F0ifn" id="6vXZUoCOm3a" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
@@ -161,7 +161,7 @@
       <node concept="l2Vlx" id="6vXZUoCOm3d" role="2iSdaV" />
       <node concept="3F1sOY" id="6vXZUoCOm3e" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="qym2:6vXZUoCOm2b" />
+        <ref role="1NtTu8" to="qym2:6vXZUoCOm2b" resolve="Array_1" />
         <node concept="3F0ifn" id="6vXZUoCOm3f" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
@@ -201,7 +201,7 @@
       <node concept="l2Vlx" id="6vXZUoCOm3s" role="2iSdaV" />
       <node concept="3F1sOY" id="6vXZUoCOm3t" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="qym2:6vXZUoCOm2e" />
+        <ref role="1NtTu8" to="qym2:6vXZUoCOm2e" resolve="Object_1" />
         <node concept="3F0ifn" id="6vXZUoCOm3u" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
@@ -215,7 +215,7 @@
       <node concept="l2Vlx" id="6vXZUoCOm3x" role="2iSdaV" />
       <node concept="3F1sOY" id="6vXZUoCOm3y" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="qym2:6vXZUoCOm2f" />
+        <ref role="1NtTu8" to="qym2:6vXZUoCOm2f" resolve="Array_1" />
         <node concept="3F0ifn" id="6vXZUoCOm3z" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
@@ -262,13 +262,13 @@
       </node>
       <node concept="3F1sOY" id="6vXZUoCOm3O" role="3EZMnx">
         <property role="2ru_X1" value="true" />
-        <ref role="1NtTu8" to="qym2:6vXZUoCOm2g" />
+        <ref role="1NtTu8" to="qym2:6vXZUoCOm2g" resolve="Pair_1" />
         <node concept="3F0ifn" id="6vXZUoCOm3P" role="2ruayu">
           <property role="3F0ifm" value=" " />
         </node>
       </node>
       <node concept="3F2HdR" id="6vXZUoCOm3Q" role="3EZMnx">
-        <ref role="1NtTu8" to="qym2:6vXZUoCOm2h" />
+        <ref role="1NtTu8" to="qym2:6vXZUoCOm2h" resolve="Object_block_1_1_2" />
         <node concept="3F0ifn" id="6vXZUoCOm3S" role="2czzBI">
           <property role="3F0ifm" value=" " />
         </node>

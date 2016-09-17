@@ -2,11 +2,12 @@
 <model ref="r:df88d579-4e87-43b2-b287-067b8f589474(SimpleXML.adjusted.actions)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="bed5" ref="r:575257f1-368c-46f9-8a2f-eeebf9d70d9a(SimpleXML.adjusted.structure)" implicit="true" />
+    <import index="bm8t" ref="r:0d46acdd-c43a-4fe7-ae4e-c3624da6ae05(SimpleXML.adjusted.editor)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -28,6 +29,9 @@
       </concept>
     </language>
     <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions">
+      <concept id="562388756457499018" name="jetbrains.mps.lang.actions.structure.MigratedToAnnotation" flags="ng" index="xBawi">
+        <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
+      </concept>
       <concept id="1177497140107" name="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" flags="nn" index="Cj7Ep" />
       <concept id="1177526535706" name="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" flags="nn" index="E3gs8" />
       <concept id="1177526592562" name="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler" flags="in" index="E3ukw" />
@@ -41,9 +45,7 @@
         <reference id="1138079221462" name="applicableConcept" index="3UNGvu" />
         <child id="1177442283389" name="part" index="_1QTJ" />
       </concept>
-      <concept id="1138079416598" name="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" flags="ng" index="3UOs0u">
-        <child id="1138079416599" name="actionsBuilder" index="3UOs0v" />
-      </concept>
+      <concept id="1138079416598" name="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" flags="ng" index="3UOs0u" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
@@ -53,9 +55,17 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -68,31 +78,41 @@
   <node concept="3UOs0u" id="6vXZUoCUPj2">
     <property role="3GE5qa" value="Rules.Element" />
     <property role="TrG5h" value="transform_Element_1_Attributes" />
-    <node concept="3UNGvq" id="6vXZUoCUPj3" role="3UOs0v">
-      <property role="2uHTBK" value="ext_1_RTransform" />
-      <property role="3mWRNi" value=" Add first attribute" />
-      <ref role="3UNGvu" to="bed5:6vXZUoCOmj7" resolve="Element_1" />
-      <node concept="1_wSoI" id="6vXZUoCUR4q" role="_1QTJ">
-        <ref role="1_xjl5" to="bed5:6vXZUoCOmiZ" resolve="Attribute" />
-        <node concept="E3ukw" id="6vXZUoCUR4r" role="1_xdl1">
-          <node concept="3clFbS" id="6vXZUoCUR4s" role="2VODD2">
-            <node concept="3clFbF" id="6vXZUoCUR5X" role="3cqZAp">
-              <node concept="2OqwBi" id="6vXZUoCURL1" role="3clFbG">
-                <node concept="2OqwBi" id="6vXZUoCURc3" role="2Oq$k0">
-                  <node concept="Cj7Ep" id="6vXZUoCUR5W" role="2Oq$k0" />
-                  <node concept="3Tsc0h" id="6vXZUoCURik" role="2OqNvi">
-                    <ref role="3TtcxE" to="bed5:6vXZUoCOmjl" />
+    <node concept="1X3_iC" id="5x5bWrf4pAh" role="lGtFl">
+      <property role="3V$3am" value="actionsBuilder" />
+      <property role="3V$3ak" value="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1138079416598/1138079416599" />
+      <node concept="3UNGvq" id="6vXZUoCUPj3" role="8Wnug">
+        <property role="2uHTBK" value="ext_1_RTransform" />
+        <property role="3mWRNi" value=" Add first attribute" />
+        <ref role="3UNGvu" to="bed5:6vXZUoCOmj7" resolve="Element_1" />
+        <node concept="1_wSoI" id="6vXZUoCUR4q" role="_1QTJ">
+          <ref role="1_xjl5" to="bed5:6vXZUoCOmiZ" resolve="Attribute" />
+          <node concept="E3ukw" id="6vXZUoCUR4r" role="1_xdl1">
+            <node concept="3clFbS" id="6vXZUoCUR4s" role="2VODD2">
+              <node concept="3clFbF" id="6vXZUoCUR5X" role="3cqZAp">
+                <node concept="2OqwBi" id="6vXZUoCURL1" role="3clFbG">
+                  <node concept="2OqwBi" id="6vXZUoCURc3" role="2Oq$k0">
+                    <node concept="Cj7Ep" id="6vXZUoCUR5W" role="2Oq$k0" />
+                    <node concept="3Tsc0h" id="6vXZUoCURik" role="2OqNvi">
+                      <ref role="3TtcxE" to="bed5:6vXZUoCOmjl" resolve="Attribute" />
+                    </node>
                   </node>
-                </node>
-                <node concept="1sK_Qi" id="6vXZUoCUTcL" role="2OqNvi">
-                  <node concept="3cmrfG" id="6vXZUoCUTfW" role="1sKJu8">
-                    <property role="3cmrfH" value="0" />
+                  <node concept="1sK_Qi" id="6vXZUoCUTcL" role="2OqNvi">
+                    <node concept="3cmrfG" id="6vXZUoCUTfW" role="1sKJu8">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                    <node concept="E3gs8" id="6vXZUoCUTiE" role="1sKFgg" />
                   </node>
-                  <node concept="E3gs8" id="6vXZUoCUTiE" role="1sKFgg" />
                 </node>
               </node>
             </node>
           </node>
+          <node concept="xBawi" id="5x5bWrf4p$B" role="lGtFl">
+            <ref role="xBaxx" to="bm8t:5x5bWrf4p$j" />
+          </node>
+        </node>
+        <node concept="xBawi" id="5x5bWrf4p$i" role="lGtFl">
+          <ref role="xBaxx" to="bm8t:5x5bWrf4p$d" resolve="transform_Element_1_Attributes" />
         </node>
       </node>
     </node>
@@ -100,31 +120,41 @@
   <node concept="3UOs0u" id="6vXZUoCUZZi">
     <property role="3GE5qa" value="Rules.Element" />
     <property role="TrG5h" value="transform_Element_2_Attributes" />
-    <node concept="3UNGvq" id="6vXZUoCUZZj" role="3UOs0v">
-      <property role="3mWRNi" value=" Add first attribute" />
-      <property role="2uHTBK" value="ext_1_RTransform" />
-      <ref role="3UNGvu" to="bed5:6vXZUoCOmj8" resolve="Element_2" />
-      <node concept="1_wSoI" id="6vXZUoCUZZk" role="_1QTJ">
-        <ref role="1_xjl5" to="bed5:6vXZUoCOmiZ" resolve="Attribute" />
-        <node concept="E3ukw" id="6vXZUoCUZZl" role="1_xdl1">
-          <node concept="3clFbS" id="6vXZUoCUZZm" role="2VODD2">
-            <node concept="3clFbF" id="6vXZUoCV00R" role="3cqZAp">
-              <node concept="2OqwBi" id="6vXZUoCV0DB" role="3clFbG">
-                <node concept="2OqwBi" id="6vXZUoCV04D" role="2Oq$k0">
-                  <node concept="Cj7Ep" id="6vXZUoCV00Q" role="2Oq$k0" />
-                  <node concept="3Tsc0h" id="6vXZUoCV0aU" role="2OqNvi">
-                    <ref role="3TtcxE" to="bed5:6vXZUoCOmjp" />
+    <node concept="1X3_iC" id="5x5bWrf4pAg" role="lGtFl">
+      <property role="3V$3am" value="actionsBuilder" />
+      <property role="3V$3ak" value="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1138079416598/1138079416599" />
+      <node concept="3UNGvq" id="6vXZUoCUZZj" role="8Wnug">
+        <property role="3mWRNi" value=" Add first attribute" />
+        <property role="2uHTBK" value="ext_1_RTransform" />
+        <ref role="3UNGvu" to="bed5:6vXZUoCOmj8" resolve="Element_2" />
+        <node concept="1_wSoI" id="6vXZUoCUZZk" role="_1QTJ">
+          <ref role="1_xjl5" to="bed5:6vXZUoCOmiZ" resolve="Attribute" />
+          <node concept="E3ukw" id="6vXZUoCUZZl" role="1_xdl1">
+            <node concept="3clFbS" id="6vXZUoCUZZm" role="2VODD2">
+              <node concept="3clFbF" id="6vXZUoCV00R" role="3cqZAp">
+                <node concept="2OqwBi" id="6vXZUoCV0DB" role="3clFbG">
+                  <node concept="2OqwBi" id="6vXZUoCV04D" role="2Oq$k0">
+                    <node concept="Cj7Ep" id="6vXZUoCV00Q" role="2Oq$k0" />
+                    <node concept="3Tsc0h" id="6vXZUoCV0aU" role="2OqNvi">
+                      <ref role="3TtcxE" to="bed5:6vXZUoCOmjp" resolve="Attribute_1" />
+                    </node>
                   </node>
-                </node>
-                <node concept="1sK_Qi" id="6vXZUoCV3xV" role="2OqNvi">
-                  <node concept="3cmrfG" id="6vXZUoCV3$K" role="1sKJu8">
-                    <property role="3cmrfH" value="0" />
+                  <node concept="1sK_Qi" id="6vXZUoCV3xV" role="2OqNvi">
+                    <node concept="3cmrfG" id="6vXZUoCV3$K" role="1sKJu8">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                    <node concept="E3gs8" id="6vXZUoCV3Bu" role="1sKFgg" />
                   </node>
-                  <node concept="E3gs8" id="6vXZUoCV3Bu" role="1sKFgg" />
                 </node>
               </node>
             </node>
           </node>
+          <node concept="xBawi" id="5x5bWrf4p$c" role="lGtFl">
+            <ref role="xBaxx" to="bm8t:5x5bWrf4pzS" />
+          </node>
+        </node>
+        <node concept="xBawi" id="5x5bWrf4pzR" role="lGtFl">
+          <ref role="xBaxx" to="bm8t:5x5bWrf4pzM" resolve="transform_Element_2_Attributes" />
         </node>
       </node>
     </node>
