@@ -2,6 +2,8 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/CSharp/CSharp.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/CSharp/sandbox/CSharp.sandbox.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/JSON.adjusted/JSON.adjusted.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/JSON.adjusted/sandbox/JSON.adjusted.sandbox.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/JSON/JSON.mpl" folder="" />
