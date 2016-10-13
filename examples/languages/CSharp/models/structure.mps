@@ -2466,22 +2466,12 @@
     <property role="3GE5qa" value="Rules.Block" />
     <property role="19KtqR" value="false" />
     <ref role="1TJDcQ" node="30KzO6ApIVq" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="30KzO6ApJ9S" role="1TKVEl">
-      <property role="IQ2nx" value="3472432824830063224" />
-      <property role="TrG5h" value="OPEN_BRACE_1" />
-      <ref role="AX2Wp" node="30KzO6ApJ7L" resolve="OPEN_BRACE" />
-    </node>
     <node concept="1TJgyj" id="30KzO6ApJ9T" role="1TKVEi">
       <property role="IQ2ns" value="3472432824830063225" />
       <property role="20kJfa" value="Statement_list_1" />
       <property role="20lbJX" value="0..1" />
       <property role="20lmBu" value="aggregation" />
       <ref role="20lvS9" node="30KzO6ApIYn" resolve="Statement_list" />
-    </node>
-    <node concept="1TJgyi" id="30KzO6ApJ9U" role="1TKVEl">
-      <property role="IQ2nx" value="3472432824830063226" />
-      <property role="TrG5h" value="CLOSE_BRACE_2" />
-      <ref role="AX2Wp" node="30KzO6ApJ7O" resolve="CLOSE_BRACE" />
     </node>
     <node concept="PrWs8" id="30KzO6ApJjy" role="PzmwI">
       <ref role="PrY4T" node="30KzO6ApJ3C" resolve="IStatement" />

@@ -11,8 +11,7 @@
         <child id="3472432824830063213" name="Identifier_2" index="2mlBOG" />
       </concept>
       <concept id="3472432824830062428" name="CSharp.structure.Block" flags="ng" index="2mlA0t">
-        <property id="3472432824830063224" name="OPEN_BRACE_1" index="2mlBOT" />
-        <property id="3472432824830063226" name="CLOSE_BRACE_2" index="2mlBOV" />
+        <child id="3472432824830063225" name="Statement_list_1" index="2mlBOS" />
       </concept>
       <concept id="3472432824830062336" name="CSharp.structure.Null_coalescing_expression" flags="ng" index="2mlA11">
         <child id="3472432824830063135" name="Conditional_or_expression_1" index="2mlBPu" />
@@ -41,6 +40,10 @@
         <child id="3472432824830063201" name="Arg_declaration_block_1_1_3" index="2mlBOw" />
         <child id="3472432824830063200" name="Identifier_2" index="2mlBOx" />
       </concept>
+      <concept id="3472432824830062395" name="CSharp.structure.Typed_member_declaration" flags="ng" index="2mlA1U">
+        <child id="3472432824830063203" name="Type_1" index="2mlBOy" />
+        <child id="3472432824830063204" name="Typed_member_declaration_block_1_1_2" index="2mlBO_" />
+      </concept>
       <concept id="3472432824830062528" name="CSharp.structure.Using_directive_2" flags="ng" index="2mlA21">
         <child id="3472432824830063331" name="Namespace_or_type_name_1" index="2mlBQy" />
       </concept>
@@ -52,6 +55,7 @@
         <child id="3472432824830063378" name="Namespace_or_type_name_block_1_1_1" index="2mlBLj" />
       </concept>
       <concept id="3472432824830062556" name="CSharp.structure.Fixed_parameters" flags="ng" index="2mlA2t">
+        <child id="3472432824830063377" name="Fixed_parameters_block_1_1_2" index="2mlBLg" />
         <child id="3472432824830063376" name="Fixed_parameter_1" index="2mlBLh" />
       </concept>
       <concept id="3472432824830062577" name="CSharp.structure.Qualified_identifier" flags="ng" index="2mlA2K">
@@ -62,6 +66,9 @@
       </concept>
       <concept id="3472432824830062584" name="CSharp.structure.Type_parameter_list" flags="ng" index="2mlA2T">
         <child id="3472432824830063405" name="Type_parameter_1" index="2mlBLG" />
+      </concept>
+      <concept id="3472432824830062487" name="CSharp.structure.Statement_list" flags="ng" index="2mlA3m">
+        <child id="3472432824830063284" name="Statement_1" index="2mlBRP" />
       </concept>
       <concept id="3472432824830062490" name="CSharp.structure.Class_definition" flags="ng" index="2mlA3r">
         <child id="3472432824830063289" name="Type_parameter_list_2" index="2mlBRS" />
@@ -75,6 +82,9 @@
       </concept>
       <concept id="3472432824830062502" name="CSharp.structure.Relational_expression" flags="ng" index="2mlA3B">
         <child id="3472432824830063306" name="Shift_expression_1" index="2mlBQb" />
+      </concept>
+      <concept id="3472432824830062517" name="CSharp.structure.Fixed_parameters_block_1_1" flags="ng" index="2mlA3O">
+        <child id="3472432824830063318" name="Fixed_parameter_1" index="2mlBQn" />
       </concept>
       <concept id="3472432824830062316" name="CSharp.structure.Formal_parameter_list_2" flags="ng" index="2mlA6H">
         <child id="3472432824830063113" name="Fixed_parameters_1" index="2mlBP8" />
@@ -91,6 +101,11 @@
       <concept id="3472432824830062910" name="CSharp.structure.Identifier_1" flags="ng" index="2mlBTZ">
         <property id="3472432824830063632" name="IDENTIFIER_1" index="2mlBHh" />
       </concept>
+      <concept id="3472432824830063044" name="CSharp.structure.Method_declaration" flags="ng" index="2mlBU5">
+        <child id="3472432824830063767" name="Type_parameter_list_2" index="2mlBJm" />
+        <child id="3472432824830063766" name="Method_member_name_1" index="2mlBJn" />
+        <child id="3472432824830063770" name="Method_declaration_block_1_1_5" index="2mlBJr" />
+      </concept>
       <concept id="3472432824830063080" name="CSharp.structure.Namespace_or_type_name_block_1_1_1" flags="ng" index="2mlBUD">
         <child id="3472432824830063804" name="Identifier_1" index="2mlBJX" />
       </concept>
@@ -100,6 +115,12 @@
       <concept id="3472432824830062979" name="CSharp.structure.Compilation_unit" flags="ng" index="2mlBV2">
         <child id="3472432824830063698" name="Using_directives_2" index="2mlBGj" />
         <child id="3472432824830063700" name="Namespace_member_declarations_4" index="2mlBGl" />
+      </concept>
+      <concept id="3472432824830062978" name="CSharp.structure.Variable_declarators" flags="ng" index="2mlBV3">
+        <child id="3472432824830063695" name="Variable_declarator_1" index="2mlBGe" />
+      </concept>
+      <concept id="3472432824830062988" name="CSharp.structure.Field_declaration" flags="ng" index="2mlBVd">
+        <child id="3472432824830063714" name="Variable_declarators_1" index="2mlBGz" />
       </concept>
       <concept id="3472432824830063023" name="CSharp.structure.Class_base" flags="ng" index="2mlBVI">
         <child id="3472432824830063751" name="Class_type_1" index="2mlBJ6" />
@@ -119,6 +140,8 @@
         <child id="3472432824830063515" name="Class_member_declaration_1" index="2mlBNq" />
       </concept>
       <concept id="3472432824830062689" name="CSharp.structure.All_member_modifier_2" flags="ng" index="2mlBWw" />
+      <concept id="3472432824830062692" name="CSharp.structure.All_member_modifier_5" flags="ng" index="2mlBW_" />
+      <concept id="3472432824830062695" name="CSharp.structure.All_member_modifier_8" flags="ng" index="2mlBWA" />
       <concept id="3472432824830062709" name="CSharp.structure.And_expression" flags="ng" index="2mlBWO">
         <child id="3472432824830063524" name="Equality_expression_1" index="2mlBN_" />
       </concept>
@@ -140,9 +163,19 @@
       <concept id="3472432824830062792" name="CSharp.structure.Class_body" flags="ng" index="2mlBY9">
         <child id="3472432824830063537" name="Class_member_declarations_1" index="2mlBNK" />
       </concept>
+      <concept id="3472432824830062797" name="CSharp.structure.Method_member_name" flags="ng" index="2mlBYc">
+        <child id="3472432824830063540" name="Method_member_name_block_1_1_1" index="2mlBNP" />
+      </concept>
+      <concept id="3472432824830062804" name="CSharp.structure.Common_member_declaration_6" flags="ng" index="2mlBYl">
+        <child id="3472432824830063548" name="Method_declaration_1" index="2mlBNX" />
+      </concept>
+      <concept id="3472432824830062811" name="CSharp.structure.Variable_declarator" flags="ng" index="2mlBYq">
+        <child id="3472432824830063558" name="Identifier_1" index="2mlBM7" />
+      </concept>
       <concept id="3472432824830062822" name="CSharp.structure.Conditional_and_expression" flags="ng" index="2mlBYB">
         <child id="3472432824830063571" name="Inclusive_or_expression_1" index="2mlBMi" />
       </concept>
+      <concept id="3472432824830062824" name="CSharp.structure.IStatement" flags="ng" index="2mlBYD" />
       <concept id="3472432824830062840" name="CSharp.structure.Namespace_member_declarations" flags="ng" index="2mlBYT">
         <child id="3472432824830063594" name="Namespace_member_declaration_1" index="2mlBMF" />
       </concept>
@@ -181,14 +214,35 @@
                 </node>
                 <node concept="2mlBY9" id="30KzO6AAhaI" role="2mlBRX">
                   <node concept="2mlBWv" id="30KzO6ADOhM" role="2mlBNK">
+                    <node concept="2mlA1v" id="5j9UznEFgFZ" role="2mlBNq">
+                      <node concept="2mlA1U" id="5j9UznEFgGF" role="2mlBOb">
+                        <node concept="2mlBT8" id="5j9UznEFgGH" role="2mlBOy">
+                          <node concept="2mlA2s" id="5j9UznEFgGP" role="2mlBMX">
+                            <node concept="2mlBUD" id="5j9UznEFgGU" role="2mlBLj">
+                              <node concept="2mlBTZ" id="5j9UznEFgGZ" role="2mlBJX">
+                                <property role="2mlBHh" value="int" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2mlBVd" id="5j9UznEFgH2" role="2mlBO_">
+                          <node concept="2mlBV3" id="5j9UznEFgH4" role="2mlBGz">
+                            <node concept="2mlBYq" id="5j9UznEFgH6" role="2mlBGe">
+                              <node concept="2mlBTZ" id="5j9UznEFgHd" role="2mlBM7">
+                                <property role="2mlBHh" value="n" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2mlBXr" id="5j9UznEFgHz" role="2mlBO8">
+                        <node concept="2mlBW_" id="5j9UznEFgHB" role="2mlBKh" />
+                      </node>
+                    </node>
                     <node concept="2mlA1v" id="30KzO6ADOhN" role="2mlBNq">
                       <node concept="2mlBWs" id="30KzO6ADOjF" role="2mlBOb">
                         <node concept="2mlBTZ" id="30KzO6ADOjM" role="2mlBNm">
                           <property role="2mlBHh" value="A" />
-                        </node>
-                        <node concept="2mlA0t" id="30KzO6ADOlT" role="2mlBNr">
-                          <property role="2mlBOT" value="{" />
-                          <property role="2mlBOV" value="}" />
                         </node>
                         <node concept="2mlA6H" id="30KzO6ADOk8" role="2mlBNp">
                           <node concept="2mlA2t" id="30KzO6ADOk9" role="2mlBP8">
@@ -239,11 +293,60 @@
                                 </node>
                               </node>
                             </node>
+                            <node concept="2mlA3O" id="5j9UznEFgDU" role="2mlBLg">
+                              <node concept="2mlA1g" id="5j9UznEFgDY" role="2mlBQn">
+                                <node concept="2mlA1R" id="5j9UznEFgE0" role="2mlBPL">
+                                  <node concept="2mlBT8" id="5j9UznEFgE2" role="2mlBOu">
+                                    <node concept="2mlA2s" id="5j9UznEFgEb" role="2mlBMX">
+                                      <node concept="2mlBUD" id="5j9UznEFgEg" role="2mlBLj">
+                                        <node concept="2mlBTZ" id="5j9UznEFgEl" role="2mlBJX">
+                                          <property role="2mlBHh" value="string" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="2mlBTZ" id="5j9UznEFgEo" role="2mlBOx">
+                                    <property role="2mlBHh" value="foo" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2mlA0t" id="5j9UznED51p" role="2mlBNr">
+                          <node concept="2mlA3m" id="5j9UznEFgDA" role="2mlBOS">
+                            <node concept="2mlBYD" id="5j9UznEFgDD" role="2mlBRP" />
                           </node>
                         </node>
                       </node>
                       <node concept="2mlBXr" id="30KzO6ADOjP" role="2mlBO8">
                         <node concept="2mlBWw" id="30KzO6ADOjT" role="2mlBKh" />
+                      </node>
+                    </node>
+                    <node concept="2mlA1v" id="5j9UznEFgHE" role="2mlBNq">
+                      <node concept="2mlBYl" id="5j9UznEFgIX" role="2mlBOb">
+                        <node concept="2mlBU5" id="5j9UznEFgIZ" role="2mlBNX">
+                          <node concept="2mlBYc" id="5j9UznEFgJ1" role="2mlBJn">
+                            <node concept="2mlBTZ" id="5j9UznEFgJa" role="2mlBNP">
+                              <property role="2mlBHh" value="bar" />
+                            </node>
+                          </node>
+                          <node concept="2mlA2T" id="5j9UznEFgJk" role="2mlBJm">
+                            <node concept="2mlA0i" id="5j9UznEFgJl" role="2mlBLG">
+                              <node concept="2mlBTZ" id="5j9UznEFgJq" role="2mlBOG">
+                                <property role="2mlBHh" value="T" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2mlA0t" id="5j9UznEFgJF" role="2mlBJr">
+                            <node concept="2mlA3m" id="5j9UznEFgK5" role="2mlBOS">
+                              <node concept="2mlBYD" id="5j9UznEFgK8" role="2mlBRP" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2mlBXr" id="5j9UznEFgJU" role="2mlBO8">
+                        <node concept="2mlBWA" id="5j9UznEFgJY" role="2mlBKh" />
                       </node>
                     </node>
                   </node>
