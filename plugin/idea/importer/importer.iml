@@ -11,6 +11,6 @@
     <orderEntry type="library" name="org.jetbrains.mps" level="project" />
     <orderEntry type="module" module-name="parser" />
     <orderEntry type="module" module-name="model" />
-    <orderEntry type="module" module-name="library" />
+    <orderEntry type="library" name="library" level="project" />
   </component>
 </module>

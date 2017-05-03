@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/importer/importer.iml" filepath="$PROJECT_DIR$/importer/importer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../mps/library/source_gen/library.iml" filepath="$PROJECT_DIR$/../mps/library/source_gen/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/model/model.iml" filepath="$PROJECT_DIR$/model/model.iml" />
       <module fileurl="file://$PROJECT_DIR$/parser/parser.iml" filepath="$PROJECT_DIR$/parser/parser.iml" />
       <module fileurl="file://$PROJECT_DIR$/parser_tests/parser_tests.iml" filepath="$PROJECT_DIR$/parser_tests/parser_tests.iml" />
