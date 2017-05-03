@@ -53,6 +53,9 @@
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
         <library jar="../../antlr-4.5.2-complete.jar" />
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="org.antlr-src.jar" descriptor="org.antlr.msd" />
       </module>
     </echoxml>
@@ -73,7 +76,7 @@
         <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/org.antlr/org.antlr.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-org.antlr-models" prefix="module/../../../plugin/mps/org.antlr/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-org.antlr-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/premun.mps.ingrid.plugin.jar" />
     <mkdir dir="${build.tmp}/default/premun.mps.ingrid.plugin.jar/META-INF" />
@@ -86,14 +89,15 @@
           <module ref="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" />
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
-          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
-          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="premun.mps.ingrid.plugin-src.jar" descriptor="premun.mps.ingrid.plugin.msd" />
       </module>
     </echoxml>
@@ -114,7 +118,7 @@
         <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/plugin/premun.mps.ingrid.plugin.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-plugin-models" prefix="module/../../../plugin/mps/plugin/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-plugin-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/premun.mps.ingrid.importer.jar" />
     <mkdir dir="${build.tmp}/default/premun.mps.ingrid.importer.jar/META-INF" />
@@ -123,6 +127,9 @@
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="premun.mps.ingrid.importer-src.jar" descriptor="premun.mps.ingrid.importer.msd" />
       </module>
     </echoxml>
@@ -150,7 +157,7 @@
         <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/importer/premun.mps.ingrid.importer.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-importer-models" prefix="module/../../../plugin/mps/importer/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-importer-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/premun.mps.ingrid.library.jar" />
     <mkdir dir="${build.tmp}/default/premun.mps.ingrid.library.jar/META-INF" />
@@ -167,6 +174,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="premun.mps.ingrid.library-src.jar" descriptor="premun.mps.ingrid.library.msd" />
       </module>
     </echoxml>
@@ -187,7 +197,7 @@
         <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/library/premun.mps.ingrid.library.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-library-models" prefix="module/../../../plugin/mps/library/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-library-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/premun.mps.ingrid.model.jar" />
     <mkdir dir="${build.tmp}/default/premun.mps.ingrid.model.jar/META-INF" />
@@ -196,6 +206,9 @@
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="premun.mps.ingrid.model-src.jar" descriptor="premun.mps.ingrid.model.msd" />
       </module>
     </echoxml>
@@ -223,7 +236,7 @@
         <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/model/premun.mps.ingrid.model.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-model-models" prefix="module/../../../plugin/mps/model/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-model-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/premun.mps.ingrid.parser.jar" />
     <mkdir dir="${build.tmp}/default/premun.mps.ingrid.parser.jar/META-INF" />
@@ -232,6 +245,9 @@
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="premun.mps.ingrid.parser-src.jar" descriptor="premun.mps.ingrid.parser.msd" />
       </module>
     </echoxml>
@@ -259,7 +275,7 @@
         <exclude name="**/*.mps" />
       </fileset>
       <zipfileset file="${basedir}/parser/premun.mps.ingrid.parser.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-parser-models" prefix="module/../../../plugin/mps/parser/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-parser-models" prefix="module/models" />
     </jar>
     <copy todir="${build.tmp}/default/premun.mps.ingrid.zip/Ingrid">
       <fileset file="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
@@ -305,7 +321,8 @@
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
-      <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+      <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar" />
+      <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jetbrains.mps.baseLanguage.unitTest.libs.jar" />
@@ -318,7 +335,6 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.analyzers.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
@@ -345,10 +361,9 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.util.order.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
-      <library file="${artifacts.mps}/languages/make/jetbrains.mps.make.facet.jar" />
       <library file="${artifacts.mps}/languages/make/jetbrains.mps.make.reduced.jar" />
-      <library file="${artifacts.mps}/languages/make/jetbrains.mps.make.script.jar" />
       <library file="${artifacts.mps}/languages/make/jetbrains.mps.tool.gentest.jar" />
       <library file="${artifacts.mps}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.mps}/languages/xml/jetbrains.mps.core.xml.jar" />
@@ -424,9 +439,9 @@
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
         <pathelement path="${build.tmp}/java/out/premun.mps.ingrid.importer" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/premun.mps.ingrid.library" />
@@ -435,14 +450,11 @@
         <fileset file="${artifacts.mps}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />
         <fileset file="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
-        <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
-        <fileset file="${artifacts.mps}/lib/xstream-1.4.8.jar" />
-        <fileset file="${artifacts.mps}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset file="${artifacts.mps}/lib/ecj-4.5.2.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.6.2.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
       </classpath>
@@ -472,9 +484,9 @@
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/premun.mps.ingrid.library" />
@@ -482,16 +494,12 @@
         <pathelement path="${build.tmp}/java/out/premun.mps.ingrid.parser" />
         <fileset file="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
-        <fileset file="${artifacts.mps}/lib/xstream-1.4.8.jar" />
-        <fileset file="${artifacts.mps}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset file="${artifacts.mps}/lib/log4j.jar" />
-        <fileset file="${artifacts.mps}/lib/ecj-4.5.2.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.6.2.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -526,23 +534,19 @@
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
-        <fileset file="${artifacts.mps}/lib/xstream-1.4.8.jar" />
-        <fileset file="${artifacts.mps}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset file="${artifacts.mps}/lib/log4j.jar" />
-        <fileset file="${artifacts.mps}/lib/ecj-4.5.2.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.6.2.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
@@ -576,11 +580,6 @@
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
-        <fileset file="${artifacts.mps}/lib/jdom.jar" />
-        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
-        <fileset file="${artifacts.mps}/lib/xstream-1.4.8.jar" />
-        <fileset file="${artifacts.mps}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
       </classpath>
     </javac>
   </target>
@@ -602,11 +601,6 @@
         <pathelement path="${build.tmp}/java/out/premun.mps.ingrid.model" />
         <fileset file="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
-        <fileset file="${artifacts.mps}/lib/jdom.jar" />
-        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
-        <fileset file="${artifacts.mps}/lib/xstream-1.4.8.jar" />
-        <fileset file="${artifacts.mps}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
       </classpath>
     </javac>
   </target>

@@ -2,11 +2,11 @@
 <model ref="r:faec8325-a7c0-4998-b6c0-5059e513d4dc(premun.mps.ingrid.plugin.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
@@ -395,7 +395,7 @@
                 <ref role="3cqZAo" node="75$k3hpG408" resolve="dialog" />
               </node>
               <node concept="liA8E" id="75$k3hpG40v" role="2OqNvi">
-                <ref role="37wK5l" to="dsk9:3cbaM0Treuk" resolve="getLangauge" />
+                <ref role="37wK5l" to="dsk9:3pY4pKeZj_N" resolve="getModule" />
               </node>
             </node>
           </node>
