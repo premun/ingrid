@@ -6,7 +6,7 @@ The name **Ingrid** comes from a mix of an abbreviation of *Interactive Grammar 
 **[Here](https://github.com/premun/diploma-thesis/blob/master/Grammar%20to%20JetBrains%20MPS%20Convertor.pdf) is a full diploma thesis describing the plugin.**
 
 ## Requirements
-- MPS 3.4 EAP 3 and higher
+- MPS 2017.1 and higher
 - Running the MPS using Java 8 (JDK 1.8)
 - JDK 1.8 for IntelliJ IDEA (needed when building the plugin)
 
