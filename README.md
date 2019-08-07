@@ -12,11 +12,11 @@ The name **Ingrid** comes from a mix of an abbreviation of *Interactive Grammar 
 
 ## How to import a language to the current project
 
-1. Download [`premun.mps.ingrid.zip`](https://raw.githubusercontent.com/premun/ingrid/master/out/premun.mps.ingrid.zip) (a binary release), or follow the steps below to build it from sources.
+1. Download [`premun.mps.ingrid.2017_1.zip`](https://raw.githubusercontent.com/premun/ingrid/master/out/premun.mps.ingrid.2017_1.zip) or [`premun.mps.ingrid.2019_1.zip`](https://raw.githubusercontent.com/premun/ingrid/master/out/premun.mps.ingrid.2019_1.zip) (binary releases), or follow the steps below to build it from sources.
 2. Open `File` > `Settings`.
 3. Go to the `Plugins` section.
 4. Click `Install plugin from disk...`
-5. Locate the plugin file `premun.mps.ingrid.zip`.
+5. Locate the plugin file `premun.mps.ingrid.<version>.zip`.
 6. Restart MPS.
 7. `Tools` -> `Import ANTLR v4 grammar`
 8. Add some `.g4` file. Either you can use any from the `grammars` directory or take a look at this [grammar repository](https://github.com/antlr/grammars-v4).
