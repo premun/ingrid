@@ -12,7 +12,7 @@ The name **Ingrid** comes from a mix of an abbreviation of *Interactive Grammar 
 
 ## How to import a language to the current project
 
-1. Download [`premun.mps.ingrid.2017_1.zip`](https://raw.githubusercontent.com/premun/ingrid/master/out/premun.mps.ingrid.2017_1.zip) or [`premun.mps.ingrid.2019_1.zip`](https://raw.githubusercontent.com/premun/ingrid/master/out/premun.mps.ingrid.2019_1.zip) (binary releases), or follow the steps below to build it from sources.
+1. Download the required zip-file from [`here`](/out/) (binary releases), or follow the steps below to build it from sources.
 2. Open `File` > `Settings`.
 3. Go to the `Plugins` section.
 4. Click `Install plugin from disk...`
@@ -56,7 +56,7 @@ After setting this variable, it is recommended to restart the IDE.
 Both projects (MPS and IDEA) maintain the same structure, so it is very easy to find your way around the code base.
 Furthermore, both projects were split up into several modules and, apart from one library module, they were all developed inside the IDEA project in plain Java.
 
-![alt text](https://raw.githubusercontent.com/premun/ingrid/master/doc/plugin_architecture.png "Plugin architecture")
+![alt text](/doc/plugin_architecture.png "Plugin architecture")
 
 Each colored box in the picture represents a module (or a library).
 Black solid arrows represent dependency relationships between modules.
