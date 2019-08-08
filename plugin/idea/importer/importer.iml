@@ -12,5 +12,7 @@
     <orderEntry type="module" module-name="parser" />
     <orderEntry type="module" module-name="model" />
     <orderEntry type="library" name="library" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

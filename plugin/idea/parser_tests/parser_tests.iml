@@ -20,5 +20,7 @@
     </orderEntry>
     <orderEntry type="module" module-name="parser" />
     <orderEntry type="module" module-name="model" scope="TEST" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>
