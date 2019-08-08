@@ -7,6 +7,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
@@ -20,6 +21,7 @@
     <import index="dsk9" ref="r:8bdc9cf5-28de-48ab-8b85-36b2d96bc635(jetbrains.mps.ide.newModuleDialogs)" />
     <import index="vcyu" ref="f0276ed1-44e5-4463-9cfe-cf15618e4974/java:premun.mps.ingrid.importer.exceptions(premun.mps.ingrid.importer/)" />
     <import index="wm4a" ref="66288791-e621-45d1-bebf-408d2568bbe6/java:premun.mps.ingrid.parser.exception(premun.mps.ingrid.parser/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
@@ -269,14 +271,14 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2OqwBi" id="75$k3hpG3ZF" role="33vP2m">
+                <node concept="2OqwBi" id="4NDoW_fx1aL" role="33vP2m">
                   <node concept="2OqwBi" id="75$k3hpG3ZG" role="2Oq$k0">
                     <node concept="2WthIp" id="75$k3hpG3ZH" role="2Oq$k0" />
                     <node concept="1DTwFV" id="75$k3hpG3ZI" role="2OqNvi">
                       <ref role="2WH_rO" node="5_E18HdnRZc" resolve="mpsProject" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="75$k3hpG3ZJ" role="2OqNvi">
+                  <node concept="liA8E" id="4NDoW_fxM8i" role="2OqNvi">
                     <ref role="37wK5l" to="z1c3:~Project.getModules():java.lang.Iterable" resolve="getModules" />
                   </node>
                 </node>
@@ -479,9 +481,6 @@
         <node concept="3cpWs8" id="33RGotrJHt5" role="3cqZAp">
           <node concept="3cpWsn" id="33RGotrJHt6" role="3cpWs9">
             <property role="TrG5h" value="languages" />
-            <node concept="_YKpA" id="33RGotrJHrT" role="1tU5fm">
-              <node concept="17QB3L" id="33RGotrJIwg" role="_ZDj9" />
-            </node>
             <node concept="2OqwBi" id="33RGotrJHt7" role="33vP2m">
               <node concept="2OqwBi" id="33RGotrJHt8" role="2Oq$k0">
                 <node concept="2OqwBi" id="33RGotrJMwv" role="2Oq$k0">
@@ -516,6 +515,11 @@
                 </node>
               </node>
               <node concept="ANE8D" id="33RGotrJHtj" role="2OqNvi" />
+            </node>
+            <node concept="_YKpA" id="4NDoW_fwVmk" role="1tU5fm">
+              <node concept="3uibUv" id="4NDoW_fwVmn" role="_ZDj9">
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
             </node>
           </node>
         </node>

@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator generatorUID="SimpleXML.adjusted#7493426444129189836" uuid="739ebb56-69b0-4328-a5f9-51a61f99e8b3">
+    <generator generatorUID="SimpleXML.adjusted#9097780766783058653" uuid="739ebb56-69b0-4328-a5f9-51a61f99e8b3">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
@@ -39,7 +39,7 @@
         <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="74a4313b-5d3a-4ac6-ba0f-b49ffebac8ca(SimpleXML.adjusted)" version="0" />
-        <module reference="739ebb56-69b0-4328-a5f9-51a61f99e8b3(SimpleXML.adjusted#7493426444129189836)" version="0" />
+        <module reference="739ebb56-69b0-4328-a5f9-51a61f99e8b3(SimpleXML.adjusted#9097780766783058653)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
         <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
         <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
@@ -49,8 +49,11 @@
   </generators>
   <sourcePath />
   <usedDevKits>
-    <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
     <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
+    <usedDevKit>fa73d85a-ac7f-447b-846c-fcdc41caa600(jetbrains.mps.devkit.aspect.textgen)</usedDevKit>
+    <usedDevKit>78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)</usedDevKit>
+    <usedDevKit>00000000-0000-4000-0000-1de82b3a4936(jetbrains.mps.devkit.aspect.typesystem)</usedDevKit>
+    <usedDevKit>00000000-0000-4000-0000-5604ebd4f22c(jetbrains.mps.devkit.aspect.constraints)</usedDevKit>
   </usedDevKits>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="4" />

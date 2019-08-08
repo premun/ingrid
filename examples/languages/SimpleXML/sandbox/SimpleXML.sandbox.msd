@@ -7,8 +7,8 @@
   </models>
   <sourcePath />
   <languageVersions>
-    <language id="9283473d-1390-4574-be8a-cc6a2aa4b500" fqName="SimpleXML" version="-1" />
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />
+    <language slang="l:9283473d-1390-4574-be8a-cc6a2aa4b500:SimpleXML" version="-1" />
+    <language slang="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" version="1" />
   </languageVersions>
   <dependencyVersions>
     <module reference="02fdd783-252a-4df8-aaac-171ed6fc2603(SimpleXML.sandbox)" version="0" />
