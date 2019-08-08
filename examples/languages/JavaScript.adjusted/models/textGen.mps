@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model ref="r:efcb07c6-1612-4e26-87aa-a858817af594(JavaScript.adjusted.textGen)">
   <persistence version="9" />
-  <languages />
+  <languages>
+    <use id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" name="jetbrains.mps.lang.textGen" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="13" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="1" />
+  </languages>
   <imports>
     <import index="uppz" ref="r:e7cb953d-e1d3-464c-b954-fb1460bed4d2(JavaScript.adjusted.structure)" implicit="true" />
   </imports>
