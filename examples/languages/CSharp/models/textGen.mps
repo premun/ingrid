@@ -2,8 +2,7 @@
 <model ref="r:123f19ef-590b-4d19-935b-b8be0687499b(CSharp.textGen)">
   <persistence version="9" />
   <languages>
-    <use id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" name="jetbrains.mps.lang.textGen" version="0" />
-    <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
+    <devkit ref="fa73d85a-ac7f-447b-846c-fcdc41caa600(jetbrains.mps.devkit.aspect.textgen)" />
   </languages>
   <imports>
     <import index="trw8" ref="r:66408d77-ffb3-4326-9a15-5d799ccaf950(CSharp.structure)" implicit="true" />
