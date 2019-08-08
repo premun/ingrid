@@ -5,11 +5,11 @@
       <sourceRoot location="models" />
     </modelRoot>
     <modelRoot contentPath="${INGRID_HOME}/plugin/lib" type="java_classes">
-      <sourceRoot location="antlr-4.5.2-complete.jar" />
+      <sourceRoot location="antlr4-4.7.2-complete.jar" />
     </modelRoot>
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
+    <stubModelEntry path="${INGRID_HOME}/plugin/lib/antlr4-4.7.2-complete.jar" />
   </stubModelEntries>
   <sourcePath />
   <languageVersions>

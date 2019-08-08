@@ -51,7 +51,7 @@
     <echoxml file="${build.tmp}/default/org.antlr.jar/META-INF/module.xml">
       <module namespace="org.antlr" type="solution" uuid="4db458f1-215f-424c-8756-4cc4b0227697">
         <dependencies />
-        <library jar="../../antlr-4.5.2-complete.jar" />
+        <library jar="../../antlr4-4.7.2-complete.jar" />
         <classpath>
           <entry path="." />
         </classpath>
@@ -282,7 +282,7 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugin-mps-parser-models" prefix="module/models" />
     </jar>
     <copy todir="${build.tmp}/default/premun.mps.ingrid.zip/Ingrid">
-      <fileset file="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
+      <fileset file="${INGRID_HOME}/plugin/lib/antlr4-4.7.2-complete.jar" />
     </copy>
     <zip destfile="${build.layout}/premun.mps.ingrid.zip">
       <fileset dir="${build.tmp}/default/premun.mps.ingrid.zip" />
@@ -414,7 +414,7 @@
         <path location="${INGRID_HOME}/plugin/mps/org.antlr/source_gen" />
       </src>
       <classpath>
-        <fileset file="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
+        <fileset file="${INGRID_HOME}/plugin/lib/antlr4-4.7.2-complete.jar" />
       </classpath>
     </javac>
   </target>
@@ -453,7 +453,7 @@
         <pathelement path="${build.tmp}/java/out/premun.mps.ingrid.parser" />
         <fileset file="${artifacts.mps}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />
-        <fileset file="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
+        <fileset file="${INGRID_HOME}/plugin/lib/antlr4-4.7.2-complete.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -498,7 +498,7 @@
         <pathelement path="${build.tmp}/java/out/premun.mps.ingrid.library" />
         <pathelement path="${build.tmp}/java/out/premun.mps.ingrid.model" />
         <pathelement path="${build.tmp}/java/out/premun.mps.ingrid.parser" />
-        <fileset file="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
+        <fileset file="${INGRID_HOME}/plugin/lib/antlr4-4.7.2-complete.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
@@ -546,7 +546,7 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-project-check.jar" />
-        <fileset file="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
+        <fileset file="${INGRID_HOME}/plugin/lib/antlr4-4.7.2-complete.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
@@ -584,7 +584,7 @@
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-references.jar" />
-        <fileset file="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
+        <fileset file="${INGRID_HOME}/plugin/lib/antlr4-4.7.2-complete.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
       </classpath>
     </javac>
@@ -606,7 +606,7 @@
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mps}/lib/mps-references.jar" />
         <pathelement path="${build.tmp}/java/out/premun.mps.ingrid.model" />
-        <fileset file="${INGRID_HOME}/plugin/lib/antlr-4.5.2-complete.jar" />
+        <fileset file="${INGRID_HOME}/plugin/lib/antlr4-4.7.2-complete.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
       </classpath>
     </javac>
