@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="3" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="7" />
   </languages>
   <imports>
     <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
@@ -48,10 +48,17 @@
         <child id="5617550519002745378" name="macros" index="1l3spd" />
         <child id="5617550519002745372" name="layout" index="1l3spN" />
       </concept>
+      <concept id="8654221991637384182" name="jetbrains.mps.build.structure.BuildFileIncludesSelector" flags="ng" index="3qWCbU">
+        <property id="8654221991637384184" name="pattern" index="3qWCbO" />
+      </concept>
       <concept id="4701820937132344003" name="jetbrains.mps.build.structure.BuildLayout_Container" flags="ng" index="1y1bJS">
         <child id="7389400916848037006" name="children" index="39821P" />
       </concept>
       <concept id="841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" flags="ng" index="3_J27D" />
+      <concept id="5248329904287794596" name="jetbrains.mps.build.structure.BuildInputFiles" flags="ng" index="3LXTmp">
+        <child id="5248329904287794598" name="dir" index="3LXTmr" />
+        <child id="5248329904287794679" name="selectors" index="3LXTna" />
+      </concept>
       <concept id="4903714810883702019" name="jetbrains.mps.build.structure.BuildTextStringPart" flags="ng" index="3Mxwew">
         <property id="4903714810883755350" name="text" index="3MwjfP" />
       </concept>
@@ -76,21 +83,27 @@
       </concept>
       <concept id="6592112598314498926" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin" flags="ng" index="m$_wl">
         <reference id="6592112598314801433" name="plugin" index="m_rDy" />
+        <child id="3570488090019868128" name="packagingType" index="pUk7w" />
       </concept>
       <concept id="6592112598314499027" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency" flags="ng" index="m$_yC">
         <reference id="6592112598314499066" name="target" index="m$_y1" />
       </concept>
+      <concept id="3570488090019868065" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_AutoPluginLayoutType" flags="ng" index="pUk6x" />
       <concept id="1500819558095907805" name="jetbrains.mps.build.mps.structure.BuildMps_Group" flags="ng" index="2G$12M">
         <child id="1500819558095907806" name="modules" index="2G$12L" />
       </concept>
       <concept id="868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" flags="ng" index="3b7kt6" />
       <concept id="5253498789149381388" name="jetbrains.mps.build.mps.structure.BuildMps_Module" flags="ng" index="3bQrTs">
         <property id="1500819558096356884" name="doNotCompile" index="2GAjPV" />
+        <child id="5253498789149547825" name="sources" index="3bR31x" />
         <child id="5253498789149547704" name="dependencies" index="3bR37C" />
       </concept>
       <concept id="5253498789149585690" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule" flags="ng" index="3bR9La">
         <property id="5253498789149547713" name="reexport" index="3bR36h" />
         <reference id="5253498789149547705" name="module" index="3bR37D" />
+      </concept>
+      <concept id="763829979718664966" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleResources" flags="ng" index="3rtmxn">
+        <child id="763829979718664967" name="files" index="3rtmxm" />
       </concept>
       <concept id="4278635856200826393" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar" flags="ng" index="1BurEX">
         <child id="4278635856200826394" name="path" index="1BurEY" />
@@ -189,6 +202,7 @@
               </node>
             </node>
           </node>
+          <node concept="pUk6x" id="5ytfO$zzJRd" role="pUk7w" />
         </node>
       </node>
     </node>
@@ -251,6 +265,18 @@
                     <property role="2Ry0Am" value="antlr-4.5.2-complete.jar" />
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3rtmxn" id="5ytfO$zzJQb" role="3bR31x">
+          <node concept="3LXTmp" id="5ytfO$zzJQc" role="3rtmxm">
+            <node concept="3qWCbU" id="5ytfO$zzJQd" role="3LXTna">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+            <node concept="55IIr" id="5ytfO$zzJQe" role="3LXTmr">
+              <node concept="2Ry0Ak" id="5ytfO$zzJQf" role="iGT6I">
+                <property role="2Ry0Am" value="org.antlr" />
               </node>
             </node>
           </node>
@@ -335,6 +361,18 @@
             <ref role="3bR37D" node="5FaaOUBGVUZ" resolve="premun.mps.ingrid.model" />
           </node>
         </node>
+        <node concept="3rtmxn" id="5ytfO$zzJQh" role="3bR31x">
+          <node concept="3LXTmp" id="5ytfO$zzJQi" role="3rtmxm">
+            <node concept="3qWCbU" id="5ytfO$zzJQj" role="3LXTna">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+            <node concept="55IIr" id="5ytfO$zzJQk" role="3LXTmr">
+              <node concept="2Ry0Ak" id="5ytfO$zzJQl" role="iGT6I">
+                <property role="2Ry0Am" value="plugin" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="5FaaOUBGVUp" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -383,6 +421,18 @@
           <node concept="3bR9La" id="5FaaOUBH0kH" role="1SiIV1">
             <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="5FaaOUBGVUG" resolve="premun.mps.ingrid.library" />
+          </node>
+        </node>
+        <node concept="3rtmxn" id="5ytfO$zzJQn" role="3bR31x">
+          <node concept="3LXTmp" id="5ytfO$zzJQo" role="3rtmxm">
+            <node concept="3qWCbU" id="5ytfO$zzJQp" role="3LXTna">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+            <node concept="55IIr" id="5ytfO$zzJQq" role="3LXTmr">
+              <node concept="2Ry0Ak" id="5ytfO$zzJQr" role="iGT6I">
+                <property role="2Ry0Am" value="importer" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -435,6 +485,18 @@
             <ref role="3bR37D" node="5FaaOUBGVUZ" resolve="premun.mps.ingrid.model" />
           </node>
         </node>
+        <node concept="3rtmxn" id="5ytfO$zzJQt" role="3bR31x">
+          <node concept="3LXTmp" id="5ytfO$zzJQu" role="3rtmxm">
+            <node concept="3qWCbU" id="5ytfO$zzJQv" role="3LXTna">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+            <node concept="55IIr" id="5ytfO$zzJQw" role="3LXTmr">
+              <node concept="2Ry0Ak" id="5ytfO$zzJQx" role="iGT6I">
+                <property role="2Ry0Am" value="library" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="5FaaOUBGVUZ" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -461,6 +523,18 @@
             <ref role="3bR37D" to="ffeo:1H905DlDUSw" resolve="MPS.OpenAPI" />
           </node>
         </node>
+        <node concept="3rtmxn" id="5ytfO$zzJQz" role="3bR31x">
+          <node concept="3LXTmp" id="5ytfO$zzJQ$" role="3rtmxm">
+            <node concept="3qWCbU" id="5ytfO$zzJQ_" role="3LXTna">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+            <node concept="55IIr" id="5ytfO$zzJQA" role="3LXTmr">
+              <node concept="2Ry0Ak" id="5ytfO$zzJQB" role="iGT6I">
+                <property role="2Ry0Am" value="model" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="5FaaOUBGVVi" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -485,6 +559,18 @@
           <node concept="3bR9La" id="5FaaOUBH0jx" role="1SiIV1">
             <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="5FaaOUBGVUZ" resolve="premun.mps.ingrid.model" />
+          </node>
+        </node>
+        <node concept="3rtmxn" id="5ytfO$zzJQD" role="3bR31x">
+          <node concept="3LXTmp" id="5ytfO$zzJQE" role="3rtmxm">
+            <node concept="3qWCbU" id="5ytfO$zzJQF" role="3LXTna">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+            <node concept="55IIr" id="5ytfO$zzJQG" role="3LXTmr">
+              <node concept="2Ry0Ak" id="5ytfO$zzJQH" role="iGT6I">
+                <property role="2Ry0Am" value="parser" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
