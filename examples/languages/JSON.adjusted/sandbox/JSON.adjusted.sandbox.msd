@@ -7,8 +7,8 @@
   </models>
   <sourcePath />
   <languageVersions>
-    <language id="1cf135c6-28ba-478b-8370-80ffc1371666" fqName="JSON.adjusted" version="-1" />
-    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />
+    <language slang="l:1cf135c6-28ba-478b-8370-80ffc1371666:JSON.adjusted" version="-1" />
+    <language slang="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" version="1" />
   </languageVersions>
   <dependencyVersions>
     <module reference="acb2aa21-d8de-4d9c-b99c-ad34040d247d(JSON.adjusted.sandbox)" version="0" />
